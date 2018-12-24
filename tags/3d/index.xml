@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3d on Marian&#39;s Blog</title>
-    <link>https://marian42.de/tags/3d/</link>
+    <link>https://marian42.github.io/tags/3d/</link>
     <description>Recent content in 3d on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 22 Jul 2018 19:32:12 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.de/tags/3d/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.github.io/tags/3d/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ESA ExoMars Rover 3D model</title>
-      <link>https://marian42.de/article/exomars/</link>
+      <link>https://marian42.github.io/article/exomars/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>https://marian42.de/article/exomars/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/exomars/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

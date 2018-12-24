@@ -2,524 +2,524 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Marian&#39;s Blog</title>
-    <link>https://marian42.de/tags/</link>
+    <link>https://marian42.github.io/tags/</link>
     <description>Recent content in Tags on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 22 Jul 2018 19:32:12 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.de/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>3d</title>
-      <link>https://marian42.de/tags/3d/</link>
+      <link>https://marian42.github.io/tags/3d/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/3d/</guid>
+      <guid>https://marian42.github.io/tags/3d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>3dprinting</title>
-      <link>https://marian42.de/tags/3dprinting/</link>
+      <link>https://marian42.github.io/tags/3dprinting/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/3dprinting/</guid>
+      <guid>https://marian42.github.io/tags/3dprinting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>https://marian42.de/tags/android/</link>
+      <link>https://marian42.github.io/tags/android/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/android/</guid>
+      <guid>https://marian42.github.io/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>App</title>
-      <link>https://marian42.de/tags/app/</link>
+      <link>https://marian42.github.io/tags/app/</link>
       <pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/app/</guid>
+      <guid>https://marian42.github.io/tags/app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Arduino</title>
-      <link>https://marian42.de/tags/arduino/</link>
+      <link>https://marian42.github.io/tags/arduino/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/arduino/</guid>
+      <guid>https://marian42.github.io/tags/arduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Art</title>
-      <link>https://marian42.de/tags/art/</link>
+      <link>https://marian42.github.io/tags/art/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/art/</guid>
+      <guid>https://marian42.github.io/tags/art/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bluetooth</title>
-      <link>https://marian42.de/tags/bluetooth/</link>
+      <link>https://marian42.github.io/tags/bluetooth/</link>
       <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/bluetooth/</guid>
+      <guid>https://marian42.github.io/tags/bluetooth/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bootstrap</title>
-      <link>https://marian42.de/tags/bootstrap/</link>
+      <link>https://marian42.github.io/tags/bootstrap/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/bootstrap/</guid>
+      <guid>https://marian42.github.io/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Btduino</title>
-      <link>https://marian42.de/tags/btduino/</link>
+      <link>https://marian42.github.io/tags/btduino/</link>
       <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/btduino/</guid>
+      <guid>https://marian42.github.io/tags/btduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://marian42.de/tags/c&#43;&#43;/</link>
+      <link>https://marian42.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/c&#43;&#43;/</guid>
+      <guid>https://marian42.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computerscience</title>
-      <link>https://marian42.de/tags/computerscience/</link>
+      <link>https://marian42.github.io/tags/computerscience/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/computerscience/</guid>
+      <guid>https://marian42.github.io/tags/computerscience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computervision</title>
-      <link>https://marian42.de/tags/computervision/</link>
+      <link>https://marian42.github.io/tags/computervision/</link>
       <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/computervision/</guid>
+      <guid>https://marian42.github.io/tags/computervision/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Csharp</title>
-      <link>https://marian42.de/tags/csharp/</link>
+      <link>https://marian42.github.io/tags/csharp/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/csharp/</guid>
+      <guid>https://marian42.github.io/tags/csharp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>De</title>
-      <link>https://marian42.de/tags/de/</link>
+      <link>https://marian42.github.io/tags/de/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/de/</guid>
+      <guid>https://marian42.github.io/tags/de/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electronics</title>
-      <link>https://marian42.de/tags/electronics/</link>
+      <link>https://marian42.github.io/tags/electronics/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/electronics/</guid>
+      <guid>https://marian42.github.io/tags/electronics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fische</title>
-      <link>https://marian42.de/tags/fische/</link>
+      <link>https://marian42.github.io/tags/fische/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/fische/</guid>
+      <guid>https://marian42.github.io/tags/fische/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fishtank</title>
-      <link>https://marian42.de/tags/fishtank/</link>
+      <link>https://marian42.github.io/tags/fishtank/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/fishtank/</guid>
+      <guid>https://marian42.github.io/tags/fishtank/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flask</title>
-      <link>https://marian42.de/tags/flask/</link>
+      <link>https://marian42.github.io/tags/flask/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/flask/</guid>
+      <guid>https://marian42.github.io/tags/flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Foto</title>
-      <link>https://marian42.de/tags/foto/</link>
+      <link>https://marian42.github.io/tags/foto/</link>
       <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/foto/</guid>
+      <guid>https://marian42.github.io/tags/foto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gamedev</title>
-      <link>https://marian42.de/tags/gamedev/</link>
+      <link>https://marian42.github.io/tags/gamedev/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/gamedev/</guid>
+      <guid>https://marian42.github.io/tags/gamedev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gaming</title>
-      <link>https://marian42.de/tags/gaming/</link>
+      <link>https://marian42.github.io/tags/gaming/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/gaming/</guid>
+      <guid>https://marian42.github.io/tags/gaming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Glsl</title>
-      <link>https://marian42.de/tags/glsl/</link>
+      <link>https://marian42.github.io/tags/glsl/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/glsl/</guid>
+      <guid>https://marian42.github.io/tags/glsl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gopro</title>
-      <link>https://marian42.de/tags/gopro/</link>
+      <link>https://marian42.github.io/tags/gopro/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/gopro/</guid>
+      <guid>https://marian42.github.io/tags/gopro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graphics</title>
-      <link>https://marian42.de/tags/graphics/</link>
+      <link>https://marian42.github.io/tags/graphics/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/graphics/</guid>
+      <guid>https://marian42.github.io/tags/graphics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hardware</title>
-      <link>https://marian42.de/tags/hardware/</link>
+      <link>https://marian42.github.io/tags/hardware/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/hardware/</guid>
+      <guid>https://marian42.github.io/tags/hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Home Automation</title>
-      <link>https://marian42.de/tags/home-automation/</link>
+      <link>https://marian42.github.io/tags/home-automation/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/home-automation/</guid>
+      <guid>https://marian42.github.io/tags/home-automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Howto</title>
-      <link>https://marian42.de/tags/howto/</link>
+      <link>https://marian42.github.io/tags/howto/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/howto/</guid>
+      <guid>https://marian42.github.io/tags/howto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Http</title>
-      <link>https://marian42.de/tags/http/</link>
+      <link>https://marian42.github.io/tags/http/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/http/</guid>
+      <guid>https://marian42.github.io/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internet of Things</title>
-      <link>https://marian42.de/tags/internet-of-things/</link>
+      <link>https://marian42.github.io/tags/internet-of-things/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/internet-of-things/</guid>
+      <guid>https://marian42.github.io/tags/internet-of-things/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ir</title>
-      <link>https://marian42.de/tags/ir/</link>
+      <link>https://marian42.github.io/tags/ir/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/ir/</guid>
+      <guid>https://marian42.github.io/tags/ir/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://marian42.de/tags/java/</link>
+      <link>https://marian42.github.io/tags/java/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/java/</guid>
+      <guid>https://marian42.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Js</title>
-      <link>https://marian42.de/tags/js/</link>
+      <link>https://marian42.github.io/tags/js/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/js/</guid>
+      <guid>https://marian42.github.io/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Led</title>
-      <link>https://marian42.de/tags/led/</link>
+      <link>https://marian42.github.io/tags/led/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/led/</guid>
+      <guid>https://marian42.github.io/tags/led/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ledmatrix</title>
-      <link>https://marian42.de/tags/ledmatrix/</link>
+      <link>https://marian42.github.io/tags/ledmatrix/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/ledmatrix/</guid>
+      <guid>https://marian42.github.io/tags/ledmatrix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Leds</title>
-      <link>https://marian42.de/tags/leds/</link>
+      <link>https://marian42.github.io/tags/leds/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/leds/</guid>
+      <guid>https://marian42.github.io/tags/leds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lego</title>
-      <link>https://marian42.de/tags/lego/</link>
+      <link>https://marian42.github.io/tags/lego/</link>
       <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/lego/</guid>
+      <guid>https://marian42.github.io/tags/lego/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lightpainting</title>
-      <link>https://marian42.de/tags/lightpainting/</link>
+      <link>https://marian42.github.io/tags/lightpainting/</link>
       <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/lightpainting/</guid>
+      <guid>https://marian42.github.io/tags/lightpainting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matrix</title>
-      <link>https://marian42.de/tags/matrix/</link>
+      <link>https://marian42.github.io/tags/matrix/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/matrix/</guid>
+      <guid>https://marian42.github.io/tags/matrix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modelling</title>
-      <link>https://marian42.de/tags/modelling/</link>
+      <link>https://marian42.github.io/tags/modelling/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/modelling/</guid>
+      <guid>https://marian42.github.io/tags/modelling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Opengl</title>
-      <link>https://marian42.de/tags/opengl/</link>
+      <link>https://marian42.github.io/tags/opengl/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/opengl/</guid>
+      <guid>https://marian42.github.io/tags/opengl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Php</title>
-      <link>https://marian42.de/tags/php/</link>
+      <link>https://marian42.github.io/tags/php/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/php/</guid>
+      <guid>https://marian42.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pixelart</title>
-      <link>https://marian42.de/tags/pixelart/</link>
+      <link>https://marian42.github.io/tags/pixelart/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/pixelart/</guid>
+      <guid>https://marian42.github.io/tags/pixelart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pointcloud</title>
-      <link>https://marian42.de/tags/pointcloud/</link>
+      <link>https://marian42.github.io/tags/pointcloud/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/pointcloud/</guid>
+      <guid>https://marian42.github.io/tags/pointcloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Portal</title>
-      <link>https://marian42.de/tags/portal/</link>
+      <link>https://marian42.github.io/tags/portal/</link>
       <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/portal/</guid>
+      <guid>https://marian42.github.io/tags/portal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Procgen</title>
-      <link>https://marian42.de/tags/procgen/</link>
+      <link>https://marian42.github.io/tags/procgen/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/procgen/</guid>
+      <guid>https://marian42.github.io/tags/procgen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://marian42.de/tags/python/</link>
+      <link>https://marian42.github.io/tags/python/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/python/</guid>
+      <guid>https://marian42.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quadcopter</title>
-      <link>https://marian42.de/tags/quadcopter/</link>
+      <link>https://marian42.github.io/tags/quadcopter/</link>
       <pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/quadcopter/</guid>
+      <guid>https://marian42.github.io/tags/quadcopter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberry Pi</title>
-      <link>https://marian42.de/tags/raspberry-pi/</link>
+      <link>https://marian42.github.io/tags/raspberry-pi/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/raspberry-pi/</guid>
+      <guid>https://marian42.github.io/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberrypi</title>
-      <link>https://marian42.de/tags/raspberrypi/</link>
+      <link>https://marian42.github.io/tags/raspberrypi/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/raspberrypi/</guid>
+      <guid>https://marian42.github.io/tags/raspberrypi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raytracing</title>
-      <link>https://marian42.de/tags/raytracing/</link>
+      <link>https://marian42.github.io/tags/raytracing/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/raytracing/</guid>
+      <guid>https://marian42.github.io/tags/raytracing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rf</title>
-      <link>https://marian42.de/tags/rf/</link>
+      <link>https://marian42.github.io/tags/rf/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/rf/</guid>
+      <guid>https://marian42.github.io/tags/rf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Samba</title>
-      <link>https://marian42.de/tags/samba/</link>
+      <link>https://marian42.github.io/tags/samba/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/samba/</guid>
+      <guid>https://marian42.github.io/tags/samba/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tasker</title>
-      <link>https://marian42.de/tags/tasker/</link>
+      <link>https://marian42.github.io/tags/tasker/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/tasker/</guid>
+      <guid>https://marian42.github.io/tags/tasker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>https://marian42.de/tags/tutorial/</link>
+      <link>https://marian42.github.io/tags/tutorial/</link>
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/tutorial/</guid>
+      <guid>https://marian42.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>https://marian42.de/tags/unity/</link>
+      <link>https://marian42.github.io/tags/unity/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/unity/</guid>
+      <guid>https://marian42.github.io/tags/unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webdev</title>
-      <link>https://marian42.de/tags/webdev/</link>
+      <link>https://marian42.github.io/tags/webdev/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/webdev/</guid>
+      <guid>https://marian42.github.io/tags/webdev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wetter</title>
-      <link>https://marian42.de/tags/wetter/</link>
+      <link>https://marian42.github.io/tags/wetter/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>https://marian42.de/tags/wetter/</guid>
+      <guid>https://marian42.github.io/tags/wetter/</guid>
       <description></description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hardware on Marian&#39;s Blog</title>
-    <link>https://marian42.de/tags/hardware/</link>
+    <link>https://marian42.github.io/tags/hardware/</link>
     <description>Recent content in Hardware on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 08 May 2017 00:17:55 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.de/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.github.io/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED Matrix Materials Guide</title>
-      <link>https://marian42.de/article/ledmatrix-tutorial/</link>
+      <link>https://marian42.github.io/article/ledmatrix-tutorial/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -27,12 +27,12 @@
     
     <item>
       <title>Computer Vision and Robotics Demo with Raspberry Pi</title>
-      <link>https://marian42.de/article/computervision/</link>
+      <link>https://marian42.github.io/article/computervision/</link>
       <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
       
-      <guid>https://marian42.de/article/computervision/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/computervision/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -44,12 +44,12 @@
     
     <item>
       <title>16×16 LED Matrix</title>
-      <link>https://marian42.de/article/ledmatrix/</link>
+      <link>https://marian42.github.io/article/ledmatrix/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>https://marian42.de/article/ledmatrix/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/ledmatrix/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -59,12 +59,12 @@
     
     <item>
       <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
-      <link>https://marian42.de/article/fishfeeder/</link>
+      <link>https://marian42.github.io/article/fishfeeder/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>https://marian42.de/article/fishfeeder/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/fishfeeder/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -74,12 +74,12 @@
     
     <item>
       <title>Raspberry Pi Wetterstation</title>
-      <link>https://marian42.de/article/pi-wetterstation/</link>
+      <link>https://marian42.github.io/article/pi-wetterstation/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>https://marian42.de/article/pi-wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/pi-wetterstation/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -91,12 +91,12 @@
     
     <item>
       <title>Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App</title>
-      <link>https://marian42.de/article/wetterstation/</link>
+      <link>https://marian42.github.io/article/wetterstation/</link>
       <pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
       
-      <guid>https://marian42.de/article/wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.github.io/article/wetterstation/</guid>
+      <description>&lt;a href=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

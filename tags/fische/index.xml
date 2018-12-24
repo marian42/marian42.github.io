@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fische on Marian&#39;s Blog</title>
-    <link>https://marian42.de/tags/fische/</link>
+    <link>https://marian42.github.io/tags/fische/</link>
     <description>Recent content in Fische on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 30 Nov 2013 18:02:19 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.de/tags/fische/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.github.io/tags/fische/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Aquarium Innensicht mit Gopro</title>
-      <link>https://marian42.de/article/gopro-timelapse/</link>
+      <link>https://marian42.github.io/article/gopro-timelapse/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>https://marian42.de/article/gopro-timelapse/</guid>
+      <guid>https://marian42.github.io/article/gopro-timelapse/</guid>
       <description>Wegen meinem Quadrocopter habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.</description>
     </item>
     

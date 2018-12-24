@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Marian&#39;s Blog</title>
-    <link>https://marian42.de/tags/java/</link>
+    <link>https://marian42.github.io/tags/java/</link>
     <description>Recent content in Java on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 18 Jul 2015 15:55:40 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.de/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Game prototypes</title>
-      <link>https://marian42.de/article/game-prototypes/</link>
+      <link>https://marian42.github.io/article/game-prototypes/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>https://marian42.de/article/game-prototypes/</guid>
+      <guid>https://marian42.github.io/article/game-prototypes/</guid>
       <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;https://marian42.github.io/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;https://marian42.github.io/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Uni-Timer</title>
-      <link>https://marian42.de/article/uni-timer/</link>
+      <link>https://marian42.github.io/article/uni-timer/</link>
       <pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
       
-      <guid>https://marian42.de/article/uni-timer/</guid>
+      <guid>https://marian42.github.io/article/uni-timer/</guid>
       <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
               Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
     </item>
     
     <item>
       <title>BTduino</title>
-      <link>https://marian42.de/article/btduino/</link>
+      <link>https://marian42.github.io/article/btduino/</link>
       <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
       
-      <guid>https://marian42.de/article/btduino/</guid>
+      <guid>https://marian42.github.io/article/btduino/</guid>
       <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
 
 &lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
@@ -52,8 +52,8 @@
 
 
 
-&lt;a href=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;a href=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -61,10 +61,10 @@
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
