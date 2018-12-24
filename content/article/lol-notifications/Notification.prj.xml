@@ -1,0 +1,569 @@
+<TaskerData sr="" dvi="1" tv="4.1u3m">
+	<Profile sr="prof24" ve="2">
+		<cdate>1392410633379</cdate>
+		<clp>true</clp>
+		<edate>1392410702836</edate>
+		<id>24</id>
+		<mid0>23</mid0>
+		<Event sr="con0" ve="2">
+			<code>1000</code>
+		</Event>
+	</Profile>
+	<Profile sr="prof36" ve="2">
+		<cdate>1392411144213</cdate>
+		<clp>true</clp>
+		<edate>1392411144213</edate>
+		<id>36</id>
+		<mid0>22</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.facebook.katana.LoginActivity</appClass>
+				<appPkg>com.facebook.katana</appPkg>
+				<label>Facebook</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof37" ve="2">
+		<cdate>1392411173694</cdate>
+		<clp>true</clp>
+		<edate>1392411173694</edate>
+		<id>37</id>
+		<mid0>25</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.google.android.apps.plus.phone.HomeActivity</appClass>
+				<appPkg>com.google.android.apps.plus</appPkg>
+				<label>Google+</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof38" ve="2">
+		<cdate>1392411215219</cdate>
+		<clp>true</clp>
+		<edate>1392411215219</edate>
+		<id>38</id>
+		<mid0>26</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.google.android.talk.SigningInActivity</appClass>
+				<appPkg>com.google.android.talk</appPkg>
+				<label>Hangouts</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof39" ve="2">
+		<cdate>1392411250461</cdate>
+		<clp>true</clp>
+		<edate>1392411250461</edate>
+		<id>39</id>
+		<mid0>27</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.nianticproject.ingress.NemesisActivity</appClass>
+				<appPkg>com.nianticproject.ingress</appPkg>
+				<label>Ingress</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof40" ve="2">
+		<cdate>1392411302429</cdate>
+		<clp>true</clp>
+		<edate>1392411302429</edate>
+		<id>40</id>
+		<mid0>28</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.kaitenmail.adsupported.activity.Accounts</appClass>
+				<appPkg>com.kaitenmail.adsupported</appPkg>
+				<label>Kaiten Mail Free</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof41" ve="2">
+		<cdate>1392411317594</cdate>
+		<clp>true</clp>
+		<edate>1392411317594</edate>
+		<id>41</id>
+		<mid0>29</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.google.android.dialer.extensions.GoogleDialtactsActivity</appClass>
+				<appPkg>com.google.android.dialer</appPkg>
+				<label>Telefon</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof42" ve="2">
+		<cdate>1392411337980</cdate>
+		<clp>true</clp>
+		<edate>1392411337980</edate>
+		<id>42</id>
+		<mid0>30</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>se.feomedia.quizkampen.MainActivity</appClass>
+				<appPkg>se.feomedia.quizkampen.de.premium</appPkg>
+				<label>Quizduell PREMIUM</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof43" ve="2">
+		<cdate>1392411358405</cdate>
+		<clp>true</clp>
+		<edate>1392411358405</edate>
+		<id>43</id>
+		<mid0>31</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.heavensabove.PassListView</appClass>
+				<appPkg>com.heavensabove</appPkg>
+				<label>SatTrack</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof44" ve="2">
+		<cdate>1392411377653</cdate>
+		<clp>true</clp>
+		<edate>1392411377653</edate>
+		<id>44</id>
+		<mid0>32</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.skype.raider.Main</appClass>
+				<appPkg>com.skype.raider</appPkg>
+				<label>Skype</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof45" ve="2">
+		<cdate>1392411393220</cdate>
+		<clp>true</clp>
+		<edate>1392411393220</edate>
+		<id>45</id>
+		<mid0>33</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.twitter.android.StartActivity</appClass>
+				<appPkg>com.twitter.android</appPkg>
+				<label>Twitter</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof46" ve="2">
+		<cdate>1392411412880</cdate>
+		<clp>true</clp>
+		<edate>1392411412880</edate>
+		<id>46</id>
+		<mid0>34</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.whatsapp.Main</appClass>
+				<appPkg>com.whatsapp</appPkg>
+				<label>WhatsApp</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof47" ve="2">
+		<cdate>1392411433591</cdate>
+		<clp>true</clp>
+		<edate>1392411433591</edate>
+		<id>47</id>
+		<mid0>35</mid0>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>com.android.mms.ui.ConversationList</appClass>
+				<appPkg>com.android.mms</appPkg>
+				<label>SMS/MMS</label>
+			</App>
+			<Str sr="arg1" ve="3"/>
+		</Event>
+	</Profile>
+	<Project sr="proj0">
+		<cdate>1392409862873</cdate>
+		<name>Notification</name>
+		<pids>37,46,40,36,42,44,38,47,43,41,24,39,45</pids>
+		<tids>23,21,34,25,30,22,32,35,29,33,26,27,28,31</tids>
+	</Project>
+	<Task sr="task21">
+		<cdate>1392409878906</cdate>
+		<edate>1392562386575</edate>
+		<id>21</id>
+		<nme>nenable</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>116</code>
+			<Str sr="arg0" ve="3">marian42.no-ip.biz/schalter/api.php?notification=%NINDEX&amp;enable=1&amp;text=#NTITLE</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="10"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NENABLED</Str>
+			<Str sr="arg1" ve="3">true</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="3">
+			<code>37</code>
+			<lhs>%SCREEN</lhs>
+			<op>1</op>
+			<rhs>on</rhs>
+		</Action>
+		<Action sr="act3" ve="3">
+			<code>30</code>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="20"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act4" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">ndisable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+		<Action sr="act5" ve="3">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task22">
+		<cdate>1392410004267</cdate>
+		<edate>1392410798790</edate>
+		<id>22</id>
+		<nme>facebook</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">0</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task23">
+		<cdate>1392409878906</cdate>
+		<edate>1392481837984</edate>
+		<id>23</id>
+		<nme>ndisable</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>37</code>
+			<lhs>%NENABLED</lhs>
+			<op>1</op>
+			<rhs>true</rhs>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>116</code>
+			<Str sr="arg0" ve="3">marian42.no-ip.biz/schalter/api.php?notification=all&amp;enable=0</Str>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Int sr="arg4" val="10"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NENABLED</Str>
+			<Str sr="arg1" ve="3">false</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act3" ve="3">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task25">
+		<cdate>1392410004267</cdate>
+		<edate>1392410973262</edate>
+		<id>25</id>
+		<nme>gplus</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task26">
+		<cdate>1392410004267</cdate>
+		<edate>1392410981290</edate>
+		<id>26</id>
+		<nme>ghangouts</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">2</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task27">
+		<cdate>1392410004267</cdate>
+		<edate>1392481830836</edate>
+		<id>27</id>
+		<nme>ingress</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">3</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task28">
+		<cdate>1392410004267</cdate>
+		<edate>1392411007657</edate>
+		<id>28</id>
+		<nme>mail</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">4</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task29">
+		<cdate>1392410004267</cdate>
+		<edate>1392411013611</edate>
+		<id>29</id>
+		<nme>phone</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">5</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task30">
+		<cdate>1392410004267</cdate>
+		<edate>1392411027897</edate>
+		<id>30</id>
+		<nme>quiz</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">6</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task31">
+		<cdate>1392410004267</cdate>
+		<edate>1392411045261</edate>
+		<id>31</id>
+		<nme>sattelite</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">7</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task32">
+		<cdate>1392410004267</cdate>
+		<edate>1392411057490</edate>
+		<id>32</id>
+		<nme>skype</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">8</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task33">
+		<cdate>1392410004267</cdate>
+		<edate>1392411065188</edate>
+		<id>33</id>
+		<nme>twitter</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">9</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task34">
+		<cdate>1392410004267</cdate>
+		<edate>1392411075475</edate>
+		<id>34</id>
+		<nme>whatsapp</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">10</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task35">
+		<cdate>1392410004267</cdate>
+		<edate>1392411088393</edate>
+		<id>35</id>
+		<nme>sms</nme>
+		<pri>10</pri>
+		<Action sr="act0" ve="3">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%NINDEX</Str>
+			<Str sr="arg1" ve="3">11</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="3">
+			<code>130</code>
+			<Str sr="arg0" ve="3">nenable</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="5"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+		</Action>
+	</Task>
+</TaskerData>

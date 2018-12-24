@@ -1,0 +1,35 @@
+title = "Marian's Blog"
+baseURL = "https://marian42.de/"
+theme = "bilberry-hugo-theme"
+
+enableRobotsTXT = true
+
+DefaultContentLanguage = "en"
+
+
+realtiveURLs = true
+
+[params]
+	author = "Marian Kleineberg"
+	description = "Personal blog about programming, game development and space ships."
+
+	paginate = 10
+	siteWidth = "700px"
+	subtitle = ""
+	customImage = "marian.png"
+	dateFormat = "January 2, 2006"
+	showFooter = true
+
+	showSocialMedia = true
+
+	twitter    = "https://twitter.com/marian42_"
+	github     = "https://github.com/marian42"
+	email      = "mailto:mail@marian42.de"
+	rss        = "/index.xml"
+
+	contact    = "mailto:mail@marian42.de"
+	imprint    = "/page/imprint/"
+
+[outputs]
+	home = [ "HTML", "RSS" ]
+	page = [ "HTML" ]

@@ -1,0 +1,56 @@
+// ----------- BLUETOOTH ------------- 
+char buff_name[100]; 		// Use smaller buffers to safe RAM
+char buff_value[100];		// RAM propblems are indicated by random errors with string processing
+int pos = 0;
+boolean colon = false;
+
+void setup() {    
+  Serial.begin(9600);
+  sendsetup();
+}
+
+void loop() {
+  checkserial();  
+  delay(20);
+}
+
+void checkserial() {
+  while(Serial.available()) {
+     if (!colon) {
+       buff_name[pos] = Serial.read();
+       if (buff_name[pos] == ':') {
+         colon = !colon;
+         buff_name[pos] = '\0';
+         pos = -1; 
+       }
+       if (buff_name[pos] == '\n') {
+         buff_name[pos] = '\0';
+         buff_value[0] = '\0';
+         pos = -1;
+         receiveline(buff_name,buff_value);
+       }
+     } else {
+       buff_value[pos] = Serial.read();
+       if (buff_value[pos] == '\n') {
+         colon = !colon;
+         buff_value[pos] = '\0';
+         pos = -1;
+         receiveline(buff_name,buff_value);
+       }
+     }
+     pos++;
+  }
+}
+
+void receiveline(String name, String value) {
+  if (name == "requestsetup") { sendsetup(); return; } 
+  if (name == "mirror") {
+    Serial.print(value + "\n");
+    return;
+  }
+}
+
+// Send information about the events you want to use
+void sendsetup() {
+
+}

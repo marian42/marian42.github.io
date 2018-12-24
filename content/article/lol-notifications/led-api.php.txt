@@ -1,0 +1,66 @@
+<?php
+	include "php_serial.class.php";
+	
+	error_reporting (E_ALL | E_STRICT);
+	ini_set ('display_errors' , 1);	
+	
+	function serialsend($msg) {	
+		$serial = new phpSerial;
+			$serial->deviceSet("/dev/ttyAMA0");
+			$serial->confBaudRate(9600);
+			$serial->confParity("none");
+			$serial->confCharacterLength(8);
+			$serial->confStopBits(1);
+			$serial->deviceOpen();
+			
+			$serial->sendMessage($msg);
+			
+			$serial->deviceClose();
+	}
+	
+	if (isset($_REQUEST["setclock"])) {		
+		serialsend('h'.chr(ord('a') + intval(date("G"))).'m'.chr(ord('a') + intval(date("i"))).'i'.chr(ord('a') + intval(date("s"))));
+	}
+	
+	function setnotification($index,$value) {
+		echo "index: ".$index.", value: ".$value;
+		
+		if ($index == "all") {
+			if ($value == 1) serialsend("a");
+			else serialsend("b");
+			return;
+		}
+		
+		if ($index < 0 || $index >= 12) return;
+		if ($value != 0 && $value != 1) return;
+		
+		
+		$abc = 'abcdefghijklmn';		
+		
+		serialsend("s".
+			substr($abc,intval($index),1).
+			($value == 1 ? '1' : '0'));
+	}
+	
+	if (isset($_REQUEST["notification"])) {
+		$cmd = strtolower($_REQUEST["notification"]);
+		$value = strtolower($_REQUEST["enable"]);
+		
+		setnotification($cmd,$value);
+	}
+	
+	if (isset($_REQUEST["clockmode"])) {	
+		serialsend('c'.chr(ord('a') + intval($_REQUEST["clockmode"])));
+	}
+	
+	if (isset($_REQUEST["text"])) {
+		if ($_REQUEST["text"] != '') {
+			serialsend('t'.$_REQUEST["text"].chr(13));
+			file_put_contents ( "lolshield.log" , date('d.m.y H:i:s ').$_GET["text"]."\n", FILE_APPEND);
+		}
+	}
+	
+	if (isset($_REQUEST["repeat"])) {	
+		serialsend('u'.chr(ord('a') + intval($_REQUEST["repeat"])));
+	}
+?>
