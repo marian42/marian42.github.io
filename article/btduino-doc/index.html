@@ -1,0 +1,306 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.49.2" />
+        <title>
+			
+				
+					BTduino documentation |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="BTduino documentation">
+        <meta itemprop="description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="BTduino documentation">
+        <meta property="og:description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/btduino-doc/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.a81d32cb0ccb0ef05a1713c820b9f2e7c5958517c3a6dd2ffa3266f8c8751a9f.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/btduino-doc/">BTduino documentation</a></h3>
+    
+		<div class="meta">
+    		<span class="date">July 27, 2013</span>
+		</div>
+    
+
+    
+        <p>The <a href="http://marian42.de/?p=179">BTduino app</a> sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:</p>
+
+<pre><code>name:value
+</code></pre>
+
+<h2 id="special-commands">Special commands</h2>
+
+<h3 id="setup">Setup</h3>
+
+<pre><code>requestsetup
+</code></pre>
+
+<p>The BTduino app will send this command if you open a new project or if you click Menu &gt; Request setup. At this point the microcontroller program should request all events that it will be using. The <a href="/article/btduino-doc/BTduino_example.txt">example sketch</a> for Arduino provides a method that is called when requestsetup is received.</p>
+
+<h3 id="ping">Ping</h3>
+
+<pre><code>ping
+</code></pre>
+
+<p>If the BTduino app receives this line, it will send exactly the same back to the microcontroller. This can be used to check if there is a working connection.</p>
+
+<h3 id="remove-event">Remove event</h3>
+
+<pre><code>remove:myevent
+</code></pre>
+
+<p>If the BTduino app receives this line, it will remove the specified event.</p>
+
+<h3 id="parse">Parse</h3>
+
+<p>In your project in the BTduino app, click Menu &gt; Parse and enter a command. This will have the exact same effect as if the app received this command via Bluetooth.</p>
+
+<h2 id="events">Events</h2>
+
+<p>BTduino features several event types that can be used in a project:</p>
+
+<h3 id="value-receiver"><strong>Value receiver</strong></h3>
+
+<p>This event displays values that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. The event is discovered by the app automatically. Example:</p>
+
+<pre><code>mysensor:42
+</code></pre>
+
+<p>The app provides a gauge, a plot and datalogging.</p>
+
+<h3 id="string-receiver"><strong>String receiver</strong></h3>
+
+<p>This event displays text that is sent from the microcontroller to the Android device. Send the name, a colon and your text as one line. The event is discovered by the app automatically. Example:</p>
+
+<pre><code>log:ready
+</code></pre>
+
+<p>The app provides a datalogging feature.</p>
+
+<h3 id="value-sender"><strong>Value sender</strong></h3>
+
+<p>This event provides an interface to send numbers from the Android device to the microcontroller.</p>
+
+<p>Send a value by typing it in the input field and hitting the send button or by using the slider. Touching the slider will automatically send a value to the microcontroller. The data will look like this:</p>
+
+<pre><code>myvaluesender:42
+</code></pre>
+
+<p>You can change the value of the input field and the position of the slider via Bluetooth. This is done again by sending the name and the value as in the example above.</p>
+
+<p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
+
+<pre><code>requestint:myvaluesender
+</code></pre>
+
+<p>This command will as well make the Android app send the current value.</p>
+
+<p>Set the min and max value of the slider by entering a value in the input field and then clicking the min or max value or by sending one of these commands via Bluetooth:</p>
+
+<pre><code>setminmyvaluesender:0
+setmaxmyvaluesender:100
+</code></pre>
+
+<h3 id="string-sender"><strong>String sender</strong></h3>
+
+<p>This event provides an interface to send text from the Android device to the microcontroller. Send text by typing it in the input field and hitting the send button. The data will look like this:</p>
+
+<pre><code>mystringsender:Hello World!
+</code></pre>
+
+<p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
+
+<pre><code>requeststring:mystringsender
+</code></pre>
+
+<p>This command will as well make the Android app send the current value.</p>
+
+<h3 id="boolean-sender"><strong>Boolean sender</strong></h3>
+
+<p>This event provides a switch that will send a boolean value to the microcontroller. Example:</p>
+
+<pre><code>mybooleansender:true;
+mybooleansender:false;
+</code></pre>
+
+<p>You can change the state of the switch via Bluetooth. This is done again by sending the name and the value as in the example above. The app will recognize “true”/”false”, “1”/”0″ and “HIGH”/”LOW”. The event can be added manually in the Android app or by sending this command via bluetooth:</p>
+
+<pre><code>requestboolean:mybooleansender
+requestbool:mybooleansender
+</code></pre>
+
+<p>This command will as well make the Android app send the current value.</p>
+
+<h3 id="event-sender"><strong>Event sender</strong></h3>
+
+<p>This event provides a button that will send a specific text to the microcontroller when clicked. It will send the word “event” and the name of the event:</p>
+
+<pre><code>event:myevent
+</code></pre>
+
+<p>Add it manually from the app or by sending this code:</p>
+
+<pre><code>registerevent:myevent
+</code></pre>
+
+<h3 id="color-receiver"><strong>Color receiver</strong></h3>
+
+<p>This event displays colors that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. You can use the HTML format or send the color as an integer value. The event is discovered by the app automatically if you use the HTML color format. Example:</p>
+
+<pre><code>mycolorreceiver:#FF00FF
+mycolorreceiver:16711935
+</code></pre>
+
+<p>Both lines represent the same color, because 16711935 equals 0xFF00FF. The color receiver provides a datalogging feature.</p>
+
+<h3 id="color-sender">Color sender</h3>
+
+<p>This event provides an interface to send colors from the Android device to the microcontroller.</p>
+
+<p>Click on the color area to choose a color and click the send button to send it. You can select between four color formats: Integer, Hex, HTML and RGB. Example:</p>
+
+<pre><code>mycolorsender:16711935
+mycolorsender:FF00FF
+mycolorsender:#FF00FF
+mycolorsender:255,0,255
+</code></pre>
+
+<p>You can change the value of the color field via Bluetooth. This is done again by sending the name and the value as in the example above, using the HTML or integer format.</p>
+
+<p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
+
+<pre><code>requestcolor:mycolorsender
+</code></pre>
+
+<p>This command will as well make the Android app send the current color.</p>
+
+<h3 id="joystick"><strong>Joystick</strong></h3>
+
+<p>This event provides a virtual joystick on the Android device that will continuously send the position via bluetooth. It will send X and Y coordinates between -1.0 and 1.0 like this:</p>
+
+<pre><code>myjostick:0|0
+</code></pre>
+
+<p>The <a href="/article/btduino-doc/BTduino_example.txt">example sketch for Arduino</a> shows how to use the data. The event can be added manually in the Android app or by sending this command via bluetooth:</p>
+
+<pre><code>requestjoystick:myjoystick
+</code></pre>
+
+<p>You can lock or invert an axis in the BTduino app. The app allow you use the accelerometer to control the joystick. Click the record button to record a path. It can be performed using the play button. After you have recorded a path, long-click the joystick and select “Save path” to add a path event. This allows you to record multiple paths.</p>
+
+<p>The logfiles for value receiver, string receiver and color receiver are stored on the SD card int he folder <code>/Bluetooth/&lt;project name&gt;/&lt;eventname&gt;.txt</code>. The textfile contains one dataset per line, consisting of the timestamp in milliseconds and the value.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/android">android</a>
+	                
+	                    <a href="/tags/app">app</a>
+	                
+	                    <a href="/tags/arduino">arduino</a>
+	                
+	                    <a href="/tags/bluetooth">bluetooth</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/" target="_blank">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de" target="_blank">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

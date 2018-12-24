@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.49.2" />
+        <title>
+			
+				
+					Work in progress: Location based online game |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Work in progress: Location based online game - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Work in progress: Location based online game">
+        <meta itemprop="description" content="Work in progress: Location based online game - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Work in progress: Location based online game">
+        <meta property="og:description" content="Work in progress: Location based online game - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/reslayer/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.a81d32cb0ccb0ef05a1713c820b9f2e7c5958517c3a6dd2ffa3266f8c8751a9f.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/reslayer/">Work in progress: Location based online game</a></h3>
+    
+		<div class="meta">
+    		<span class="date">September 12, 2015</span>
+		</div>
+    
+
+    
+        <a href="/article/reslayer/Screenshot-21.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.
+
+I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.</p>
+
+<p>The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.</p>
+
+<p>The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only within 100 meters of a school” and so on. Here is an example:</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-5.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-5_hud701fe3eb76b5e5221b9fa63ce0c88ab_939567_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>The green resources are distributed randomly across roads, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.</p>
+
+<p>There are four kinds of buildings that can be placed anywhere on the map.</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-22.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-22_hu2e913d5de65812cc5247a26e7302f423_240300_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>In the actual game, players can only place buildings at their current location, and only if there isn’t another building already.</p>
+
+<p>Buildings consume and output resources, which are transported via links. All buildings can be connected with links and the system will figure out the most effective way to use them.</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-14.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-14_hu347b6f5ab0cb2222c418e9cf27becfbe_115900_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>A mine picks up resources from the ground.</p>
+
+
+
+
+
+
+<img src="/article/reslayer/Screenshot-15.png" width="625" alt="">
+
+
+
+<p>A warehouse stores them.</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-12.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-12_hu3ca64d15e2af66bea0d019966aab7af6_168921_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>There are ten tiers of resources and only the resources of the first tier can be aquired by mining. Higher tier resources are made by directing two different kinds of resources of the same tier into a factory and it will output a resource of a higher tier. This encourages players to build complex networks of mines, factories and warehouses, like this one:</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-20.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-20_hu0b18c74297ee5bed2d20164543a5b0d5_256129_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>And finally, a tower protects someones buildings. Buildings that are not in the range of a tower can be used by everyone. So you need to build a tower to keep people from pulling resources out of your factories and looting your warehouses. High-tier resources serve as explosives to take down other’s towers and use their production networks.</p>
+
+
+
+
+
+
+<a href="/article/reslayer/Screenshot-8.png" target="_blank" title="">
+	<img src="/article/reslayer/Screenshot-8_hu6b14c541c7aadb3e955ae2307be4b1e5_136945_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>You can see that two of the mines are idle, because the warehouse has a limited input rate.</p>
+
+<p>The goal of this mechanic is to encourage teamwork, reward efforts and provide some permanence to the players’ actions, as opposed to Ingress. In Ingress, it doesn’t really matter which portals of which place you conquer, since someone else will have taken them over by the next day. I’m trying to make a game that fixes some of the problems that Ingress has.</p>
+
+<p>The screenshots in this article contain map data by <a href="https://openstreetmap.org">OpenStreetMap</a> (ODbL) and Dark Matter tiles by <a href="https://cartodb.com/attributions#basemaps">CartoDB</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>).</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/c&#43;&#43;">c&#43;&#43;</a>
+	                
+	                    <a href="/tags/gamedev">gamedev</a>
+	                
+	                    <a href="/tags/webdev">webdev</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/" target="_blank">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de" target="_blank">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

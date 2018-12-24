@@ -1,0 +1,229 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.49.2" />
+        <title>
+			
+				
+					Raspberry Pi Projekte |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Raspberry Pi Projekte - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Raspberry Pi Projekte">
+        <meta itemprop="description" content="Raspberry Pi Projekte - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Raspberry Pi Projekte">
+        <meta property="og:description" content="Raspberry Pi Projekte - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/pi-projects/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.a81d32cb0ccb0ef05a1713c820b9f2e7c5958517c3a6dd2ffa3266f8c8751a9f.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/pi-projects/">Raspberry Pi Projekte</a></h3>
+    
+		<div class="meta">
+    		<span class="date">October 19, 2013</span>
+		</div>
+    
+
+    
+        <p>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:</p>
+
+<ul>
+<li>http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte</li>
+<li><a href="http://blog.pi3g.com/2013/05/dateien-fr-windows-freigeben-raspberry-pi-als-dateiserver-mittels-samba/">Samba</a> und <a href="http://ihoeft.wordpress.com/2013/03/26/raspberry-pi-ftp-server-einrichten-proftpd/">FTP</a> Server für die Daten auf der Festplatte</li>
+</ul>
+
+
+
+
+
+
+<img src="/article/pi-projects/samba.png" width="625" alt="">
+
+
+
+<ul>
+<li><a href="/article/wetterstation/">Wetterstation</a>: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet</li>
+</ul>
+
+
+
+
+
+
+<a href="/article/pi-projects/wiring.jpg" target="_blank" title="">
+	<img src="/article/pi-projects/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<ul>
+<li>Webseite für die Wetterdaten</li>
+<li>Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit <a href="http://www.ebay.de/sch/i.html?_odkw=rf+433&amp;LH_BIN=1&amp;_sop=15&amp;_osacat=0&amp;_from=R40&amp;LH_PrefLoc=3&amp;_trksid=p2045573.m570.l1313.TR0.TRC0.Xrf+433mhz&amp;_nkw=rf+433mhz&amp;_sacat=0">RF-Sender</a>, <a href="http://www.amazon.de/Elro-AB440S-3C-Funksteckdosen-Funksteckdose/dp/B002QXN7X6/ref=sr_1_1?ie=UTF8&amp;qid=1382180929&amp;sr=8-1&amp;keywords=elro+funksteckdose">ELRO-Funksteckdosen</a> und <a href="https://github.com/r10r/rcswitch-pi">rcswitch-pi</a>)</li>
+<li>Über einen IR-Sender steuert der Pi meine Stereoanlage (mit <a href="http://www.lirc.org/">LIRC</a>)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+
+
+
+
+<img src="/article/pi-projects/zimmer.png" width="459" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/pi-projects/steckdose.jpg" width="512" alt="">
+
+</td>
+<td>
+
+
+
+
+<a href="/article/pi-projects/Screenshot_2013-10-19-12-16-43.png" target="_blank" title="">
+	<img src="/article/pi-projects/Screenshot_2013-10-19-12-16-43_hu24419dde733dd0fa62a74d16b62b89be_565330_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern. Außerdem kann die App <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a> auf meinem Handy auf die API zugreifen. Es gibt z.B. einen Task für “Schreibtischlampe umschalten”. Auf dem Homescreen liegt ein Ordner mit Verknüpfungen für diese Tasks. Der eigentliche Sinn von Tasker ist aber, solche Tasks automatisiert auszuführen. Beispielsweise schaltet Tasker morgens, wenn der Wecker klingelt, auch gleich das Licht und das Radio an.</li>
+<li>Der Pi verbindet ein LoL-Shield mit dem Internet, um <a href="/article/lol-notifications">Benachrichtigungen</a> anzuzeigen.</li>
+</ul>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/de">de</a>
+	                
+	                    <a href="/tags/home-automation">Home Automation</a>
+	                
+	                    <a href="/tags/http">http</a>
+	                
+	                    <a href="/tags/ir">IR</a>
+	                
+	                    <a href="/tags/raspberry-pi">raspberry-pi</a>
+	                
+	                    <a href="/tags/rf">RF</a>
+	                
+	                    <a href="/tags/samba">samba</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/" target="_blank">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de" target="_blank">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

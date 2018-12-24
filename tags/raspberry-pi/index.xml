@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 May 2017 00:17:55 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LED Matrix Materials Guide</title>
+      <link>https://marian42.de/article/ledmatrix-tutorial/</link>
+      <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I built an LED matrix out of 256 WS2812 LEDs. This post will describe which materials I used and which I tried with no success so you don’t have to.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android-Benachrichtigungen auf dem Schreibtisch</title>
+      <link>https://marian42.de/article/lol-notifications/</link>
+      <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/lol-notifications/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Das Ziel dieses Projekts ist, Benachrichtigungen von meinem Android-Handy automatisch auf einem &lt;a href=&#34;http://jimmieprodgers.com/kits/lolshield/&#34;&gt;LoL-Shield&lt;/a&gt; (Lots of LEDs) anzuzeigen. Dazu benutze ich einen Raspberry Pi, der sowieso schon auf meinem Schreibtisch steht, einen Arduino für das Schild und auf dem Handy &lt;a href=&#34;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&#34;&gt;Tasker&lt;/a&gt;, um auf Benachrichtigungen zu reagieren. Sobald eine Benachrichtigung erscheint, passiert folgendes:&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Projekte</title>
+      <link>https://marian42.de/article/pi-projects/</link>
+      <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/pi-projects/</guid>
+      <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
+ http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet   Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                   Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Wetterstation</title>
+      <link>https://marian42.de/article/pi-wetterstation/</link>
+      <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/pi-wetterstation/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

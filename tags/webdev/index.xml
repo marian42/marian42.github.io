@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webdev on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/webdev/</link>
+    <description>Recent content in Webdev on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 13 May 2017 21:49:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LED Matrix Software</title>
+      <link>https://marian42.de/article/ledmatrix-software/</link>
+      <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/ledmatrix-software/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes the one of them. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Work in progress: Location based online game</title>
+      <link>https://marian42.de/article/reslayer/</link>
+      <pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/reslayer/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi powered fishtank</title>
+      <link>https://marian42.de/article/iot-fishfeeder/</link>
+      <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/iot-fishfeeder/</guid>
+      <description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+
+&lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
+
+&lt;p&gt;To feed the fish, the Raspberry Pi sends commands to an automatic fishfeeder that I modified. It can empty any container in any order. This is achieved by an Arduino Pro Mini, two servos and a motor (&lt;a href=&#34;http://marian42.de/?p=508&#34;&gt;more&lt;/a&gt;). The plate prevents hot air from flowing into the feeder. In an early iteration of the project, this made the food sticky and kept it from falling into the tank. Switching the lights is done using a remote light switch and 433Mhz transmitter. Finally, there is a webcam that is connected directly to the Raspberry Pi to take pictures.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

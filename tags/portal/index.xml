@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portal on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/portal/</link>
+    <description>Recent content in Portal on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 30 Apr 2014 23:16:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/portal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to build a Lego Portal Gun</title>
+      <link>https://marian42.de/article/portalgun/</link>
+      <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/portalgun/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Resources:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Parts: &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-parts.html&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-rebrickable.csv&#34;&gt;Rebrickable CSV&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-bricklink.xml&#34;&gt;Bricklink XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Model: &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Build this &lt;a href=&#34;http://rebrickable.com/mocs/marian/portal-gun-aperture-science-portable-quantum-tunneling-devic&#34;&gt;MOC on Rebrickable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

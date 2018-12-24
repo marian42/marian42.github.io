@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Btduino on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/btduino/</link>
+    <description>Recent content in Btduino on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Oct 2013 22:47:26 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/btduino/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quadrocopter Lichtsystem</title>
+      <link>https://marian42.de/article/copter-lights/</link>
+      <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/copter-lights/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Dies ist ein Arduinoprojekt, das vier RGB-LED-Streifen an den vier Armen des Quadrocopters ansteuert. Das Ziel war, bei möglichst geringen Materialkosten möglichst viele Möglichkeiten bei der Beleuchtung des Quadrocopters zu haben.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

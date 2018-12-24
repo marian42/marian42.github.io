@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Led on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/led/</link>
+    <description>Recent content in Led on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 13 May 2017 21:49:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/led/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LED Matrix Software</title>
+      <link>https://marian42.de/article/ledmatrix-software/</link>
+      <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/ledmatrix-software/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes the one of them. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LED Matrix Materials Guide</title>
+      <link>https://marian42.de/article/ledmatrix-tutorial/</link>
+      <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I built an LED matrix out of 256 WS2812 LEDs. This post will describe which materials I used and which I tried with no success so you don’t have to.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quadrocopter Lichtsystem</title>
+      <link>https://marian42.de/article/copter-lights/</link>
+      <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/copter-lights/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Dies ist ein Arduinoprojekt, das vier RGB-LED-Streifen an den vier Armen des Quadrocopters ansteuert. Das Ziel war, bei möglichst geringen Materialkosten möglichst viele Möglichkeiten bei der Beleuchtung des Quadrocopters zu haben.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quadcopter Lightpainting</title>
+      <link>https://marian42.de/article/copter-lightpainting/</link>
+      <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/copter-lightpainting/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

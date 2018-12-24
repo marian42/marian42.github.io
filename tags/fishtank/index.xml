@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fishtank on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/fishtank/</link>
+    <description>Recent content in Fishtank on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Apr 2015 18:20:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/fishtank/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi powered fishtank</title>
+      <link>https://marian42.de/article/iot-fishfeeder/</link>
+      <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/iot-fishfeeder/</guid>
+      <description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+
+&lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
+
+&lt;p&gt;To feed the fish, the Raspberry Pi sends commands to an automatic fishfeeder that I modified. It can empty any container in any order. This is achieved by an Arduino Pro Mini, two servos and a motor (&lt;a href=&#34;http://marian42.de/?p=508&#34;&gt;more&lt;/a&gt;). The plate prevents hot air from flowing into the feeder. In an early iteration of the project, this made the food sticky and kept it from falling into the tank. Switching the lights is done using a remote light switch and 433Mhz transmitter. Finally, there is a webcam that is connected directly to the Raspberry Pi to take pictures.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
+      <link>https://marian42.de/article/fishfeeder/</link>
+      <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/fishfeeder/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I bought a used &lt;a href=&#34;https://www.google.com/search?q=rondomatic&amp;amp;safe=active&amp;amp;hl=de&amp;amp;tbm=isch&amp;amp;source=lnms&amp;amp;sa=X&amp;amp;ei=TLmxU-bcE4n-4QSyw4DIDA&amp;amp;ved=0CAgQ_AUoAw&amp;amp;biw=1920&amp;amp;bih=968&#34;&gt;automatic fish feeder&lt;/a&gt; from ebay. This device is completely mechanic and very old (older than 1989). It has 27 containers for fish food and a disc that does one rotation per day. By sticking pins into that disc one can trigger one or more feedings per day. A pin will rotate an outer ring with the containers by one unit. One container always faces down, emptying its contents. So if the outer ring has made one revolution, all containers have been emptied.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

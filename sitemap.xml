@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://marian42.de/article/exomars/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/neighborhood/</loc>
+    <lastmod>2018-04-17T20:46:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/ggj18/</loc>
+    <lastmod>2018-02-04T13:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/roofmeshes/</loc>
+    <lastmod>2018-01-02T22:14:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/ledmatrix-software/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/ledmatrix-tutorial/</loc>
+    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/no-mans-starfield/</loc>
+    <lastmod>2016-09-18T20:56:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/computervision/</loc>
+    <lastmod>2016-07-02T19:03:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/reslayer/</loc>
+    <lastmod>2015-09-12T23:10:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/ledmatrix/</loc>
+    <lastmod>2015-09-12T14:44:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/proceduralart/</loc>
+    <lastmod>2015-07-18T16:18:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/game-prototypes/</loc>
+    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/iot-fishfeeder/</loc>
+    <lastmod>2015-04-03T18:20:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/fishfeeder/</loc>
+    <lastmod>2014-06-30T19:57:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/portalgun/</loc>
+    <lastmod>2014-04-30T23:16:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/lol-notifications/</loc>
+    <lastmod>2014-02-16T18:47:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/gopro-timelapse/</loc>
+    <lastmod>2013-11-30T18:02:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/uni-timer/</loc>
+    <lastmod>2013-11-30T17:50:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/copter/</loc>
+    <lastmod>2013-10-26T23:57:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/pi-projects/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/copter-lights/</loc>
+    <lastmod>2013-10-15T22:47:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/copter-lightpainting/</loc>
+    <lastmod>2013-10-07T22:39:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/pi-wetterstation/</loc>
+    <lastmod>2013-09-23T17:27:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/btduino/</loc>
+    <lastmod>2013-07-27T15:00:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/btduino-doc/</loc>
+    <lastmod>2013-07-27T13:49:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/btduino-tutorial/</loc>
+    <lastmod>2013-07-24T20:51:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/wetterstation/</loc>
+    <lastmod>2013-07-09T23:43:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/3d/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/3dprinting/</loc>
+    <lastmod>2018-04-17T20:46:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/android/</loc>
+    <lastmod>2014-02-16T18:47:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/app/</loc>
+    <lastmod>2013-11-30T17:50:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/arduino/</loc>
+    <lastmod>2015-04-03T18:20:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/art/</loc>
+    <lastmod>2015-07-18T16:18:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/categories/blog/</loc>
+    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/bluetooth/</loc>
+    <lastmod>2013-07-27T15:00:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/bootstrap/</loc>
+    <lastmod>2015-04-03T18:20:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/btduino/</loc>
+    <lastmod>2013-10-15T22:47:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/c&#43;&#43;/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/categories/</loc>
+    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/computerscience/</loc>
+    <lastmod>2018-01-02T22:14:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/computervision/</loc>
+    <lastmod>2016-07-02T19:03:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/csharp/</loc>
+    <lastmod>2018-01-02T22:14:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/de/</loc>
+    <lastmod>2014-02-16T18:47:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/electronics/</loc>
+    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/fische/</loc>
+    <lastmod>2013-11-30T18:02:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/fishtank/</loc>
+    <lastmod>2015-04-03T18:20:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/flask/</loc>
+    <lastmod>2015-04-03T18:20:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/foto/</loc>
+    <lastmod>2013-10-07T22:39:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/gamedev/</loc>
+    <lastmod>2018-02-04T13:46:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/gaming/</loc>
+    <lastmod>2015-07-18T16:18:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/glsl/</loc>
+    <lastmod>2018-01-02T22:14:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/gopro/</loc>
+    <lastmod>2013-11-30T18:02:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/graphics/</loc>
+    <lastmod>2018-04-17T20:46:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/hardware/</loc>
+    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/home-automation/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/howto/</loc>
+    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/http/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/page/imprint/</loc>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/internet-of-things/</loc>
+    <lastmod>2014-06-30T19:57:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/ir/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/java/</loc>
+    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/js/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/led/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/ledmatrix/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/leds/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/lego/</loc>
+    <lastmod>2014-04-30T23:16:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/lightpainting/</loc>
+    <lastmod>2013-10-07T22:39:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/matrix/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/modelling/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/opengl/</loc>
+    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/php/</loc>
+    <lastmod>2013-09-23T17:27:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/pixelart/</loc>
+    <lastmod>2015-09-12T14:44:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/pointcloud/</loc>
+    <lastmod>2018-04-17T20:46:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/portal/</loc>
+    <lastmod>2014-04-30T23:16:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/procgen/</loc>
+    <lastmod>2015-07-18T16:18:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/python/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/quadcopter/</loc>
+    <lastmod>2013-10-26T23:57:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/raspberry-pi/</loc>
+    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/raspberrypi/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/raytracing/</loc>
+    <lastmod>2016-09-18T20:56:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/rf/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/samba/</loc>
+    <lastmod>2013-10-19T11:29:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/</loc>
+    <lastmod>2018-07-22T19:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/tasker/</loc>
+    <lastmod>2014-02-16T18:47:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/tutorial/</loc>
+    <lastmod>2013-07-24T20:51:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/unity/</loc>
+    <lastmod>2018-02-04T13:46:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/webdev/</loc>
+    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/wetter/</loc>
+    <lastmod>2013-09-23T17:27:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

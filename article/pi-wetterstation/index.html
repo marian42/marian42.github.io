@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.49.2" />
+        <title>
+			
+				
+					Raspberry Pi Wetterstation |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Raspberry Pi Wetterstation - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Raspberry Pi Wetterstation">
+        <meta itemprop="description" content="Raspberry Pi Wetterstation - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Raspberry Pi Wetterstation">
+        <meta property="og:description" content="Raspberry Pi Wetterstation - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/pi-wetterstation/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.a81d32cb0ccb0ef05a1713c820b9f2e7c5958517c3a6dd2ffa3266f8c8751a9f.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h3><a href="/article/pi-wetterstation/">Raspberry Pi Wetterstation</a></h3>
+    
+		<div class="meta">
+    		<span class="date">September 23, 2013</span>
+		</div>
+    
+
+    
+        <a href="/article/pi-wetterstation/b1.jpg" target="_blank" title="">
+	<img src="/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>Um die Daten, die meine <a href="http://marian42.de/?p=8">Arduino-Wetterstation</a> liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb <a href="http://www.intel-leibniz-challenge.de/">Intel Leibniz Challenge</a> bekommen habe.</p>
+
+<p></p>
+
+
+
+
+
+
+<a href="/article/pi-wetterstation/wiring.jpg" target="_blank" title="">
+	<img src="/article/pi-wetterstation/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>Dazu kommt ein weiterer Helligkeitssensor und ein weiterer <a href="https://www.adafruit.com/products/374">Temperatursensor</a>. Den Temperatursensor verwende ich, da er einen eigenen IC zum Kompensieren von Spannungsschwankungen etc. hat und so zuverlässiger ist als der Heißleiter des ILC-Boards, der über einen Spannungsteiler ausgelesen wird.</p>
+
+<p>Für den Pi habe ich ein kurzes <a href="http://pi.marian42.de/wetter/ilc.cpp" target="_blank">C++-Programm</a> geschrieben, dass dank <a href="http://wiringpi.com/" target="_blank">Wiring-Pi</a> weitgehend den Arduinocode aus dem Vorgängerprojekt enthält. Dabei wird aus 5 Messungen für jeden Sensor der Mittelwert verwendet. Das Programm wird von der Kommandozeile aufgerufen und kann die Daten direkt ausgeben oder auf die SD-Karte speichern. Ein Skript führt das Programm alle 60 Sekunden aus und zeichnet so die Daten auf.</p>
+
+
+
+
+
+
+<img src="/article/pi-wetterstation/screenshot2.png" width="384" alt="">
+
+
+
+<p>Der Pi ist ans Netzwerk angeschlossen und hostet eine Webseite, über die die Daten angezeigt werden können. Die Seite greift dabei auf die letzen gemessenen Daten zurück oder kann auf Wunsch auch eine eigene Messung anfertigen.</p>
+
+<p>Bei den automatischen Messungen wird außerdem ein Datensatz an Xively gesendet (<a href="http://marian42.de/?p=67">siehe auch</a>), das eine API und eine <a href="https://xively.com/feeds/200231797">Visualisierung</a> der Daten bereitstellt.</p>
+
+
+
+
+
+
+<a href="/article/pi-wetterstation/xively.png" target="_blank" title="">
+	<img src="/article/pi-wetterstation/xively_hucebc74b746d20651483b92983bebeab6_25353_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>Im Vergleich zum <a href="http://marian42.de/?p=8">Vorgängerprojekt</a> ist die Lösung mit dem Raspberry Pi zuverlässiger, da für die SD-Karte, die Uhrzeit etc. keine spezielle Hardware notwendig ist. Wie bei der Arduinowetterstation ist die Hardware noch nicht für den Betrieb im Freien ausgerüstet, wo die Wetterdaten aussagekräftiger wären.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/c&#43;&#43;">c&#43;&#43;</a>
+	                
+	                    <a href="/tags/de">de</a>
+	                
+	                    <a href="/tags/hardware">hardware</a>
+	                
+	                    <a href="/tags/php">php</a>
+	                
+	                    <a href="/tags/raspberry-pi">raspberry-pi</a>
+	                
+	                    <a href="/tags/wetter">wetter</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/" target="_blank">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de" target="_blank">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

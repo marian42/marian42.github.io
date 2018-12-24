@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tasker on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/tasker/</link>
+    <description>Recent content in Tasker on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 16 Feb 2014 18:47:39 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/tasker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android-Benachrichtigungen auf dem Schreibtisch</title>
+      <link>https://marian42.de/article/lol-notifications/</link>
+      <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/lol-notifications/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Das Ziel dieses Projekts ist, Benachrichtigungen von meinem Android-Handy automatisch auf einem &lt;a href=&#34;http://jimmieprodgers.com/kits/lolshield/&#34;&gt;LoL-Shield&lt;/a&gt; (Lots of LEDs) anzuzeigen. Dazu benutze ich einen Raspberry Pi, der sowieso schon auf meinem Schreibtisch steht, einen Arduino für das Schild und auf dem Handy &lt;a href=&#34;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&#34;&gt;Tasker&lt;/a&gt;, um auf Benachrichtigungen zu reagieren. Sobald eine Benachrichtigung erscheint, passiert folgendes:&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
