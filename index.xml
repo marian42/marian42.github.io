@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/</link>
+    <link>/</link>
     <description>Recent content on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 22 Jul 2018 19:32:12 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ESA ExoMars Rover 3D model</title>
-      <link>https://marian42.github.io/article/exomars/</link>
+      <link>/article/exomars/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/exomars/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/exomars/</guid>
+      <description>&lt;a href=&#34;/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -29,12 +29,12 @@
     
     <item>
       <title>3D printed model of my neighborhood</title>
-      <link>https://marian42.github.io/article/neighborhood/</link>
+      <link>/article/neighborhood/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/neighborhood/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/neighborhood/</guid>
+      <description>&lt;a href=&#34;/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -46,23 +46,23 @@
     
     <item>
       <title>Agent V – Global Game Jam 2018 Project</title>
-      <link>https://marian42.github.io/article/ggj18/</link>
+      <link>/article/ggj18/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ggj18/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ggj18/</guid>
+      <description>&lt;a href=&#34;/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
       <title>Generating 3D roof meshes from aerial LIDAR data</title>
-      <link>https://marian42.github.io/article/roofmeshes/</link>
+      <link>/article/roofmeshes/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/roofmeshes/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/roofmeshes/</guid>
+      <description>&lt;a href=&#34;/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -74,12 +74,12 @@
     
     <item>
       <title>LED Matrix Software</title>
-      <link>https://marian42.github.io/article/ledmatrix-software/</link>
+      <link>/article/ledmatrix-software/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix-software/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix-software/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -89,12 +89,12 @@
     
     <item>
       <title>LED Matrix Materials Guide</title>
-      <link>https://marian42.github.io/article/ledmatrix-tutorial/</link>
+      <link>/article/ledmatrix-tutorial/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix-tutorial/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -104,11 +104,11 @@
     
     <item>
       <title>No Man’s Starfield</title>
-      <link>https://marian42.github.io/article/no-mans-starfield/</link>
+      <link>/article/no-mans-starfield/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.github.io/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <guid>/article/no-mans-starfield/</guid>
+      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
@@ -119,12 +119,12 @@
     
     <item>
       <title>Computer Vision and Robotics Demo with Raspberry Pi</title>
-      <link>https://marian42.github.io/article/computervision/</link>
+      <link>/article/computervision/</link>
       <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/computervision/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/computervision/</guid>
+      <description>&lt;a href=&#34;/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -136,23 +136,23 @@
     
     <item>
       <title>Work in progress: Location based online game</title>
-      <link>https://marian42.github.io/article/reslayer/</link>
+      <link>/article/reslayer/</link>
       <pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/reslayer/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/reslayer/</guid>
+      <description>&lt;a href=&#34;/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
       <title>16×16 LED Matrix</title>
-      <link>https://marian42.github.io/article/ledmatrix/</link>
+      <link>/article/ledmatrix/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -162,12 +162,12 @@
     
     <item>
       <title>Procedural pixelart generator</title>
-      <link>https://marian42.github.io/article/proceduralart/</link>
+      <link>/article/proceduralart/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/proceduralart/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/proceduralart/</guid>
+      <description>&lt;a href=&#34;/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -181,28 +181,28 @@
     
     <item>
       <title>Game prototypes</title>
-      <link>https://marian42.github.io/article/game-prototypes/</link>
+      <link>/article/game-prototypes/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/game-prototypes/</guid>
+      <guid>/article/game-prototypes/</guid>
       <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.github.io/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.github.io/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi powered fishtank</title>
-      <link>https://marian42.github.io/article/iot-fishfeeder/</link>
+      <link>/article/iot-fishfeeder/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;https://marian42.github.io/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+      <guid>/article/iot-fishfeeder/</guid>
+      <description>&lt;video autoplay loop src=&#34;/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 
@@ -211,12 +211,12 @@
     
     <item>
       <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
-      <link>https://marian42.github.io/article/fishfeeder/</link>
+      <link>/article/fishfeeder/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/fishfeeder/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/fishfeeder/</guid>
+      <description>&lt;a href=&#34;/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -226,12 +226,12 @@
     
     <item>
       <title>How to build a Lego Portal Gun</title>
-      <link>https://marian42.github.io/article/portalgun/</link>
+      <link>/article/portalgun/</link>
       <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/portalgun/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/portalgun/</guid>
+      <description>&lt;a href=&#34;/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -239,8 +239,8 @@
 &lt;p&gt;Resources:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Parts: &lt;a href=&#34;https://marian42.github.io/article/portalgun/portalgun-parts.html&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;https://marian42.github.io/article/portalgun/portalgun-rebrickable.csv&#34;&gt;Rebrickable CSV&lt;/a&gt;, &lt;a href=&#34;https://marian42.github.io/article/portalgun/portalgun-bricklink.xml&#34;&gt;Bricklink XML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Model: &lt;a href=&#34;https://marian42.github.io/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;https://marian42.github.io/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Parts: &lt;a href=&#34;/article/portalgun/portalgun-parts.html&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun-rebrickable.csv&#34;&gt;Rebrickable CSV&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun-bricklink.xml&#34;&gt;Bricklink XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Model: &lt;a href=&#34;/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Build this &lt;a href=&#34;http://rebrickable.com/mocs/marian/portal-gun-aperture-science-portable-quantum-tunneling-devic&#34;&gt;MOC on Rebrickable&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -249,12 +249,12 @@
     
     <item>
       <title>Android-Benachrichtigungen auf dem Schreibtisch</title>
-      <link>https://marian42.github.io/article/lol-notifications/</link>
+      <link>/article/lol-notifications/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/lol-notifications/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/lol-notifications/</guid>
+      <description>&lt;a href=&#34;/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -266,7 +266,7 @@
 
 
 
-&lt;img src=&#34;https://marian42.github.io/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -275,31 +275,31 @@
     
     <item>
       <title>Aquarium Innensicht mit Gopro</title>
-      <link>https://marian42.github.io/article/gopro-timelapse/</link>
+      <link>/article/gopro-timelapse/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/gopro-timelapse/</guid>
+      <guid>/article/gopro-timelapse/</guid>
       <description>Wegen meinem Quadrocopter habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.</description>
     </item>
     
     <item>
       <title>Uni-Timer</title>
-      <link>https://marian42.github.io/article/uni-timer/</link>
+      <link>/article/uni-timer/</link>
       <pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/uni-timer/</guid>
+      <guid>/article/uni-timer/</guid>
       <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
               Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
     </item>
     
     <item>
       <title>Quadrocopter</title>
-      <link>https://marian42.github.io/article/copter/</link>
+      <link>/article/copter/</link>
       <pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/copter/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/copter/</guid>
+      <description>&lt;a href=&#34;/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -311,22 +311,22 @@
     
     <item>
       <title>Raspberry Pi Projekte</title>
-      <link>https://marian42.github.io/article/pi-projects/</link>
+      <link>/article/pi-projects/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/pi-projects/</guid>
+      <guid>/article/pi-projects/</guid>
       <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
  http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet   Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                   Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
     </item>
     
     <item>
       <title>Quadrocopter Lichtsystem</title>
-      <link>https://marian42.github.io/article/copter-lights/</link>
+      <link>/article/copter-lights/</link>
       <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/copter-lights/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/copter-lights/</guid>
+      <description>&lt;a href=&#34;/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -336,12 +336,12 @@
     
     <item>
       <title>Quadcopter Lightpainting</title>
-      <link>https://marian42.github.io/article/copter-lightpainting/</link>
+      <link>/article/copter-lightpainting/</link>
       <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/copter-lightpainting/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/copter-lightpainting/</guid>
+      <description>&lt;a href=&#34;/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -352,12 +352,12 @@
     
     <item>
       <title>Raspberry Pi Wetterstation</title>
-      <link>https://marian42.github.io/article/pi-wetterstation/</link>
+      <link>/article/pi-wetterstation/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/pi-wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/pi-wetterstation/</guid>
+      <description>&lt;a href=&#34;/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -369,10 +369,10 @@
     
     <item>
       <title>BTduino</title>
-      <link>https://marian42.github.io/article/btduino/</link>
+      <link>/article/btduino/</link>
       <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino/</guid>
+      <guid>/article/btduino/</guid>
       <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
 
 &lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
@@ -382,8 +382,8 @@
 
 
 
-&lt;a href=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;a href=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -391,28 +391,28 @@
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>BTduino documentation</title>
-      <link>https://marian42.github.io/article/btduino-doc/</link>
+      <link>/article/btduino-doc/</link>
       <pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino-doc/</guid>
+      <guid>/article/btduino-doc/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to add Bluetooth to your Arduino Project with BTduino</title>
-      <link>https://marian42.github.io/article/btduino-tutorial/</link>
+      <link>/article/btduino-tutorial/</link>
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino-tutorial/</guid>
+      <guid>/article/btduino-tutorial/</guid>
       <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -420,12 +420,12 @@
     
     <item>
       <title>Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App</title>
-      <link>https://marian42.github.io/article/wetterstation/</link>
+      <link>/article/wetterstation/</link>
       <pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/wetterstation/</guid>
+      <description>&lt;a href=&#34;/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -435,10 +435,10 @@
     
     <item>
       <title>Impressum</title>
-      <link>https://marian42.github.io/page/imprint/</link>
+      <link>/page/imprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://marian42.github.io/page/imprint/</guid>
+      <guid>/page/imprint/</guid>
       <description>Angaben gemäß § 5 TMG:
 Marian Kleineberg
 Kohlentreiberweg 26

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bluetooth on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/bluetooth/</link>
+    <link>/tags/bluetooth/</link>
     <description>Recent content in Bluetooth on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 27 Jul 2013 15:00:42 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BTduino</title>
-      <link>https://marian42.github.io/article/btduino/</link>
+      <link>/article/btduino/</link>
       <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino/</guid>
+      <guid>/article/btduino/</guid>
       <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
 
 &lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
@@ -25,8 +25,8 @@
 
 
 
-&lt;a href=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;a href=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -34,28 +34,28 @@
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marian42.github.io/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>BTduino documentation</title>
-      <link>https://marian42.github.io/article/btduino-doc/</link>
+      <link>/article/btduino-doc/</link>
       <pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino-doc/</guid>
+      <guid>/article/btduino-doc/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to add Bluetooth to your Arduino Project with BTduino</title>
-      <link>https://marian42.github.io/article/btduino-tutorial/</link>
+      <link>/article/btduino-tutorial/</link>
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/btduino-tutorial/</guid>
+      <guid>/article/btduino-tutorial/</guid>
       <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -63,12 +63,12 @@
     
     <item>
       <title>Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App</title>
-      <link>https://marian42.github.io/article/wetterstation/</link>
+      <link>/article/wetterstation/</link>
       <pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/wetterstation/</guid>
+      <description>&lt;a href=&#34;/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

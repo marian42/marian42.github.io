@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/unity/</link>
+    <link>/tags/unity/</link>
     <description>Recent content in Unity on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 04 Feb 2018 13:46:35 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Agent V – Global Game Jam 2018 Project</title>
-      <link>https://marian42.github.io/article/ggj18/</link>
+      <link>/article/ggj18/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ggj18/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ggj18/</guid>
+      <description>&lt;a href=&#34;/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
       <title>Generating 3D roof meshes from aerial LIDAR data</title>
-      <link>https://marian42.github.io/article/roofmeshes/</link>
+      <link>/article/roofmeshes/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/roofmeshes/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/roofmeshes/</guid>
+      <description>&lt;a href=&#34;/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

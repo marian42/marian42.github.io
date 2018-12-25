@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/python/</link>
+    <link>/tags/python/</link>
     <description>Recent content in Python on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 13 May 2017 21:49:00 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED Matrix Software</title>
-      <link>https://marian42.github.io/article/ledmatrix-software/</link>
+      <link>/article/ledmatrix-software/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix-software/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix-software/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -27,12 +27,12 @@
     
     <item>
       <title>16×16 LED Matrix</title>
-      <link>https://marian42.github.io/article/ledmatrix/</link>
+      <link>/article/ledmatrix/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -42,11 +42,11 @@
     
     <item>
       <title>Raspberry Pi powered fishtank</title>
-      <link>https://marian42.github.io/article/iot-fishfeeder/</link>
+      <link>/article/iot-fishfeeder/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;https://marian42.github.io/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+      <guid>/article/iot-fishfeeder/</guid>
+      <description>&lt;video autoplay loop src=&#34;/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 

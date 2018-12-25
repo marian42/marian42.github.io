@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Internet of Things on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/internet-of-things/</link>
+    <link>/tags/internet-of-things/</link>
     <description>Recent content in Internet of Things on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 30 Jun 2014 19:57:37 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/internet-of-things/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/internet-of-things/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
-      <link>https://marian42.github.io/article/fishfeeder/</link>
+      <link>/article/fishfeeder/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/fishfeeder/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/fishfeeder/</guid>
+      <description>&lt;a href=&#34;/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gaming on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/gaming/</link>
+    <link>/tags/gaming/</link>
     <description>Recent content in Gaming on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 18 Jul 2015 16:18:46 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Procedural pixelart generator</title>
-      <link>https://marian42.github.io/article/proceduralart/</link>
+      <link>/article/proceduralart/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/proceduralart/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/proceduralart/</guid>
+      <description>&lt;a href=&#34;/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

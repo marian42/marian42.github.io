@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/raspberry-pi/</link>
+    <link>/tags/raspberry-pi/</link>
     <description>Recent content in Raspberry Pi on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 08 May 2017 00:17:55 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED Matrix Materials Guide</title>
-      <link>https://marian42.github.io/article/ledmatrix-tutorial/</link>
+      <link>/article/ledmatrix-tutorial/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/ledmatrix-tutorial/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -27,12 +27,12 @@
     
     <item>
       <title>Android-Benachrichtigungen auf dem Schreibtisch</title>
-      <link>https://marian42.github.io/article/lol-notifications/</link>
+      <link>/article/lol-notifications/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/lol-notifications/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/lol-notifications/</guid>
+      <description>&lt;a href=&#34;/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -44,7 +44,7 @@
 
 
 
-&lt;img src=&#34;https://marian42.github.io/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -53,22 +53,22 @@
     
     <item>
       <title>Raspberry Pi Projekte</title>
-      <link>https://marian42.github.io/article/pi-projects/</link>
+      <link>/article/pi-projects/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/pi-projects/</guid>
+      <guid>/article/pi-projects/</guid>
       <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
  http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet   Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                   Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
     </item>
     
     <item>
       <title>Raspberry Pi Wetterstation</title>
-      <link>https://marian42.github.io/article/pi-wetterstation/</link>
+      <link>/article/pi-wetterstation/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/pi-wetterstation/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/pi-wetterstation/</guid>
+      <description>&lt;a href=&#34;/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Glsl on Marian&#39;s Blog</title>
-    <link>https://marian42.github.io/tags/glsl/</link>
+    <link>/tags/glsl/</link>
     <description>Recent content in Glsl on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 02 Jan 2018 22:14:14 +0000</lastBuildDate>
     
-	<atom:link href="https://marian42.github.io/tags/glsl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/glsl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Generating 3D roof meshes from aerial LIDAR data</title>
-      <link>https://marian42.github.io/article/roofmeshes/</link>
+      <link>/article/roofmeshes/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/roofmeshes/</guid>
-      <description>&lt;a href=&#34;https://marian42.github.io/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.github.io/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>/article/roofmeshes/</guid>
+      <description>&lt;a href=&#34;/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -29,11 +29,11 @@
     
     <item>
       <title>No Man’s Starfield</title>
-      <link>https://marian42.github.io/article/no-mans-starfield/</link>
+      <link>/article/no-mans-starfield/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>https://marian42.github.io/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.github.io/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <guid>/article/no-mans-starfield/</guid>
+      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
