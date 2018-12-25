@@ -1,5 +1,5 @@
 title = "Marian's Blog"
-baseURL = "https://marian42.de/"
+baseURL = ""
 theme = "bilberry-hugo-theme"
 
 enableRobotsTXT = true
