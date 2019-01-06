@@ -5,10 +5,26 @@
     <link>/tags/graphics/</link>
     <description>Recent content in Graphics on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 17 Apr 2018 20:46:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Infinite procedurally generated city with the Wave Function Collapse algorithm</title>
+      <link>/article/wfc/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/article/wfc/</guid>
+      <description>&lt;a href=&#34;/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a game where you walk through an infinite city that is procedurally generated as you walk.
+It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>3D printed model of my neighborhood</title>
