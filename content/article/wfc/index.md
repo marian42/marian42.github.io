@@ -112,7 +112,7 @@ Instead of using chunks, I store the map in a dictionary that maps a slot positi
 It is only populated when needed.
 Some parts of the algorithm needed to be adjusted to this.
 When selecting a slot to collapse, not all infinite slots can be considered.
-Instead, the only a small area of the map is generated at once, when the player reaches it.
+Instead, only a small area of the map is generated at once, when the player reaches it.
 Constraints are still propagated outside of this area.
 
 In some cases this approach doesn't work.
