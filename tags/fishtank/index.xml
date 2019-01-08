@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fishtank on Marian&#39;s Blog</title>
-    <link>/tags/fishtank/</link>
+    <link>https://marian42.de/tags/fishtank/</link>
     <description>Recent content in Fishtank on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 03 Apr 2015 18:20:17 +0000</lastBuildDate>
     
-	<atom:link href="/tags/fishtank/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/fishtank/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Raspberry Pi powered fishtank</title>
-      <link>/article/iot-fishfeeder/</link>
+      <link>https://marian42.de/article/iot-fishfeeder/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+      <guid>https://marian42.de/article/iot-fishfeeder/</guid>
+      <description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 
@@ -25,12 +25,12 @@
     
     <item>
       <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
-      <link>/article/fishfeeder/</link>
+      <link>https://marian42.de/article/fishfeeder/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>/article/fishfeeder/</guid>
-      <description>&lt;a href=&#34;/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/fishfeeder/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

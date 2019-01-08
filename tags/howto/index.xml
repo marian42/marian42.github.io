@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Howto on Marian&#39;s Blog</title>
-    <link>/tags/howto/</link>
+    <link>https://marian42.de/tags/howto/</link>
     <description>Recent content in Howto on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 08 May 2017 00:17:55 +0000</lastBuildDate>
     
-	<atom:link href="/tags/howto/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/howto/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED Matrix Materials Guide</title>
-      <link>/article/ledmatrix-tutorial/</link>
+      <link>https://marian42.de/article/ledmatrix-tutorial/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>/article/ledmatrix-tutorial/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

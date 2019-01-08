@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raytracing on Marian&#39;s Blog</title>
-    <link>/tags/raytracing/</link>
+    <link>https://marian42.de/tags/raytracing/</link>
     <description>Recent content in Raytracing on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 18 Sep 2016 20:56:03 +0000</lastBuildDate>
     
-	<atom:link href="/tags/raytracing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/raytracing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>No Man’s Starfield</title>
-      <link>/article/no-mans-starfield/</link>
+      <link>https://marian42.de/article/no-mans-starfield/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <guid>https://marian42.de/article/no-mans-starfield/</guid>
+      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 

@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gamedev on Marian&#39;s Blog</title>
-    <link>/tags/gamedev/</link>
+    <link>https://marian42.de/tags/gamedev/</link>
     <description>Recent content in Gamedev on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 04 Feb 2018 13:46:35 +0000</lastBuildDate>
     
-	<atom:link href="/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Agent V – Global Game Jam 2018 Project</title>
-      <link>/article/ggj18/</link>
+      <link>https://marian42.de/article/ggj18/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>/article/ggj18/</guid>
-      <description>&lt;a href=&#34;/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/ggj18/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
       <title>No Man’s Starfield</title>
-      <link>/article/no-mans-starfield/</link>
+      <link>https://marian42.de/article/no-mans-starfield/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <guid>https://marian42.de/article/no-mans-starfield/</guid>
+      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
@@ -38,23 +38,23 @@
     
     <item>
       <title>Work in progress: Location based online game</title>
-      <link>/article/reslayer/</link>
+      <link>https://marian42.de/article/reslayer/</link>
       <pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
       
-      <guid>/article/reslayer/</guid>
-      <description>&lt;a href=&#34;/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/reslayer/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
       <title>Procedural pixelart generator</title>
-      <link>/article/proceduralart/</link>
+      <link>https://marian42.de/article/proceduralart/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>/article/proceduralart/</guid>
-      <description>&lt;a href=&#34;/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/proceduralart/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -68,17 +68,17 @@
     
     <item>
       <title>Game prototypes</title>
-      <link>/article/game-prototypes/</link>
+      <link>https://marian42.de/article/game-prototypes/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>/article/game-prototypes/</guid>
+      <guid>https://marian42.de/article/game-prototypes/</guid>
       <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3dprinting on Marian&#39;s Blog</title>
-    <link>/tags/3dprinting/</link>
+    <link>https://marian42.de/tags/3dprinting/</link>
     <description>Recent content in 3dprinting on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 17 Apr 2018 20:46:44 +0000</lastBuildDate>
     
-	<atom:link href="/tags/3dprinting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/3dprinting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>3D printed model of my neighborhood</title>
-      <link>/article/neighborhood/</link>
+      <link>https://marian42.de/article/neighborhood/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>/article/neighborhood/</guid>
-      <description>&lt;a href=&#34;/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/neighborhood/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -29,12 +29,12 @@
     
     <item>
       <title>Computer Vision and Robotics Demo with Raspberry Pi</title>
-      <link>/article/computervision/</link>
+      <link>https://marian42.de/article/computervision/</link>
       <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
       
-      <guid>/article/computervision/</guid>
-      <description>&lt;a href=&#34;/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/computervision/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

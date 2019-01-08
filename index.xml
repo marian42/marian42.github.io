@@ -2,188 +2,1590 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marian&#39;s Blog</title>
-    <link>/</link>
-    <description>Recent content on Marian&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <link>https://marian42.de/</link>
+    <description>Personal blog about programming, game development and space ships.</description>
+	<lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Infinite procedurally generated city with the Wave Function Collapse algorithm</title>
-      <link>/article/wfc/</link>
-      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/article/wfc/</guid>
-      <description>&lt;a href=&#34;/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Infinite procedurally generated city with the Wave Function Collapse algorithm</title>
+		<link>https://marian42.de/article/wfc/</link>
+		<pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/wfc/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;This is a game where you walk through an infinite city that is procedurally generated as you walk.
-It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;</description>
+It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;
+
+&lt;p&gt;You can download a playable build of the game on &lt;a href=&#34;https://marian42.itch.io/wfc&#34;&gt;itch.io&lt;/a&gt; and you can get the &lt;a href=&#34;https://github.com/marian42/wavefunctioncollapse&#34;&gt;source code on github&lt;/a&gt;.
+Here is a video of me walking around a generated city:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/-W7zt8181Zo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h1 id=&#34;the-algorithm&#34;&gt;The algorithm&lt;/h1&gt;
+
+&lt;p&gt;I will use the word &amp;ldquo;slot&amp;rdquo; for a place in the 3D voxel grid that can contain a block (or be empty) and I will use the word &amp;ldquo;module&amp;rdquo; for a block that can inhabit such a slot.&lt;/p&gt;
+
+&lt;p&gt;The algorithm chooses which modules to select for each slot in the world.
+The array of slots is considerd a wave function in an unobserved state.
+That means that each slot has a set of possible modules that could be put there.
+In the language of quantum mechanics, one could say &amp;ldquo;The slot is in superposition of all modules&amp;rdquo;.
+The world starts in a completely unobserved state where every module is possible in any slot.
+One by one, each slot is collapsed.
+That means, one module from the set of possible modules is selected at random.
+This is followed by a step of constraint propagation.
+For each module, only a subset of modules are allowed to be placed adjacent to it.
+Whenever a slot is collapsed, the sets of modules that are still possible to be placed in nearby slots need to be updated.
+The constraint propagation step is the most computationally expensive part of the algorithm.&lt;/p&gt;
+
+&lt;p&gt;An important aspect of the algorithm is deciding which slot to collapse.
+The algorithm always collapses the slot with the lowest &lt;a href=&#34;https://en.wikipedia.org/wiki/Entropy_(information_theory)&#34;&gt;entropy&lt;/a&gt;.
+That is the slot which has the least amount of choice (or chaos).
+If all modules have the same probability, the slot with the smallest number of possible modules has the lowest entropy.
+In general, modules have different probabilities to be selected.
+A slot with two possible modules of the same probability has less choice (smaller entropy) than one with two modules where one is very likely and one is very unlikely.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+(Gif by &lt;a href=&#34;https://github.com/mxgmn&#34;&gt;ExUtumno on Github&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;You can find more information and some beautiful examples of the &lt;a href=&#34;https://github.com/mxgmn/WaveFunctionCollapse&#34;&gt;Wave Function Collapse algorithm here&lt;/a&gt;.
+The algorithm was proposed to generate 2D textures from a single example.
+In that case, the module probabilities and adjacency rules are determined based on how they occur in the example.
+In my case, they are supplied manually.&lt;/p&gt;
+
+&lt;p&gt;Here is a video of the algorithm in action:&lt;/p&gt;
+
+&lt;p&gt;&lt;video autoplay loop src=&#34;wfc.mp4&#34;&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;about-blocks-prototypes-and-modules&#34;&gt;About blocks, prototypes and modules&lt;/h1&gt;
+
+&lt;p&gt;The world is generated from a set of ~100 blocks, which I made with Blender.
+I started out with a small number of blocks and made more whenever I felt like it.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wfc/blocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/blocks_hu114abfd4d48dd340f32b76b8c9dfa1e2_348405_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The algorithm needs to know which modules can be placed next to each other.
+Each module has 6 lists of possible neighbors, one for each direction.
+But I wanted to avoid having to create this list manually.
+I also wanted a way to automatically generate rotated variants of my blocks.&lt;/p&gt;
+
+&lt;p&gt;Both can be achieved by using what I call &lt;em&gt;module prototypes&lt;/em&gt;.
+This is a MonoBehaviour that can be conveniently edited in the Unity editor.
+The modules together with lists of allowed neighbors and the rotated variants are created automatically from these.&lt;/p&gt;
+
+&lt;p&gt;A difficult problem was figuring out how to model adjacency information so that this automatic process works.
+Here is what I came up with:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wfc/blocks2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/blocks2_hu37f13feb32bd6da3e960f52edbce8af6_342729_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Each block has 6 connectors, one for each face.
+The connector has a number.
+In addition, horizontal connectors are either &lt;em&gt;flipped&lt;/em&gt;, &lt;em&gt;not flipped&lt;/em&gt; or &lt;em&gt;symmetric&lt;/em&gt;.
+Vertical connectors either have a rotation index between 0 and 3 (b, c, d in the screenshot) or they are flagged &lt;em&gt;rotationally invariant&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Based on this, I can automatically check which modules are allowed next to each other.
+Adjaced modules must have the same connector number.
+And their symmetry must match (same rotation index vertically, a &lt;em&gt;flipped&lt;/em&gt; and &lt;em&gt;not flipped&lt;/em&gt; pair horizontally) or they must be symmetric / invariant.&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/wfc/moduleprototype.png&#34; width=&#34;323&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;There are exclusion rules that allow me to prohibit neighbors that would otherwise be allowed.
+Some blocks with matching connectors just don&amp;rsquo;t look nice next to each other.
+Here is an example of a map generated &lt;em&gt;without&lt;/em&gt; the exclusion rules:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wfc/noexclusions.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/noexclusions_hu41b98ab5240a8eddbb04645b41374b88_648216_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;h1 id=&#34;reaching-infinity&#34;&gt;Reaching infinity&lt;/h1&gt;
+
+&lt;p&gt;The original Wave Function Collapse algorithm generates finite maps.
+I wanted to have a world that expands further and further as you walk through it.&lt;/p&gt;
+
+&lt;p&gt;My first approach was to generate chunks of finite size and use the connectors of adjacent chunks as constraints.
+If a chunk is generated and an adjacent chunk was already generated, only modules are allowed that fit with the existing modules.
+The problem with this approach is, whenever a slot is collapsed, the constraint propagation will limit the posibilities even a few slots away.
+In this image you can see all the places affected from collapsing just one slot:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wfc/cloud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/cloud_hu64dccd040cc017d12f021f2216a83cda_44916_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;When just generating a single chunk at once, constraints where not propagated to adjacent chunks.
+This led to modules being selected within the chunk that would not be allowed when considering the other chunks.
+When the algorithm would then try to generate the next chunk, it could not find any solution.&lt;/p&gt;
+
+&lt;p&gt;Instead of using chunks, I store the map in a dictionary that maps a slot position to a slot.
+It is only populated when needed.
+Some parts of the algorithm needed to be adjusted to this.
+When selecting a slot to collapse, not all infinite slots can be considered.
+Instead, only a small area of the map is generated at once, when the player reaches it.
+Constraints are still propagated outside of this area.&lt;/p&gt;
+
+&lt;p&gt;In some cases this approach doesn&amp;rsquo;t work.
+Consider a module set with the straight tunnel pieces from the screenshot above, but no tunnel entrance.
+If the algorithm selects such a tunnel module, this predetermines an infinite tunnel.
+The constraint propagation step would try to allocate an infinite amount of slots.
+I designed the module set to avoid this problem.&lt;/p&gt;
+
+&lt;h1 id=&#34;boundary-constraints&#34;&gt;Boundary constraints&lt;/h1&gt;
+
+&lt;p&gt;There are two important boundary constraints:
+Faces at the top of the map must have &amp;ldquo;air&amp;rdquo; connectors.
+Faces at the bottom of the map must have &amp;ldquo;solid&amp;rdquo; connectors.
+If these constraints are not met, there are holes in the ground and buildings with missing roofs.&lt;/p&gt;
+
+&lt;p&gt;In a finite map, this would be easy to do:
+For all slots in the top and bottom layer, remove all modules with unwanted connectors.
+Then use constraint propagation to remove other modules that are no longer valid.&lt;/p&gt;
+
+&lt;p&gt;In the infinite map, this doesn&amp;rsquo;t work because there are infinitely many slots in the top and bottom layer.
+Naively, I would only remove these modules in the top and bottom layer once the slots are created.
+However, removing a module in one top layer slot implies constraints for its neighbor slots.
+This leads to a cascading effect which would again allocate slots infinitely.&lt;/p&gt;
+
+&lt;p&gt;I solved this by creating a 1×n×1 map, where n is the height.
+This map uses world wrapping to propagate constraints.
+This works like Pacman, you leave the level on the right and enter on the left.
+Now in this map I can apply all the boundary constraints.
+Whenever a new slot in the infinite map is created, it is initialized with the module set of the corresponding position in that map.&lt;/p&gt;
+
+&lt;h1 id=&#34;error-states-and-backtracking&#34;&gt;Error states and backtracking&lt;/h1&gt;
+
+&lt;p&gt;Sometimes the WFC algorithm will reach a state where a slot has zero possible modules.
+In applications with a finite world, you can just discard the result and start over.
+In the infinite world, this doesn&amp;rsquo;t work, since a part of the world has already been shown to the player.
+I started with a solution where a white block would be spawned in places of errors.&lt;/p&gt;
+
+&lt;p&gt;My current solution is backtracking.
+The order in which the slots where collapsed and some information about constraint propagation is stored as a history.
+If the WFC algorithm fails, some of the history is undone.
+This works in most cases, but sometimes errors are recognized very late which leads to many steps being backtracked.
+In rare cases, the slot in which the player is, is regenerated.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, this limitation makes the WFC approach for infinite worlds unsuitable for commercial games.&lt;/p&gt;
+
+&lt;h1 id=&#34;outlook&#34;&gt;Outlook&lt;/h1&gt;
+
+&lt;p&gt;I started working on this when I saw a &lt;a href=&#34;https://www.youtube.com/watch?v=0bcZb-SsnrA&#34;&gt;talk by Oskar Stålberg who uses the WFC algorithm to generate levels in Bad North&lt;/a&gt;.
+Most of the basics were implemented during the &lt;a href=&#34;http://www.procjam.com/&#34;&gt;procjam&lt;/a&gt; week.&lt;/p&gt;
+
+&lt;p&gt;I have some ideas about future improvements, but I&amp;rsquo;m not sure if I&amp;rsquo;ll ever add gameplay.
+And if I do, it will probably not be the battle royale game that you are envisioning.
+But if you want to see your favorite game mechanic added to this, just do it yourself!
+The source code is available after all and it&amp;rsquo;s MIT licensed.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>ESA ExoMars Rover 3D model</title>
-      <link>/article/exomars/</link>
-      <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
-      
-      <guid>/article/exomars/</guid>
-      <description>&lt;a href=&#34;/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>ESA ExoMars Rover 3D model</title>
+		<link>https://marian42.de/article/exomars/</link>
+		<pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
+		<guid>https://marian42.de/article/exomars/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;This is one of my first 3D modeling projects in Blender and my biggest 3D modeling project so far.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a model of ESA&amp;rsquo;s ExoMars rover.
+You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com/models/4148a592193549c59c778a69fd45df5a&#34;&gt;Sketchfab&lt;/a&gt;:&lt;/p&gt;
+
+&lt;iframe src=&#34;https://sketchfab.com/models/4148a592193549c59c778a69fd45df5a/embed?autospin=0.2&amp;amp;autostart=1&#34; width=&#34;640&#34; height=&#34;480&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;There is also a download option on Sketchfab so you can get the original .blend file and use it for anything you like!&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>3D printed model of my neighborhood</title>
-      <link>/article/neighborhood/</link>
-      <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
-      
-      <guid>/article/neighborhood/</guid>
-      <description>&lt;a href=&#34;/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>3D printed model of my neighborhood</title>
+		<link>https://marian42.de/article/neighborhood/</link>
+		<pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
+		<guid>https://marian42.de/article/neighborhood/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Agent V – Global Game Jam 2018 Project</title>
-      <link>/article/ggj18/</link>
-      <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
-      
-      <guid>/article/ggj18/</guid>
-      <description>&lt;a href=&#34;/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have now automated the entire process and published my code. You can find it &lt;a href=&#34;https://github.com/marian42/pointcloudprinter&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I worked with aerial Lidar data that is provided by the state I live in to &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;download&lt;/a&gt; for free. After completing the rather big download, I figured out what my coordinates are in the projection used with the data and which XYZ file they fall into. I wrote a simple program to extract all the points within a 200m square around my house.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/square.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/square_hu54a05c297a7ded348f622a81f63cad57_539415_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This left me with a smaller XYZ file, now containing 430k points, which are pictured above. The task now was now to turn all these points into a solid body in order to be printable.&lt;/p&gt;
+
+&lt;p&gt;In order to turn the pointcloud into a mesh, I used the software MeshLab. As a first step, I used the program to estimate normals for the pointcloud. The normals are estimated by fitting a plane into some nearby points and using the normal of that plane. However, knowing the plane, there are still two possible normals of which one has to be selected. For some separated parts of the pointcloud, the normals can be flipped and need to be manually fixed.&lt;/p&gt;
+
+&lt;p&gt;Here is a mesh that MeshLab generates without normals fixed and wihtout holes patched:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/first.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/first_hua3cc1ad2326f7318912c34595ad41dac_1290287_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Since the Lidar data are taken from an airplane, parts of the surface that are occluded from the perspective of the plane result in holes in the pointcloud. After trying to generate a mesh with no success, I had to fix the holes first.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-149.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149_huec574cf7580820776255c5b16cf7b9eb_1032567_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I made a program to detect and fill the holes. First it tries to identify points on the edge of holes. This is done by measuring the distance of a point to the average of some nearby points. This distance is small when the nearby points are found in all directions. Points on an edge have less neighbours towards the hole, resulting in an average shifted away from the edge. Points found like this are shown in red in the above screenshot.&lt;/p&gt;
+
+&lt;p&gt;Next, to create patches, the program looks for edge points with other edge points straight above them. Depending on the distance, new points are then created on the connecting line. These are shown in green.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-149b.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149b_hu072b60a146f2e2602077e94e4921c18e_1568067_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Now I can apply what MeshLab calls “Screened Poisson Surface Reconstruction”. With the holes patched, normals corrected and parameters tweaked, I have a mesh of the surface.&lt;/p&gt;
+
+&lt;p&gt;This mesh can be opened in Blender. I selected the outer vertices, moved them down and connected them, resulting in this:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/belnder.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/belnder_hu087aede2d0e7107cfb21de8b042da18f_373061_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is finally a solid body, although an ugly one. I created a 200m cube and applied a Boolean / Intersect operation between the two, resulting in the final model for printing. Here it is being prepared in Cura:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-150.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-150_hu16f154dd47c9881400f973f8f5311294_997269_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I printed it 12cm long with the smallest layer size available, 0.06mm, which took 21 hours. &lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/neighborhood/DSCF3482.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3482_huffb867a27675b009de6b88a54bf6c5d8_292533_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
     <item>
-      <title>Generating 3D roof meshes from aerial LIDAR data</title>
-      <link>/article/roofmeshes/</link>
-      <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
-      
-      <guid>/article/roofmeshes/</guid>
-      <description>&lt;a href=&#34;/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Agent V – Global Game Jam 2018 Project</title>
+		<link>https://marian42.de/article/ggj18/</link>
+		<pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
+		<guid>https://marian42.de/article/ggj18/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This year I participated in my first game jam, the Global Game Jam 2018. With a team of artists, programmers and a sound designer, we made a video game within 48 hours. You play the game as a virus that infiltrates a company’s headquarters. The virus can not move on its own, it can only take control of hackable devices and use them to move around. There are six levels, each with a puzzle to move to the next one.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-12-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-12-1_hub97d7a4566bfbaa5dd59fe2352afbd97_3376740_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;&lt;a href=&#34;https://globalgamejam.org/2018/games/agent-v&#34;&gt;You can download the game on the Global Game Jam website&lt;/a&gt; or watch the playthrough below.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/lKfaJwlm7eM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+		<title>Generating 3D roof meshes from aerial LIDAR data</title>
+		<link>https://marian42.de/article/roofmeshes/</link>
+		<pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
+		<guid>https://marian42.de/article/roofmeshes/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>LED Matrix Software</title>
-      <link>/article/ledmatrix-software/</link>
-      <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
-      
-      <guid>/article/ledmatrix-software/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;separating-the-point-cloud-by-buildings&#34;&gt;Separating the point cloud by buildings&lt;/h2&gt;
+
+&lt;p&gt;The dataset for the city of Dortmund contains about 4×10^9 points. For this city, the building layout dataset has about 200,000 entries. My first step was to write a program that finds the subset of points that belong to each building.&lt;/p&gt;
+
+&lt;p&gt;As the building layouts are polygons, the core of this operation is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Point_in_polygon&#34;&gt;point in polygon test&lt;/a&gt;. The important takeaway for this part is to use spatial hashing. The polygons are stored in a hash set so that for each point, only a few polygons need to be considered. It took four hours to process 100 GB of data on my laptop.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/separation.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/separation_hu01176d2368e5b27c08f5e6bd78615e98_20855_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes the one of them. &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>LED Matrix Materials Guide</title>
-      <link>/article/ledmatrix-tutorial/</link>
-      <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
-      
-      <guid>/article/ledmatrix-tutorial/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;h2 id=&#34;finding-planes&#34;&gt;Finding planes&lt;/h2&gt;
+
+&lt;p&gt;The next step is to look for planes that describe many of the points in a point cloud. These planes are likely to portray roof faces, which makes them a good foundation for generating a roof mesh.&lt;/p&gt;
+
+&lt;p&gt;It turned out that a &lt;a href=&#34;https://en.wikipedia.org/wiki/Random_sample_consensus&#34;&gt;RANSAC&lt;/a&gt; approach works well for this problem. The idea of RANSAC is to select a subset of points at random and generate planes from these sample points. To get a sample plane from a sample point, a fit plane for nearby points is calculated. For each sample plane, a score is calculated that tells how well the plane fits the entire point cloud. The best scoring planes are returned.&lt;/p&gt;
+
+&lt;p&gt;The picture below shows an example point cloud with planes found by the RANSAC algorithm.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/ransac.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/ransac_hubdceeb8983e57db09f92a36945107e98_90029_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;I built an LED matrix out of 256 WS2812 LEDs. This post will describe which materials I used and which I tried with no success so you don’t have to.&lt;/p&gt;</description>
+&lt;h2 id=&#34;algorithm-to-generate-convex-roof-meshes&#34;&gt;Algorithm to generate convex roof meshes&lt;/h2&gt;
+
+&lt;p&gt;Now that we have a set of points that belong to a single building, the building’s layout polygon and a set of planes, it’s time for a mesh generation algorithm. The idea of this algorithm is to start with an infinetly extruded layout polygon and cut away each of the roof plane. Each cut creates a roof face.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples of roof types that can be modeled this way:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/convex.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/convex_hu70b74044e4f9f3ff82f6960d7d4709f9_96534_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The algorithm to generate these meshes works a bit different from the explanation above. For each roof face, the layout polygon is triangulated and projected onto the plane. In a second step, this mesh is cut along all roof planes, leaving only the geometry that lies below all other planes. All roof faces are generated like this and are then combined.&lt;/p&gt;
+
+&lt;p&gt;This graphic shows a run of this algorithm with a simple gabled roof. Two roof planes result in two roof faces. For each plane, there is only one other plane that is cut away from the mesh.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/algorithmexample.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/algorithmexample_hu50a234768f1144c8040e779f2b1d19b6_333779_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The choice of roof planes is quite important, as the RANSAC algorithm usually returns more than the desired set of planes. To find the best ones, each possible subset of planes is tested. Each time, a roof mesh is generated and scored. The best one is returned.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples of meshes generated with the above algorithm:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexa.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexa_hue91d5cea83a39dcf95425e13a99bef95_284340_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexb.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexb_hu6f8b60ac18ecf85ae6c4a6c57d0e375a_227379_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexc.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexc_hu53b8f90271ec9fbdcbf5f613758c4838_246849_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexd-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexd-1_hub9deedc562b5b26a14c23e1e0c6e8e3e_282653_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;attachments&#34;&gt;Attachments&lt;/h2&gt;
+
+&lt;p&gt;As the name suggests, the algorithm to generate convex roofs is limited to convex roofs. In the real world, many roofs aren’t convex, like these ones:&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/attachments.png&#34; width=&#34;489&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;To generete roof meshes for these roofs, I extended the algorithm to look for attachments. It starts with a convex roof. For each face, the subset of points above the roof plane is considered. The same algorithm is used to generate meshes for attachments. These attachments are added to the resulting mesh.&lt;/p&gt;
+
+&lt;p&gt;A postprocessing step is needed to avoid some unwanted geometry that arises from combining the base mesh with the attachment meshes. Sometimes, this step introduces unwanted artifacts in the result.&lt;/p&gt;
+
+&lt;p&gt;Here are some exmaples of convex roofs with attachments:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaua.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaua_hu3533fc11d9bee14bd1fff2ee98f0c689_526700_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaub.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaub_hu40c01ef95c9fec83a0641260c7b30f78_365578_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbauc.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbauc_hu5ad9d0309e5113d621bdeab749a41723_396090_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaud_hu0d14cc1893ab9bcddd2df78d088d2388_291075_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;I used the Unity game engine to test the algorithms. Unity makes it easy to display meshes and point clouds. For common geometry problems like triangulating polygons, there is code available online.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/roofmeshes/gui-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/gui-1_hub02691b97b5eba00ae18a8dd18fecbd5_743640_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/marian42/pointcloud&#34;&gt;You can find the source code for the Unity implementation on github.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;data-sources&#34;&gt;Data sources&lt;/h2&gt;
+
+&lt;p&gt;The point data used in the screenshots in this article was calculated using point data and shape data from &lt;a href=&#34;https://www.opengeodata.nrw.de/&#34;&gt;https://www.opengeodata.nrw.de/&lt;/a&gt;
+Source for point data: &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/dom1l_05913000_Dortmund_EPSG25832_XYZ.zip&#34;&gt;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/dom1l_05913000_Dortmund_EPSG25832_XYZ.zip&lt;/a&gt;
+Source for shape data: &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/lika/alkis_sek/hu_nw/hu_nw_EPSG4647_Shape.zip&#34;&gt;https://www.opengeodata.nrw.de/produkte/geobasis/lika/alkis_sek/hu_nw/hu_nw_EPSG4647_Shape.zip&lt;/a&gt;
+The data was provided by the &amp;ldquo;Land NRW&amp;rdquo; under the Data licence Germany – attribution – Version 2.0 (dl-de/by-2-0) Full license text is available at &lt;a href=&#34;http://www.govdata.de/dl-de/by-2-0&#34;&gt;http://www.govdata.de/dl-de/by-2-0&lt;/a&gt;
+The screenshots in this article contain map data by &lt;a href=&#34;https://openstreetmap.org/&#34;&gt;OpenStreetMap&lt;/a&gt; (ODbL) and Positron tiles by &lt;a href=&#34;https://cartodb.com/attributions#basemaps&#34;&gt;CartoDB&lt;/a&gt; (&lt;a href=&#34;https://creativecommons.org/licenses/by/3.0/&#34;&gt;CC BY 3.0&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>No Man’s Starfield</title>
-      <link>/article/no-mans-starfield/</link>
-      <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
-      
-      <guid>/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+		<title>LED Matrix Software</title>
+		<link>https://marian42.de/article/ledmatrix-software/</link>
+		<pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
+		<guid>https://marian42.de/article/ledmatrix-software/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes the one of them. &lt;/p&gt;
+
+&lt;p&gt;The app offers a web interface where users can write simple programs that are then compiled and started instantly from the website. The concept is similar to &lt;a href=&#34;https://shadertoy.com&#34;&gt;Shadertoy&lt;/a&gt;, where you write C-like shader code in a browser window and instantly see it run. The code of for this project is on my &lt;a href=&#34;https://github.com/marian42/ledcpp&#34;&gt;github&lt;/a&gt; and it’s in a state where you should be able to run it fairly easily, if your hardware is similar. The github page has installation instructions and some documentation on the available functions for user apps.&lt;/p&gt;
+
+&lt;p&gt;The backend for the webapp is written in Python, using flask. The user apps are written in C++. I first tried to use Python for this as well, but it wasn’t fast enough. Just iterating through a 256 color list already impacts the framerate. The C++ code is compiled into a shared object library file. The library is loaded into the python app using the python module ctypes. The client is written in Javascript, using codemirror to edit code and bootstrap for the UI.&lt;/p&gt;
+
+&lt;p&gt;There is a gif recording feature that creates live recordings of the apps you write:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/RingTest.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/Pie.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/Fire.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/Swirl.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/CloudySky.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/RingZoom.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/Beacon.gif&#34; width=&#34;128&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/DSCF1527.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/DSCF1527_hu0013a6270d5b14a6d216699302a8701b_677905_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+		<title>LED Matrix Materials Guide</title>
+		<link>https://marian42.de/article/ledmatrix-tutorial/</link>
+		<pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
+		<guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I built an LED matrix out of 256 WS2812 LEDs. This post will describe which materials I used and which I tried with no success so you don’t have to.&lt;/p&gt;
+
+&lt;h1 id=&#34;case&#34;&gt;Case&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1226.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1226_huebcc994a0cc4e4d011a77d7bbc25ae4d_435543_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;For the case, I used a custom made photo frame. The main purpose of the case is to look good, which is harder to achieve if you make it yourself. I’m using a matte black aluminium frame. Make sure it is deep enough to house all parts. My frame came with a glass plate, so I didn’t need to buy a seperate one.&lt;/p&gt;
+
+&lt;p&gt;I used a sheet of scrap wood as a base plate to stick the LED strips on and to mount the other components.&lt;/p&gt;
+
+&lt;h1 id=&#34;dividing-grid&#34;&gt;Dividing grid&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1298-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1298-1_hu007b1fd197d392935a4c4db9ee032936_686107_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;You need a dividing grid in order to prevent neighbour pixels from blending colors. Without a dividing grid, there will be no sharp edges between two pixels, but a gradient, making the resulting image look blurry.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1343.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1343_huefd32cd731011394475107d597eaabd6_712538_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;My first try was making a grid of interlocked cardboard strips. The resulting walls bent, creating squiggly pixels.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1317.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1317_hu6ab933de1457ee52c71fe148f0db7b55_790362_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Next, I ordered wood strips, cut notches in them and made another interlocking grid. This resulted in the same bending as the cardboard approach. Even though the wood strips bend less, small inaccuracies with the positioning of the notchces lead to tension and bend the pixels.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1320.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1320_hu30e085a5ffb490e5d1e27e9c3f77bcba_754167_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;To get rid of the inaccuracies of manual measuring, I tried a laser cutter. My first approach was to cut the entire grid out of multiple layers of wood. The walls were too thin and the laser destroyed them. Since I only had access to the laser cutter for a limited time, I didn’t explore it exhaustively. You might get better results with the interlocking approach or with a different material.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1299.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1299_hu140ed1165fdbce301c884374d3d925f9_838318_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Finally, I got a 3D printer and printed a grid. This is the one I ended up keeping for my matrix. I had to split it into four parts to fit in the printer’s build volume. If your grid model has bridges for the LED strips, you might try to print the grid with the viewer facing side pointing up in the printer. However, the unwanted flatfood effect will be visible in the LED matrix if you print your grid like this. Instead, print it so that the viewer facing layer is printed last.&lt;/p&gt;
+
+&lt;h1 id=&#34;diffuser&#34;&gt;Diffuser&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1244.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1244_hue8e9577b2b9500d50fbfdec55972e883_848090_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;In order to light up the entire pixel, not just a small dot in your field of view, you need something to diffuse the light.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1258.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1258_hu006d00af7db03d8466394e781c8ab493_577532_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I found a sheet of diffused acrylic glass. This is not suitable for using in an LED matrix. The thicker the diffuser is, the more it blurs the image, in addition to diffusing it.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1261.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1261_hu546a9d3dec7abcde6c05337a8c9bbe70_619759_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a thinner sheet which creates a slightly sharper image. However, for a good image, the diffuser needs to be as thin as possible.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1277-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1277-1_hu59d92efabab9f582a9282ba34eaf602a_794432_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Looking for something thinner, I ordered diffusing 0.5mm thick plastic sheet from a crafting supplier (1). This still creates a bit of blur.&lt;/p&gt;
+
+&lt;p&gt;Next, I tried paper (2). I used vellum / transparent paper, which is sold for crafting. While still a bit too thick, and thus making the image a tiny bit blurry, the main problem was that the paper got rippled after a while. This adds an unwanted texture to the LED screen.&lt;/p&gt;
+
+&lt;p&gt;Finally, the solution I sticked with is a plastic foil. These are made to be put on windows for privacy. I found a website that sells these foils and offers free samples, so I got a selection of samples. Sample 3 and 4 don’t diffuse the light enough, you can make out the shape of the LED. Finally, I got sample 5 and 6 in full size. I found the non adhesive foil easier to handle. It stays in place well without being glued to the glass plate.&lt;/p&gt;
+
+&lt;h1 id=&#34;electronics&#34;&gt;Electronics&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1216.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1216_hu9e01d8a326ff20cba31230c743aa82f6_1230261_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Depending on the software you intend to run on your LED matrix, I recommend using a Raspberry Pi or, for simpler projects, an Arduino. If your board operates at 3.3V, you might want to use a level shifter that converts the 3.3V signal to the 5V signal the WS2812 strip needs. However, if you feel adventurous, you can skip the level shifter and hope that the WS2812 picks up the 3.3V as a logical 1, which it will probably do.&lt;/p&gt;
+
+&lt;p&gt;In addition, my setup has four buttons and a microphone, these are optional depending on your intended use of the LED matrix.&lt;/p&gt;
+
+&lt;p&gt;Adafruit has a &lt;a href=&#34;https://learn.adafruit.com/neopixels-on-raspberry-pi?view=all&#34;&gt;good tutorial&lt;/a&gt; for setting up the LED strip and the software for it on a Raspberry Pi. You should make sure to get the strandtest.py example running before sticking the LED strips.&lt;/p&gt;
+
+&lt;h1 id=&#34;leds&#34;&gt;LEDs&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1471.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1471_hu9636491b4dd5371821f9b328e971fb90_428327_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I’m using WS2812 LED strips. As long as the model is correct, just go for the cheapest offer. Check the estimated shipping time when ordering from China.&lt;/p&gt;
+
+&lt;h1 id=&#34;led-layout&#34;&gt;LED layout&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/layout.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/layout_hu9eea575f3a5442485ce8a3aab31ec3a0_439212_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The LEDs are supplied as a single strip and will appear as such to the computer. The LED strip will be cut after every line and then placed with alternating orientation for each line of the grid. Since cutting and resoldering every pixel is tedious, you should consider the spacing of the LEDs when selecting the LED strip and chosing the spacing for your grid. I used a strip with 60 LEDs per meter. The 16 pixels plus a margin of one pixel on each end results in a 30cm x 30cm base plate. This way, I don’t need to cut after every LED, but only once per row.&lt;/p&gt;
+
+&lt;p&gt;Note that the LEDs are not centered between the cutting lines. You need to make sure that the LEDs themselves line up, not the cutting lines. I realized this too late.&lt;/p&gt;
+
+&lt;h1 id=&#34;power-supply&#34;&gt;Power supply&lt;/h1&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1467.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1467_hu162479749694a23d53162ad8436287db_467290_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Each subpixel LED draws 20mA at full brightness. That’s 60mA per pixel or 15.3A for 256 pixels.&lt;/p&gt;
+
+&lt;p&gt;Going by that math, you’ll need a power supply that can supply at least 15A. However, this only really applies if you want to have your entire LED matrix on bright white for long amounts of time. In practice, a lower rated power supply will do the job. &lt;a href=&#34;https://learn.adafruit.com/adafruit-neopixel-uberguide/power&#34;&gt;Adafruit proposes that as a rule of thumb&lt;/a&gt;, you can get away with &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of the maximum theoretical power draw. This would be 5A in the case of 256 pixels. I’m using a 10A power supply for my project and I didn’t have any issues.&lt;/p&gt;
+
+&lt;p&gt;However, operating a power supply beyond specification can be a fire hazard.&lt;/p&gt;
+
+&lt;p&gt;Also note that running 256 LEDs at their brightest level is really bright. Unless you need a floodlight, you might want to limit the brightness anyway.&lt;/p&gt;
+
+&lt;h1 id=&#34;additional-hardware&#34;&gt;Additional hardware&lt;/h1&gt;
+
+&lt;h2 id=&#34;cosmetic-grid&#34;&gt;Cosmetic grid&lt;/h2&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1390.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1390_hu44ccd217ff412db25e6203fdbfe986e4_602781_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a thin grid made out of black adhesive foil with a cutting plotter. It is applied to the glass sheet and its purpose is to give the pixels a visual seperation, creating a sharper looking image. This is optional and I’m not entirely sure if I like the matrix better with or without it. It looks bad at places where the dividing walls behind the diffuser don’t line up with the cosmetic grid. When turned off, the grid does make it look more interesting.&lt;/p&gt;
+
+&lt;h2 id=&#34;electronics-case&#34;&gt;Electronics case&lt;/h2&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1210.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1210_hudc30c4ed2d8fbe718c5ad07483d83e20_696545_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I 3D printed a case for the electronics. This is also optional, since the matrix works perfectly well without it, but it looks cool. It also contains an USB port for the Raspberry Pi Zero W I use, so I can connect a gamepad.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1504_c.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1504_c_hu2b0445ec532f9b2e3a115715e7ef509e_728602_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
+    </item>
+    
+    <item>
+		<title>No Man’s Starfield</title>
+		<link>https://marian42.de/article/no-mans-starfield/</link>
+		<pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
+		<guid>https://marian42.de/article/no-mans-starfield/</guid>
+		<description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The cool thing about this is that it runs inside a shader. A shader is a small program that runs on the graphics card and is usually used to create simple effects like shadows or reflections. However, it can also be used to make &lt;a href=&#34;https://www.shadertoy.com/results?query=&amp;amp;sort=love&amp;amp;filter=&#34;&gt;really complex things&lt;/a&gt;. In a shader, all pixels are computed separately and in paralell. That means the program gets the pixel coordinate and computes a color for it. This program is then called for each pixel in the frame.&lt;/p&gt;
+
+&lt;p&gt;To render 3D worlds, realtime graphics apps usually use depth buffers. However, inside a shader, one is forced to use raytracing. This means that for each pixel, a virtual light ray is followed from the camera until it hits something.&lt;/p&gt;
+
+&lt;p&gt;In this case, I need to check if the ray hits a star. Computing the distance between every ray and every star to check if it’s less than the star radius would take too long. Instead, the ray travels through a 3D grid. Every grid cell either has a star or not. This is determined using simplex noise. With this technique, the ray needs only to be compared to the stars within the grid cells that the ray travels through, and only those grid cells that contain a star.&lt;/p&gt;
+
+&lt;p&gt;Using raytracing also makes it easy to bend rays. My shader uses this to bend light rays close to black holes. Black holes occasionally appear instead of stars.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/no-mans-starfield/starfield.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/no-mans-starfield/starfield_hu1ff34d90f796d5b61b798ff4e4955ea0_113008_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
     </item>
     
     <item>
-      <title>Computer Vision and Robotics Demo with Raspberry Pi</title>
-      <link>/article/computervision/</link>
-      <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
-      
-      <guid>/article/computervision/</guid>
-      <description>&lt;a href=&#34;/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Computer Vision and Robotics Demo with Raspberry Pi</title>
+		<link>https://marian42.de/article/computervision/</link>
+		<pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
+		<guid>https://marian42.de/article/computervision/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Work in progress: Location based online game</title>
-      <link>/article/reslayer/</link>
-      <pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
-      
-      <guid>/article/reslayer/</guid>
-      <description>&lt;a href=&#34;/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;</description>
-    </item>
-    
-    <item>
-      <title>16×16 LED Matrix</title>
-      <link>/article/ledmatrix/</link>
-      <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
-      
-      <guid>/article/ledmatrix/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/JA-Aoqt4izY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As a prototyping platform, I used a Raspberry Pi board with the Picam camera module. For QR codes, there is a library available to detect them, called zbar. The problem with zbar is that its performance is not good enough to use in robotics. On a Raspberry Pi 2B, it can scan the camera image about three times per second, which is too slow.&lt;/p&gt;
+
+&lt;p&gt;Therefore, I explored alternatives to QR codes. I created a new type of symbol that is simpler than a QR code and can be detected faster. The symbol detection was done using Python and the OpenCV library. OpenCV provides tools for computer vision, such as colorspace conversion or contour detection algorithms. These codes can be detected at about 20fps on the Raspberry Pi.&lt;/p&gt;
+
+&lt;p&gt;Due to the interpretation layer of Python, it’s not perfect for projects with critical performance. To increase performance even more, the code could be rewritten in C++, which I decided not to do for this prototype. However the performance was improved by operating on large arrays using Numpy rather than standard Python.&lt;/p&gt;
+
+&lt;p&gt;For even faster recognition, I designed symbols that just consist of concentric circles. These can be detected faster, but they don’t carry any data. The robot can’t tell them apart.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/computervision/symbols-comparison.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/computervision/symbols-comparison_hu45f31a2cf2d5fd76e145ce3923804d35_121591_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;This is a 16×16 RGB LED matrix, made of 256 WS2812B LEDs. It’s powered by a Raspberry Pi and can display images and animations. With a game controller attached, it can play games.&lt;/p&gt;</description>
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/computervision/screenshot-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/computervision/screenshot-1_hu416e6cdfe7b64541b68008c170488f3f_309857_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Now that the Pi knows where the symbols are, a laser is pointed at them. The setup can move a red laser on two axes, using two stepper motors. The motors are connected with 3D-printed parts and driven by two Sparkfun EasyDriver boards that provide the correct voltage and current for the motors. The Raspberry Pi uses two GPIO pins for each motor to set the direction and trigger a step.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/computervision/Bild3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/computervision/Bild3_hubb30837be62c837d998adb5ca75061d5_109411_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Together with a stand for the camera, the Raspberry Pi can see symbols on the table and move the laser dot around on the table. The camera is also used to detect where the laser is pointing. Another Python script takes the symbol position on the screen and computes the corresponding motor positions.&lt;/p&gt;
+
+&lt;p&gt;As another way of demonstrating the laser movement and symbol detection, I wrote a version of the game Pong that is played without a screen, on the table. The laser dot is the ball and the paddles are symbols that are moved around on the table.&lt;/p&gt;
+
+&lt;p&gt;Finally, here is an album that shows the steps that are used by the program to analyze an image:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;imgur-embed-pub&#34; lang=&#34;en&#34; data-id=&#34;a/yO13U&#34;&gt;&lt;a href=&#34;//imgur.com/yO13U&#34;&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src=&#34;//s.imgur.com/min/embed.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Procedural pixelart generator</title>
-      <link>/article/proceduralart/</link>
-      <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
-      
-      <guid>/article/proceduralart/</guid>
-      <description>&lt;a href=&#34;/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Work in progress: Location based online game</title>
+		<link>https://marian42.de/article/reslayer/</link>
+		<pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
+		<guid>https://marian42.de/article/reslayer/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.
+
+I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.&lt;/p&gt;
+
+&lt;p&gt;The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.&lt;/p&gt;
+
+&lt;p&gt;The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only within 100 meters of a school” and so on. Here is an example:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-5.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-5_hud701fe3eb76b5e5221b9fa63ce0c88ab_939567_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The green resources are distributed randomly across roads, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.&lt;/p&gt;
+
+&lt;p&gt;There are four kinds of buildings that can be placed anywhere on the map.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-22.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-22_hu2e913d5de65812cc5247a26e7302f423_240300_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;In the actual game, players can only place buildings at their current location, and only if there isn’t another building already.&lt;/p&gt;
+
+&lt;p&gt;Buildings consume and output resources, which are transported via links. All buildings can be connected with links and the system will figure out the most effective way to use them.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-14.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-14_hu347b6f5ab0cb2222c418e9cf27becfbe_115900_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;A mine picks up resources from the ground.&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-15.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;A warehouse stores them.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-12.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-12_hu3ca64d15e2af66bea0d019966aab7af6_168921_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;There are ten tiers of resources and only the resources of the first tier can be aquired by mining. Higher tier resources are made by directing two different kinds of resources of the same tier into a factory and it will output a resource of a higher tier. This encourages players to build complex networks of mines, factories and warehouses, like this one:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-20.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-20_hu0b18c74297ee5bed2d20164543a5b0d5_256129_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;And finally, a tower protects someones buildings. Buildings that are not in the range of a tower can be used by everyone. So you need to build a tower to keep people from pulling resources out of your factories and looting your warehouses. High-tier resources serve as explosives to take down other’s towers and use their production networks.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-8.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-8_hu6b14c541c7aadb3e955ae2307be4b1e5_136945_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;You can see that two of the mines are idle, because the warehouse has a limited input rate.&lt;/p&gt;
+
+&lt;p&gt;The goal of this mechanic is to encourage teamwork, reward efforts and provide some permanence to the players’ actions, as opposed to Ingress. In Ingress, it doesn’t really matter which portals of which place you conquer, since someone else will have taken them over by the next day. I’m trying to make a game that fixes some of the problems that Ingress has.&lt;/p&gt;
+
+&lt;p&gt;The screenshots in this article contain map data by &lt;a href=&#34;https://openstreetmap.org&#34;&gt;OpenStreetMap&lt;/a&gt; (ODbL) and Dark Matter tiles by &lt;a href=&#34;https://cartodb.com/attributions#basemaps&#34;&gt;CartoDB&lt;/a&gt; (&lt;a href=&#34;https://creativecommons.org/licenses/by/3.0/&#34;&gt;CC BY 3.0&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>16×16 LED Matrix</title>
+		<link>https://marian42.de/article/ledmatrix/</link>
+		<pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
+		<guid>https://marian42.de/article/ledmatrix/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a 16×16 RGB LED matrix, made of 256 WS2812B LEDs. It’s powered by a Raspberry Pi and can display images and animations. With a game controller attached, it can play games.&lt;/p&gt;
+
+&lt;p&gt;The pictures below show how I built the frame.&lt;/p&gt;
+
+&lt;p&gt;Painting the base plate&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080915.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080915_hu95fdd951061dbe718a9626a47da63c1d_316792_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Drawing the scale&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080919.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080919_hub459312615562a7ff29b7a5d5a37ac95_227898_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Ordered a custom picture frame&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080923.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080923_huf8728b90ecaaafc761b459fe2422f939_249560_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Assembled frame&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080927.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080927_hu3e7ac390ccc094b532223af7d665d637_234546_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Frame with glass front and baseplate&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080928.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080928_hua06c47a72fb142eca7ae377e779f7d72_203351_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Making the grid&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080931.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080931_hue66e459d316701d9e18faa9f476dc2f6_275828_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Completed grid&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080934.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080934_hue9c8c16fc79d074f7658211e231d956b_322974_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Testing the LEDs&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080947.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080947_huc9481e9d04f9aa659b47c90dfcb60220_313975_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Sticked the first line of LEDs&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080949.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080949_hu8ba4a10c7756d3deb0b0571baf194383_193363_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;All strips sticked on&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080951.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080951_hu2403484efd05e27d46e0576e20abaf4e_395376_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Soldering complete&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080954.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080954_hu2f6c095106311b6a9abeff34c419f840_470515_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Mounting the Raspberry Pi&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080960.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080960_huc69c2115ae8a9e01ccb685a833eeba75_358597_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Relieved that it actually lights up&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080970.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080970_hu41b8a136a28e87190e7bdbc3ff132521_314546_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Assembled back side&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080978.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080978_hu304783b9d8a288cbcf5a4799fd0829c5_276415_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Testing with a PC power supply while waiting for the actual one to arrive&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P10809811.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P10809811_hu37b7d978fc349c89cb209aec5b053119_281481_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Complete&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080987.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080987_hu8c33c7df81a8f36c9471c198c8f1b30d_194567_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Hello!&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090028_hu8569c9ef0d609ddecff8984267da4e85_233610_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;&lt;a href=&#34;http://ledseq.com/product/game-frame-sd-files/&#34;&gt;Artwork by Eboy&lt;/a&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090029.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090029_hu08fbfbefffad0402e1f36d7e9051943c_240234_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Beach&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/beach.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Drop&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/drop.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Fire&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/fire.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Diamond Sword&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090049.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090049_hu1b71f14c5f3911cebc5bf31a43e38a12_179469_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Link&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090042.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090042_hua395f00ceb48b3f2ec1a1a8a1dace615_212287_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Mario&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090047.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090047_hub6406a378f58f26df70fd0091944eb32_203751_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Pacman&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/pacman.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Space Invader&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/invader.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Working clock&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090106.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090106_hua6bf1781c9ba6bdd9a2df468492d9001_169850_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;It’s a Raspberry Pi, so why not use the USB port for a gamepad?&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090099.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090099_hubebed54848d41621dd3173f4b1cf7d47_259597_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Tetris&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/tetris.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;Snake&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/snake.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;This project was inspired by Jeremy William’s Game Frame. My code can play all animations that work with the Game Frame. Find my source code, a parts list and build notes on &lt;a href=&#34;https://github.com/marian42/pixelpi&#34;&gt;github&lt;/a&gt;. I also published these pictures to &lt;a href=&#34;https://imgur.com/a/Ql25S&#34;&gt;imgur&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>Procedural pixelart generator</title>
+		<link>https://marian42.de/article/proceduralart/</link>
+		<pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
+		<guid>https://marian42.de/article/proceduralart/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -192,62 +1594,317 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 &lt;p&gt;Check it out and generate your own pixelart:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://marian42.github.io/proceduralart/&#34;&gt;https://marian42.github.io/proceduralart/&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Game prototypes</title>
-      <link>/article/game-prototypes/</link>
-      <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
-      
-      <guid>/article/game-prototypes/</guid>
-      <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://marian42.github.io/proceduralart/&#34;&gt;https://marian42.github.io/proceduralart/&lt;/a&gt;&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;p&gt;The art generator is written in javascript and uses noise functions such as simplex noise to generate procedural landscapes and other features. Whenever the page is loaded, a new random seed is selected and an artwork is generated based on this seed. As a consequence, it is extremely unlikely that the same planet is shown twice.&lt;/p&gt;
 
-&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi powered fishtank</title>
-      <link>/article/iot-fishfeeder/</link>
-      <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
-      
-      <guid>/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
-&lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 
-&lt;p&gt;To feed the fish, the Raspberry Pi sends commands to an automatic fishfeeder that I modified. It can empty any container in any order. This is achieved by an Arduino Pro Mini, two servos and a motor (&lt;a href=&#34;http://marian42.de/?p=508&#34;&gt;more&lt;/a&gt;). The plate prevents hot air from flowing into the feeder. In an early iteration of the project, this made the food sticky and kept it from falling into the tank. Switching the lights is done using a remote light switch and 433Mhz transmitter. Finally, there is a webcam that is connected directly to the Raspberry Pi to take pictures.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
-      <link>/article/fishfeeder/</link>
-      <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
-      
-      <guid>/article/fishfeeder/</guid>
-      <description>&lt;a href=&#34;/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+
+&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas_hub7d22b3d618fb8e046b790eac2a7e92a_715584_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;I bought a used &lt;a href=&#34;https://www.google.com/search?q=rondomatic&amp;amp;safe=active&amp;amp;hl=de&amp;amp;tbm=isch&amp;amp;source=lnms&amp;amp;sa=X&amp;amp;ei=TLmxU-bcE4n-4QSyw4DIDA&amp;amp;ved=0CAgQ_AUoAw&amp;amp;biw=1920&amp;amp;bih=968&#34;&gt;automatic fish feeder&lt;/a&gt; from ebay. This device is completely mechanic and very old (older than 1989). It has 27 containers for fish food and a disc that does one rotation per day. By sticking pins into that disc one can trigger one or more feedings per day. A pin will rotate an outer ring with the containers by one unit. One container always faces down, emptying its contents. So if the outer ring has made one revolution, all containers have been emptied.&lt;/p&gt;</description>
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas12.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas12_hu4b2f5a6cef0d92e62a0c52eeda9a82a4_563505_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas3_hu7ca2e58f81dec36be6a270c53d07b2c0_517149_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas11.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas11_hu5ec6da819b681f825cb15cf9826991e9_480525_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas8.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas8_hu6e7cb5136d1c8504bbaa448567c60b1e_458446_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
     </item>
     
     <item>
-      <title>How to build a Lego Portal Gun</title>
-      <link>/article/portalgun/</link>
-      <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
-      
-      <guid>/article/portalgun/</guid>
-      <description>&lt;a href=&#34;/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Game prototypes</title>
+		<link>https://marian42.de/article/game-prototypes/</link>
+		<pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
+		<guid>https://marian42.de/article/game-prototypes/</guid>
+		<description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
+
+&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/cells.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://marian42.de/article/game-prototypes/games.zip&#34; target=&#34;_blank&#34;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>Raspberry Pi powered fishtank</title>
+		<link>https://marian42.de/article/iot-fishfeeder/</link>
+		<pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
+		<guid>https://marian42.de/article/iot-fishfeeder/</guid>
+		<description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+
+&lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
+
+&lt;p&gt;To feed the fish, the Raspberry Pi sends commands to an automatic fishfeeder that I modified. It can empty any container in any order. This is achieved by an Arduino Pro Mini, two servos and a motor (&lt;a href=&#34;http://marian42.de/?p=508&#34;&gt;more&lt;/a&gt;). The plate prevents hot air from flowing into the feeder. In an early iteration of the project, this made the food sticky and kept it from falling into the tank. Switching the lights is done using a remote light switch and 433Mhz transmitter. Finally, there is a webcam that is connected directly to the Raspberry Pi to take pictures.&lt;/p&gt;
+
+&lt;p&gt;The setup sits on top of my aquarium:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/setup.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/setup_hua7b6311d47231104d6f6e1eca9a72e9a_2423523_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The Raspberry Pi runs a python / flask server that provides a web interface. If everything works, the web interface of my fishtank is available here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fishtank.marian42.de/&#34; title=&#34;http://fishtank.marian42.de/&#34;&gt;http://fishtank.marian42.de/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The food stored in each container is remembered by the python script. This allows rules like “Feed the oldest food first” or “Prefer flake food”. The script will also try to minimize the rotation time.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/feeder.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/feeder_hue7e65815e4166da6e97ff305ae8b9153_105165_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The Raspberry Pi performs planned events that can be set up and monitored through the web interface.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/schedule.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/schedule_huba0c5bd725585b0018e6de89d3191da7_25083_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;To prevent overfeeding, the server remembers a “saturation value” for the fish. Whenever the fishfeeder adds food, the saturation value is increased (eg. by one for a typical one day portion). The saturation is gradually decreased by one per day, but doesn’t go below zero. A value below 1 means that the fish are hungy. Planned feed events are only automatically performed by the Raspberry Pi when the saturation is below 1. This mechanism makes sure that on average the fish get about one portion unit of food per day.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/webcam.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/webcam_hu3f9334f75d9434ff9a882bb97d429ae1_1802755_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The web interface allows guests to feed the fish. This feature is only available if the fish are hungry and the lights are on. Guests can choose what kind of food to feed. Once the process is complete, a picture is taken and displayed on the website.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/img65.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/img65_hu92b2eb64b5f746bb3bf4c9d36fdae972_154705_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The pictures taken with the webcam can be used to verify that everything worked.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/pushbullet.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/pushbullet_hu32a45a272f29279c748ba2ee8593b492_612565_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Whenever the fish are fed or a picture is taken, the picture is sent to my phone using the pushbullet API.&lt;/p&gt;
+
+&lt;p&gt;The server keeps a log of all events and errors that can also be viewed on the web interface.&lt;/p&gt;
+
+&lt;p&gt;All the source code for this project can be found on &lt;a href=&#34;https://github.com/marian42/fishtank&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>Connecting my fish tank to the Internet of Things – Part 1: Hacking an automatic fish feeder</title>
+		<link>https://marian42.de/article/fishfeeder/</link>
+		<pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
+		<guid>https://marian42.de/article/fishfeeder/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I bought a used &lt;a href=&#34;https://www.google.com/search?q=rondomatic&amp;amp;safe=active&amp;amp;hl=de&amp;amp;tbm=isch&amp;amp;source=lnms&amp;amp;sa=X&amp;amp;ei=TLmxU-bcE4n-4QSyw4DIDA&amp;amp;ved=0CAgQ_AUoAw&amp;amp;biw=1920&amp;amp;bih=968&#34;&gt;automatic fish feeder&lt;/a&gt; from ebay. This device is completely mechanic and very old (older than 1989). It has 27 containers for fish food and a disc that does one rotation per day. By sticking pins into that disc one can trigger one or more feedings per day. A pin will rotate an outer ring with the containers by one unit. One container always faces down, emptying its contents. So if the outer ring has made one revolution, all containers have been emptied.&lt;/p&gt;
+
+&lt;p&gt;The goals of my modification were&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add an Arduino that can empty a container at any time&lt;/li&gt;
+&lt;li&gt;Let the ring move to any container without emptying all other ones along the way&lt;/li&gt;
+&lt;li&gt;Let the Arduino know the absolute position of ring&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The advantage of this is the ability to store differend kinds of fish food and different portion sizes. This is possible since the feeder can not only empty the very next container, but any one.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_201910.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_201910_hu3d8a9efff99dc282a1aebde91d0e47e0_1718044_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_212625.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_212625_hu4d909e094c41b364ef0734788eebf943_1851401_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140528_201416.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140528_201416_hu475289a36430ba104f108ab1132df939_452956_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Taking the old fish feeder apart&lt;/td&gt;
+&lt;td&gt;Removing the old clockwork&lt;/td&gt;
+&lt;td&gt;New gear routing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In order to hack the fish feeder, I removed the original power supply, most of the original clockwork and replaced the motor with a lower voltage, DC motor. The motor is driven using a &lt;a href=&#34;https://www.sparkfun.com/products/9457&#34;&gt;Sparkfun Motor Driver&lt;/a&gt; board.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0020_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0020__hubf53b84e3b32edd9a0076ce266f6bb4b_264506_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I added a servo that pushes a bar in the gap that used to empty all passing containers. When the correct container is above the gap, the servo moves down, releasing the containers’s content. I use an &lt;a href=&#34;https://www.sparkfun.com/products/11113&#34;&gt;Arduino Pro Mini&lt;/a&gt; as microcontroller.&lt;/p&gt;
+
+&lt;p&gt;To make precise movements, I added a light sensor to one cog in the clockwork. I colored part of the cog black and put an LED underneath it. When the black part moves between the LED and the sensor, it senses less light. The microcontroller can use this to count the revolutions, mimicing the functionality of a stepper motor.&lt;/p&gt;
+
+&lt;video loop autoplay src=&#34;https://marian42.de/article/fishfeeder/sensor1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0016_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0016__hu844935d39919c2b49e467ce119fe6073_320251_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Another LED plus light sensor detects the position of the outer ring. A white marker on the black ring indicates the position of the first container, letting the microcontroller determine the absolute position of the ring.&lt;/p&gt;
+
+&lt;p&gt;I drilled a hole in the case of the fish feeder and put in an RGB-LED. It can display the status of the Arduino. For later use, I also connected another light sensor, facing into the fish tank to check whether the lights are on.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/fishfeeder/openclose.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/openclose_hub5bae307f11b5d3cb57e9c9965f1108b_946599_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The Arduino Pro Mini and all the electronics fit nicely into the case of the original device. The Arduino will later be connected to a Raspberry Pi and communicate through a serial connection. The next entry will be about setting up the Raspberry Pi.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://marian42.de/article/fishfeeder/fishfeeder.ino&#34;&gt;Arduino Source Code&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>How to build a Lego Portal Gun</title>
+		<link>https://marian42.de/article/portalgun/</link>
+		<pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
+		<guid>https://marian42.de/article/portalgun/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -255,22 +1912,375 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 &lt;p&gt;Resources:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Parts: &lt;a href=&#34;/article/portalgun/portalgun-parts.html&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun-rebrickable.csv&#34;&gt;Rebrickable CSV&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun-bricklink.xml&#34;&gt;Bricklink XML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Model: &lt;a href=&#34;/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Parts: &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-parts.html&#34;&gt;list&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-rebrickable.csv&#34;&gt;Rebrickable CSV&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun-bricklink.xml&#34;&gt;Bricklink XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Model: &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Build this &lt;a href=&#34;http://rebrickable.com/mocs/marian/portal-gun-aperture-science-portable-quantum-tunneling-devic&#34;&gt;MOC on Rebrickable&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Instructions:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0001.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0001_hu39d7582b51df118ba1010ce70cdb752a_244470_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0002.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0002_hu39d7582b51df118ba1010ce70cdb752a_245788_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0003.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0003_hu39d7582b51df118ba1010ce70cdb752a_251714_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0004.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0004_hu39d7582b51df118ba1010ce70cdb752a_263213_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0005.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0005_hu39d7582b51df118ba1010ce70cdb752a_264504_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0006.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0006_hu39d7582b51df118ba1010ce70cdb752a_266085_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0007.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0007_hu39d7582b51df118ba1010ce70cdb752a_268036_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0008.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0008_hu39d7582b51df118ba1010ce70cdb752a_264543_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0009.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0009_huc735453f1f6ba0b59ea8ef21cb56d9a0_266996_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0010_huc735453f1f6ba0b59ea8ef21cb56d9a0_268407_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0011.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0011_hu97a90871ac9f57b47e6d7033c5d53356_227834_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0012.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0012_hu97a90871ac9f57b47e6d7033c5d53356_229517_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0013.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0013_hu56f21d525cb02137367cb5b0173c10dc_172224_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0014.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0014_hu56f21d525cb02137367cb5b0173c10dc_194692_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0015_hu56f21d525cb02137367cb5b0173c10dc_190422_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0017.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0017_hu56f21d525cb02137367cb5b0173c10dc_191712_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0018.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0018_hu56f21d525cb02137367cb5b0173c10dc_185659_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0019.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0019_hu56f21d525cb02137367cb5b0173c10dc_177482_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0020.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0020_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_243639_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0021.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0021_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_244245_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0022_hu664fdda1930640a0d752304579bfa665_254533_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0023.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0023_hu137109586ac9630afbea1472af9434f9_275921_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0024.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0024_hu3e073af37710670247f71c9ea19b9caa_281321_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0025.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0025_hu3e073af37710670247f71c9ea19b9caa_283424_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0026.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0026_hub68f9a10646bbb21d517d641c5b2d8ac_285229_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0027.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0027_hub68f9a10646bbb21d517d641c5b2d8ac_290398_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0028_hu5eb84db25f19e7b2f4b382bb7ba1ffc3_288024_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0029.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0029_hu2b0d9c19469c5f49708f59e2c2dd52d2_147155_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The model looks a bit better if this axle is shortened to 1.5 units. So if you are willing to sacrifice one axle and build bad lego, you can cut off the tip.&lt;a href=&#34;https://marian42.de/article/portalgun/step0029.jpg&#34; rel=&#34;lightbox[456]&#34; title=&#34;How to build a Lego Portal Gun&#34;&gt;&lt;br /&gt; &lt;/a&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0030.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0030_hu2b0d9c19469c5f49708f59e2c2dd52d2_184091_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0031.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0031_hu2b0d9c19469c5f49708f59e2c2dd52d2_176625_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/step0032.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0032_huab9e53e7393918c682a8da345b08f26d_295587_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/portalgun/portalgun2.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/portalgun2_hu8fd17cc1ba39511ea0087a6bc0ad0d95_189342_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;</description>
     </item>
     
     <item>
-      <title>Android-Benachrichtigungen auf dem Schreibtisch</title>
-      <link>/article/lol-notifications/</link>
-      <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
-      
-      <guid>/article/lol-notifications/</guid>
-      <description>&lt;a href=&#34;/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Android-Benachrichtigungen auf dem Schreibtisch</title>
+		<link>https://marian42.de/article/lol-notifications/</link>
+		<pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
+		<guid>https://marian42.de/article/lol-notifications/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -282,114 +2292,624 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 
 
-&lt;img src=&#34;/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
 
 
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/png.png&#34; width=&#34;186&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Der Arduino-Sketch zeigt die entsprechenden Icons in 8 Graustufen an. Dazu habe ich ein Java-Programm geschrieben, das PNG-Grafiken mit 14×9 Pixeln in Arrays mit C++-Syntax umrechnet. Werden einzelne Icons per serieller Schnitstelle aktiviert, werden sie auf dem Shield angezeigt und bei mehreren periodisch durchgewechselt.&lt;/p&gt;
+
+&lt;p&gt;Der Arduino ist mit dem Raspberry Pi mit drei Kabeln verbunden: 5V, GND und TX. Der TX-Pin des Pi ist mit dem RX Pin des Arduino verbunden. Auf dem Pi läuft ein PHP-Script, das die Befehle an den Arduino weiterleitet. Die einzelnen Befehle für den Arduino können auch mit einem Webinterface ausgelöst werden.&lt;/p&gt;
+
+&lt;p&gt;Es gibt eine Demofunktion, die alle Symbole anzeigt:&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/s3.gif&#34; width=&#34;160&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Die Konfiguration mit Tasker gestaltet sich etwas schwieriger, da es keinen Trigger gibt, der bei jeder Benachrichtigung ausgelöst wird und gleichzeitig Rückschlüsse auf Anwendung zulässt, die die Benachrichtigung ausgelöst hat. Deshalb musste ich für jede unterstützte App (Twitter, Facebook, …) einen eigenen Task anlegen, insgesamt 12. Ebenso ist es nicht möglich, mit Tasker auf das Anklicken oder Deaktivieren von Benachrichtigungen zu reagieren. Deshalb werden beim Entsperren des Displays alle Symbole auf dem LoL-Shield deaktiviert und solche, die bei eingeschaltetem Handy-Display erschienen sind, verschwinden nach 40 Sekunden wieder.&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/s1.gif&#34; width=&#34;160&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Unabhängig von den Benachrichtigungen kann das LoL-Shield, wenn keine Icons angezeigt werden, eine Binäruhr anzeigen. Es gibt außerdem die Möglichkeit, Texte zum Arduino zu senden, die dann über das Display scrollen. Dies kann per Web-Interface geschehen oder mit der Benachrichtigungsfunktion kombiniert via Tasker weitere Informationen anzeigen, beispielsweise, wer eine Nachricht gesendet hat.&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/s2.gif&#34; width=&#34;160&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Download: &lt;a href=&#34;https://marian42.de/article/lol-notifications/lol_notifier.ino&#34;&gt;Arduino Skript&lt;/a&gt; (benötigt LoL-Shield &lt;a href=&#34;http://code.google.com/p/lolshield/&#34;&gt;Bibliothek&lt;/a&gt;), &lt;a href=&#34;https://marian42.de/article/lol-notifications/led-api.php.txt&#34;&gt;PHP-Skript&lt;/a&gt;, (benötigt &lt;a href=&#34;https://github.com/Xowap/PHP-Serial&#34;&gt;PHP Serial&lt;/a&gt;), &lt;a href=&#34;https://marian42.de/article/lol-notifications/pixelextractor.java&#34;&gt;Java Programm&lt;/a&gt; für Icons, &lt;a href=&#34;https://marian42.de/article/lol-notifications/Notification.prj.xml&#34;&gt;Tasker-Skript&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Aquarium Innensicht mit Gopro</title>
-      <link>/article/gopro-timelapse/</link>
-      <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
-      
-      <guid>/article/gopro-timelapse/</guid>
-      <description>Wegen meinem Quadrocopter habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.</description>
+		<title>Aquarium Innensicht mit Gopro</title>
+		<link>https://marian42.de/article/gopro-timelapse/</link>
+		<pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
+		<guid>https://marian42.de/article/gopro-timelapse/</guid>
+		<description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/zWb60ZoBSag&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Wegen meinem &lt;a href=&#34;https://marian42.de/article/copter/&#34;&gt;Quadrocopter&lt;/a&gt; habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Uni-Timer</title>
-      <link>/article/uni-timer/</link>
-      <pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
-      
-      <guid>/article/uni-timer/</guid>
-      <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
-              Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
+		<title>Uni-Timer</title>
+		<link>https://marian42.de/article/uni-timer/</link>
+		<pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
+		<guid>https://marian42.de/article/uni-timer/</guid>
+		<description>&lt;p&gt;Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-19.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-19_hudb07cbd4f760f0f7e7a1a8cfdebe92b5_60362_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-28.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-28_hu5f37382d3f139cded47066d9f719f119_66187_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an. Und es gibt ein spezielles Feature für meinen Mathe-Prof, bei dem die Vorlesung nicht 90, sondern 95 Minuten dauert. Das Design ist dem der Stock-Uhr von Android 4 nachempfunden.&lt;/p&gt;
+
+&lt;p&gt;Download: &lt;a href=&#34;https://marian42.de/article/uni-timer/Uni.apk&#34;&gt;Android-App&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/uni-timer/Uni.zip&#34;&gt;Source code&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Quadrocopter</title>
-      <link>/article/copter/</link>
-      <pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
-      
-      <guid>/article/copter/</guid>
-      <description>&lt;a href=&#34;/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Quadrocopter</title>
+		<link>https://marian42.de/article/copter/</link>
+		<pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
+		<guid>https://marian42.de/article/copter/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;Ich habe mir dieses Jahr den Traum erfüllt, einen selbst zusammengestellten Quadrocopter zu bauen.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Raspberry Pi Projekte</title>
-      <link>/article/pi-projects/</link>
-      <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
-      
-      <guid>/article/pi-projects/</guid>
-      <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
- http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet   Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                   Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
-    </item>
-    
-    <item>
-      <title>Quadrocopter Lichtsystem</title>
-      <link>/article/copter-lights/</link>
-      <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
-      
-      <guid>/article/copter-lights/</guid>
-      <description>&lt;a href=&#34;/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;investitionen&#34;&gt;Investitionen&lt;/h4&gt;
+
+&lt;p&gt;Für mich ist dieses Projekt bisher immer an zu hohen Kosten und mangelnden Informationen für Einsteiger gescheitert. Diese Probleme wurden zum Teil ausgeräumt durch die Erkenntnis, dass es deutlich günstigere Systeme als die von Mikrocopter gibt, als auch die Hilfe von der Community bei &lt;a href=&#34;http://fpv-community.de/forum.php&#34;&gt;fpv-community.de&lt;/a&gt;, insbesondere &lt;a href=&#34;http://fpv-community.de/showthread.php?24169-Anleitung-amp-Erkl%E4rung-zum-Bau-eines-Multicopters-mit-aktuellen-Komponenten&#34;&gt;dieser Einsteiger-Guide&lt;/a&gt;. Mein Ziel bei diesem Projekt ist, möglichst wenig zu investieren und einen Copter zu haben, der später problemlos aufgerüstet werden kann, z.B. mit einer Kamera oder einem FPV-System.&lt;/p&gt;
+
+&lt;h4 id=&#34;arducopter&#34;&gt;ArduCopter&lt;/h4&gt;
+
+&lt;p&gt;Letztendlich benutze ich als Flight Control, also als “Gehirn” des Copters, einen &lt;a href=&#34;http://www.rctimer.com/product_818.html&#34;&gt;ArduFlyer 2.5&lt;/a&gt;, der ein Nachbau des Open Source Projekts &lt;a href=&#34;http://copter.ardupilot.com/&#34;&gt;ArduPilot&lt;/a&gt; ist. Das Board ist baugleich und entsprechend kompatibel, bzw. bietet die gleichen Funktionen. Die Vorteile von ArduPilot sind die hohe Rechenleistung, die Sensoren (10 &lt;a href=&#34;https://en.wikipedia.org/wiki/Degrees_of_freedom_%28mechanics%29&#34;&gt;DOF&lt;/a&gt;) und die Kompatibilität zu verschiedener Hardware wie GPS, Kompass, Telemetrie, Kameraaufhängung.&lt;/p&gt;
+
+&lt;h4 id=&#34;hobbyking-und-teile&#34;&gt;Hobbyking und Teile&lt;/h4&gt;
+
+&lt;p&gt;####&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter/IMG_20130820_140911s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130820_140911s_huf8fba1a8a124ce5a4c67488e6ff5fd97_408793_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;Dies ist ein Arduinoprojekt, das vier RGB-LED-Streifen an den vier Armen des Quadrocopters ansteuert. Das Ziel war, bei möglichst geringen Materialkosten möglichst viele Möglichkeiten bei der Beleuchtung des Quadrocopters zu haben.&lt;/p&gt;</description>
+&lt;p&gt;Einen Großteil der Teile habe ich bei Hobbyking bestellt, das besonders günstig ist, aber einen &lt;a href=&#34;https://encrypted.google.com/search?hl=de&amp;amp;q=hobbyking#hl=de&amp;amp;q=hobbyking+probleme&amp;amp;safe=off&#34;&gt;durchwachsenen&lt;/a&gt; Ruf hat. Bei mir sind keine der “bekannten” Probleme mit Hobbyking aufgetreten. Die Pakete waren nach einer Woche in Deutschland, wo sie allerdings recht lange beim Zoll bearbeitet wurden. Wer im Ausland bestellt, muss ab einem bestimmten Wert damit rechnen, 19% MwSt und 4,9% Zoll zusätzlich zu bezahlen.&lt;/p&gt;
+
+&lt;h4 id=&#34;fernsteuerung&#34;&gt;Fernsteuerung&lt;/h4&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter/IMG_20130824_003531s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130824_003531s_huabcf8e1ffafad7473cf22a7256b3cb0a_369176_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Als Fernsteuerung benutze ich die Turnigy 9X, die dadurch hervorsticht, dass sie nur etwa 10% einer typischen RC-Fernsteuerung kostet. Dies macht sich dadurch bemerkbar, dass einige Teile etwas “wackelig” wirken. Die Firmware ist ab Werk nicht zufriedenstellend, da sie Fehler enthält und bei jedem Tastendruck laut piept. Dank einer breiten Nutzerbasis gibt es allerdings auch alternative Firmwares, die sich mit &lt;a href=&#34;http://diyjunky.blogspot.de/2011/09/using-your-arduino-to-program-turnigy.html&#34;&gt;etwas Löten und einem Arduino&lt;/a&gt; aufspielen lassen. Mit der &lt;a href=&#34;http://code.google.com/p/er9x/&#34;&gt;er9x&lt;/a&gt; Firmware hat die Turnigy dann alle Features, die man sich wünschen kann. Außerdem habe ich eine Displaybeleuchtung und einen Akku nachgerüstet, was die 9X zu einer vollwertigen Fernsteuerung macht.&lt;/p&gt;
+
+&lt;h4 id=&#34;technische-daten&#34;&gt;Technische Daten&lt;/h4&gt;
+
+&lt;p&gt;Der Copter ist mit einem GPS-Modul, einem externen Kompass, einem Telemetriesystem zum Datenaustausch mit einer Bodenstation und LED-Streifen ausgestattet. Die Flugzeit beträgt ohne Kamera etwa 13 – 15 Minuten bei einem 3Ah Akku (12V, 3C, LiPo). Die ESCs sind mit der SimonK Firmware geflasht. Der Copter ist diagonal etwa 60cm lang und wiegt 1kg.&lt;/p&gt;
+
+&lt;h4 id=&#34;fähigkeiten&#34;&gt;Fähigkeiten&lt;/h4&gt;
+
+&lt;p&gt;Diese Stunts sind etwa das “&lt;a href=&#34;http://copter.ardupilot.com/wiki/flight-modes/&#34;&gt;Standardrepartoire&lt;/a&gt;” vom Ardupilot. Im Folgenden also eine Liste mit Dingen, die der Copter kann, allerdings nur die, die ich schon erfolgreich getestet habe:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Loitermodus: Der Copter behält automatisch die Höhe und Position bei&lt;/li&gt;
+&lt;li&gt;Return to Launch: Der Copter fliegt zum Startpunkt und landet. Dies ist auch das Verhalten, wenn die Verbindung zur Fernsteuerung abbricht.&lt;/li&gt;
+&lt;li&gt;Bodenstation: Mit einer Verbindung zu einem Handy / Laptop am Boden können Flugdaten abgerufen und Befehle gesendet werden, wie Wegpunkte, die der Copter anfliegt.&lt;/li&gt;
+&lt;li&gt;Follow Me: Der Copter folgt einer Person (bzw einem Handy) auf einer festgelegten Höhe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;kamera&#34;&gt;Kamera&lt;/h4&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter/G0010081.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/G0010081_hu6a9b1b669b4e0b7b119dbd95ed6f64b1_1561312_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Der typische Anwendungsfall von Multicoptern ist das Filmen oder Fotografieren aus der Luft. Mein Copter ist seit kurzem mit einer Gopro ausgestattet. Er wird bald ein Kamera-Gimbal bekommen, das die Neigungen des Copters während des Flugs ausgleicht.&lt;/p&gt;
+
+&lt;h4 id=&#34;licht&#34;&gt;Licht&lt;/h4&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter/DSC_0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Der Copter ist mit RGB-LED Streifen ausgestattet, die pro Arm ansteuerbar sind. Mit der Fernsteuerung kann durch verschiedene Modi durchgewechselt werden, wie “Polizei” oder einzelne Farben. Mit dieser Beleuchtung kann man bei Nacht schöne &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/&#34;&gt;Effekte&lt;/a&gt; mit Langzeitbelichtung erzielen.&lt;/p&gt;
+
+&lt;h4 id=&#34;material&#34;&gt;Material&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLou6JbK5uCtZ4Q6rRq4UWLk5jsg_JpIeh&#34;&gt;Onboard Videomaterial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/copter/parts.html&#34;&gt;Teileliste mit Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/tags/quadcopter/&#34;&gt;Alle Blogbeiträge zum Quadrocopter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/copter-lights/&#34;&gt;Lichtsystem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
-      <title>Quadcopter Lightpainting</title>
-      <link>/article/copter-lightpainting/</link>
-      <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
-      
-      <guid>/article/copter-lightpainting/</guid>
-      <description>&lt;a href=&#34;/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Raspberry Pi Projekte</title>
+		<link>https://marian42.de/article/pi-projects/</link>
+		<pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
+		<guid>https://marian42.de/article/pi-projects/</guid>
+		<description>&lt;p&gt;Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.pi3g.com/2013/05/dateien-fr-windows-freigeben-raspberry-pi-als-dateiserver-mittels-samba/&#34;&gt;Samba&lt;/a&gt; und &lt;a href=&#34;http://ihoeft.wordpress.com/2013/03/26/raspberry-pi-ftp-server-einrichten-proftpd/&#34;&gt;FTP&lt;/a&gt; Server für die Daten auf der Festplatte&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/pi-projects/samba.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/wetterstation/&#34;&gt;Wetterstation&lt;/a&gt;: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/pi-projects/wiring.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-projects/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;ul&gt;
+&lt;li&gt;Webseite für die Wetterdaten&lt;/li&gt;
+&lt;li&gt;Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit &lt;a href=&#34;http://www.ebay.de/sch/i.html?_odkw=rf+433&amp;amp;LH_BIN=1&amp;amp;_sop=15&amp;amp;_osacat=0&amp;amp;_from=R40&amp;amp;LH_PrefLoc=3&amp;amp;_trksid=p2045573.m570.l1313.TR0.TRC0.Xrf+433mhz&amp;amp;_nkw=rf+433mhz&amp;amp;_sacat=0&#34;&gt;RF-Sender&lt;/a&gt;, &lt;a href=&#34;http://www.amazon.de/Elro-AB440S-3C-Funksteckdosen-Funksteckdose/dp/B002QXN7X6/ref=sr_1_1?ie=UTF8&amp;amp;qid=1382180929&amp;amp;sr=8-1&amp;amp;keywords=elro+funksteckdose&#34;&gt;ELRO-Funksteckdosen&lt;/a&gt; und &lt;a href=&#34;https://github.com/r10r/rcswitch-pi&#34;&gt;rcswitch-pi&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Über einen IR-Sender steuert der Pi meine Stereoanlage (mit &lt;a href=&#34;http://www.lirc.org/&#34;&gt;LIRC&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/pi-projects/zimmer.png&#34; width=&#34;459&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/pi-projects/steckdose.jpg&#34; width=&#34;512&#34; alt=&#34;&#34;&gt;
+
+&lt;/td&gt;
+&lt;td&gt;
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/pi-projects/Screenshot_2013-10-19-12-16-43.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-projects/Screenshot_2013-10-19-12-16-43_hu24419dde733dd0fa62a74d16b62b89be_565330_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern. Außerdem kann die App &lt;a href=&#34;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&#34;&gt;Tasker&lt;/a&gt; auf meinem Handy auf die API zugreifen. Es gibt z.B. einen Task für “Schreibtischlampe umschalten”. Auf dem Homescreen liegt ein Ordner mit Verknüpfungen für diese Tasks. Der eigentliche Sinn von Tasker ist aber, solche Tasks automatisiert auszuführen. Beispielsweise schaltet Tasker morgens, wenn der Wecker klingelt, auch gleich das Licht und das Radio an.&lt;/li&gt;
+&lt;li&gt;Der Pi verbindet ein LoL-Shield mit dem Internet, um &lt;a href=&#34;https://marian42.de/article/lol-notifications&#34;&gt;Benachrichtigungen&lt;/a&gt; anzuzeigen.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+		<title>Quadrocopter Lichtsystem</title>
+		<link>https://marian42.de/article/copter-lights/</link>
+		<pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
+		<guid>https://marian42.de/article/copter-lights/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Dies ist ein Arduinoprojekt, das vier RGB-LED-Streifen an den vier Armen des Quadrocopters ansteuert. Das Ziel war, bei möglichst geringen Materialkosten möglichst viele Möglichkeiten bei der Beleuchtung des Quadrocopters zu haben.&lt;/p&gt;
+
+&lt;p&gt;Verwendete Teile:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1m RGB-LED Streifen, jeweils zwei Segmente a 3x RGB pro Arm, mit 12V&lt;/li&gt;
+&lt;li&gt;TLC5940 LED Driver zur Steuerung der LEDs&lt;/li&gt;
+&lt;li&gt;ATmega328p (der Microcontroller des Arduino Uno)&lt;/li&gt;
+&lt;li&gt;Bluetooth-Modul (muss im Flug nicht zwingend angebracht sein)&lt;/li&gt;
+&lt;li&gt;Kabel, zum Testen ein Breadboard&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Der Arduino steuert über zwölf Kanäle jeweils den Rot-, Grün- und Blauanteil der vier LED-Streifen und kann so Farben mischen. Dazu wird der &lt;a href=&#34;https://de.wikipedia.org/wiki/HSV-Farbraum#Umrechnung_HSV_in_RGB&#34;&gt;Farbwert (HSV)&lt;/a&gt; in RGB umgerechnet.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lights/arduino_Schaltplan33.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/arduino_Schaltplan33_hu2eac0c52fd28c06c7069f3896c007823_398551_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Als Eingabe dienen die Fernsteuerung des Quadrocopters, ein Bluetooth-Interface und der Status des Flightcontrollers. Die Fernsteuerung sendet über zwei Kanäle den Wert eines Potenziometers und den zweier Schalter (An/Aus, Modus). Abhängig vom Modus verändert der Drehregler unterschiedliche Paramter (siehe Video). Die gleichen Eingaben können auch über das Bluetooth-Interface gemacht werden. Außerdem können dort Parameter für eigene Animationen festgelegt werden, die dann auf dem ATmega gespeichert werden und im Flug als eigene Modi auftreten. Weiterhin gibt das Lichtsystem ein optisches Signal beim Starten, beim Sperren und Entsperren, bei fehlendem GPS-Signal und bei ausgeschalteter Fernsteuerung. Dazu liest der Arduino die Signale der APM-Pins für die &lt;a href=&#34;http://copter.ardupilot.com/wiki/nav-leds/&#34;&gt;Status-LEDs&lt;/a&gt; (A4 – A6).&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_00071.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_00071_hufa16802c69aee134b13faeaeec7c986a_1928374_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0008.jpg&#34; width=&#34;413&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Nachdem ich das Projekt einige Zeit mit einem Breadboard getestet habe, sind nun alle Komponenten auf ein Stück Lochbrett gelötet, mit Steckverbindungen, sodass ich die Teile auch für andere Projekte verwenden kann. Außerdem habe ich eine Programmierschnittstelle (rechts) für den Arduino angelötet.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lights/q1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/q1_hu906862880a70537b96e9a7829a600a91_127801_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Für das Android-Interface habe ich meine selbstgeschriebene &lt;a href=&#34;https://marian42.de/article/btduino/&#34;&gt;Android-App&lt;/a&gt; verwendet, die es ermöglicht, Benutzeroberflächen für Arduino-Projekte zu erstellen. In der App werden die Farben der vier LED-Ausgänge in Echtzeit angezeigt. Weiterhin können der Modus und der entsprechende Wert verändert werden.&lt;/p&gt;
+
+&lt;p&gt;Mit diesen Parametern können eigene Animationen konfiguriert werden:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Farbwert&lt;/li&gt;
+&lt;li&gt;Offset der Farbwerte zwischen den vier Armen&lt;/li&gt;
+&lt;li&gt;Offset der Farbwerte für die einzelnen Arme&lt;/li&gt;
+&lt;li&gt;Geschwindigkeit, mit der sich der Farbwert verändert (0 -&amp;gt; keine Änderung)&lt;/li&gt;
+&lt;li&gt;Schritt, mit dem sich der Farbwert ändert (0 -&amp;gt; stufenlose Änderung)&lt;/li&gt;
+&lt;li&gt;Sättigung&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lights/q2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/q2_hu77394f32494edfe5b55c019b16ce4eea_179642_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;ul&gt;
+&lt;li&gt;Sättigung für die einzelnen Arme&lt;/li&gt;
+&lt;li&gt;Helligkeit für die einzelnen Arme&lt;/li&gt;
+&lt;li&gt;Gesamthelligkeit Sinus (Helligkeit pulsiert alle x Millisekunden)&lt;/li&gt;
+&lt;li&gt;Offset Helligkeit Sinus zwischen den vier Armen&lt;/li&gt;
+&lt;li&gt;Zeitabstand zwischen Pausen&lt;/li&gt;
+&lt;li&gt;Dauer der Pausen&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In der App kann die aktuelle Konfiguration gespeichert werden.&lt;/p&gt;
+
+&lt;p&gt;Material: &lt;a href=&#34;https://marian42.de/article/copter-lights/copter_leds.txt&#34; target=&#34;_blank&#34;&gt;Arduino-Quellcode&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/&#34; target=&#34;_blank&#34;&gt;Quadcopter Lightpainting Fotos&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>Quadcopter Lightpainting</title>
+		<link>https://marian42.de/article/copter-lightpainting/</link>
+		<pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
+		<guid>https://marian42.de/article/copter-lightpainting/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.
-&lt;/p&gt;</description>
+&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030_hu64c176f12090e957f948890e03cca9d1_603882_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0016.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0016_hu68eed684564a47324e94258c2a9112ab_601780_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0034.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0034_hu0a64b3cefb708984f8d059defc4ff173_636342_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Bei diesen Fotos stimmte die Einstellung noch nicht, sodass sie zu dunkel sind:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0405.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0405_hu9a41eb3cf51097ef3498ffeb5b1f7702_944581_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0403.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0403_hu0dd46a3f1a1e15033768ceec3ce466fe_1055166_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0400.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0400_hue2f6a8339621cbafa74e374ac95cbd15_944074_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0390.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0390_hu17dbf37f00353fce0f8655720ab79a76_906598_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0389.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0389_hub84162cb0713e4ced1414b4c17ca3c22_987105_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0371.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0371_hue51b7d2859a0ad0700ab678c34a71299_683109_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Das letze Foto wurde mit einem kleineren Quadrocopter, einem &lt;a href=&#34;https://www.google.de/search?q=hubsan%20x4&amp;amp;biw=1280&amp;amp;bih=940&amp;amp;sei=VWNwT43TEo7VsgbVl82GAg&amp;amp;tbm=isch&#34;&gt;Hubsan X4&lt;/a&gt; aufgenommen, an den ich eine blaue LED mit Knopfzelle geklebt habe.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Raspberry Pi Wetterstation</title>
-      <link>/article/pi-wetterstation/</link>
-      <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
-      
-      <guid>/article/pi-wetterstation/</guid>
-      <description>&lt;a href=&#34;/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>Raspberry Pi Wetterstation</title>
+		<link>https://marian42.de/article/pi-wetterstation/</link>
+		<pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
+		<guid>https://marian42.de/article/pi-wetterstation/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
 &lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/wiring.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Dazu kommt ein weiterer Helligkeitssensor und ein weiterer &lt;a href=&#34;https://www.adafruit.com/products/374&#34;&gt;Temperatursensor&lt;/a&gt;. Den Temperatursensor verwende ich, da er einen eigenen IC zum Kompensieren von Spannungsschwankungen etc. hat und so zuverlässiger ist als der Heißleiter des ILC-Boards, der über einen Spannungsteiler ausgelesen wird.&lt;/p&gt;
+
+&lt;p&gt;Für den Pi habe ich ein kurzes &lt;a href=&#34;http://pi.marian42.de/wetter/ilc.cpp&#34; target=&#34;_blank&#34;&gt;C++-Programm&lt;/a&gt; geschrieben, dass dank &lt;a href=&#34;http://wiringpi.com/&#34; target=&#34;_blank&#34;&gt;Wiring-Pi&lt;/a&gt; weitgehend den Arduinocode aus dem Vorgängerprojekt enthält. Dabei wird aus 5 Messungen für jeden Sensor der Mittelwert verwendet. Das Programm wird von der Kommandozeile aufgerufen und kann die Daten direkt ausgeben oder auf die SD-Karte speichern. Ein Skript führt das Programm alle 60 Sekunden aus und zeichnet so die Daten auf.&lt;/p&gt;
+
+
+
+
+
+
+&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/screenshot2.png&#34; width=&#34;384&#34; alt=&#34;&#34;&gt;
+
+
+
+&lt;p&gt;Der Pi ist ans Netzwerk angeschlossen und hostet eine Webseite, über die die Daten angezeigt werden können. Die Seite greift dabei auf die letzen gemessenen Daten zurück oder kann auf Wunsch auch eine eigene Messung anfertigen.&lt;/p&gt;
+
+&lt;p&gt;Bei den automatischen Messungen wird außerdem ein Datensatz an Xively gesendet (&lt;a href=&#34;http://marian42.de/?p=67&#34;&gt;siehe auch&lt;/a&gt;), das eine API und eine &lt;a href=&#34;https://xively.com/feeds/200231797&#34;&gt;Visualisierung&lt;/a&gt; der Daten bereitstellt.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/xively.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/xively_hucebc74b746d20651483b92983bebeab6_25353_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Im Vergleich zum &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Vorgängerprojekt&lt;/a&gt; ist die Lösung mit dem Raspberry Pi zuverlässiger, da für die SD-Karte, die Uhrzeit etc. keine spezielle Hardware notwendig ist. Wie bei der Arduinowetterstation ist die Hardware noch nicht für den Betrieb im Freien ausgerüstet, wo die Wetterdaten aussagekräftiger wären.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>BTduino</title>
-      <link>/article/btduino/</link>
-      <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
-      
-      <guid>/article/btduino/</guid>
-      <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
+		<title>BTduino</title>
+		<link>https://marian42.de/article/btduino/</link>
+		<pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
+		<guid>https://marian42.de/article/btduino/</guid>
+		<description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
 
 &lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
 
@@ -398,8 +2918,8 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 
 
-&lt;a href=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;a href=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -407,59 +2927,414 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>BTduino documentation</title>
-      <link>/article/btduino-doc/</link>
-      <pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
-      
-      <guid>/article/btduino-doc/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How to add Bluetooth to your Arduino Project with BTduino</title>
-      <link>/article/btduino-tutorial/</link>
-      <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
-      
-      <guid>/article/btduino-tutorial/</guid>
-      <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino.apk&#34;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino_example.txt&#34;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino.txt&#34;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marian42.de/article/btduino/BTduino_source.zip&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;To use this app, you need an Arduino or any microcontroller with a serial connection that you can program, a bluetooth module (about €10) and the parts for your project.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;The app is designed to be self-explaining. Send values by sending a name, a colon and the value, all in text form. Take a look at the &lt;a href=&#34;https://marian42.de/article/btduino/BTduino_example.txt&#34;&gt;example sketch for Arduino&lt;/a&gt; for a quick start. There is a step-by-step &lt;a href=&#34;http://marian42.de/?p=95&#34;&gt;tutorial&lt;/a&gt; that shows you how to control an LED and a potentiometer via bluetooth. All capabilities of BTduino are explained in the &lt;a href=&#34;http://marian42.de/?p=140&#34;&gt;documentation&lt;/a&gt;. If anything goes wrong, check out the &lt;a href=&#34;http://marian42.de/?p=242&#34;&gt;troubleshooting page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;beta&#34;&gt;Beta&lt;/h2&gt;
+
+&lt;p&gt;I have tested this only with my own setup, so consider this a beta release. If you find a bug or want to request a feature, please &lt;a href=&#34;mailto:mail@marian42.de&#34;&gt;send me an email&lt;/a&gt;. Also, just out of curiosity, please let me know if you used this for a project.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App</title>
-      <link>/article/wetterstation/</link>
-      <pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
-      
-      <guid>/article/wetterstation/</guid>
-      <description>&lt;a href=&#34;/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+		<title>BTduino documentation</title>
+		<link>https://marian42.de/article/btduino-doc/</link>
+		<pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
+		<guid>https://marian42.de/article/btduino-doc/</guid>
+		<description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;name:value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;special-commands&#34;&gt;Special commands&lt;/h2&gt;
+
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;requestsetup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The BTduino app will send this command if you open a new project or if you click Menu &amp;gt; Request setup. At this point the microcontroller program should request all events that it will be using. The &lt;a href=&#34;https://marian42.de/article/btduino-doc/BTduino_example.txt&#34;&gt;example sketch&lt;/a&gt; for Arduino provides a method that is called when requestsetup is received.&lt;/p&gt;
+
+&lt;h3 id=&#34;ping&#34;&gt;Ping&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;ping
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the BTduino app receives this line, it will send exactly the same back to the microcontroller. This can be used to check if there is a working connection.&lt;/p&gt;
+
+&lt;h3 id=&#34;remove-event&#34;&gt;Remove event&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;remove:myevent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the BTduino app receives this line, it will remove the specified event.&lt;/p&gt;
+
+&lt;h3 id=&#34;parse&#34;&gt;Parse&lt;/h3&gt;
+
+&lt;p&gt;In your project in the BTduino app, click Menu &amp;gt; Parse and enter a command. This will have the exact same effect as if the app received this command via Bluetooth.&lt;/p&gt;
+
+&lt;h2 id=&#34;events&#34;&gt;Events&lt;/h2&gt;
+
+&lt;p&gt;BTduino features several event types that can be used in a project:&lt;/p&gt;
+
+&lt;h3 id=&#34;value-receiver&#34;&gt;&lt;strong&gt;Value receiver&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event displays values that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. The event is discovered by the app automatically. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysensor:42
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The app provides a gauge, a plot and datalogging.&lt;/p&gt;
+
+&lt;h3 id=&#34;string-receiver&#34;&gt;&lt;strong&gt;String receiver&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event displays text that is sent from the microcontroller to the Android device. Send the name, a colon and your text as one line. The event is discovered by the app automatically. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;log:ready
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The app provides a datalogging feature.&lt;/p&gt;
+
+&lt;h3 id=&#34;value-sender&#34;&gt;&lt;strong&gt;Value sender&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event provides an interface to send numbers from the Android device to the microcontroller.&lt;/p&gt;
+
+&lt;p&gt;Send a value by typing it in the input field and hitting the send button or by using the slider. Touching the slider will automatically send a value to the microcontroller. The data will look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myvaluesender:42
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can change the value of the input field and the position of the slider via Bluetooth. This is done again by sending the name and the value as in the example above.&lt;/p&gt;
+
+&lt;p&gt;The event can be added manually in the Android app or by sending this command via bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requestint:myvaluesender
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will as well make the Android app send the current value.&lt;/p&gt;
+
+&lt;p&gt;Set the min and max value of the slider by entering a value in the input field and then clicking the min or max value or by sending one of these commands via Bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;setminmyvaluesender:0
+setmaxmyvaluesender:100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;string-sender&#34;&gt;&lt;strong&gt;String sender&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event provides an interface to send text from the Android device to the microcontroller. Send text by typing it in the input field and hitting the send button. The data will look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mystringsender:Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The event can be added manually in the Android app or by sending this command via bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requeststring:mystringsender
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will as well make the Android app send the current value.&lt;/p&gt;
+
+&lt;h3 id=&#34;boolean-sender&#34;&gt;&lt;strong&gt;Boolean sender&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event provides a switch that will send a boolean value to the microcontroller. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mybooleansender:true;
+mybooleansender:false;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can change the state of the switch via Bluetooth. This is done again by sending the name and the value as in the example above. The app will recognize “true”/”false”, “1”/”0″ and “HIGH”/”LOW”. The event can be added manually in the Android app or by sending this command via bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requestboolean:mybooleansender
+requestbool:mybooleansender
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will as well make the Android app send the current value.&lt;/p&gt;
+
+&lt;h3 id=&#34;event-sender&#34;&gt;&lt;strong&gt;Event sender&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event provides a button that will send a specific text to the microcontroller when clicked. It will send the word “event” and the name of the event:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;event:myevent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add it manually from the app or by sending this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;registerevent:myevent
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;color-receiver&#34;&gt;&lt;strong&gt;Color receiver&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event displays colors that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. You can use the HTML format or send the color as an integer value. The event is discovered by the app automatically if you use the HTML color format. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mycolorreceiver:#FF00FF
+mycolorreceiver:16711935
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Both lines represent the same color, because 16711935 equals 0xFF00FF. The color receiver provides a datalogging feature.&lt;/p&gt;
+
+&lt;h3 id=&#34;color-sender&#34;&gt;Color sender&lt;/h3&gt;
+
+&lt;p&gt;This event provides an interface to send colors from the Android device to the microcontroller.&lt;/p&gt;
+
+&lt;p&gt;Click on the color area to choose a color and click the send button to send it. You can select between four color formats: Integer, Hex, HTML and RGB. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mycolorsender:16711935
+mycolorsender:FF00FF
+mycolorsender:#FF00FF
+mycolorsender:255,0,255
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can change the value of the color field via Bluetooth. This is done again by sending the name and the value as in the example above, using the HTML or integer format.&lt;/p&gt;
+
+&lt;p&gt;The event can be added manually in the Android app or by sending this command via bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requestcolor:mycolorsender
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will as well make the Android app send the current color.&lt;/p&gt;
+
+&lt;h3 id=&#34;joystick&#34;&gt;&lt;strong&gt;Joystick&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This event provides a virtual joystick on the Android device that will continuously send the position via bluetooth. It will send X and Y coordinates between -1.0 and 1.0 like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myjostick:0|0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://marian42.de/article/btduino-doc/BTduino_example.txt&#34;&gt;example sketch for Arduino&lt;/a&gt; shows how to use the data. The event can be added manually in the Android app or by sending this command via bluetooth:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requestjoystick:myjoystick
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can lock or invert an axis in the BTduino app. The app allow you use the accelerometer to control the joystick. Click the record button to record a path. It can be performed using the play button. After you have recorded a path, long-click the joystick and select “Save path” to add a path event. This allows you to record multiple paths.&lt;/p&gt;
+
+&lt;p&gt;The logfiles for value receiver, string receiver and color receiver are stored on the SD card int he folder &lt;code&gt;/Bluetooth/&amp;lt;project name&amp;gt;/&amp;lt;eventname&amp;gt;.txt&lt;/code&gt;. The textfile contains one dataset per line, consisting of the timestamp in milliseconds and the value.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>How to add Bluetooth to your Arduino Project with BTduino</title>
+		<link>https://marian42.de/article/btduino-tutorial/</link>
+		<pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
+		<guid>https://marian42.de/article/btduino-tutorial/</guid>
+		<description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is what you need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;an Android device running Android 4.0 or higher that supports bluetooth (most phones do)&lt;/li&gt;
+&lt;li&gt;an Arduino or any microcontroller that has a Serial connection&lt;/li&gt;
+&lt;li&gt;a bluetooth module for the Arduino (get one for about €10, for example from &lt;a href=&#34;http://www.ebay.com/sch/i.html?_sop=15&amp;amp;_sacat=0&amp;amp;_from=R40&amp;amp;_nkw=arduino+bluetooth+board&amp;amp;LH_BIN=1&#34;&gt;ebay&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;the parts for your project&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Connect the bluetooth module to your Arduino like this:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/btduino-tutorial/btsetup3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/btsetup3_hub086522d4565c7744cbc3187ca044a1c_219848_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
 
-&lt;p&gt;Die Wetterdaten für die Wetterstation werden von einem Board gesammelt, das ich für einen Schülerwettbewerb (&lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;ILC&lt;/a&gt;) bekommen und zusammengesetzt habe. Auf dem Board rechnet ein &lt;a href=&#34;http://www.atmel.com/Images/Atmel-8386-8-and-16-bit-AVR-Microcontroller-ATxmega64A3U-128A3U-192A3U-256A3U_datasheet.pdf&#34; target=&#34;_blank&#34;&gt;ATxmega128A3U&lt;/a&gt;. Temperatur, Luftfeuchte, Luftdruck, Helligkeit, Regenmenge und Windgeschwindigkeit werden bestimmt. Die letzen beiden Werte werden durch &lt;a href=&#34;http://de.wikipedia.org/wiki/Regenmesser#Digitale_Niederschlagsmesser&#34; target=&#34;_blank&#34;&gt;mechanische Aufbauten&lt;/a&gt; ermittelt, an denen ein Magnet einen Hallsensor passiert.&lt;/p&gt;</description>
+&lt;p&gt;If your bluetooth module runs at 3.3V, you need an additional voltage divider. In this case, use three resistors with an equal value between 1kΩ and 10kΩ as shown above.&lt;/p&gt;
+
+&lt;p&gt;Then, set up your Arduino project. For this tutorial I will be using a potentiometer and an LED. Here is the setup:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/btduino-tutorial/schaltung_Steckplatine.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/schaltung_Steckplatine_hude9311adc2572445c7f9f798c54b0ddb_1722399_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Now install the BTduino app on your device:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://marian42.de/article/btduino-tutorial/BTduino.apk&#34;&gt;Download it here&lt;/a&gt; or scan the QR code on the right.&lt;/p&gt;
+
+&lt;p&gt;The main concept of the BTduino app is to send data through the serial interface in text form. Every set of data contains the name of the event, a colon and the value:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;name:value
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To send the value of the potentiometer to the BTduino app, you just have to make the Arduino send something like “A0:4”. Here is the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Serial.begin(9600);
+
+void loop() {
+    Serial.println(&amp;quot;A0:&amp;quot; + String(analogRead(0)));
+    delay(200);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it’s time to start the app and establish a bluetooth connection. To do so, click on the connect button on the bottom right of the screen. Enable bluetooth if prompted. Your bluetooth module should show up in the list. If you are asked for a pin, try 0000 or 1234.&lt;/p&gt;
+
+&lt;p&gt;You can show the raw text data that is sent by the Arduino using the bluetooth console. However, the point of this app is to interpret the received data. Click “Exchange values” and a screen will show up that displays the events of your bluetooth project. The event that was named “A0” by the above Arduino code will show up automatically. You can display a gauge or a plot of the data by clicking the icons next to the value display. Play around with the potentiometer to see how the value changes.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/btduino-tutorial/Screenshot_2013-07-25-00-29-39.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/Screenshot_2013-07-25-00-29-39_hu7a226aa3f5e06d5a881f36750cb5d1f0_61271_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;To add an event for the LED, click the plus icon in the BTduino app. Enter “led” for the name and select the “Send boolean” event. Every time you click the button on the new event, the app will send either “led:false” or “led:true” to the Arduino&lt;/p&gt;
+
+&lt;p&gt;Receiving data at the Arduino is a bit more complicated than sending because you will have to read and interpret the serial data. So a good point to start is &lt;a href=&#34;https://marian42.de/article/btduino-tutorial/BTduino_example.txt&#34;&gt;this example sketch&lt;/a&gt; that provides a base for BTduino projects.&lt;/p&gt;
+
+&lt;p&gt;Open a new Arduino sketch and paste the content of the &lt;a href=&#34;https://marian42.de/article/btduino-tutorial/BTduino_example.txt&#34;&gt;example sketch&lt;/a&gt;. To use the LED, declare a variable for the pin and set the pin mode in the setup function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int ledpin = 13;
+...
+pinMode(ledpin,OUTPUT);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Every time a full line of text is received, the function &lt;em&gt;receiveline&lt;/em&gt; will be called. After the comment &lt;em&gt;Check events&lt;/em&gt; you have acces to the string variables &lt;em&gt;name&lt;/em&gt; and &lt;em&gt;value&lt;/em&gt;. To switch the LED, add this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (name == &amp;quot;led&amp;quot;) {
+    if (value == &amp;quot;true&amp;quot;) digitalWrite(ledpin,HIGH);
+    if (value == &amp;quot;false&amp;quot;) digitalWrite(ledpin,LOW);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is one of the examples provided by the sketch so you just need to remove the comment. Upload the sketch and you should be able to turn the LED on and of from your Android device!&lt;/p&gt;
+
+&lt;p&gt;That’s it for the tutorial. You can take a closer look at the example sketch to see what else this app is capable of. Also, every event that you can add to your project in BTduino provides an example if you long-click it and select “About”. For more information, take a look at the &lt;a href=&#34;http://marian42.de/?p=140&#34;&gt;events documentation&lt;/a&gt;. There is a &lt;a href=&#34;http://marian42.de/?p=242&#34;&gt;troubleshooting page&lt;/a&gt; for frequent problems. Please &lt;a href=&#34;mailto:mail@marian42.de&#34;&gt;send me an email&lt;/a&gt; if you have any problems, if you want to report a bug or request a feature or if you built a project with BTduino.&lt;/p&gt;
+
+&lt;p&gt;Also, you might want to take a look at this &lt;a href=&#34;http://ecno92.blogspot.de/2012/11/jy-mcu-linvor-at-commands-change-name.html&#34; target=&#34;_blank&#34;&gt;guide&lt;/a&gt; to change some of the bluetooth module’s settings. I changed the baud rate of my module to 57600. At the standard rate of 9600 it takes about 1ms to send one character which can slow down a time-critical project.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Impressum</title>
-      <link>/page/imprint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/page/imprint/</guid>
-      <description>Angaben gemäß § 5 TMG:
-Marian Kleineberg
-Kohlentreiberweg 26
-45549 Sprockhövel
-mail@marian42.de</description>
+		<title>Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App</title>
+		<link>https://marian42.de/article/wetterstation/</link>
+		<pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
+		<guid>https://marian42.de/article/wetterstation/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Die Wetterdaten für die Wetterstation werden von einem Board gesammelt, das ich für einen Schülerwettbewerb (&lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;ILC&lt;/a&gt;) bekommen und zusammengesetzt habe. Auf dem Board rechnet ein &lt;a href=&#34;http://www.atmel.com/Images/Atmel-8386-8-and-16-bit-AVR-Microcontroller-ATxmega64A3U-128A3U-192A3U-256A3U_datasheet.pdf&#34; target=&#34;_blank&#34;&gt;ATxmega128A3U&lt;/a&gt;. Temperatur, Luftfeuchte, Luftdruck, Helligkeit, Regenmenge und Windgeschwindigkeit werden bestimmt. Die letzen beiden Werte werden durch &lt;a href=&#34;http://de.wikipedia.org/wiki/Regenmesser#Digitale_Niederschlagsmesser&#34; target=&#34;_blank&#34;&gt;mechanische Aufbauten&lt;/a&gt; ermittelt, an denen ein Magnet einen Hallsensor passiert.&lt;/p&gt;
+
+&lt;p&gt;Auf dem Breadboard befindet sich ein &lt;a href=&#34;http://www.atmel.com/Images/doc8161.pdf&#34; target=&#34;_blank&#34;&gt;ATmega328p&lt;/a&gt;, auf dem Arduino-Code läuft. Das ILC-Board sammelt und sendet die sechs Wetterdaten auf Anfrage an den Arduino. Aus Zeitgründen habe ich dafür ein eigenes Protokoll implementiert, diese Aufgabe könnte eleganter und besser mit I²C o.ä. umgesetzt werden.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/Screenshot_2013-05-28-20-11-15.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/Screenshot_2013-05-28-20-11-15_hu2233e746e718bf5c45aed4dc71af19ed_117322_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Der Arduino ermittelt über eine angeschlossene &lt;a href=&#34;http://de.wikipedia.org/wiki/DCF77&#34;&gt;DCF77&lt;/a&gt;-Antenne die aktuelle Uhrzeit, wie in einer Funkuhr. Mithilfe eines SD-Moduls wird auf einer SD-Karte eine Textdatei angelegt, in der die Wetterdaten gespeichert werden. Die Daten werden alle vier Sekunden aufgenommen und gespeichert, mit einer Zeile pro Datensatz. Dabei verwende ich das CSV-Format, sodass die Daten später einfach ausgewertet werden.&lt;/p&gt;
+
+&lt;p&gt;An die serielle Schnittstelle des Arduinos ist ein Bluetooth-Modul angeschlossen. Eine selbst entwickelte &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;Android-App&lt;/a&gt; empfängt die Wetterdaten und zeigt sie an. Dazu werden die Daten in Textform über die serielle Verbindung gesendet, im Format Name-Doppelpunkt-Wert, also z.B. “Temperatur:25.41”. Neben den Wetterdaten werden in der App auch die Uhrzeit des DCF-Moduls und Informationen zur Stromversorgung angezeigt.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/erkl%C3%A4rung.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/erkl%C3%A4rung_hu01afd7596af374f295ea80cb12fb1c7d_737220_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Als Stromversorgung dient entweder ein Akku von einem Modellauto (7,2V, 3Ah), der auf dem Board auf 5V reguliert wird, oder ein Handyladegerät, das über den Micro-USB-Port an das ILC-Board angeschlossen wird. Die Widerstände auf dem Breadboard dienen dazu, zwischen dem Arduino mit 5V und dem ILC-Board (bzw. dem DCF77-Modul) mit 3,3V zu kommunizieren.&lt;/p&gt;
+
+&lt;p&gt;Der eine Knopf setzt den Arduino zurück und der andere schaltet das Bluetooth-Modul an oder aus. Die rote LED leuchtet auf, wenn ein Fehler auftritt, wie zum Beispiel ein fehlerhaftes Zeitsignal oder eine fehlende SD-Karte. Die rechte grüne LED leuchtet immer und die linke visualisiert das DCF-Signal, sodass man erkennen kann, ob die Antenne richtig ausgerichtet ist.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://marian42.de/article/wetterstation/wetterstation.png&#34; rel=&#34;lightbox[8]&#34; title=&#34;Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/wetterstation_o.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_o_hu91695d419e6dcc72c31d24acc44c7c26_316718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/wetterstation.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_huf514aa3aa432b302687eb64190d36974_448406_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/schaltplan.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/schaltplan_hu5dcb1ed7ddd03f83ffedb4c52c79eab9_274582_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Der Hauptnachteil von meinem Projekt ist, dass es nicht wetterfest ist und somit nicht ohne zusätzliches Gehäuse draußen aufgestellt werden kann. Die Wetterstation bringt den ATmega an seine Grenzen was &lt;a href=&#34;http://www.atmel.com/Images/doc8161.pdf&#34; target=&#34;_blank&#34;&gt;Programm- und Arbeitsspeicher&lt;/a&gt; betrifft. Für weitere Features wie eine aktive Steuerung über Bluetooth wäre also z.B. ein &lt;a href=&#34;http://arduino.cc/de/Main/ArduinoBoardMega&#34; target=&#34;_blank&#34;&gt;Arduino Mega&lt;/a&gt; notwendig. Ein weiteres Problem ist die Zuverlässigkeit des DCF77-Moduls, das drinnen oft kein Signal empfängt. In Zukunft plane ich, ein ähnliches Projekt mit einem &lt;a href=&#34;http://de.wikipedia.org/wiki/Raspberry_Pi&#34; target=&#34;_blank&#34;&gt;Raspberry Pi&lt;/a&gt; umzusetzen, der dann alle Aufgaben außer dem Sammeln der Sensordaten übernimmt. Die Daten könnten so über das Internet bereitgestellt werden und die Beschränkung durch die Bluetooth-Reichweite entfällt.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/wetterstation/gui.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/gui_hu549bc1f7059fc882cc9848cd32f7d3f0_131118_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Ich habe mit dem Projekt bei der &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge 2013&lt;/a&gt; teilgenommen, bin aber nicht in die Endauswahl gekommen. Für diesen Wettbewerb habe ich auch eine GUI entwickelt, mit der die Daten über eine USB-Verbindung am Computer angezeigt werdenkönnen.&lt;/p&gt;
+
+&lt;p&gt;Downloads: &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation.ino&#34;&gt;Arduino-Sketch&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation_tiny.ino&#34;&gt;Arduino-Sketch für den ATtiny&lt;/a&gt;, &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;Android-App&lt;/a&gt; (mindestens Android 4.0), &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation.fzz&#34;&gt;Fritzing-Schaltplan&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+		<title>Impressum</title>
+		<link>https://marian42.de/page/imprint/</link>
+		<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/page/imprint/</guid>
+		<description>&lt;p&gt;Angaben gemäß § 5 TMG:&lt;/p&gt;
+
+&lt;p&gt;Marian Kleineberg&lt;br /&gt;
+Kohlentreiberweg 26&lt;br /&gt;
+45549 Sprockhövel&lt;br /&gt;
+mail@marian42.de&lt;/p&gt;
+</description>
     </item>
     
   </channel>

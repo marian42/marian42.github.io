@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Modeling on Marian&#39;s Blog</title>
-    <link>/tags/modeling/</link>
+    <link>https://marian42.de/tags/modeling/</link>
     <description>Recent content in Modeling on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/modeling/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/modeling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Infinite procedurally generated city with the Wave Function Collapse algorithm</title>
-      <link>/article/wfc/</link>
+      <link>https://marian42.de/article/wfc/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/article/wfc/</guid>
-      <description>&lt;a href=&#34;/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/wfc/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

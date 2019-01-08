@@ -2,533 +2,533 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Marian&#39;s Blog</title>
-    <link>/tags/</link>
+    <link>https://marian42.de/tags/</link>
     <description>Recent content in Tags on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 22 Jul 2018 19:32:12 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>3d</title>
-      <link>/tags/3d/</link>
+      <link>https://marian42.de/tags/3d/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>/tags/3d/</guid>
+      <guid>https://marian42.de/tags/3d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>3dprinting</title>
-      <link>/tags/3dprinting/</link>
+      <link>https://marian42.de/tags/3dprinting/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>/tags/3dprinting/</guid>
+      <guid>https://marian42.de/tags/3dprinting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>/tags/android/</link>
+      <link>https://marian42.de/tags/android/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>/tags/android/</guid>
+      <guid>https://marian42.de/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>App</title>
-      <link>/tags/app/</link>
+      <link>https://marian42.de/tags/app/</link>
       <pubDate>Sat, 30 Nov 2013 17:50:57 +0000</pubDate>
       
-      <guid>/tags/app/</guid>
+      <guid>https://marian42.de/tags/app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Arduino</title>
-      <link>/tags/arduino/</link>
+      <link>https://marian42.de/tags/arduino/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>/tags/arduino/</guid>
+      <guid>https://marian42.de/tags/arduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Art</title>
-      <link>/tags/art/</link>
+      <link>https://marian42.de/tags/art/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>/tags/art/</guid>
+      <guid>https://marian42.de/tags/art/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bluetooth</title>
-      <link>/tags/bluetooth/</link>
+      <link>https://marian42.de/tags/bluetooth/</link>
       <pubDate>Sat, 27 Jul 2013 15:00:42 +0000</pubDate>
       
-      <guid>/tags/bluetooth/</guid>
+      <guid>https://marian42.de/tags/bluetooth/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bootstrap</title>
-      <link>/tags/bootstrap/</link>
+      <link>https://marian42.de/tags/bootstrap/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>/tags/bootstrap/</guid>
+      <guid>https://marian42.de/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Btduino</title>
-      <link>/tags/btduino/</link>
+      <link>https://marian42.de/tags/btduino/</link>
       <pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
       
-      <guid>/tags/btduino/</guid>
+      <guid>https://marian42.de/tags/btduino/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>/tags/c&#43;&#43;/</link>
+      <link>https://marian42.de/tags/c&#43;&#43;/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/c&#43;&#43;/</guid>
+      <guid>https://marian42.de/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computerscience</title>
-      <link>/tags/computerscience/</link>
+      <link>https://marian42.de/tags/computerscience/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>/tags/computerscience/</guid>
+      <guid>https://marian42.de/tags/computerscience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computervision</title>
-      <link>/tags/computervision/</link>
+      <link>https://marian42.de/tags/computervision/</link>
       <pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
       
-      <guid>/tags/computervision/</guid>
+      <guid>https://marian42.de/tags/computervision/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Csharp</title>
-      <link>/tags/csharp/</link>
+      <link>https://marian42.de/tags/csharp/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>/tags/csharp/</guid>
+      <guid>https://marian42.de/tags/csharp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>De</title>
-      <link>/tags/de/</link>
+      <link>https://marian42.de/tags/de/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>/tags/de/</guid>
+      <guid>https://marian42.de/tags/de/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electronics</title>
-      <link>/tags/electronics/</link>
+      <link>https://marian42.de/tags/electronics/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>/tags/electronics/</guid>
+      <guid>https://marian42.de/tags/electronics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fische</title>
-      <link>/tags/fische/</link>
+      <link>https://marian42.de/tags/fische/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>/tags/fische/</guid>
+      <guid>https://marian42.de/tags/fische/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fishtank</title>
-      <link>/tags/fishtank/</link>
+      <link>https://marian42.de/tags/fishtank/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>/tags/fishtank/</guid>
+      <guid>https://marian42.de/tags/fishtank/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flask</title>
-      <link>/tags/flask/</link>
+      <link>https://marian42.de/tags/flask/</link>
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
-      <guid>/tags/flask/</guid>
+      <guid>https://marian42.de/tags/flask/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Foto</title>
-      <link>/tags/foto/</link>
+      <link>https://marian42.de/tags/foto/</link>
       <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
       
-      <guid>/tags/foto/</guid>
+      <guid>https://marian42.de/tags/foto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gamedev</title>
-      <link>/tags/gamedev/</link>
+      <link>https://marian42.de/tags/gamedev/</link>
       <pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
       
-      <guid>/tags/gamedev/</guid>
+      <guid>https://marian42.de/tags/gamedev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gaming</title>
-      <link>/tags/gaming/</link>
+      <link>https://marian42.de/tags/gaming/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>/tags/gaming/</guid>
+      <guid>https://marian42.de/tags/gaming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Glsl</title>
-      <link>/tags/glsl/</link>
+      <link>https://marian42.de/tags/glsl/</link>
       <pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
       
-      <guid>/tags/glsl/</guid>
+      <guid>https://marian42.de/tags/glsl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gopro</title>
-      <link>/tags/gopro/</link>
+      <link>https://marian42.de/tags/gopro/</link>
       <pubDate>Sat, 30 Nov 2013 18:02:19 +0000</pubDate>
       
-      <guid>/tags/gopro/</guid>
+      <guid>https://marian42.de/tags/gopro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graphics</title>
-      <link>/tags/graphics/</link>
+      <link>https://marian42.de/tags/graphics/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/graphics/</guid>
+      <guid>https://marian42.de/tags/graphics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hardware</title>
-      <link>/tags/hardware/</link>
+      <link>https://marian42.de/tags/hardware/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>/tags/hardware/</guid>
+      <guid>https://marian42.de/tags/hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Home Automation</title>
-      <link>/tags/home-automation/</link>
+      <link>https://marian42.de/tags/home-automation/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>/tags/home-automation/</guid>
+      <guid>https://marian42.de/tags/home-automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Howto</title>
-      <link>/tags/howto/</link>
+      <link>https://marian42.de/tags/howto/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>/tags/howto/</guid>
+      <guid>https://marian42.de/tags/howto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Http</title>
-      <link>/tags/http/</link>
+      <link>https://marian42.de/tags/http/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>/tags/http/</guid>
+      <guid>https://marian42.de/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internet of Things</title>
-      <link>/tags/internet-of-things/</link>
+      <link>https://marian42.de/tags/internet-of-things/</link>
       <pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
       
-      <guid>/tags/internet-of-things/</guid>
+      <guid>https://marian42.de/tags/internet-of-things/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ir</title>
-      <link>/tags/ir/</link>
+      <link>https://marian42.de/tags/ir/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>/tags/ir/</guid>
+      <guid>https://marian42.de/tags/ir/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>/tags/java/</link>
+      <link>https://marian42.de/tags/java/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>/tags/java/</guid>
+      <guid>https://marian42.de/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Js</title>
-      <link>/tags/js/</link>
+      <link>https://marian42.de/tags/js/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/js/</guid>
+      <guid>https://marian42.de/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Led</title>
-      <link>/tags/led/</link>
+      <link>https://marian42.de/tags/led/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/led/</guid>
+      <guid>https://marian42.de/tags/led/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ledmatrix</title>
-      <link>/tags/ledmatrix/</link>
+      <link>https://marian42.de/tags/ledmatrix/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/ledmatrix/</guid>
+      <guid>https://marian42.de/tags/ledmatrix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Leds</title>
-      <link>/tags/leds/</link>
+      <link>https://marian42.de/tags/leds/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/leds/</guid>
+      <guid>https://marian42.de/tags/leds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lego</title>
-      <link>/tags/lego/</link>
+      <link>https://marian42.de/tags/lego/</link>
       <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
       
-      <guid>/tags/lego/</guid>
+      <guid>https://marian42.de/tags/lego/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lightpainting</title>
-      <link>/tags/lightpainting/</link>
+      <link>https://marian42.de/tags/lightpainting/</link>
       <pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
       
-      <guid>/tags/lightpainting/</guid>
+      <guid>https://marian42.de/tags/lightpainting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matrix</title>
-      <link>/tags/matrix/</link>
+      <link>https://marian42.de/tags/matrix/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/matrix/</guid>
+      <guid>https://marian42.de/tags/matrix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modeling</title>
-      <link>/tags/modeling/</link>
+      <link>https://marian42.de/tags/modeling/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/modeling/</guid>
+      <guid>https://marian42.de/tags/modeling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modelling</title>
-      <link>/tags/modelling/</link>
+      <link>https://marian42.de/tags/modelling/</link>
       <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
       
-      <guid>/tags/modelling/</guid>
+      <guid>https://marian42.de/tags/modelling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Opengl</title>
-      <link>/tags/opengl/</link>
+      <link>https://marian42.de/tags/opengl/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>
       
-      <guid>/tags/opengl/</guid>
+      <guid>https://marian42.de/tags/opengl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Php</title>
-      <link>/tags/php/</link>
+      <link>https://marian42.de/tags/php/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>/tags/php/</guid>
+      <guid>https://marian42.de/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pixelart</title>
-      <link>/tags/pixelart/</link>
+      <link>https://marian42.de/tags/pixelart/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>/tags/pixelart/</guid>
+      <guid>https://marian42.de/tags/pixelart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pointcloud</title>
-      <link>/tags/pointcloud/</link>
+      <link>https://marian42.de/tags/pointcloud/</link>
       <pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
       
-      <guid>/tags/pointcloud/</guid>
+      <guid>https://marian42.de/tags/pointcloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Portal</title>
-      <link>/tags/portal/</link>
+      <link>https://marian42.de/tags/portal/</link>
       <pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
       
-      <guid>/tags/portal/</guid>
+      <guid>https://marian42.de/tags/portal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Procgen</title>
-      <link>/tags/procgen/</link>
+      <link>https://marian42.de/tags/procgen/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/procgen/</guid>
+      <guid>https://marian42.de/tags/procgen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>/tags/python/</link>
+      <link>https://marian42.de/tags/python/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>https://marian42.de/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quadcopter</title>
-      <link>/tags/quadcopter/</link>
+      <link>https://marian42.de/tags/quadcopter/</link>
       <pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
       
-      <guid>/tags/quadcopter/</guid>
+      <guid>https://marian42.de/tags/quadcopter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberry Pi</title>
-      <link>/tags/raspberry-pi/</link>
+      <link>https://marian42.de/tags/raspberry-pi/</link>
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
-      <guid>/tags/raspberry-pi/</guid>
+      <guid>https://marian42.de/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberrypi</title>
-      <link>/tags/raspberrypi/</link>
+      <link>https://marian42.de/tags/raspberrypi/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/raspberrypi/</guid>
+      <guid>https://marian42.de/tags/raspberrypi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raytracing</title>
-      <link>/tags/raytracing/</link>
+      <link>https://marian42.de/tags/raytracing/</link>
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
-      <guid>/tags/raytracing/</guid>
+      <guid>https://marian42.de/tags/raytracing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rf</title>
-      <link>/tags/rf/</link>
+      <link>https://marian42.de/tags/rf/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>/tags/rf/</guid>
+      <guid>https://marian42.de/tags/rf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Samba</title>
-      <link>/tags/samba/</link>
+      <link>https://marian42.de/tags/samba/</link>
       <pubDate>Sat, 19 Oct 2013 11:29:54 +0000</pubDate>
       
-      <guid>/tags/samba/</guid>
+      <guid>https://marian42.de/tags/samba/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tasker</title>
-      <link>/tags/tasker/</link>
+      <link>https://marian42.de/tags/tasker/</link>
       <pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
       
-      <guid>/tags/tasker/</guid>
+      <guid>https://marian42.de/tags/tasker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>/tags/tutorial/</link>
+      <link>https://marian42.de/tags/tutorial/</link>
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
-      <guid>/tags/tutorial/</guid>
+      <guid>https://marian42.de/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>/tags/unity/</link>
+      <link>https://marian42.de/tags/unity/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/unity/</guid>
+      <guid>https://marian42.de/tags/unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webdev</title>
-      <link>/tags/webdev/</link>
+      <link>https://marian42.de/tags/webdev/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/tags/webdev/</guid>
+      <guid>https://marian42.de/tags/webdev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wetter</title>
-      <link>/tags/wetter/</link>
+      <link>https://marian42.de/tags/wetter/</link>
       <pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
       
-      <guid>/tags/wetter/</guid>
+      <guid>https://marian42.de/tags/wetter/</guid>
       <description></description>
     </item>
     

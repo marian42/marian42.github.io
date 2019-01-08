@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pixelart on Marian&#39;s Blog</title>
-    <link>/tags/pixelart/</link>
+    <link>https://marian42.de/tags/pixelart/</link>
     <description>Recent content in Pixelart on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 12 Sep 2015 14:44:48 +0000</lastBuildDate>
     
-	<atom:link href="/tags/pixelart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/pixelart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>16×16 LED Matrix</title>
-      <link>/article/ledmatrix/</link>
+      <link>https://marian42.de/article/ledmatrix/</link>
       <pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
       
-      <guid>/article/ledmatrix/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/ledmatrix/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -27,12 +27,12 @@
     
     <item>
       <title>Procedural pixelart generator</title>
-      <link>/article/proceduralart/</link>
+      <link>https://marian42.de/article/proceduralart/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
       
-      <guid>/article/proceduralart/</guid>
-      <description>&lt;a href=&#34;/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/proceduralart/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 

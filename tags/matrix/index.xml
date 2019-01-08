@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matrix on Marian&#39;s Blog</title>
-    <link>/tags/matrix/</link>
+    <link>https://marian42.de/tags/matrix/</link>
     <description>Recent content in Matrix on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 13 May 2017 21:49:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/matrix/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://marian42.de/tags/matrix/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED Matrix Software</title>
-      <link>/article/ledmatrix-software/</link>
+      <link>https://marian42.de/article/ledmatrix-software/</link>
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
-      <guid>/article/ledmatrix-software/</guid>
-      <description>&lt;a href=&#34;/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+      <guid>https://marian42.de/article/ledmatrix-software/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
