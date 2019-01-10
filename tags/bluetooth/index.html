@@ -203,91 +203,9 @@
 
 <p>Die Wetterdaten für die Wetterstation werden von einem Board gesammelt, das ich für einen Schülerwettbewerb (<a href="http://www.intel-leibniz-challenge.de/">ILC</a>) bekommen und zusammengesetzt habe. Auf dem Board rechnet ein <a href="http://www.atmel.com/Images/Atmel-8386-8-and-16-bit-AVR-Microcontroller-ATxmega64A3U-128A3U-192A3U-256A3U_datasheet.pdf" target="_blank">ATxmega128A3U</a>. Temperatur, Luftfeuchte, Luftdruck, Helligkeit, Regenmenge und Windgeschwindigkeit werden bestimmt. Die letzen beiden Werte werden durch <a href="http://de.wikipedia.org/wiki/Regenmesser#Digitale_Niederschlagsmesser" target="_blank">mechanische Aufbauten</a> ermittelt, an denen ein Magnet einen Hallsensor passiert.</p>
 
-<p>Auf dem Breadboard befindet sich ein <a href="http://www.atmel.com/Images/doc8161.pdf" target="_blank">ATmega328p</a>, auf dem Arduino-Code läuft. Das ILC-Board sammelt und sendet die sechs Wetterdaten auf Anfrage an den Arduino. Aus Zeitgründen habe ich dafür ein eigenes Protokoll implementiert, diese Aufgabe könnte eleganter und besser mit I²C o.ä. umgesetzt werden.</p>
-
-
-
-
-
-
-<a href="/article/wetterstation/Screenshot_2013-05-28-20-11-15.png" target="_blank" title="">
-	<img src="/article/wetterstation/Screenshot_2013-05-28-20-11-15_hu2233e746e718bf5c45aed4dc71af19ed_117322_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-<p>Der Arduino ermittelt über eine angeschlossene <a href="http://de.wikipedia.org/wiki/DCF77">DCF77</a>-Antenne die aktuelle Uhrzeit, wie in einer Funkuhr. Mithilfe eines SD-Moduls wird auf einer SD-Karte eine Textdatei angelegt, in der die Wetterdaten gespeichert werden. Die Daten werden alle vier Sekunden aufgenommen und gespeichert, mit einer Zeile pro Datensatz. Dabei verwende ich das CSV-Format, sodass die Daten später einfach ausgewertet werden.</p>
-
-<p>An die serielle Schnittstelle des Arduinos ist ein Bluetooth-Modul angeschlossen. Eine selbst entwickelte <a href="http://marian42.de/?p=179">Android-App</a> empfängt die Wetterdaten und zeigt sie an. Dazu werden die Daten in Textform über die serielle Verbindung gesendet, im Format Name-Doppelpunkt-Wert, also z.B. “Temperatur:25.41”. Neben den Wetterdaten werden in der App auch die Uhrzeit des DCF-Moduls und Informationen zur Stromversorgung angezeigt.</p>
-
-
-
-
-
-
-<a href="/article/wetterstation/erkl%C3%A4rung.jpg" target="_blank" title="">
-	<img src="/article/wetterstation/erkl%C3%A4rung_hu01afd7596af374f295ea80cb12fb1c7d_737220_636x0_resize_q75_box.jpg" width="636" alt="">
-</a>
-
-
-
-<p>Als Stromversorgung dient entweder ein Akku von einem Modellauto (7,2V, 3Ah), der auf dem Board auf 5V reguliert wird, oder ein Handyladegerät, das über den Micro-USB-Port an das ILC-Board angeschlossen wird. Die Widerstände auf dem Breadboard dienen dazu, zwischen dem Arduino mit 5V und dem ILC-Board (bzw. dem DCF77-Modul) mit 3,3V zu kommunizieren.</p>
-
-<p>Der eine Knopf setzt den Arduino zurück und der andere schaltet das Bluetooth-Modul an oder aus. Die rote LED leuchtet auf, wenn ein Fehler auftritt, wie zum Beispiel ein fehlerhaftes Zeitsignal oder eine fehlende SD-Karte. Die rechte grüne LED leuchtet immer und die linke visualisiert das DCF-Signal, sodass man erkennen kann, ob die Antenne richtig ausgerichtet ist.</p>
-
-<p><a href="/article/wetterstation/wetterstation.png" rel="lightbox[8]" title="Arduino-Wetterstation mit Bluetooth, Datalogging und Android-App"></p>
-
-
-
-
-
-
-<a href="/article/wetterstation/wetterstation_o.png" target="_blank" title="">
-	<img src="/article/wetterstation/wetterstation_o_hu91695d419e6dcc72c31d24acc44c7c26_316718_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-
-
-
-
-
-<a href="/article/wetterstation/wetterstation.png" target="_blank" title="">
-	<img src="/article/wetterstation/wetterstation_huf514aa3aa432b302687eb64190d36974_448406_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-<p></a></p>
-
-
-
-
-
-
-<a href="/article/wetterstation/schaltplan.png" target="_blank" title="">
-	<img src="/article/wetterstation/schaltplan_hu5dcb1ed7ddd03f83ffedb4c52c79eab9_274582_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-<p>Der Hauptnachteil von meinem Projekt ist, dass es nicht wetterfest ist und somit nicht ohne zusätzliches Gehäuse draußen aufgestellt werden kann. Die Wetterstation bringt den ATmega an seine Grenzen was <a href="http://www.atmel.com/Images/doc8161.pdf" target="_blank">Programm- und Arbeitsspeicher</a> betrifft. Für weitere Features wie eine aktive Steuerung über Bluetooth wäre also z.B. ein <a href="http://arduino.cc/de/Main/ArduinoBoardMega" target="_blank">Arduino Mega</a> notwendig. Ein weiteres Problem ist die Zuverlässigkeit des DCF77-Moduls, das drinnen oft kein Signal empfängt. In Zukunft plane ich, ein ähnliches Projekt mit einem <a href="http://de.wikipedia.org/wiki/Raspberry_Pi" target="_blank">Raspberry Pi</a> umzusetzen, der dann alle Aufgaben außer dem Sammeln der Sensordaten übernimmt. Die Daten könnten so über das Internet bereitgestellt werden und die Beschränkung durch die Bluetooth-Reichweite entfällt.</p>
-
-
-
-
-
-
-<a href="/article/wetterstation/gui.png" target="_blank" title="">
-	<img src="/article/wetterstation/gui_hu549bc1f7059fc882cc9848cd32f7d3f0_131118_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-<p>Ich habe mit dem Projekt bei der <a href="http://www.intel-leibniz-challenge.de/">Intel Leibniz Challenge 2013</a> teilgenommen, bin aber nicht in die Endauswahl gekommen. Für diesen Wettbewerb habe ich auch eine GUI entwickelt, mit der die Daten über eine USB-Verbindung am Computer angezeigt werdenkönnen.</p>
-
-<p>Downloads: <a href="/article/wetterstation/Wetterstation.ino">Arduino-Sketch</a>, <a href="/article/wetterstation/Wetterstation_tiny.ino">Arduino-Sketch für den ATtiny</a>, <a href="http://marian42.de/?p=179">Android-App</a> (mindestens Android 4.0), <a href="/article/wetterstation/Wetterstation.fzz">Fritzing-Schaltplan</a>.</p>
+        
+            <a href="/article/wetterstation/" class="more">continue reading</a>
+        
     
 </div>
 
@@ -295,25 +213,6 @@
 <div class="footer">
 
 
-	
-	    
-	        <div class="tags">
-				tagged
-	            <div class="links">
-	                
-	                    <a href="/tags/arduino">arduino</a>
-	                
-	                    <a href="/tags/bluetooth">bluetooth</a>
-	                
-	                    <a href="/tags/c&#43;&#43;">c&#43;&#43;</a>
-	                
-	                    <a href="/tags/de">de</a>
-	                
-	                    <a href="/tags/hardware">hardware</a>
-	                
-	            </div>
-	        </div>
-	    
 	
 </div>
 

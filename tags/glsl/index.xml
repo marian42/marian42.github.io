@@ -33,7 +33,7 @@
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
       <guid>https://marian42.de/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 

@@ -65,7 +65,7 @@ In my case, they are supplied manually.&lt;/p&gt;
 
 &lt;p&gt;Here is a video of the algorithm in action:&lt;/p&gt;
 
-&lt;p&gt;&lt;video autoplay loop src=&#34;wfc.mp4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video autoplay loop muted src=&#34;wfc.mp4&#34;&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;about-blocks-prototypes-and-modules&#34;&gt;About blocks, prototypes and modules&lt;/h1&gt;
 
@@ -1018,7 +1018,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 		<link>https://marian42.de/article/no-mans-starfield/</link>
 		<pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
 		<guid>https://marian42.de/article/no-mans-starfield/</guid>
-		<description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+		<description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
@@ -1485,15 +1485,15 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;p&gt;Beach&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/beach.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/beach.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Drop&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/drop.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/drop.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Fire&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/fire.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/fire.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Diamond Sword&lt;/p&gt;
 
@@ -1536,11 +1536,11 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;p&gt;Pacman&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/pacman.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/pacman.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Space Invader&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/invader.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/invader.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Working clock&lt;/p&gt;
 
@@ -1570,11 +1570,11 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;p&gt;Tetris&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/tetris.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/tetris.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;Snake&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/ledmatrix/snake.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/ledmatrix/snake.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;This project was inspired by Jeremy William’s Game Frame. My code can play all animations that work with the Game Frame. Find my source code, a parts list and build notes on &lt;a href=&#34;https://github.com/marian42/pixelpi&#34;&gt;github&lt;/a&gt;. I also published these pictures to &lt;a href=&#34;https://imgur.com/a/Ql25S&#34;&gt;imgur&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
@@ -1659,17 +1659,17 @@ I know that making an online game like this is an ambitious goal and it will pro
 		<guid>https://marian42.de/article/game-prototypes/</guid>
 		<description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/cells.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/cells.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://marian42.de/article/game-prototypes/games.zip&#34; target=&#34;_blank&#34;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
@@ -1679,7 +1679,7 @@ I know that making an online game like this is an ambitious goal and it will pro
 		<link>https://marian42.de/article/iot-fishfeeder/</link>
 		<pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
 		<guid>https://marian42.de/article/iot-fishfeeder/</guid>
-		<description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+		<description>&lt;video autoplay loop muted src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 
@@ -1865,7 +1865,7 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;p&gt;To make precise movements, I added a light sensor to one cog in the clockwork. I colored part of the cog black and put an LED underneath it. When the black part moves between the LED and the sensor, it senses less light. The microcontroller can use this to count the revolutions, mimicing the functionality of a stepper motor.&lt;/p&gt;
 
-&lt;video loop autoplay src=&#34;https://marian42.de/article/fishfeeder/sensor1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;
+&lt;video loop autoplay muted src=&#34;https://marian42.de/article/fishfeeder/sensor1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;
 
 
 

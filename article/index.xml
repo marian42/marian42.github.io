@@ -124,7 +124,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
       <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
       
       <guid>https://marian42.de/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+      <description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
@@ -203,11 +203,11 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
       <guid>https://marian42.de/article/game-prototypes/</guid>
       <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/tetris1.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 
-&lt;video autoplay loop src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
+&lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -218,7 +218,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
       <guid>https://marian42.de/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+      <description>&lt;video autoplay loop muted src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 

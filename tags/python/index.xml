@@ -46,7 +46,7 @@
       <pubDate>Fri, 03 Apr 2015 18:20:17 +0000</pubDate>
       
       <guid>https://marian42.de/article/iot-fishfeeder/</guid>
-      <description>&lt;video autoplay loop src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
+      <description>&lt;video autoplay loop muted src=&#34;https://marian42.de/article/iot-fishfeeder/feed.ogv&#34; type=&#34;video/ogg&#34; /&gt;&lt;/video&gt;
 
 &lt;p&gt;My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.&lt;/p&gt;
 
