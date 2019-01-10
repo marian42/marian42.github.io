@@ -34,7 +34,7 @@ I added a servo that pushes a bar in the gap that used to empty all passing cont
 
 To make precise movements, I added a light sensor to one cog in the clockwork. I colored part of the cog black and put an LED underneath it. When the black part moves between the LED and the sensor, it senses less light. The microcontroller can use this to count the revolutions, mimicing the functionality of a stepper motor.
 
-<video loop autoplay src="/article/fishfeeder/sensor1.mp4" type="video/mp4"></video>
+<video loop autoplay muted src="/article/fishfeeder/sensor1.mp4" type="video/mp4"></video>
 
 {{< img "DSC_0016_.jpg" "" >}}
 

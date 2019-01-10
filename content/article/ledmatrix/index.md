@@ -91,15 +91,15 @@ Hello!
 
 Beach
 
-<video autoplay loop src="/article/ledmatrix/beach.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/beach.webm" type="video/webm"></video>
 
 Drop
 
-<video autoplay loop src="/article/ledmatrix/drop.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/drop.webm" type="video/webm"></video>
 
 Fire
 
-<video autoplay loop src="/article/ledmatrix/fire.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/fire.webm" type="video/webm"></video>
 
 Diamond Sword
 
@@ -115,11 +115,11 @@ Mario
 
 Pacman
 
-<video autoplay loop src="/article/ledmatrix/pacman.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/pacman.webm" type="video/webm"></video>
 
 Space Invader
 
-<video autoplay loop src="/article/ledmatrix/invader.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/invader.webm" type="video/webm"></video>
 
 Working clock
 
@@ -131,11 +131,11 @@ It’s a Raspberry Pi, so why not use the USB port for a gamepad?
 
 Tetris
 
-<video autoplay loop src="/article/ledmatrix/tetris.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/tetris.webm" type="video/webm"></video>
 
 Snake
 
-<video autoplay loop src="/article/ledmatrix/snake.webm" type="video/webm"></video>
+<video autoplay loop muted src="/article/ledmatrix/snake.webm" type="video/webm"></video>
 
 This project was inspired by Jeremy William’s Game Frame. My code can play all animations that work with the Game Frame. Find my source code, a parts list and build notes on [github][2]. I also published these pictures to [imgur][3].
 

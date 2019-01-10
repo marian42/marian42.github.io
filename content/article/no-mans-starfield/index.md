@@ -9,7 +9,7 @@ tags:
   - raytracing
 
 ---
-<video autoplay loop><source src="/article/no-mans-starfield/starfield.webm" type="video/webm" /></video>
+<video autoplay loop muted><source src="/article/no-mans-starfield/starfield.webm" type="video/webm" /></video>
 
 This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:
 

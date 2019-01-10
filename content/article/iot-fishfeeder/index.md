@@ -11,7 +11,7 @@ tags:
   - webdev
 
 ---
-<video autoplay loop src="/article/iot-fishfeeder/feed.ogv" type="video/ogg" /></video>
+<video autoplay loop muted src="/article/iot-fishfeeder/feed.ogv" type="video/ogg" /></video>
 
 My fishtank is now internet-connected. It is run by a Raspberry Pi that can do three things: Feed the fish, switch the lights and take pictures.
 

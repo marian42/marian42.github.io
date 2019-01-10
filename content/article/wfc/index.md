@@ -26,7 +26,7 @@ I will use the word "slot" for a place in the 3D voxel grid that can contain a b
 The algorithm chooses which modules to select for each slot in the world.
 The array of slots is considerd a wave function in an unobserved state.
 That means that each slot has a set of possible modules that could be put there.
-In the language of quantum mechanics, one could say "The slot is in superposition of all modules". 
+In the language of quantum mechanics, one could say "The slot is in superposition of all modules".
 The world starts in a completely unobserved state where every module is possible in any slot.
 One by one, each slot is collapsed.
 That means, one module from the set of possible modules is selected at random.
@@ -52,7 +52,7 @@ In my case, they are supplied manually.
 
 Here is a video of the algorithm in action:
 
-<video autoplay loop src="wfc.mp4">
+<video autoplay loop muted src="wfc.mp4">
 
 # About blocks, prototypes and modules
 
@@ -167,4 +167,3 @@ I have some ideas about future improvements, but I'm not sure if I'll ever add g
 And if I do, it will probably not be the battle royale game that you are envisioning.
 But if you want to see your favorite game mechanic added to this, just do it yourself!
 The source code is available after all and it's MIT licensed.
-
