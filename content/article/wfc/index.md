@@ -40,7 +40,7 @@ The algorithm always collapses the slot with the lowest [entropy](https://en.wik
 That is the slot which has the least amount of choice (or chaos).
 If all modules have the same probability, the slot with the smallest number of possible modules has the lowest entropy.
 In general, modules have different probabilities to be selected.
-A slot with two possible modules of the same probability has less choice (smaller entropy) than one with two modules where one is very likely and one is very unlikely.
+A slot with two possible modules of the same probability has more choice (greater entropy) than one with two modules where one is very likely and one is very unlikely.
 
 ![](https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966)  
 (Gif by [ExUtumno on Github](https://github.com/mxgmn))
