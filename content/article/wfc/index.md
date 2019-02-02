@@ -116,7 +116,7 @@ Instead, only a small area of the map is generated at once, when the player reac
 Constraints are still propagated outside of this area.
 
 In some cases this approach doesn't work.
-Consider a module set with the straight tunnel pieces from the screenshot above, but no tunnel entrance.
+Consider a module set with the straight tunnel piece from the screenshot above, but no tunnel entrance.
 If the algorithm selects such a tunnel module, this predetermines an infinite tunnel.
 The constraint propagation step would try to allocate an infinite amount of slots.
 I designed the module set to avoid this problem.
