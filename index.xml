@@ -4,10 +4,90 @@
     <title>Marian&#39;s Blog</title>
     <link>https://marian42.de/</link>
     <description>Personal blog about programming, game development and space ships.</description>
-	<lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
+	<lastBuildDate>Sat, 02 Feb 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+		<title>Faster Than Life – Global Game Jam 2019 Project</title>
+		<link>https://marian42.de/article/ggj19/</link>
+		<pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/ggj19/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/ggj19/system1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system1_hub37c77a8bdb645f534a89a4da743e7ec_1929407_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Like in the &lt;a href=&#34;https://marian42.de/article/ggj18&#34;&gt;previous year&lt;/a&gt;, I took part in the Global Game Jam.
+I joined a team of six programmers, unfortunately there was a shortage of artists this year.
+During the 48 hour jam, we made a space game that is inspired by Faster Than Light. &lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ggj19/map.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/map_hu3f52b41c9100f6e5c4fb06bcecd7a132_2014156_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;You travel through a sector of solar systems, with the goal to make your way home.
+In each system, you need to collect jump fuel to jump to the next system.
+You can die by crashing into a planet or by flying too far into deep space.
+The amount of fuel in the spacecraft is also limited, but it regenerates over time.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ggj19/system2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system2_hu7c4a542bb0bee7823a98e503e62a9e30_1929320_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;My contribution was making the planets move on somewhat realistic, elliptical orbits.
+I wanted to achieve the same for the spaceship, but didn&amp;rsquo;t manage to do it in time.
+So now it has semi-realistic physics, but it&amp;rsquo;s influenced by all bodies in the system.
+I hope that I&amp;rsquo;ll do more with realistic orbits in Unity in the future.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ggj19/system3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system3_hu4cd628865f62271c1ee13ed7ab8731aa_1907049_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Our team put quite some effort into making procedurally generated low-poly planets.
+These ended up being quite small in the levels, so we added &amp;ldquo;personal&amp;rdquo; planets to our credit screen:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/ggj19/credits.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/credits_hu3d7dbcc1beb217c4913d91d65dbb8631_2042676_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;&lt;a href=&#34;https://globalgamejam.org/2019/games/faster-life&#34;&gt;You can download the game on the Global Game Jam website&lt;/a&gt; or watch me play through it below.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/TMTNR6_pQw4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
 		<title>Infinite procedurally generated city with the Wave Function Collapse algorithm</title>
@@ -172,7 +252,7 @@ Instead, only a small area of the map is generated at once, when the player reac
 Constraints are still propagated outside of this area.&lt;/p&gt;
 
 &lt;p&gt;In some cases this approach doesn&amp;rsquo;t work.
-Consider a module set with the straight tunnel pieces from the screenshot above, but no tunnel entrance.
+Consider a module set with the straight tunnel piece from the screenshot above, but no tunnel entrance.
 If the algorithm selects such a tunnel module, this predetermines an infinite tunnel.
 The constraint propagation step would try to allocate an infinite amount of slots.
 I designed the module set to avoid this problem.&lt;/p&gt;

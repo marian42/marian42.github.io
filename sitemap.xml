@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marian42.de/article/ggj19/</loc>
+    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marian42.de/article/wfc/</loc>
     <lastmod>2019-01-06T00:00:00+00:00</lastmod>
   </url>
@@ -180,7 +185,7 @@
   
   <url>
     <loc>https://marian42.de/article/</loc>
-    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -276,7 +281,7 @@
   
   <url>
     <loc>https://marian42.de/tags/gamedev/</loc>
-    <lastmod>2018-02-04T13:46:35+00:00</lastmod>
+    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -388,7 +393,7 @@
   
   <url>
     <loc>https://marian42.de/</loc>
-    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -513,7 +518,7 @@
   
   <url>
     <loc>https://marian42.de/tags/unity/</loc>
-    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

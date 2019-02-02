@@ -5,10 +5,27 @@
     <link>https://marian42.de/tags/gamedev/</link>
     <description>Recent content in Gamedev on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Feb 2018 13:46:35 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/gamedev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Faster Than Life – Global Game Jam 2019 Project</title>
+      <link>https://marian42.de/article/ggj19/</link>
+      <pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/ggj19/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/ggj19/system1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system1_hub37c77a8bdb645f534a89a4da743e7ec_1929407_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Like in the &lt;a href=&#34;https://marian42.de/article/ggj18&#34;&gt;previous year&lt;/a&gt;, I took part in the Global Game Jam.
+I joined a team of six programmers, unfortunately there was a shortage of artists this year.
+During the 48 hour jam, we made a space game that is inspired by Faster Than Light. &lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Agent V – Global Game Jam 2018 Project</title>
