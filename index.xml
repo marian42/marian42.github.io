@@ -64,7 +64,7 @@ This is done directly in the TypeScript code, &lt;em&gt;without&lt;/em&gt; using
 There are no big surprises in the implementation, just lots and lots of corner cases to handle, many of them literal corner cases.
 The source code for this project is available on &lt;a href=&#34;https://github.com/marian42/partdesigner&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;One problem with TypeScript is it&amp;rsquo;s lack of support for &lt;a href=&#34;https://github.com/Microsoft/TypeScript/issues/6936&#34;&gt;operator overloading&lt;/a&gt;.
+&lt;p&gt;One problem with TypeScript is its lack of support for &lt;a href=&#34;https://github.com/Microsoft/TypeScript/issues/6936&#34;&gt;operator overloading&lt;/a&gt;.
 This project uses lots of vector operations and without operator overloading, I can&amp;rsquo;t write &lt;code&gt;v1 = v2 + v3 * f;&lt;/code&gt;, instead I have to write &lt;code&gt;v1 = v2.plus(v3.times(f));&lt;/code&gt;.
 This can make the code unnecessarily cluttered.&lt;/p&gt;
 
@@ -141,7 +141,7 @@ I took the sun, earth and moon design from that model and designed everything el
 
 
 
-&lt;p&gt;The gears run reasonably smooth in the printed part.
+&lt;p&gt;The gears run reasonably smoothly in the printed part.
 Choosing the size of the axle holes is a tradeoff between having too much resistance and being too loose.
 Of course the real, injection molded parts have tighter tolerances than one can achieve with a consumer 3D printer.
 This example shows that 3D printed parts can be combined with original Lego parts.
