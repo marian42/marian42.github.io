@@ -41,7 +41,7 @@ This is done directly in the TypeScript code, *without* using a [CSG](https://en
 There are no big surprises in the implementation, just lots and lots of corner cases to handle, many of them literal corner cases.
 The source code for this project is available on [Github](https://github.com/marian42/partdesigner).
 
-One problem with TypeScript is it's lack of support for [operator overloading](https://github.com/Microsoft/TypeScript/issues/6936).
+One problem with TypeScript is its lack of support for [operator overloading](https://github.com/Microsoft/TypeScript/issues/6936).
 This project uses lots of vector operations and without operator overloading, I can't write `v1 = v2 + v3 * f;`, instead I have to write `v1 = v2.plus(v3.times(f));`.
 This can make the code unnecessarily cluttered.
 
@@ -73,7 +73,7 @@ And finally, here is the completed orrery:
 
 {{< img "orrery2.jpg" "" >}}
 
-The gears run reasonably smooth in the printed part.
+The gears run reasonably smoothly in the printed part.
 Choosing the size of the axle holes is a tradeoff between having too much resistance and being too loose.
 Of course the real, injection molded parts have tighter tolerances than one can achieve with a consumer 3D printer.
 This example shows that 3D printed parts can be combined with original Lego parts.
