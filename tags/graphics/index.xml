@@ -23,7 +23,7 @@
 
 
 &lt;p&gt;This is a game where you walk through an infinite city that is procedurally generated as you walk.
-It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;</description>
+It is generated from a set of blocks with the Wave Function Collapse algorithm.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,9 +38,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 
 
-&lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,9 +53,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 
 
-&lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +66,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 &lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

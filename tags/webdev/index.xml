@@ -5,10 +5,26 @@
     <link>https://marian42.de/tags/webdev/</link>
     <description>Recent content in Webdev on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 13 May 2017 21:49:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lego Part Designer</title>
+      <link>https://marian42.de/article/partdesigner/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/partdesigner/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/partdesigner/partdesigner.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/partdesigner_hu848b95c1a7a5f7bdd0de614dd09bca54_112021_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I made a web app that lets you design your own Lego Technic parts and save them as printable STL files.
+You can check it out &lt;a href=&#34;https://marian42.de/partdesigner/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>LED Matrix Software</title>
@@ -33,7 +49,11 @@
       <guid>https://marian42.de/article/reslayer/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
 	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;</description>
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.&lt;/p&gt;</description>
     </item>
     
     <item>

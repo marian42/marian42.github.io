@@ -17,7 +17,7 @@
       
       <guid>https://marian42.de/article/uni-timer/</guid>
       <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
-              Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
+                  Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@
       <pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
       
       <guid>https://marian42.de/article/btduino-doc/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable.&lt;/p&gt;</description>
     </item>
     
   </channel>

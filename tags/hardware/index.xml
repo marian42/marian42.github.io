@@ -37,9 +37,7 @@
 
 
 
-&lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -84,9 +82,7 @@
 
 
 
-&lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;</description>
     </item>
     
     <item>

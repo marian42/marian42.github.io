@@ -16,9 +16,7 @@
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
       <guid>https://marian42.de/article/btduino-tutorial/</guid>
-      <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;</description>
     </item>
     
   </channel>

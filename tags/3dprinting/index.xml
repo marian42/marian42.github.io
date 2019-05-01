@@ -5,10 +5,26 @@
     <link>https://marian42.de/tags/3dprinting/</link>
     <description>Recent content in 3dprinting on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 17 Apr 2018 20:46:44 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/3dprinting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lego Part Designer</title>
+      <link>https://marian42.de/article/partdesigner/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/partdesigner/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/partdesigner/partdesigner.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/partdesigner_hu848b95c1a7a5f7bdd0de614dd09bca54_112021_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I made a web app that lets you design your own Lego Technic parts and save them as printable STL files.
+You can check it out &lt;a href=&#34;https://marian42.de/partdesigner/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>3D printed model of my neighborhood</title>
@@ -22,9 +38,7 @@
 
 
 
-&lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,9 +53,7 @@
 
 
 
-&lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;</description>
     </item>
     
   </channel>

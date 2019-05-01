@@ -29,11 +29,7 @@
 
 
 
-&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
-
-
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;</description>
     </item>
     
     <item>
@@ -52,7 +48,7 @@
       
       <guid>https://marian42.de/article/uni-timer/</guid>
       <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
-              Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
+                  Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
     </item>
     
     <item>
@@ -67,9 +63,7 @@
 
 
 
-&lt;p&gt;Ich habe mir dieses Jahr den Traum erfüllt, einen selbst zusammengestellten Quadrocopter zu bauen.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Ich habe mir dieses Jahr den Traum erfüllt, einen selbst zusammengestellten Quadrocopter zu bauen.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,7 +73,7 @@
       
       <guid>https://marian42.de/article/pi-projects/</guid>
       <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
- http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet   Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                   Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
+ http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet    Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                       Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
     </item>
     
     <item>
@@ -109,8 +103,7 @@
 
 
 
-&lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.
-&lt;/p&gt;</description>
+&lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -125,9 +118,7 @@
 
 
 
-&lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;</description>
     </item>
     
     <item>

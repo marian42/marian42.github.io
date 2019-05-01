@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marian42.de/article/partdesigner/</loc>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://marian42.de/article/ggj19/</loc>
     <lastmod>2019-02-02T00:00:00+00:00</lastmod>
   </url>
@@ -155,7 +160,7 @@
   
   <url>
     <loc>https://marian42.de/tags/3dprinting/</loc>
-    <lastmod>2018-04-17T20:46:44+00:00</lastmod>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -185,7 +190,7 @@
   
   <url>
     <loc>https://marian42.de/article/</loc>
-    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -216,6 +221,12 @@
   <url>
     <loc>https://marian42.de/tags/c&#43;&#43;/</loc>
     <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/cad/</loc>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -393,7 +404,7 @@
   
   <url>
     <loc>https://marian42.de/</loc>
-    <lastmod>2019-02-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -417,7 +428,7 @@
   
   <url>
     <loc>https://marian42.de/tags/opengl/</loc>
-    <lastmod>2015-07-18T15:55:40+00:00</lastmod>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -524,7 +535,13 @@
   
   <url>
     <loc>https://marian42.de/tags/webdev/</loc>
-    <lastmod>2017-05-13T21:49:00+00:00</lastmod>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/webgl/</loc>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

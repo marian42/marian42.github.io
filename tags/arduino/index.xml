@@ -57,11 +57,7 @@
 
 
 
-&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;
-
-
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;https://marian42.de/article/lol-notifications/idea.png&#34; width=&#34;625&#34; alt=&#34;&#34;&gt;</description>
     </item>
     
     <item>
@@ -101,7 +97,7 @@
       <pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
       
       <guid>https://marian42.de/article/btduino-doc/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,9 +106,7 @@
       <pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
       
       <guid>https://marian42.de/article/btduino-tutorial/</guid>
-      <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;</description>
     </item>
     
     <item>

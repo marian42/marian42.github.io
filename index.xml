@@ -4,10 +4,150 @@
     <title>Marian&#39;s Blog</title>
     <link>https://marian42.de/</link>
     <description>Personal blog about programming, game development and space ships.</description>
-	<lastBuildDate>Sat, 02 Feb 2019 00:00:00 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+		<title>Lego Part Designer</title>
+		<link>https://marian42.de/article/partdesigner/</link>
+		<pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/partdesigner/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/partdesigner/partdesigner.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/partdesigner_hu848b95c1a7a5f7bdd0de614dd09bca54_112021_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I made a web app that lets you design your own Lego Technic parts and save them as printable STL files.
+You can check it out &lt;a href=&#34;https://marian42.de/partdesigner/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I got the idea for this project when I was building with Lego parts and wondered how many of the common parts can be described with a simple rule set.
+The system I came up with assembles the parts out of five basic blocks:
+Pin Hole, Axle Hole, Pin, Axle and Solid.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/blocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/blocks_hu4539ca95fcf0d99c7240eb9548a79b51_58787_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Internally, each block consists of four &lt;em&gt;small blocks&lt;/em&gt;.
+By default, double sized blocks are created that consist of eight small blocks.
+All blocks are placed using coordinates of the small blocks so that they can be placed at &amp;ldquo;half&amp;rdquo; positions.&lt;/p&gt;
+
+&lt;p&gt;To accomodate 0.2 mm margins at the outside faces of the part, the small blocks are split further into three &lt;em&gt;tiny blocks&lt;/em&gt; per dimension.
+The two outer tiny blocks have the size of the margin and the center tiny block takes the remaining space.
+Note that a tiny block can be in the center on one axis and in the margin on another.
+The code has some logic to determine which tiny blocks are part of the model and which aren&amp;rsquo;t.
+Finally, before rendering the tiny blocks, they are merged to lower the number of polygons.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/tinyblocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/tinyblocks_hu14cfc12955323e4cac5a1d5699cab725_401758_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The app is written in TypeScript and uses WebGL to render the model.
+The difficult part is generating the mesh for the model.
+This is done directly in the TypeScript code, &lt;em&gt;without&lt;/em&gt; using a &lt;a href=&#34;https://en.wikipedia.org/wiki/Constructive_solid_geometry&#34;&gt;CSG&lt;/a&gt; library.
+There are no big surprises in the implementation, just lots and lots of corner cases to handle, many of them literal corner cases.
+The source code for this project is available on &lt;a href=&#34;https://github.com/marian42/partdesigner&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One problem with TypeScript is it&amp;rsquo;s lack of support for &lt;a href=&#34;https://github.com/Microsoft/TypeScript/issues/6936&#34;&gt;operator overloading&lt;/a&gt;.
+This project uses lots of vector operations and without operator overloading, I can&amp;rsquo;t write &lt;code&gt;v1 = v2 + v3 * f;&lt;/code&gt;, instead I have to write &lt;code&gt;v1 = v2.plus(v3.times(f));&lt;/code&gt;.
+This can make the code unnecessarily cluttered.&lt;/p&gt;
+
+&lt;p&gt;The app features a catalog that shows a selection of existing Lego parts that can be made with this system.
+Of course the point of this tool is to make parts that don&amp;rsquo;t already exist, but this can give you some inspiration.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/catalog.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/catalog_hu303d6b643ad27fdc9c67860a1e2f7ade_254558_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The preview images for the catalog are not stored on the server.
+Instead, they are rendered using the same code that renders the model in the editor.&lt;/p&gt;
+
+&lt;h1 id=&#34;orrery-gear-box&#34;&gt;Orrery gear box&lt;/h1&gt;
+
+&lt;p&gt;To demonstrate the practical use of this app, I made a gear box for a Lego orrery.
+The orrery is based on &lt;a href=&#34;https://jkbrickworks.com/earth-moon-and-sun-orrery/&#34;&gt;a design from JK Brickworks&lt;/a&gt;.
+I took the sun, earth and moon design from that model and designed everything else myself.&lt;/p&gt;
+
+&lt;p&gt;Here is the &lt;a href=&#34;https://marian42.de/partdesigner/?part=190x11f5x129by0313y039by0434y0192y0269x1380Z0426x15acZ068ex11edy073y097y0c4y0fby013dy02edx14e0x1787x118by01e6y0766x024fy02c7y0977x034fy03e8y0562x1730x195ax1be8y0493y0d47y03bcX263fx183ax1a95x1d7y2467y210ey2512y21f9y0262y0564y0ee4y0636y0107ay06b5Z07afz078ax19c0Z0b00x1167y1229y0327y0469Y05f7y01b5y1292y03afy0514Y06c9y0141y11fby02f1y1c5bx118fy1264y0379y157by164dy13ecy1566y0734y11254y0497y1638y0831y11425y0dd1x146by17dby0516y18d8y0b2ez0dd2z0f63x199ey1c34Z0da7Z0acay110ccY0147dy1568y1736y0960y01640y01aaey163ay1833y0a8cy01850y01d01y11112x15fby0a1by06cdy0b47y010e4y01297y0bf0y01ab0y0d4fy01d03y046fy25fdy07dfy0a1dy0cbfy2fcdy051ay26cfy08dcy0b49y0e1ey21163y05d8y0e05y01316y06aay0f7fY014e7y0791z18a0z19c7z11115z112e1z116d7x19a2y01499Y0acey01689Y0c13y01ae3y0d72y01d36y0eecy01facy01082y02246y01904x1125cy01646x11ab4x11faex1253cy0142dy02821y0186dx11d20x12263x1&#34;&gt;gear box in the part designer&lt;/a&gt;:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/orrerybase.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrerybase_hubbb49a61c2121a3e8572870999b37209_103245_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;After printing and adding gears, it looks like this:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/gears.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/gears_hub93d87bc4894e727bdc3bb694c35c041_642069_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/orrery1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery1_hub93d87bc4894e727bdc3bb694c35c041_1622496_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;And finally, here is the completed orrery:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/partdesigner/orrery2.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery2_hub93d87bc4894e727bdc3bb694c35c041_1616575_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The gears run reasonably smooth in the printed part.
+Choosing the size of the axle holes is a tradeoff between having too much resistance and being too loose.
+Of course the real, injection molded parts have tighter tolerances than one can achieve with a consumer 3D printer.
+This example shows that 3D printed parts can be combined with original Lego parts.
+The main advantage of printing parts is that it saves you the time to figure out how a structure can be made with existing Lego parts.&lt;/p&gt;</description>
+    </item>
     
     <item>
 		<title>Faster Than Life – Global Game Jam 2019 Project</title>
@@ -22,12 +162,7 @@
 
 &lt;p&gt;Like in the &lt;a href=&#34;https://marian42.de/article/ggj18&#34;&gt;previous year&lt;/a&gt;, I took part in the Global Game Jam.
 I joined a team of six programmers, unfortunately there was a shortage of artists this year.
-During the 48 hour jam, we made a space game that is inspired by Faster Than Light. &lt;/p&gt;
-
-
-
-
-
+During the 48 hour jam, we made a space game that is inspired by Faster Than Light.&lt;/p&gt;
 
 &lt;a href=&#34;https://marian42.de/article/ggj19/map.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
 	&lt;img src=&#34;https://marian42.de/article/ggj19/map_hu3f52b41c9100f6e5c4fb06bcecd7a132_2014156_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
@@ -101,7 +236,7 @@ These ended up being quite small in the levels, so we added &amp;ldquo;personal&
 
 
 &lt;p&gt;This is a game where you walk through an infinite city that is procedurally generated as you walk.
-It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;
+It is generated from a set of blocks with the Wave Function Collapse algorithm.&lt;/p&gt;
 
 &lt;p&gt;You can download a playable build of the game on &lt;a href=&#34;https://marian42.itch.io/wfc&#34;&gt;itch.io&lt;/a&gt; and you can get the &lt;a href=&#34;https://github.com/marian42/wavefunctioncollapse&#34;&gt;source code on github&lt;/a&gt;.
 Here is a video of me walking around a generated city:&lt;/p&gt;
@@ -318,8 +453,6 @@ The source code is available after all and it&amp;rsquo;s MIT licensed.&lt;/p&gt
 
 &lt;p&gt;This is one of my first 3D modeling projects in Blender and my biggest 3D modeling project so far.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
 &lt;p&gt;It&amp;rsquo;s a model of ESA&amp;rsquo;s ExoMars rover.
 You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com/models/4148a592193549c59c778a69fd45df5a&#34;&gt;Sketchfab&lt;/a&gt;:&lt;/p&gt;
 
@@ -340,8 +473,6 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;p&gt;I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have now automated the entire process and published my code. You can find it &lt;a href=&#34;https://github.com/marian42/pointcloudprinter&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -454,7 +585,9 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;p&gt;This year I participated in my first game jam, the Global Game Jam 2018. With a team of artists, programmers and a sound designer, we made a video game within 48 hours. You play the game as a virus that infiltrates a company’s headquarters. The virus can not move on its own, it can only take control of hackable devices and use them to move around. There are six levels, each with a puzzle to move to the next one.&lt;/p&gt;
+&lt;p&gt;This year I participated in my first game jam, the Global Game Jam 2018. With a team of artists, programmers and a sound designer, we made a video game within 48 hours.&lt;/p&gt;
+
+&lt;p&gt;You play the game as a virus that infiltrates a company’s headquarters. The virus can not move on its own, it can only take control of hackable devices and use them to move around. There are six levels, each with a puzzle to move to the next one.&lt;/p&gt;
 
 
 
@@ -487,8 +620,6 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;separating-the-point-cloud-by-buildings&#34;&gt;Separating the point cloud by buildings&lt;/h2&gt;
 
@@ -1104,8 +1235,6 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 &lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
 &lt;p&gt;The cool thing about this is that it runs inside a shader. A shader is a small program that runs on the graphics card and is usually used to create simple effects like shadows or reflections. However, it can also be used to make &lt;a href=&#34;https://www.shadertoy.com/results?query=&amp;amp;sort=love&amp;amp;filter=&#34;&gt;really complex things&lt;/a&gt;. In a shader, all pixels are computed separately and in paralell. That means the program gets the pixel coordinate and computes a color for it. This program is then called for each pixel in the frame.&lt;/p&gt;
 
 &lt;p&gt;To render 3D worlds, realtime graphics apps usually use depth buffers. However, inside a shader, one is forced to use raytracing. This means that for each pixel, a virtual light ray is followed from the camera until it hits something.&lt;/p&gt;
@@ -1136,9 +1265,6 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;p&gt;This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;//www.youtube.com/embed/JA-Aoqt4izY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
@@ -1208,9 +1334,9 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 
-&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.
+&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.&lt;/p&gt;
 
-I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.&lt;/p&gt;
+&lt;p&gt;I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.&lt;/p&gt;
 
 &lt;p&gt;The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.&lt;/p&gt;
 
@@ -1745,8 +1871,6 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/tetris2.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
 &lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
 
 &lt;video autoplay loop muted src=&#34;https://marian42.de/article/game-prototypes/cells.webm&#34; type=&#34;video/webm&#34;&gt;&lt;/video&gt;
@@ -1996,8 +2120,6 @@ I know that making an online game like this is an ambitious goal and it will pro
 &lt;li&gt;Model: &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.ldr&#34; &gt;LDR&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun.3ds&#34; &gt;3DS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Build this &lt;a href=&#34;http://rebrickable.com/mocs/marian/portal-gun-aperture-science-portable-quantum-tunneling-devic&#34;&gt;MOC on Rebrickable&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Instructions:&lt;/p&gt;
 
@@ -2376,13 +2498,6 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 
 
-&lt;p&gt;&lt;/p&gt;
-
-
-
-
-
-
 &lt;img src=&#34;https://marian42.de/article/lol-notifications/png.png&#34; width=&#34;186&#34; alt=&#34;&#34;&gt;
 
 
@@ -2501,8 +2616,6 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 
 &lt;p&gt;Ich habe mir dieses Jahr den Traum erfüllt, einen selbst zusammengestellten Quadrocopter zu bauen.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;investitionen&#34;&gt;Investitionen&lt;/h4&gt;
 
@@ -2809,13 +2922,7 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 
 
-&lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.
-&lt;/p&gt;
-
-
-
-
-
+&lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.&lt;/p&gt;
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
 	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030_hu64c176f12090e957f948890e03cca9d1_603882_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
@@ -2940,13 +3047,6 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 &lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-
-
-
-
-
 &lt;a href=&#34;https://marian42.de/article/pi-wetterstation/wiring.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
 	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
@@ -3029,7 +3129,9 @@ I know that making an online game like this is an ambitious goal and it will pro
 		<link>https://marian42.de/article/btduino-doc/</link>
 		<pubDate>Sat, 27 Jul 2013 13:49:48 +0000</pubDate>
 		<guid>https://marian42.de/article/btduino-doc/</guid>
-		<description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:&lt;/p&gt;
+		<description>&lt;p&gt;The &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt; sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;name:value
 &lt;/code&gt;&lt;/pre&gt;
@@ -3203,8 +3305,6 @@ mycolorsender:255,0,255
 		<pubDate>Wed, 24 Jul 2013 20:51:21 +0000</pubDate>
 		<guid>https://marian42.de/article/btduino-tutorial/</guid>
 		<description>&lt;p&gt;This tutorial will show you how to connect your Arduino project to an Android device using the &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;BTduino app&lt;/a&gt;. You don’t need an extra Arduino library and you don’t need to code anything on the Android side.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is what you need:&lt;/p&gt;
 

@@ -24,7 +24,7 @@
 
 &lt;p&gt;Like in the &lt;a href=&#34;https://marian42.de/article/ggj18&#34;&gt;previous year&lt;/a&gt;, I took part in the Global Game Jam.
 I joined a team of six programmers, unfortunately there was a shortage of artists this year.
-During the 48 hour jam, we made a space game that is inspired by Faster Than Light. &lt;/p&gt;</description>
+During the 48 hour jam, we made a space game that is inspired by Faster Than Light.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ During the 48 hour jam, we made a space game that is inspired by Faster Than Lig
 
 
 &lt;p&gt;This is a game where you walk through an infinite city that is procedurally generated as you walk.
-It is generated from a set of blocks with the Wave Function Collapse algorithm. &lt;/p&gt;</description>
+It is generated from a set of blocks with the Wave Function Collapse algorithm.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,7 +51,11 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
       <guid>https://marian42.de/article/ggj18/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
 	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;</description>
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This year I participated in my first game jam, the Global Game Jam 2018. With a team of artists, programmers and a sound designer, we made a video game within 48 hours.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -66,9 +70,7 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm. 
 
 
 
-&lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial &lt;a href=&#34;https://en.wikipedia.org/wiki/Lidar&#34;&gt;LIDAR&lt;/a&gt; scanners and is &lt;a href=&#34;https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/&#34;&gt;available online&lt;/a&gt;. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.&lt;/p&gt;</description>
     </item>
     
   </channel>
