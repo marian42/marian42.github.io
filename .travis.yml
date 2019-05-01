@@ -1,0 +1,25 @@
+language: minimal
+dist: xenial
+
+branches:
+  only:
+    - hugo
+
+install:
+  - apt-cache policy libstdc++6
+  - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_extended_0.55.4_Linux-64bit.deb
+  - sudo dpkg -i /tmp/hugo.deb
+
+script:
+  - hugo || travis_terminate 1
+  - echo marian42.de> public/CNAME
+
+deploy:
+  on:
+    branch: hugo
+  provider: pages
+  target_branch: master
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_API_KEY
+  local_dir: public
