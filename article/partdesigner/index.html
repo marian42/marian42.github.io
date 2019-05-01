@@ -1,0 +1,275 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					Lego Part Designer |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Lego Part Designer - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Lego Part Designer">
+        <meta itemprop="description" content="Lego Part Designer - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Lego Part Designer">
+        <meta property="og:description" content="Lego Part Designer - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/partdesigner/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/partdesigner/">Lego Part Designer</a></h1>
+    
+		<div class="meta">
+    		<span class="date">May 1, 2019</span>
+		</div>
+    
+
+    
+        <a href="/article/partdesigner/partdesigner.png" target="_blank" title="">
+	<img src="/article/partdesigner/partdesigner_hu848b95c1a7a5f7bdd0de614dd09bca54_112021_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>I made a web app that lets you design your own Lego Technic parts and save them as printable STL files.
+You can check it out <a href="https://marian42.de/partdesigner/">here</a>.</p>
+
+<p>I got the idea for this project when I was building with Lego parts and wondered how many of the common parts can be described with a simple rule set.
+The system I came up with assembles the parts out of five basic blocks:
+Pin Hole, Axle Hole, Pin, Axle and Solid.</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/blocks.png" target="_blank" title="">
+	<img src="/article/partdesigner/blocks_hu4539ca95fcf0d99c7240eb9548a79b51_58787_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>Internally, each block consists of four <em>small blocks</em>.
+By default, double sized blocks are created that consist of eight small blocks.
+All blocks are placed using coordinates of the small blocks so that they can be placed at &ldquo;half&rdquo; positions.</p>
+
+<p>To accomodate 0.2 mm margins at the outside faces of the part, the small blocks are split further into three <em>tiny blocks</em> per dimension.
+The two outer tiny blocks have the size of the margin and the center tiny block takes the remaining space.
+Note that a tiny block can be in the center on one axis and in the margin on another.
+The code has some logic to determine which tiny blocks are part of the model and which aren&rsquo;t.
+Finally, before rendering the tiny blocks, they are merged to lower the number of polygons.</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/tinyblocks.png" target="_blank" title="">
+	<img src="/article/partdesigner/tinyblocks_hu14cfc12955323e4cac5a1d5699cab725_401758_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>The app is written in TypeScript and uses WebGL to render the model.
+The difficult part is generating the mesh for the model.
+This is done directly in the TypeScript code, <em>without</em> using a <a href="https://en.wikipedia.org/wiki/Constructive_solid_geometry">CSG</a> library.
+There are no big surprises in the implementation, just lots and lots of corner cases to handle, many of them literal corner cases.
+The source code for this project is available on <a href="https://github.com/marian42/partdesigner">Github</a>.</p>
+
+<p>One problem with TypeScript is it&rsquo;s lack of support for <a href="https://github.com/Microsoft/TypeScript/issues/6936">operator overloading</a>.
+This project uses lots of vector operations and without operator overloading, I can&rsquo;t write <code>v1 = v2 + v3 * f;</code>, instead I have to write <code>v1 = v2.plus(v3.times(f));</code>.
+This can make the code unnecessarily cluttered.</p>
+
+<p>The app features a catalog that shows a selection of existing Lego parts that can be made with this system.
+Of course the point of this tool is to make parts that don&rsquo;t already exist, but this can give you some inspiration.</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/catalog.png" target="_blank" title="">
+	<img src="/article/partdesigner/catalog_hu303d6b643ad27fdc9c67860a1e2f7ade_254558_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>The preview images for the catalog are not stored on the server.
+Instead, they are rendered using the same code that renders the model in the editor.</p>
+
+<h1 id="orrery-gear-box">Orrery gear box</h1>
+
+<p>To demonstrate the practical use of this app, I made a gear box for a Lego orrery.
+The orrery is based on <a href="https://jkbrickworks.com/earth-moon-and-sun-orrery/">a design from JK Brickworks</a>.
+I took the sun, earth and moon design from that model and designed everything else myself.</p>
+
+<p>Here is the <a href="https://marian42.de/partdesigner/?part=190x11f5x129by0313y039by0434y0192y0269x1380Z0426x15acZ068ex11edy073y097y0c4y0fby013dy02edx14e0x1787x118by01e6y0766x024fy02c7y0977x034fy03e8y0562x1730x195ax1be8y0493y0d47y03bcX263fx183ax1a95x1d7y2467y210ey2512y21f9y0262y0564y0ee4y0636y0107ay06b5Z07afz078ax19c0Z0b00x1167y1229y0327y0469Y05f7y01b5y1292y03afy0514Y06c9y0141y11fby02f1y1c5bx118fy1264y0379y157by164dy13ecy1566y0734y11254y0497y1638y0831y11425y0dd1x146by17dby0516y18d8y0b2ez0dd2z0f63x199ey1c34Z0da7Z0acay110ccY0147dy1568y1736y0960y01640y01aaey163ay1833y0a8cy01850y01d01y11112x15fby0a1by06cdy0b47y010e4y01297y0bf0y01ab0y0d4fy01d03y046fy25fdy07dfy0a1dy0cbfy2fcdy051ay26cfy08dcy0b49y0e1ey21163y05d8y0e05y01316y06aay0f7fY014e7y0791z18a0z19c7z11115z112e1z116d7x19a2y01499Y0acey01689Y0c13y01ae3y0d72y01d36y0eecy01facy01082y02246y01904x1125cy01646x11ab4x11faex1253cy0142dy02821y0186dx11d20x12263x1">gear box in the part designer</a>:</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/orrerybase.png" target="_blank" title="">
+	<img src="/article/partdesigner/orrerybase_hubbb49a61c2121a3e8572870999b37209_103245_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>After printing and adding gears, it looks like this:</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/gears.jpg" target="_blank" title="">
+	<img src="/article/partdesigner/gears_hub93d87bc4894e727bdc3bb694c35c041_642069_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+
+
+
+
+
+<a href="/article/partdesigner/orrery1.jpg" target="_blank" title="">
+	<img src="/article/partdesigner/orrery1_hub93d87bc4894e727bdc3bb694c35c041_1622496_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>And finally, here is the completed orrery:</p>
+
+
+
+
+
+
+<a href="/article/partdesigner/orrery2.jpg" target="_blank" title="">
+	<img src="/article/partdesigner/orrery2_hub93d87bc4894e727bdc3bb694c35c041_1616575_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>The gears run reasonably smooth in the printed part.
+Choosing the size of the axle holes is a tradeoff between having too much resistance and being too loose.
+Of course the real, injection molded parts have tighter tolerances than one can achieve with a consumer 3D printer.
+This example shows that 3D printed parts can be combined with original Lego parts.
+The main advantage of printing parts is that it saves you the time to figure out how a structure can be made with existing Lego parts.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/cad">cad</a>
+	                
+	                    <a href="/tags/webdev">webdev</a>
+	                
+	                    <a href="/tags/opengl">opengl</a>
+	                
+	                    <a href="/tags/webgl">webgl</a>
+	                
+	                    <a href="/tags/3dprinting">3dprinting</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

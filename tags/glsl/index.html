@@ -1,0 +1,428 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					glsl |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="glsl - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="glsl">
+        <meta itemprop="description" content="glsl - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="glsl">
+        <meta property="og:description" content="glsl - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/tags/glsl/">
+        <meta property="og:site_name" content="Marian&#39;s Blog"><meta property="og:type" content="website">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+	  <link href="https://marian42.de/tags/glsl/index.xml" rel="alternate" type="application/rss+xml" title="Marian&#39;s Blog" />
+	  <link href="https://marian42.de/tags/glsl/index.xml" rel="feed" type="application/rss+xml" title="Marian&#39;s Blog" />
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+    
+    
+        <div class="article-wrapper u-cf">
+            
+                <article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/roofmeshes/">Generating 3D roof meshes from aerial LIDAR data</a></h1>
+    
+		<div class="meta">
+    		<span class="date">January 2, 2018</span>
+		</div>
+    
+
+    
+        <a href="/article/roofmeshes/example.png" target="_blank" title="">
+	<img src="/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>This is my graduation project I did in computer science. The goal was to come up with a method to generate 3D meshes of building roofs from point cloud data. The point cloud data was taken with aerial <a href="https://en.wikipedia.org/wiki/Lidar">LIDAR</a> scanners and is <a href="https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/">available online</a>. In addition, I used building layout polygons, which are also available as open data. I tested several strategies to generate a mesh and I’ll explain the best one in this post.</p>
+
+<h2 id="separating-the-point-cloud-by-buildings">Separating the point cloud by buildings</h2>
+
+<p>The dataset for the city of Dortmund contains about 4×10^9 points. For this city, the building layout dataset has about 200,000 entries. My first step was to write a program that finds the subset of points that belong to each building.</p>
+
+<p>As the building layouts are polygons, the core of this operation is the <a href="https://en.wikipedia.org/wiki/Point_in_polygon">point in polygon test</a>. The important takeaway for this part is to use spatial hashing. The polygons are stored in a hash set so that for each point, only a few polygons need to be considered. It took four hours to process 100 GB of data on my laptop.</p>
+
+
+
+
+
+
+<a href="/article/roofmeshes/separation.png" target="_blank" title="">
+	<img src="/article/roofmeshes/separation_hu01176d2368e5b27c08f5e6bd78615e98_20855_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<h2 id="finding-planes">Finding planes</h2>
+
+<p>The next step is to look for planes that describe many of the points in a point cloud. These planes are likely to portray roof faces, which makes them a good foundation for generating a roof mesh.</p>
+
+<p>It turned out that a <a href="https://en.wikipedia.org/wiki/Random_sample_consensus">RANSAC</a> approach works well for this problem. The idea of RANSAC is to select a subset of points at random and generate planes from these sample points. To get a sample plane from a sample point, a fit plane for nearby points is calculated. For each sample plane, a score is calculated that tells how well the plane fits the entire point cloud. The best scoring planes are returned.</p>
+
+<p>The picture below shows an example point cloud with planes found by the RANSAC algorithm.</p>
+
+
+
+
+
+
+<a href="/article/roofmeshes/ransac.png" target="_blank" title="">
+	<img src="/article/roofmeshes/ransac_hubdceeb8983e57db09f92a36945107e98_90029_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<h2 id="algorithm-to-generate-convex-roof-meshes">Algorithm to generate convex roof meshes</h2>
+
+<p>Now that we have a set of points that belong to a single building, the building’s layout polygon and a set of planes, it’s time for a mesh generation algorithm. The idea of this algorithm is to start with an infinetly extruded layout polygon and cut away each of the roof plane. Each cut creates a roof face.</p>
+
+<p>Here are some examples of roof types that can be modeled this way:</p>
+
+
+
+
+
+
+<a href="/article/roofmeshes/convex.png" target="_blank" title="">
+	<img src="/article/roofmeshes/convex_hu70b74044e4f9f3ff82f6960d7d4709f9_96534_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>The algorithm to generate these meshes works a bit different from the explanation above. For each roof face, the layout polygon is triangulated and projected onto the plane. In a second step, this mesh is cut along all roof planes, leaving only the geometry that lies below all other planes. All roof faces are generated like this and are then combined.</p>
+
+<p>This graphic shows a run of this algorithm with a simple gabled roof. Two roof planes result in two roof faces. For each plane, there is only one other plane that is cut away from the mesh.</p>
+
+
+
+
+
+
+<a href="/article/roofmeshes/algorithmexample.png" target="_blank" title="">
+	<img src="/article/roofmeshes/algorithmexample_hu50a234768f1144c8040e779f2b1d19b6_333779_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>The choice of roof planes is quite important, as the RANSAC algorithm usually returns more than the desired set of planes. To find the best ones, each possible subset of planes is tested. Each time, a roof mesh is generated and scored. The best one is returned.</p>
+
+<p>Here are some examples of meshes generated with the above algorithm:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/konvexa.png" target="_blank" title="">
+	<img src="/article/roofmeshes/konvexa_hue91d5cea83a39dcf95425e13a99bef95_284340_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/konvexb.png" target="_blank" title="">
+	<img src="/article/roofmeshes/konvexb_hu6f8b60ac18ecf85ae6c4a6c57d0e375a_227379_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/konvexc.png" target="_blank" title="">
+	<img src="/article/roofmeshes/konvexc_hu53b8f90271ec9fbdcbf5f613758c4838_246849_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/konvexd-1.png" target="_blank" title="">
+	<img src="/article/roofmeshes/konvexd-1_hub9deedc562b5b26a14c23e1e0c6e8e3e_282653_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="attachments">Attachments</h2>
+
+<p>As the name suggests, the algorithm to generate convex roofs is limited to convex roofs. In the real world, many roofs aren’t convex, like these ones:</p>
+
+
+
+
+
+
+<img src="/article/roofmeshes/attachments.png" width="489" alt="">
+
+
+
+<p>To generete roof meshes for these roofs, I extended the algorithm to look for attachments. It starts with a convex roof. For each face, the subset of points above the roof plane is considered. The same algorithm is used to generate meshes for attachments. These attachments are added to the resulting mesh.</p>
+
+<p>A postprocessing step is needed to avoid some unwanted geometry that arises from combining the base mesh with the attachment meshes. Sometimes, this step introduces unwanted artifacts in the result.</p>
+
+<p>Here are some exmaples of convex roofs with attachments:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/anbaua.png" target="_blank" title="">
+	<img src="/article/roofmeshes/anbaua_hu3533fc11d9bee14bd1fff2ee98f0c689_526700_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/anbaub.png" target="_blank" title="">
+	<img src="/article/roofmeshes/anbaub_hu40c01ef95c9fec83a0641260c7b30f78_365578_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/anbauc.png" target="_blank" title="">
+	<img src="/article/roofmeshes/anbauc_hu5ad9d0309e5113d621bdeab749a41723_396090_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+<td>
+
+
+
+
+<a href="/article/roofmeshes/anbaud.png" target="_blank" title="">
+	<img src="/article/roofmeshes/anbaud_hu0d14cc1893ab9bcddd2df78d088d2388_291075_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>I used the Unity game engine to test the algorithms. Unity makes it easy to display meshes and point clouds. For common geometry problems like triangulating polygons, there is code available online.</p>
+
+
+
+
+
+
+<a href="/article/roofmeshes/gui-1.png" target="_blank" title="">
+	<img src="/article/roofmeshes/gui-1_hub02691b97b5eba00ae18a8dd18fecbd5_743640_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p><a href="https://github.com/marian42/pointcloud">You can find the source code for the Unity implementation on github.</a></p>
+
+<h2 id="data-sources">Data sources</h2>
+
+<p>The point data used in the screenshots in this article was calculated using point data and shape data from <a href="https://www.opengeodata.nrw.de/">https://www.opengeodata.nrw.de/</a>
+Source for point data: <a href="https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/dom1l_05913000_Dortmund_EPSG25832_XYZ.zip">https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/dom1l_05913000_Dortmund_EPSG25832_XYZ.zip</a>
+Source for shape data: <a href="https://www.opengeodata.nrw.de/produkte/geobasis/lika/alkis_sek/hu_nw/hu_nw_EPSG4647_Shape.zip">https://www.opengeodata.nrw.de/produkte/geobasis/lika/alkis_sek/hu_nw/hu_nw_EPSG4647_Shape.zip</a>
+The data was provided by the &ldquo;Land NRW&rdquo; under the Data licence Germany – attribution – Version 2.0 (dl-de/by-2-0) Full license text is available at <a href="http://www.govdata.de/dl-de/by-2-0">http://www.govdata.de/dl-de/by-2-0</a>
+The screenshots in this article contain map data by <a href="https://openstreetmap.org/">OpenStreetMap</a> (ODbL) and Positron tiles by <a href="https://cartodb.com/attributions#basemaps">CartoDB</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>).</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/computerscience">computerscience</a>
+	                
+	                    <a href="/tags/csharp">csharp</a>
+	                
+	                    <a href="/tags/glsl">glsl</a>
+	                
+	                    <a href="/tags/graphics">graphics</a>
+	                
+	                    <a href="/tags/unity">unity</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/no-mans-starfield/">No Man’s Starfield</a></h1>
+    
+		<div class="meta">
+    		<span class="date">September 18, 2016</span>
+		</div>
+    
+
+    
+        <video autoplay loop muted><source src="/article/no-mans-starfield/starfield.webm" type="video/webm" /></video>
+
+<p>This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:</p>
+
+<p><a href="https://www.shadertoy.com/view/MtcGDf">No Man’s Starfield</a></p>
+
+        
+            <a href="/article/no-mans-starfield/" class="more">continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+</div>
+
+</article>
+
+            
+        </div>
+    
+
+    
+    <div class="paginator">
+        
+
+        
+    </div>
+
+
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

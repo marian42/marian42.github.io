@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					3D printed model of my neighborhood |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="3D printed model of my neighborhood - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="3D printed model of my neighborhood">
+        <meta itemprop="description" content="3D printed model of my neighborhood - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="3D printed model of my neighborhood">
+        <meta property="og:description" content="3D printed model of my neighborhood - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/neighborhood/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/neighborhood/">3D printed model of my neighborhood</a></h1>
+    
+		<div class="meta">
+    		<span class="date">April 17, 2018</span>
+		</div>
+    
+
+    
+        <a href="/article/neighborhood/DSCF3466.jpg" target="_blank" title="">
+	<img src="/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>I 3D printed a model of the street where I live. This post will explain how I prepared the data for it.</p>
+
+<p><strong>Update</strong>: I have now automated the entire process and published my code. You can find it <a href="https://github.com/marian42/pointcloudprinter">here</a>.</p>
+
+<p>I worked with aerial Lidar data that is provided by the state I live in to <a href="https://www.opengeodata.nrw.de/produkte/geobasis/dom/dom1l/">download</a> for free. After completing the rather big download, I figured out what my coordinates are in the projection used with the data and which XYZ file they fall into. I wrote a simple program to extract all the points within a 200m square around my house.</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/square.png" target="_blank" title="">
+	<img src="/article/neighborhood/square_hu54a05c297a7ded348f622a81f63cad57_539415_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>This left me with a smaller XYZ file, now containing 430k points, which are pictured above. The task now was now to turn all these points into a solid body in order to be printable.</p>
+
+<p>In order to turn the pointcloud into a mesh, I used the software MeshLab. As a first step, I used the program to estimate normals for the pointcloud. The normals are estimated by fitting a plane into some nearby points and using the normal of that plane. However, knowing the plane, there are still two possible normals of which one has to be selected. For some separated parts of the pointcloud, the normals can be flipped and need to be manually fixed.</p>
+
+<p>Here is a mesh that MeshLab generates without normals fixed and wihtout holes patched:</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/first.png" target="_blank" title="">
+	<img src="/article/neighborhood/first_hua3cc1ad2326f7318912c34595ad41dac_1290287_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>Since the Lidar data are taken from an airplane, parts of the surface that are occluded from the perspective of the plane result in holes in the pointcloud. After trying to generate a mesh with no success, I had to fix the holes first.</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/Screenshot-149.png" target="_blank" title="">
+	<img src="/article/neighborhood/Screenshot-149_huec574cf7580820776255c5b16cf7b9eb_1032567_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>I made a program to detect and fill the holes. First it tries to identify points on the edge of holes. This is done by measuring the distance of a point to the average of some nearby points. This distance is small when the nearby points are found in all directions. Points on an edge have less neighbours towards the hole, resulting in an average shifted away from the edge. Points found like this are shown in red in the above screenshot.</p>
+
+<p>Next, to create patches, the program looks for edge points with other edge points straight above them. Depending on the distance, new points are then created on the connecting line. These are shown in green.</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/Screenshot-149b.png" target="_blank" title="">
+	<img src="/article/neighborhood/Screenshot-149b_hu072b60a146f2e2602077e94e4921c18e_1568067_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>Now I can apply what MeshLab calls “Screened Poisson Surface Reconstruction”. With the holes patched, normals corrected and parameters tweaked, I have a mesh of the surface.</p>
+
+<p>This mesh can be opened in Blender. I selected the outer vertices, moved them down and connected them, resulting in this:</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/belnder.png" target="_blank" title="">
+	<img src="/article/neighborhood/belnder_hu087aede2d0e7107cfb21de8b042da18f_373061_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>This is finally a solid body, although an ugly one. I created a 200m cube and applied a Boolean / Intersect operation between the two, resulting in the final model for printing. Here it is being prepared in Cura:</p>
+
+
+
+
+
+
+<a href="/article/neighborhood/Screenshot-150.png" target="_blank" title="">
+	<img src="/article/neighborhood/Screenshot-150_hu16f154dd47c9881400f973f8f5311294_997269_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>I printed it 12cm long with the smallest layer size available, 0.06mm, which took 21 hours. </p>
+
+
+
+
+
+
+<a href="/article/neighborhood/DSCF3482.jpg" target="_blank" title="">
+	<img src="/article/neighborhood/DSCF3482_huffb867a27675b009de6b88a54bf6c5d8_292533_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/3dprinting">3dprinting</a>
+	                
+	                    <a href="/tags/graphics">graphics</a>
+	                
+	                    <a href="/tags/pointcloud">pointcloud</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>
