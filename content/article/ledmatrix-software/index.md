@@ -16,7 +16,7 @@ tags:
 
 {{< img "screenshot-2.png" "" >}}
 
-I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes the one of them. <!--more-->
+I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes one of them. <!--more-->
 
 The app offers a web interface where users can write simple programs that are then compiled and started instantly from the website. The concept is similar to [Shadertoy][1], where you write C-like shader code in a browser window and instantly see it run. The code of for this project is on my [github][2] and it’s in a state where you should be able to run it fairly easily, if your hardware is similar. The github page has installation instructions and some documentation on the available functions for user apps.
 
