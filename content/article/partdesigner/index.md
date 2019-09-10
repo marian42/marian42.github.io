@@ -77,4 +77,4 @@ The gears run reasonably smoothly in the printed part.
 Choosing the size of the axle holes is a tradeoff between having too much resistance and being too loose.
 Of course the real, injection molded parts have tighter tolerances than one can achieve with a consumer 3D printer.
 This example shows that 3D printed parts can be combined with original Lego parts.
-The main advantage of printing parts is that it saves you the time to figure out how a structure can be made with existing Lego parts.
+One advantage of printing parts like this is that it saves you the time to figure out how a structure can be made with existing Lego parts.
