@@ -16,11 +16,13 @@ I know that making an online game like this is an ambitious goal and it will pro
 
 The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.
 
-The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only within 100 meters of a school” and so on. Here is an example:
+The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only near paths".
+Any information that is in OpenStreetMaps can be used to create rules.
+Here is an example:
 
 {{< img "Screenshot-5.png" "" >}}
 
-The green resources are distributed randomly across roads, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.
+The green resources are distributed randomly along streets, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.
 
 There are four kinds of buildings that can be placed anywhere on the map.
 
