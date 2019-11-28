@@ -3,7 +3,7 @@ title: ESA ExoMars Rover 3D model
 date: 2018-07-22T19:32:12+00:00
 tags:
   - 3d
-  - modelling
+  - modeling
 ---
 
 {{< img "exomars.jpg" "" >}}
