@@ -57,7 +57,7 @@ Here is a video of the algorithm in action:
 # About blocks, prototypes and modules
 
 The world is generated from a set of ~100 blocks, which I made with Blender.
-I started out with a small number of blocks and made more whenever I felt like it.
+I started out with a small number of blocks and made more whenever I had some spare time.
 
 {{< img "blocks.png" "" >}}
 
@@ -104,7 +104,7 @@ In this image you can see all the places affected from collapsing just one slot:
 
 {{< img "cloud.png" "" >}}
 
-When just generating a single chunk at once, constraints where not propagated to adjacent chunks.
+When just generating a single chunk at once, constraints were not propagated to adjacent chunks.
 This led to modules being selected within the chunk that would not be allowed when considering the other chunks.
 When the algorithm would then try to generate the next chunk, it could not find any solution.
 
