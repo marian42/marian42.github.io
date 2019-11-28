@@ -26,34 +26,6 @@
     </item>
     
     <item>
-      <title>No Man’s Starfield</title>
-      <link>https://marian42.de/article/no-mans-starfield/</link>
-      <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
-      
-      <guid>https://marian42.de/article/no-mans-starfield/</guid>
-      <description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
-
-&lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Work in progress: Location based online game</title>
-      <link>https://marian42.de/article/reslayer/</link>
-      <pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
-      
-      <guid>https://marian42.de/article/reslayer/</guid>
-      <description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
-
-
-
-&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Game prototypes</title>
       <link>https://marian42.de/article/game-prototypes/</link>
       <pubDate>Sat, 18 Jul 2015 15:55:40 +0000</pubDate>

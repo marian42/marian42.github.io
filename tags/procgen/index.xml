@@ -27,6 +27,19 @@ It is generated from a set of blocks with the Wave Function Collapse algorithm.&
     </item>
     
     <item>
+      <title>No Man’s Starfield</title>
+      <link>https://marian42.de/article/no-mans-starfield/</link>
+      <pubDate>Sun, 18 Sep 2016 20:56:03 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/no-mans-starfield/</guid>
+      <description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/no-mans-starfield/starfield.webm&#34; type=&#34;video/webm&#34; /&gt;&lt;/video&gt;
+
+&lt;p&gt;This is a shader I made that renders a flight through a starfield. It’s meant to look like the galactic map that you can see in No Man’s Sky. Here is a link to the project on shadertoy:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.shadertoy.com/view/MtcGDf&#34;&gt;No Man’s Starfield&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Procedural pixelart generator</title>
       <link>https://marian42.de/article/proceduralart/</link>
       <pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
