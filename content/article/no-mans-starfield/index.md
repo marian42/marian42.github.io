@@ -2,11 +2,11 @@
 title: No Man’s Starfield
 date: 2016-09-18T20:56:03+00:00
 tags:
-  - c++
   - gamedev
   - glsl
   - graphics
   - raytracing
+  - procgen
 
 ---
 <video autoplay loop muted><source src="/article/no-mans-starfield/starfield.webm" type="video/webm" /></video>

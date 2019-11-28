@@ -2,9 +2,9 @@
 title: 'Work in progress: Location based online game'
 date: 2015-09-12T23:10:12+00:00
 tags:
-  - c++
   - gamedev
   - webdev
+  - procgen
 
 ---
 
