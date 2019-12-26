@@ -77,61 +77,9 @@
 
 <p>This spring, I spent some time at SAP’s commercial hackerspace. I wanted to explore how computer vision can be used with embedded devices and robotics. I built a demo that can detect QR codes and similar symbols and point a laser at them. Possible applications of this are putting QR codes on objects to help the robot locate them and grab or manipulate objects. Another possible use case is local navigation. A robot could infer its own location and orientation in space by detecting QR codes with known locations.</p>
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/JA-Aoqt4izY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
-<p>As a prototyping platform, I used a Raspberry Pi board with the Picam camera module. For QR codes, there is a library available to detect them, called zbar. The problem with zbar is that its performance is not good enough to use in robotics. On a Raspberry Pi 2B, it can scan the camera image about three times per second, which is too slow.</p>
-
-<p>Therefore, I explored alternatives to QR codes. I created a new type of symbol that is simpler than a QR code and can be detected faster. The symbol detection was done using Python and the OpenCV library. OpenCV provides tools for computer vision, such as colorspace conversion or contour detection algorithms. These codes can be detected at about 20fps on the Raspberry Pi.</p>
-
-<p>Due to the interpretation layer of Python, it’s not perfect for projects with critical performance. To increase performance even more, the code could be rewritten in C++, which I decided not to do for this prototype. However the performance was improved by operating on large arrays using Numpy rather than standard Python.</p>
-
-<p>For even faster recognition, I designed symbols that just consist of concentric circles. These can be detected faster, but they don’t carry any data. The robot can’t tell them apart.</p>
-
-
-
-
-
-
-<a href="/article/computervision/symbols-comparison.png" target="_blank" title="">
-	<img src="/article/computervision/symbols-comparison_hu45f31a2cf2d5fd76e145ce3923804d35_121591_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-
-
-
-
-
-<a href="/article/computervision/screenshot-1.png" target="_blank" title="">
-	<img src="/article/computervision/screenshot-1_hu416e6cdfe7b64541b68008c170488f3f_309857_636x0_resize_box_2.png" width="636" alt="">
-</a>
-
-
-
-<p>Now that the Pi knows where the symbols are, a laser is pointed at them. The setup can move a red laser on two axes, using two stepper motors. The motors are connected with 3D-printed parts and driven by two Sparkfun EasyDriver boards that provide the correct voltage and current for the motors. The Raspberry Pi uses two GPIO pins for each motor to set the direction and trigger a step.</p>
-
-
-
-
-
-
-<a href="/article/computervision/Bild3.jpg" target="_blank" title="">
-	<img src="/article/computervision/Bild3_hubb30837be62c837d998adb5ca75061d5_109411_636x0_resize_q75_box.jpg" width="636" alt="">
-</a>
-
-
-
-<p>Together with a stand for the camera, the Raspberry Pi can see symbols on the table and move the laser dot around on the table. The camera is also used to detect where the laser is pointing. Another Python script takes the symbol position on the screen and computes the corresponding motor positions.</p>
-
-<p>As another way of demonstrating the laser movement and symbol detection, I wrote a version of the game Pong that is played without a screen, on the table. The laser dot is the ball and the paddles are symbols that are moved around on the table.</p>
-
-<p>Finally, here is an album that shows the steps that are used by the program to analyze an image:</p>
-
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/yO13U"><a href="//imgur.com/yO13U"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+        
+            <a href="/article/computervision/" class="more">continue reading</a>
+        
     
 </div>
 
