@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pytorch on Marian&#39;s Blog</title>
+    <link>https://marian42.de/tags/pytorch/</link>
+    <description>Recent content in pytorch on Marian&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://marian42.de/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visualizing 150000 butterflies from the Natural History Museum</title>
+      <link>https://marian42.de/article/butterflies/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/butterflies/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/butterflies/tsne.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/tsne_hud71a1620f6d55453b4d37c36a301e951_710601_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The Natural History Museum in London has a &lt;a href=&#34;https://data.nhm.ac.uk/&#34;&gt;data portal&lt;/a&gt; in which they provide digital records for many of their specimens.
+Many of these records contain images.
+I recently learned how to use machine learning tools such as convolutional neural networks and I wanted to use the NHM data to see what can be done with these tools.
+The dataset of butterflies seemed particularly interesting to me because the images are visually interesting, yet they are all similar in that they all contain a butterfly in a canonical pose.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

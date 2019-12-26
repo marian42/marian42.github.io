@@ -1,0 +1,390 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					Visualizing 150000 butterflies from the Natural History Museum |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Visualizing 150000 butterflies from the Natural History Museum - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Visualizing 150000 butterflies from the Natural History Museum">
+        <meta itemprop="description" content="Visualizing 150000 butterflies from the Natural History Museum - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Visualizing 150000 butterflies from the Natural History Museum">
+        <meta property="og:description" content="Visualizing 150000 butterflies from the Natural History Museum - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/butterflies/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+	
+
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/butterflies/">Visualizing 150000 butterflies from the Natural History Museum</a></h1>
+    
+		<div class="meta">
+    		<span class="date">December 26, 2019</span>
+		</div>
+    
+
+    
+        <a href="/article/butterflies/tsne.jpg" target="_blank" title="">
+	<img src="/article/butterflies/tsne_hud71a1620f6d55453b4d37c36a301e951_710601_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>The Natural History Museum in London has a <a href="https://data.nhm.ac.uk/">data portal</a> in which they provide digital records for many of their specimens.
+Many of these records contain images.
+I recently learned how to use machine learning tools such as convolutional neural networks and I wanted to use the NHM data to see what can be done with these tools.
+The dataset of butterflies seemed particularly interesting to me because the images are visually interesting, yet they are all similar in that they all contain a butterfly in a canonical pose.</p>
+
+<p>Since I&rsquo;m only interested in learning the visuals of the butterflies and not the rest of the photographs, such as the labels, I needed to find a way to separate the butterflies from the background.
+Here, you can see <a href="https://data.nhm.ac.uk/dataset/56e711e6-c847-4f99-915a-6894bb5c5dea/resource/05ff2255-c38a-40c9-b657-4ccb55ab2feb?view_id=6ba121d1-da26-4ee1-81fa-7da11e68f68e&amp;filters=project%3Apapilionoidea+new+types+digitisation+project">one collection</a> of ~2000 butterflies, which are photographed against a clear background:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/dataportal.png" target="_blank" title="">
+	<img src="/article/butterflies/dataportal_hu23868297e3b6f494562ad1faa0a5eeb6_704913_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>It is quite easy to remove the background automatically based on contrast.
+However, besides this collection, there are a lot more images of butterflies available.
+They can be found by <a href="https://data.nhm.ac.uk/dataset/56e711e6-c847-4f99-915a-6894bb5c5dea/resource/05ff2255-c38a-40c9-b657-4ccb55ab2feb?q=lepidoptera&amp;field=associatedMediaCount&amp;view_id=6ba121d1-da26-4ee1-81fa-7da11e68f68e&amp;value=">searching for &ldquo;lepidoptera&rdquo; in the data portal</a>.
+This way, I downloaded 30 GB of butterflies.
+Most of the 150000 images have noisy backgrounds with varying brightness, such as this one:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/background-example.jpg" target="_blank" title="">
+	<img src="/article/butterflies/background-example_hu0ba601600426aeaa53586feb839d502c_120475_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>To separate the butterflies from the backgrounds, I trained a <a href="https://en.wikipedia.org/wiki/U-Net">U-Net</a> that predicts for each pixel of the image whether it belongs to the butterfly or background.
+It is a convolutional neural network that receives an image as the input and produces a new image as the output, in my case a background-foreground mask.</p>
+
+<p>I started by manually creating masks for a few images:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/masks.png" target="_blank" title="">
+	<img src="/article/butterflies/masks_hu1588d35ca1a1994f752688c56ddb3280_165589_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>I trained the U-Net and tested it on random images from the dataset.
+From those I selected the images where the classification went poorly and manually added masks for them to the training set.
+This selection process leads to a ground truth dataset that contains mostly &ldquo;challenging&rdquo; items
+I ended up with ~300 masks, however it works reasonably well even with fewer images.
+Since the network needs to make a prediction for every single pixel, it is forced to generalize even when it is trained on a single image.</p>
+
+<p>Using the masks generated by the U-Net, I can remove the background and crop all the images in the dataset:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/alpha.jpg" target="_blank" title="">
+	<img src="/article/butterflies/alpha_hu57f3e35a14313bf992ea4de8ea4cf9e5_1328558_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>Next, I created a 128x128 image with a white background for each butterfly and trained an autoencoder on them.
+The autoencoder receives an images as the input and produces a reconstructed image as the output.
+Its loss function is the difference between the input and output so that during training, it learns to reduce that difference and creates an accurate reconstruction of the input.
+The autoencoder has a bottleneck in the middle which consists of 128 neurons.
+This way, it learns to compress each image into a <em>latent vector</em> of 128 numbers.</p>
+
+<p>Here are some examples of images reconstructed with the autoencoder:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/reconstruction.jpg" target="_blank" title="">
+	<img src="/article/butterflies/reconstruction_hu98d383a4a0ac839065649cf4cd1b414c_81878_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>During 6 hours of training, the network didn&rsquo;t converge, meaning that a better quality could be achieved by training longer.
+However, for this project I&rsquo;m mostly interested in the latent space learned by the autoencoder, not the reconstructed images.</p>
+
+<p>I used the encoder of the autoencoder to calculate the latent vectors for all images in the dataset.
+To visualize the latent space, I used <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">t-SNE</a> to transform the latent vectors from 128-dimensional space to a 2D plane.</p>
+
+<p>In this t-SNE plot, each dot corresponds to an image in the dataset.
+The t-SNE transformation places the points so that those points appear close to each other that have similar latent vectors, meaning that they appear similar to the autoencoder.</p>
+
+
+
+
+
+
+<a href="/article/butterflies/tsne-plot.png" target="_blank" title="">
+	<img src="/article/butterflies/tsne-plot_hu05e3307ea217853219dac9f3794c04ba_1049176_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>Next, I wanted to replace the dots in the plot with images of the corresponding butterflies.
+To prevent overlapping of very close points, I iteratively moved them apart.
+This was done by defining a &ldquo;safe&rdquo; radius and finding all points that have a neighbor within this radius.
+Each point is then moved away from its closest neighbor by a small distance:</p>
+
+<video autoplay loop muted><source src="/article/butterflies/move_points.mp4" type="video/mp4"/></video>
+
+<p>Here is a part of the resulting image, where I also added some drop shadows:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/map-part.jpg" target="_blank" title="">
+	<img src="/article/butterflies/map-part_hu0a5c0bfef10627d0def13bfcc9c87827_526933_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>We can already see that similar butterflies are clustered together.
+However, this t-SNE plot is 131000x131000 pixels big.
+That is 17 Gigapixels!
+To display it, I&rsquo;m using <a href="https://leafletjs.com/">Leaflet</a>, a javascript library that can render maps.
+The image is split into tiles with a resolution of 256x256 pixels which are loaded dynamically by Leaflet.
+I also created tiles for lower zoom levels, so that people can zoom out like on a map.</p>
+
+<p>When the map is zoomed all the way out, the images appear as tiny dots.
+For the intermediate zoom levels, I rendered a few &ldquo;representative&rdquo; images.
+These are selected by applying a <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> to the t-SNE points.
+For each cluster, a representative image is rendered at the cluster center.
+The representative image is selected by calculating the average of the cluster in latent space (not t-SNE space) and finding the butterfly with the latent vector that is closest to the average.
+I found that when using t-SNE space to determine the representative, an outlier is often selected, which doesn&rsquo;t happen in latent space.</p>
+
+
+
+
+
+
+<a href="/article/butterflies/cluster.jpg" target="_blank" title="">
+	<img src="/article/butterflies/cluster_hu56347c8bff6892296baebe59b1d77183_290887_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>The tileset contains 138000 images, which is ~900 MB.
+This is what it looks like to zoom around in the interactive t-SNE plot:</p>
+
+<video autoplay loop muted><source src="/article/butterflies/zoom.mp4" type="video/mp4"/></video>
+
+<p><a href="https://marian42.de/butterflies/">Click here for the interactive version of the t-SNE plot.</a></p>
+
+<p>I also added the ability to click on the butterflies to show a popup with the original image, the scientific name and some other data.</p>
+
+
+
+
+
+
+<a href="/article/butterflies/popup.png" target="_blank" title="">
+	<img src="/article/butterflies/popup_hu9a6cace4899091425e4aa84c4ef7d81c_714854_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>These information are provided in the NHM data portal as a CSV file.
+I wrote a script that creates a JSON file with the t-SNE positions of the points and the corresponding data.
+However, this metadata file alone is 50MB in size.
+It is not feasible to load it when someone visits the website.
+So I split the metadata into smaller chunks using a quadtree, much like the images are split into tiles.
+Now the metadata is loaded only for the regions that the user looks at.</p>
+
+<p>Using the data from these CSV files, I can color the dots in the t-SNE plot according to the genus of the butterflies:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/genus.png" target="_blank" title="">
+	<img src="/article/butterflies/genus_hu97d55d7b2de9aadaa2c5fdc18aa58114_1647240_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>We can see that the autoencoder has learned to separate the butterflies by genus, solely based on the visuals, without being told anything about them!
+This is an example of unsupervised training of a classifier.</p>
+
+<p>Similarly, it mostly placed the families in adjacent clusters:</p>
+
+
+
+
+
+
+<a href="/article/butterflies/families.png" target="_blank" title="">
+	<img src="/article/butterflies/families_huea1b8c10fed2f5069aaa8eba05ec3a22_1681314_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>There is an <a href="https://marian42.de/butterflies/?-0.15302,0.12622,13">area in the plot</a> where lots of colors mix.
+These are specimens with missing wings.
+Since the missing wing is the most striking visual feature, it primarily determines the latent vector that the autoencoder assigns.</p>
+
+
+
+
+
+
+<a href="/article/butterflies/missing-wing.jpg" target="_blank" title="">
+	<img src="/article/butterflies/missing-wing_hu5f90bf03b0cab5905577c1d0b0c132c1_307278_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>Using the same method for the sex, we can see that most of the records contain no sex information.
+However, for the <a href="https://marian42.de/butterflies/?-0.40247,-0.76001,12">birdwings</a>, for which this information is available, the autoencoder has learned to separate male from female, again, without being tasked to do so.</p>
+
+
+
+
+
+
+<a href="/article/butterflies/male-female.png" target="_blank" title="">
+	<img src="/article/butterflies/male-female_huf1e308b73177fce33e0c94ff16c79f6e_955543_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>We can observe a similar result for the <a href="https://marian42.de/butterflies/?-0.72034,0.48779,12">colias</a>.</p>
+
+<p>The <a href="https://github.com/marian42/butterflies">source code for this project is available on Github</a>.
+The images of the butterflies are provided by the <a href="https://data.nhm.ac.uk/">Trustees of the Natural History Museum</a> under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/machinelearning">machinelearning</a>
+	                
+	                    <a href="/tags/datavisualization">datavisualization</a>
+	                
+	                    <a href="/tags/python">python</a>
+	                
+	                    <a href="/tags/pytorch">pytorch</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

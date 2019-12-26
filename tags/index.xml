@@ -5,10 +5,46 @@
     <link>https://marian42.de/tags/</link>
     <description>Recent content in Tags on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>datavisualization</title>
+      <link>https://marian42.de/tags/datavisualization/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/datavisualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machinelearning</title>
+      <link>https://marian42.de/tags/machinelearning/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/machinelearning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://marian42.de/tags/python/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pytorch</title>
+      <link>https://marian42.de/tags/pytorch/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/pytorch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>3dprinting</title>
@@ -196,15 +232,6 @@
       <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
       
       <guid>https://marian42.de/tags/matrix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://marian42.de/tags/python/</link>
-      <pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/python/</guid>
       <description></description>
     </item>
     
