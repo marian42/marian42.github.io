@@ -23,7 +23,7 @@
 
 
 &lt;p&gt;The Natural History Museum in London has a &lt;a href=&#34;https://data.nhm.ac.uk/&#34;&gt;data portal&lt;/a&gt; in which they provide digital records for many of their specimens.
-Many of these records contain images.
+Some of these records have images.
 I recently learned how to use machine learning tools such as convolutional neural networks and I wanted to use the NHM data to see what can be done with these tools.
 The dataset of butterflies seemed particularly interesting to me because the images are visually interesting, yet they are all similar in that they all contain a butterfly in a canonical pose.&lt;/p&gt;</description>
     </item>
