@@ -136,7 +136,7 @@ However, for the [birdwings](https://marian42.de/butterflies/?-0.40247,-0.76001,
 
 {{< img "male-female.png" "" >}}
 
-We can observe a similar result for the [colias](https://marian42.de/butterflies/?-0.72034,0.48779,12).
+We can observe a similar result for the [delias](https://marian42.de/butterflies/?-0.23245,0.17975,14).
 
 The [source code for this project is available on Github](https://github.com/marian42/butterflies).
 The images of the butterflies are provided by the [Trustees of the Natural History Museum](https://data.nhm.ac.uk/) under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
