@@ -35,7 +35,7 @@
         
         
         
-        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.be1a81634f345dade7451c3046b006070f0163ce7713df4e1d4666d60930e358.css">
 
         
     </head>
@@ -75,9 +75,96 @@
 
 <p>I wrote two programs that run on my LED matrix. They have different approaches and different aims. This post describes one of them. </p>
 
-        
-            <a href="/article/ledmatrix-software/" class="more">continue reading</a>
-        
+<p>The app offers a web interface where users can write simple programs that are then compiled and started instantly from the website. The concept is similar to <a href="https://shadertoy.com">Shadertoy</a>, where you write C-like shader code in a browser window and instantly see it run. The code of for this project is on my <a href="https://github.com/marian42/ledcpp">github</a> and it’s in a state where you should be able to run it fairly easily, if your hardware is similar. The github page has installation instructions and some documentation on the available functions for user apps.</p>
+
+<p>The backend for the webapp is written in Python, using flask. The user apps are written in C++. I first tried to use Python for this as well, but it wasn’t fast enough. Just iterating through a 256 color list already impacts the framerate. The C++ code is compiled into a shared object library file. The library is loaded into the python app using the python module ctypes. The client is written in Javascript, using codemirror to edit code and bootstrap for the UI.</p>
+
+<p>There is a gif recording feature that creates live recordings of the apps you write:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/RingTest.gif" width="128" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/Pie.gif" width="128" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/Fire.gif" width="128" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/Swirl.gif" width="128" alt="">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/CloudySky.gif" width="128" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/RingZoom.gif" width="128" alt="">
+
+</td>
+<td>
+
+
+
+
+<img src="/article/ledmatrix-software/Beacon.gif" width="128" alt="">
+
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+<a href="/article/ledmatrix-software/DSCF1527.jpg" target="_blank" title="">
+	<img src="/article/ledmatrix-software/DSCF1527_hu0013a6270d5b14a6d216699302a8701b_677905_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
     
 </div>
 
@@ -85,6 +172,33 @@
 <div class="footer">
 
 
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/c&#43;&#43;">c&#43;&#43;</a>
+	                
+	                    <a href="/tags/js">js</a>
+	                
+	                    <a href="/tags/led">LED</a>
+	                
+	                    <a href="/tags/ledmatrix">ledmatrix</a>
+	                
+	                    <a href="/tags/leds">leds</a>
+	                
+	                    <a href="/tags/matrix">matrix</a>
+	                
+	                    <a href="/tags/python">python</a>
+	                
+	                    <a href="/tags/raspberrypi">raspberrypi</a>
+	                
+	                    <a href="/tags/webdev">webdev</a>
+	                
+	            </div>
+	        </div>
+	    
 	
 </div>
 
