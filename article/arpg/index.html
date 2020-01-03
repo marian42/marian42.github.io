@@ -1,0 +1,344 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					What I learned from building autonomous model race cars for a year |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="What I learned from building autonomous model race cars for a year - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="What I learned from building autonomous model race cars for a year">
+        <meta itemprop="description" content="What I learned from building autonomous model race cars for a year - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="What I learned from building autonomous model race cars for a year">
+        <meta property="og:description" content="What I learned from building autonomous model race cars for a year - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/arpg/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+        
+        
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.9404402279c943e89a48808d9bae7fa89f1511048fdb86fa409386bf1152c218.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/arpg/">What I learned from building autonomous model race cars for a year</a></h1>
+    
+		<div class="meta">
+    		<span class="date">January 3, 2020</span>
+		</div>
+    
+
+    
+        <a href="/article/arpg/car.jpg" target="_blank" title="">
+	<img src="/article/arpg/car_hu7e318ce0abc84126abf470d742744e01_3604221_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>I was part of a university project group that develops autonomous model race cars.
+We are a group of twelve students working on the project in part time for year.</p>
+
+<p>We were provided with a car that meets the <a href="http://f1tenth.org/race/rules-v2.pdf">requirements</a> for the <a href="http://f1tenth.org/">F1/10th competition</a>.
+Even though competing in F1/10th was not our goal, we kept the rules for the competition in mind.
+We focussed mostly on trying different driving algorithms, which I&rsquo;ll explain below.
+The software we developed is <a href="https://github.com/Autonomous-Racing-PG/ar-tu-do">available on Github</a>.</p>
+
+<p>This post is about what we did and what insights I gained from this work.</p>
+
+<h2 id="hardware">Hardware</h2>
+
+
+
+
+
+
+<a href="/article/arpg/camera.jpg" target="_blank" title="">
+	<img src="/article/arpg/camera_huf02f7f6c3e4a34cd7241f4582573fe2d_3005587_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<p>Our car is a regular <sup>1</sup>&frasl;<sub>10</sub> scale RC car where the the RC receiver is replaced with a computer.
+The car is based on a <a href="https://github.com/Autonomous-Racing-PG/ar-tu-do">Traxxas Ford Fiesta ST Rally</a>.
+The computer is an <a href="https://developer.nvidia.com/embedded/jetson-tx2">Nvidia Jetson TX2</a>.
+The car is equipped with a LIDAR scanner with a resolution of 1 ✕ 1080, an IMU and a stereo camera.
+We ended up not using the stereo camera.</p>
+
+
+
+
+
+
+<a href="/article/arpg/wires.jpg" target="_blank" title="">
+	<img src="/article/arpg/wires_hu8fe0e9510807aaf629180783801700f6_2149158_636x0_resize_q75_box.jpg" width="636" alt="">
+</a>
+
+
+
+<h2 id="ros">ROS</h2>
+
+<p>Our software stack is based on <a href="https://www.ros.org/">ROS</a> and <a href="http://gazebosim.org/">Gazebo</a>.
+We used ROS and Gazebo because it is the standard for academic robotics projects.
+Most online materials assume that your project uses on ROS.</p>
+
+<p>ROS is a robotics framework that facilitates communication between robot compontents such as sensors and actors.
+All the hardware components we use have ROS nodes that publish or subscribe to data in a standardized way.
+ROS provides a rich ecosystem of software.
+For all kinds of robot parts and control problems there are ROS nodes available.
+You can get pretty far by just tying together existing ROS packages.
+ROS nodes can be written in C++ and Python 2.7 and since each node is its own process, both languages can be used at the same time.</p>
+
+
+
+
+
+
+<a href="/article/arpg/rosgraph.png" target="_blank" title="">
+	<img src="/article/arpg/rosgraph_hufdcf77b4d032670a099b9a7584c9d7fe_734936_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>A ROS architecture is built like a distributed system with nodes that subscribe and publish to topics.
+This is the case even if everything runs on a single computer, like with our project.
+This creates some overhead.
+Using ROS means that you&rsquo;ll write lots of configuration files, package definition files, launch files, robot description files that all reference each other.
+With Gazebo, you&rsquo;ll also need mesh description XML files and world definition files.
+However, I think that using ROS is worth it for ecosystem of existing ROS modules.</p>
+
+<h2 id="gazebo">Gazebo</h2>
+
+<video autoplay loop muted><source src="/article/arpg/gazebo.mp4" type="video/mp4"/></video>
+
+<p>We use <a href="http://gazebosim.org">Gazebo</a> as a simulation environment.
+Our robot car can drive in the real world and in the Gazebo simulation using the same software.
+Having this simulation turned out to be extremely useful.
+Since we mostly used the Lidar, the simulated track is designed with walls enclosing the track.
+The visual appearance and realism was less important for our use case.</p>
+
+
+
+
+
+
+<a href="/article/arpg/track.png" target="_blank" title="">
+	<img src="/article/arpg/track_hu1343c6acdccaa2cb5769fe1314583090_267951_636x0_resize_box_2.png" width="636" alt="">
+</a>
+
+
+
+<p>What follows next is my rant about Gazebo.
+Gazebo is bad software in every way.
+It is poorly documented, buggy and misses important features.
+For example, about 20% of the time, Gazebo doesn&rsquo;t launch at all and crashes instead.
+In the video above, you can see that the car receives shadows, but the track doesn&rsquo;t.
+See how the car isn&rsquo;t shiny?
+That&rsquo;s because Gazebo&rsquo;s lighting model doesn&rsquo;t support metalicity.
+Getting it to render the scene this decent was super difficult, it would be trivial to get way better looks in an engine like Unity.
+These are just a few out of many problems we had with Gazebo.
+Seemingly trivial things are unneccesarily difficult.</p>
+
+<p>My takeaway is:
+Avoid using Gazebo if at all possible.
+Use a game engine instead.
+Getting a working game engine to simulate a robotics scenario is way easier than getting Gazebo to do what it&rsquo;s supposed to do.
+For example, there is <a href="https://github.com/siemens/ros-sharp">a project to let ROS communicate with the Unity engine</a>.
+This is what you should use instead, it will save you a lot of headaches.
+There are some features in Gazebo specific to robot simulation that a game engine doesn&rsquo;t provide, such as a headless mode.</p>
+
+<p>Now for the interesting part, the autonomous driving algorithms.
+All algorithms use only LIDAR and IMU data.
+We didn&rsquo;t use the camera.</p>
+
+<h2 id="slam">SLAM</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping">SLAM</a> stands for <em>simultaneous localization and mapping</em>.
+It is the concept that the robot determines its own position in an unknown environment based on a map that it creates while exploring the enviroment.
+For autonomous racing, this means that the car generates a map of the racetrack and can then calculate and follow an ideal racing path using that map and its position.</p>
+
+<video autoplay loop muted><source src="/article/arpg/slam.mp4" type="video/mp4"/></video>
+
+<p>Since we use ROS, we can use lots of <a href="http://wiki.ros.org/gmapping">existing SLAM implementations</a> that are built specifically for ROS.
+In addition, ROS offers the <a href="http://wiki.ros.org/navigation">navigation stack</a>, which has implementations for path planning and execution.
+But working with SLAM in practice turned out to be difficult.
+The existing SLAM algorithms are mostly designed for slow robots and stop working at higher speeds.
+This makes them unsuitable for racing.
+But seeing the map generate looks pretty cool!</p>
+
+<h2 id="wallfollowing">Wallfollowing</h2>
+
+<video autoplay loop muted><source src="/article/arpg/wallfollowing.mp4" type="video/mp4"/></video>
+
+<p>Wallfollowing is what we call our greedy driving algorithm.
+It has no concept of the track or the ideal path.
+It only considers the part of the track that the LIDAR can see from the current position of the car.</p>
+
+<p>Our approach is to separate the laser sample points (shown in red) into a left and a right wall and fit two circles into them.
+The algorithm calculates a predicted position of the car (in the center of the video) and a desired position (in the center of the track).
+The difference between them (shown in orange) is used as the error for a PID controller, which controlls the steering.
+To control throttle, we calculate multiple maximum speeds based on the PID error, the curviness of the track  and the distance towards the next obstacle (shown in yellow).
+Out of these maximum speeds, we apply the smallest one.
+This allows us to slow down in curves, <a href="https://en.wikipedia.org/wiki/Racing_line">cut corners</a>, etc.</p>
+
+<p>Teams competing in the F1/10 competition typically use an approach like this.
+The wallfollowing approach provided the best lap times in our tests.</p>
+
+<p>The videos for Gazebo and for SLAM above show the car being controlled by the Wallfollowing algorithm.
+Here is a video of the physical car driving with it:</p>
+
+<video autoplay loop muted><source src="/article/arpg/wallfollowing_irl.mp4" type="video/mp4"/></video>
+
+<h2 id="reinforcement-learning">Reinforcement Learning</h2>
+
+<p>One of the methods of autonous driving we tried during this project group was <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">reinforcement learning</a>.
+It is an area of machine learning where an agent, in our case a car, learns to select actions given a state to optimize a reward function.
+In particular, we used <em>deep reinforcement learning</em>, where the function that selects an action given a state is a neural network, instead of a lookup table.</p>
+
+<p>In our case, the state vector was a downscaled version of the Lidar scan.
+That means, each element of the vector contains the measured distance for a fixed direction.
+We also experimented with other state information, such as velocity and throttle, but this didn&rsquo;t bring any improvement.
+In reinforcement learning, the actions are discrete, meaning that the agent selects an action out of a finite set, instead of providing numbers for throttle and steering.
+In the simplest example, we used a fixed velocity and two actions for steering left and right.
+Straight driving would be achieved by oscilating between left and right.
+We also tried more granular action sets, but this increases the difficulty of the learning task.
+The neural network has one input neuron for each element of the state vector and one output neuron for each action.
+It predicts a Q value for each action and the car will perform the action with the highest Q value.
+During training however, sometimes random actions are taken instead, according an epsilon-greedy policy (exploration vs. exploitation).
+For the reward function, it would be possible to use a reward of 1 for each step.
+There is an implicit reward for not crashing as this leads to longer episodes and the reward is accumulated over the episode.
+But it will learn to stay in the center faster if we give it higher rewards for driving close to the center of the track and lower rewards for driving close to the walls.
+In addition, we reward high speed.</p>
+
+<p>We tested <a href="https://en.wikipedia.org/wiki/Q-learning">Q-Learning</a> and <a href="https://en.wikipedia.org/wiki/Reinforcement_learning#Direct_policy_search">Policy Gradient</a>.
+Both took hours to learn to drive in the center, but eventually did so decently.
+Overall, policy gradient worked better than Q-learning.
+But both were unreliable in the simulation and didn&rsquo;t translate well from simulation to reality.
+I think that we could achieve significantly better results if we had more time.</p>
+
+<p>This is a video of the car driving in our simulation with policy gradient:</p>
+
+<video autoplay loop muted><source src="/article/arpg/policy_gradient.mp4" type="video/mp4"/></video>
+
+<h2 id="evolutionary-algorithm">Evolutionary Algorithm</h2>
+
+<p>For the evolutionary algorithm, we took the neural networks from our reinforcement learning approach and learned the network parameters with an evolutionary algorithm.
+Instead of using a set of actions, we let two output neurons control throttle and steering directly.
+We started with random weights and randomly changed them while measuring the performance of the car in the simulation.</p>
+
+<p>Surprisingly, this worked about as well as reinforcement learning, but was easier to implement and took less time to train.
+However, like reinforcement learning, it did not perform as well as our wallfollowing algorithm.</p>
+
+<h2 id="outlook">Outlook</h2>
+
+<p>Since our goal was not primarily to participate in the official competition, we investigated sevaral methods of autonomous driving.
+The least fancy one, our greedy wallfollowing algorithm, turned out to be the fastest.
+All of the driving methods could probably be improved with more time.
+There is a follow-up <a href="https://github.com/arpg-sophisticated/ar-tu-do">project group</a> that continues to work with our code base.
+It looks like they are even working on moving away from Gazebo.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/autonomous-driving">autonomous-driving</a>
+	                
+	                    <a href="/tags/autonomous-racing">autonomous-racing</a>
+	                
+	                    <a href="/tags/machine-learning">machine-learning</a>
+	                
+	                    <a href="/tags/hardware">hardware</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+				<a href="/page/imprint/">Imprint</a>&nbsp;
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

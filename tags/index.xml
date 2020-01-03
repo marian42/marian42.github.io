@@ -5,10 +5,46 @@
     <link>https://marian42.de/tags/</link>
     <description>Recent content in Tags on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>autonomous-driving</title>
+      <link>https://marian42.de/tags/autonomous-driving/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/autonomous-driving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>autonomous-racing</title>
+      <link>https://marian42.de/tags/autonomous-racing/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/autonomous-racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>https://marian42.de/tags/hardware/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://marian42.de/tags/machine-learning/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/machine-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>datavisualization</title>
@@ -47,6 +83,24 @@
     </item>
     
     <item>
+      <title>tsne</title>
+      <link>https://marian42.de/tags/tsne/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/tsne/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webdev</title>
+      <link>https://marian42.de/tags/webdev/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/webdev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>3dprinting</title>
       <link>https://marian42.de/tags/3dprinting/</link>
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
@@ -70,15 +124,6 @@
       <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://marian42.de/tags/opengl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webdev</title>
-      <link>https://marian42.de/tags/webdev/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/webdev/</guid>
       <description></description>
     </item>
     
@@ -250,15 +295,6 @@
       <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
       
       <guid>https://marian42.de/tags/electronics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hardware</title>
-      <link>https://marian42.de/tags/hardware/</link>
-      <pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/hardware/</guid>
       <description></description>
     </item>
     

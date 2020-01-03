@@ -4,19 +4,48 @@
   
   <url>
     <loc>https://marian42.de/article/</loc>
-    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://marian42.de/</loc>
-    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://marian42.de/tags/</loc>
-    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/arpg/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/autonomous-driving/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/autonomous-racing/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/hardware/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/machine-learning/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -50,6 +79,18 @@
   </url>
   
   <url>
+    <loc>https://marian42.de/tags/tsne/</loc>
+    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/webdev/</loc>
+    <lastmod>2019-12-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://marian42.de/tags/3dprinting/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -68,12 +109,6 @@
   
   <url>
     <loc>https://marian42.de/tags/opengl/</loc>
-    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/tags/webdev/</loc>
     <lastmod>2019-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -228,12 +263,6 @@
   
   <url>
     <loc>https://marian42.de/tags/electronics/</loc>
-    <lastmod>2017-05-08T00:17:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/tags/hardware/</loc>
     <lastmod>2017-05-08T00:17:55+00:00</lastmod>
     <priority>0</priority>
   </url>

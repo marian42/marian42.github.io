@@ -3,10 +3,223 @@
     <title>Marian&#39;s Blog</title>
     <link>https://marian42.de/</link>
     <description>Personal blog about programming, game development and space ships.</description>
-	<lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+		<title>What I learned from building autonomous model race cars for a year</title>
+		<link>https://marian42.de/article/arpg/</link>
+		<pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/arpg/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/arpg/car.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/car_hu7e318ce0abc84126abf470d742744e01_3604221_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;I was part of a university project group that develops autonomous model race cars.
+We are a group of twelve students working on the project in part time for year.&lt;/p&gt;
+
+&lt;p&gt;We were provided with a car that meets the &lt;a href=&#34;http://f1tenth.org/race/rules-v2.pdf&#34;&gt;requirements&lt;/a&gt; for the &lt;a href=&#34;http://f1tenth.org/&#34;&gt;F1/10th competition&lt;/a&gt;.
+Even though competing in F1/10th was not our goal, we kept the rules for the competition in mind.
+We focussed mostly on trying different driving algorithms, which I&amp;rsquo;ll explain below.
+The software we developed is &lt;a href=&#34;https://github.com/Autonomous-Racing-PG/ar-tu-do&#34;&gt;available on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post is about what we did and what insights I gained from this work.&lt;/p&gt;
+
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/arpg/camera.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/camera_huf02f7f6c3e4a34cd7241f4582573fe2d_3005587_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Our car is a regular &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;10&lt;/sub&gt; scale RC car where the the RC receiver is replaced with a computer.
+The car is based on a &lt;a href=&#34;https://github.com/Autonomous-Racing-PG/ar-tu-do&#34;&gt;Traxxas Ford Fiesta ST Rally&lt;/a&gt;.
+The computer is an &lt;a href=&#34;https://developer.nvidia.com/embedded/jetson-tx2&#34;&gt;Nvidia Jetson TX2&lt;/a&gt;.
+The car is equipped with a LIDAR scanner with a resolution of 1 ✕ 1080, an IMU and a stereo camera.
+We ended up not using the stereo camera.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/arpg/wires.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/wires_hu8fe0e9510807aaf629180783801700f6_2149158_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;h2 id=&#34;ros&#34;&gt;ROS&lt;/h2&gt;
+
+&lt;p&gt;Our software stack is based on &lt;a href=&#34;https://www.ros.org/&#34;&gt;ROS&lt;/a&gt; and &lt;a href=&#34;http://gazebosim.org/&#34;&gt;Gazebo&lt;/a&gt;.
+We used ROS and Gazebo because it is the standard for academic robotics projects.
+Most online materials assume that your project uses on ROS.&lt;/p&gt;
+
+&lt;p&gt;ROS is a robotics framework that facilitates communication between robot compontents such as sensors and actors.
+All the hardware components we use have ROS nodes that publish or subscribe to data in a standardized way.
+ROS provides a rich ecosystem of software.
+For all kinds of robot parts and control problems there are ROS nodes available.
+You can get pretty far by just tying together existing ROS packages.
+ROS nodes can be written in C++ and Python 2.7 and since each node is its own process, both languages can be used at the same time.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/arpg/rosgraph.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/rosgraph_hufdcf77b4d032670a099b9a7584c9d7fe_734936_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;A ROS architecture is built like a distributed system with nodes that subscribe and publish to topics.
+This is the case even if everything runs on a single computer, like with our project.
+This creates some overhead.
+Using ROS means that you&amp;rsquo;ll write lots of configuration files, package definition files, launch files, robot description files that all reference each other.
+With Gazebo, you&amp;rsquo;ll also need mesh description XML files and world definition files.
+However, I think that using ROS is worth it for ecosystem of existing ROS modules.&lt;/p&gt;
+
+&lt;h2 id=&#34;gazebo&#34;&gt;Gazebo&lt;/h2&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/arpg/gazebo.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;We use &lt;a href=&#34;http://gazebosim.org&#34;&gt;Gazebo&lt;/a&gt; as a simulation environment.
+Our robot car can drive in the real world and in the Gazebo simulation using the same software.
+Having this simulation turned out to be extremely useful.
+Since we mostly used the Lidar, the simulated track is designed with walls enclosing the track.
+The visual appearance and realism was less important for our use case.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/arpg/track.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/track_hu1343c6acdccaa2cb5769fe1314583090_267951_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;What follows next is my rant about Gazebo.
+Gazebo is bad software in every way.
+It is poorly documented, buggy and misses important features.
+For example, about 20% of the time, Gazebo doesn&amp;rsquo;t launch at all and crashes instead.
+In the video above, you can see that the car receives shadows, but the track doesn&amp;rsquo;t.
+See how the car isn&amp;rsquo;t shiny?
+That&amp;rsquo;s because Gazebo&amp;rsquo;s lighting model doesn&amp;rsquo;t support metalicity.
+Getting it to render the scene this decent was super difficult, it would be trivial to get way better looks in an engine like Unity.
+These are just a few out of many problems we had with Gazebo.
+Seemingly trivial things are unneccesarily difficult.&lt;/p&gt;
+
+&lt;p&gt;My takeaway is:
+Avoid using Gazebo if at all possible.
+Use a game engine instead.
+Getting a working game engine to simulate a robotics scenario is way easier than getting Gazebo to do what it&amp;rsquo;s supposed to do.
+For example, there is &lt;a href=&#34;https://github.com/siemens/ros-sharp&#34;&gt;a project to let ROS communicate with the Unity engine&lt;/a&gt;.
+This is what you should use instead, it will save you a lot of headaches.
+There are some features in Gazebo specific to robot simulation that a game engine doesn&amp;rsquo;t provide, such as a headless mode.&lt;/p&gt;
+
+&lt;p&gt;Now for the interesting part, the autonomous driving algorithms.
+All algorithms use only LIDAR and IMU data.
+We didn&amp;rsquo;t use the camera.&lt;/p&gt;
+
+&lt;h2 id=&#34;slam&#34;&gt;SLAM&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping&#34;&gt;SLAM&lt;/a&gt; stands for &lt;em&gt;simultaneous localization and mapping&lt;/em&gt;.
+It is the concept that the robot determines its own position in an unknown environment based on a map that it creates while exploring the enviroment.
+For autonomous racing, this means that the car generates a map of the racetrack and can then calculate and follow an ideal racing path using that map and its position.&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/arpg/slam.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;Since we use ROS, we can use lots of &lt;a href=&#34;http://wiki.ros.org/gmapping&#34;&gt;existing SLAM implementations&lt;/a&gt; that are built specifically for ROS.
+In addition, ROS offers the &lt;a href=&#34;http://wiki.ros.org/navigation&#34;&gt;navigation stack&lt;/a&gt;, which has implementations for path planning and execution.
+But working with SLAM in practice turned out to be difficult.
+The existing SLAM algorithms are mostly designed for slow robots and stop working at higher speeds.
+This makes them unsuitable for racing.
+But seeing the map generate looks pretty cool!&lt;/p&gt;
+
+&lt;h2 id=&#34;wallfollowing&#34;&gt;Wallfollowing&lt;/h2&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/arpg/wallfollowing.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;Wallfollowing is what we call our greedy driving algorithm.
+It has no concept of the track or the ideal path.
+It only considers the part of the track that the LIDAR can see from the current position of the car.&lt;/p&gt;
+
+&lt;p&gt;Our approach is to separate the laser sample points (shown in red) into a left and a right wall and fit two circles into them.
+The algorithm calculates a predicted position of the car (in the center of the video) and a desired position (in the center of the track).
+The difference between them (shown in orange) is used as the error for a PID controller, which controlls the steering.
+To control throttle, we calculate multiple maximum speeds based on the PID error, the curviness of the track  and the distance towards the next obstacle (shown in yellow).
+Out of these maximum speeds, we apply the smallest one.
+This allows us to slow down in curves, &lt;a href=&#34;https://en.wikipedia.org/wiki/Racing_line&#34;&gt;cut corners&lt;/a&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;Teams competing in the F1/10 competition typically use an approach like this.
+The wallfollowing approach provided the best lap times in our tests.&lt;/p&gt;
+
+&lt;p&gt;The videos for Gazebo and for SLAM above show the car being controlled by the Wallfollowing algorithm.
+Here is a video of the physical car driving with it:&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/arpg/wallfollowing_irl.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;h2 id=&#34;reinforcement-learning&#34;&gt;Reinforcement Learning&lt;/h2&gt;
+
+&lt;p&gt;One of the methods of autonous driving we tried during this project group was &lt;a href=&#34;https://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;reinforcement learning&lt;/a&gt;.
+It is an area of machine learning where an agent, in our case a car, learns to select actions given a state to optimize a reward function.
+In particular, we used &lt;em&gt;deep reinforcement learning&lt;/em&gt;, where the function that selects an action given a state is a neural network, instead of a lookup table.&lt;/p&gt;
+
+&lt;p&gt;In our case, the state vector was a downscaled version of the Lidar scan.
+That means, each element of the vector contains the measured distance for a fixed direction.
+We also experimented with other state information, such as velocity and throttle, but this didn&amp;rsquo;t bring any improvement.
+In reinforcement learning, the actions are discrete, meaning that the agent selects an action out of a finite set, instead of providing numbers for throttle and steering.
+In the simplest example, we used a fixed velocity and two actions for steering left and right.
+Straight driving would be achieved by oscilating between left and right.
+We also tried more granular action sets, but this increases the difficulty of the learning task.
+The neural network has one input neuron for each element of the state vector and one output neuron for each action.
+It predicts a Q value for each action and the car will perform the action with the highest Q value.
+During training however, sometimes random actions are taken instead, according an epsilon-greedy policy (exploration vs. exploitation).
+For the reward function, it would be possible to use a reward of 1 for each step.
+There is an implicit reward for not crashing as this leads to longer episodes and the reward is accumulated over the episode.
+But it will learn to stay in the center faster if we give it higher rewards for driving close to the center of the track and lower rewards for driving close to the walls.
+In addition, we reward high speed.&lt;/p&gt;
+
+&lt;p&gt;We tested &lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34;&gt;Q-Learning&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Reinforcement_learning#Direct_policy_search&#34;&gt;Policy Gradient&lt;/a&gt;.
+Both took hours to learn to drive in the center, but eventually did so decently.
+Overall, policy gradient worked better than Q-learning.
+But both were unreliable in the simulation and didn&amp;rsquo;t translate well from simulation to reality.
+I think that we could achieve significantly better results if we had more time.&lt;/p&gt;
+
+&lt;p&gt;This is a video of the car driving in our simulation with policy gradient:&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/arpg/policy_gradient.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;h2 id=&#34;evolutionary-algorithm&#34;&gt;Evolutionary Algorithm&lt;/h2&gt;
+
+&lt;p&gt;For the evolutionary algorithm, we took the neural networks from our reinforcement learning approach and learned the network parameters with an evolutionary algorithm.
+Instead of using a set of actions, we let two output neurons control throttle and steering directly.
+We started with random weights and randomly changed them while measuring the performance of the car in the simulation.&lt;/p&gt;
+
+&lt;p&gt;Surprisingly, this worked about as well as reinforcement learning, but was easier to implement and took less time to train.
+However, like reinforcement learning, it did not perform as well as our wallfollowing algorithm.&lt;/p&gt;
+
+&lt;h2 id=&#34;outlook&#34;&gt;Outlook&lt;/h2&gt;
+
+&lt;p&gt;Since our goal was not primarily to participate in the official competition, we investigated sevaral methods of autonomous driving.
+The least fancy one, our greedy wallfollowing algorithm, turned out to be the fastest.
+All of the driving methods could probably be improved with more time.
+There is a follow-up &lt;a href=&#34;https://github.com/arpg-sophisticated/ar-tu-do&#34;&gt;project group&lt;/a&gt; that continues to work with our code base.
+It looks like they are even working on moving away from Gazebo.&lt;/p&gt;</description>
+    </item>
     
     <item>
 		<title>Visualizing 150000 butterflies from the Natural History Museum</title>
