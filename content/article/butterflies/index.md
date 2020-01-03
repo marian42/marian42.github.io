@@ -6,6 +6,8 @@ tags:
   - datavisualization
   - python
   - pytorch
+  - webdev
+  - tsne
 
 ---
 
