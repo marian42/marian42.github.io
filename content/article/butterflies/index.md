@@ -2,7 +2,7 @@
 title: Visualizing 150000 butterflies from the Natural History Museum
 date: 2019-12-26
 tags:
-  - machinelearning
+  - machine-learning
   - datavisualization
   - python
   - pytorch
