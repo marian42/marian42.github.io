@@ -6,6 +6,7 @@ tags:
   - machine-learning
   - 3d
   - python
+draft: true
 ---
 
 <video autoplay loop muted><source src="/article/shapegan/shapegan.mp4" type="video/mp4"/></video>
