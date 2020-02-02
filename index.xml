@@ -3,10 +3,213 @@
     <title>Marian&#39;s Blog</title>
     <link>https://marian42.de/</link>
     <description>Personal blog about programming, game development and space ships.</description>
-	<lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+		<title>Adversarial Generation of Continuous Implicit Shape Representations</title>
+		<link>https://marian42.de/article/shapegan/</link>
+		<pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/shapegan/</guid>
+		<description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/shapegan.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;This article provides an overview of the paper &lt;a href=&#34;TODO&#34;&gt;&amp;ldquo;Adversarial Generation of Continuous Implicit Shape Representations&amp;rdquo;&lt;/a&gt;, which I co-authored with &lt;a href=&#34;https://rusty1s.github.io/&#34;&gt;Matthias Fey&lt;/a&gt;.
+While the paper focuses on the theoretical aspects, I&amp;rsquo;ll write a higher level explanation and more details related to the implementation here on the blog.&lt;/p&gt;
+
+&lt;p&gt;In the paper, we propose a GAN that generates 3D shapes.
+The GAN uses a DeepSDF network as a generator and either a 3D CNN or a Pointnet as the discriminator.&lt;/p&gt;
+
+&lt;h1 id=&#34;deepsdf&#34;&gt;DeepSDF&lt;/h1&gt;
+
+&lt;p&gt;First, I&amp;rsquo;ll introduce the idea behind &lt;a href=&#34;https://arxiv.org/abs/1901.05103&#34;&gt;DeepSDF&lt;/a&gt;.
+The standard way of representing 3D shapes in deep learning models uses voxel volumes.
+They are a generalization of images to 3D space and store for each voxel the signed distance from the voxel center to the surface.
+With this &lt;a href=&#34;https://arxiv.org/pdf/1610.07584.pdf&#34;&gt;3D CNN&lt;/a&gt; approach, concepts from deep learning for images can be applied to 3D shapes.&lt;/p&gt;
+
+&lt;p&gt;However, CNNs are well suited for learning texture properties and learning to represent a 3D shape as a combination of 3D texture patches is not ideal.
+Furthermore, due to the memory requirements of this approach, high voxel resolutions are not feasible.&lt;/p&gt;
+
+&lt;p&gt;A voxel volume contains a rasterized representation of the signed distance field of the shape.
+The signed distance function is a function that maps a point in 3D space to a scalar &lt;a href=&#34;https://en.wikipedia.org/wiki/Signed_distance_function&#34;&gt;signed distance&lt;/a&gt; value.
+The idea behind the DeepSDF network is to train a neural network to predict the value of the signed distance directly for an arbitrary point in space.
+Thus, the network learns a &lt;em&gt;continuous&lt;/em&gt; representation instead of a rasterized one.
+An SDF network for a single shape therefore has three input neurons and one output neuron.
+The DeepSDF network doesn&amp;rsquo;t use convolutions.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/deepsdf.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/deepsdf_hu8a9999743b0646fccfcac44a485c285e_36679_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;To learn a representation of multiple shapes, the DeepSDF network receives a latent code as an additional input.&lt;/p&gt;
+
+&lt;p&gt;The decision boundary of the network is the surface of the learned shape.
+For a given latent code, a mesh can be created using Marching Cubes by evaluating the network for a raster of points.
+The resolution of that raster can be selected arbitrarily after the network was trained.&lt;/p&gt;
+
+&lt;p&gt;The DeepSDF network is trained on a dataset of 3D points with corresponding SDF values.
+These points are in part uniformly sampled and in part normally distributed around the shape surface, resulting in a high density of training data near the surface.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/sdf-cloud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/sdf-cloud_hub9754221ba420deebe785cb4c61b65be_673017_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Generating SDF data for the &lt;a href=&#34;https://www.shapenet.org/&#34;&gt;ShapeNet dataset&lt;/a&gt; is quite challenging because the dataset contains non-watertight meshes.
+I made my own implementation of the approach proposed in the DeepSDF paper, as well as a slightly different approach.
+&lt;a href=&#34;https://github.com/marian42/mesh_to_sdf&#34;&gt;I published this project as a python module&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I created my own implementation of the DeepSDF network and trained it on the ShapeNet dataset.
+The DeepSDF auto&lt;em&gt;decoder&lt;/em&gt; works like an autoencoder, but without the encoder.
+The latent codes are assigned randomly and then optimized during training using SGD.&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/deepsdf.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;In the animation above, you see a t-SNE plot of the learned latent space of the DeepSDF autodecoder for the ShapeNet dataset.
+The colors show dataset categories which are not known to the network.
+It has learned on its own to assign similar latent codes to shapes of the same category.
+The shapes on the left are reconstructions of latent codes along a random spline path through the latent space.
+&lt;a href=&#34;https://www.youtube.com/watch?v=C_XNdGGs6qM&#34;&gt;Click here for a high resolution version of the animation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;gan&#34;&gt;GAN&lt;/h1&gt;
+
+&lt;p&gt;So far, I introduced the DeepSDF autodecoder that learns to reconstruct a given dataset of shapes.
+The contribution of our paper is to propose a GAN architecture that trains a DeepSDF network to generate new shapes.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&#34;https://en.wikipedia.org/wiki/Generative_adversarial_network&#34;&gt;&lt;em&gt;generative adversarial network&lt;/em&gt;&lt;/a&gt;  is a pair of a generator network and a discriminator network.
+The generator proposes new samples (in our case shapes) and the discriminator predicts whether a given sample was generated by the generator (&amp;ldquo;fake&amp;rdquo;) or taken from the dataset (&amp;ldquo;real&amp;rdquo;).
+The trick is that the generator is improved using the gradient of the discriminator output and the discriminator is trained on the dataset and the increasingly realistic samples provided by the generator.
+Thus, the generator and discriminator have adversarial goals.
+If the GAN training is successful, the generator has learned a mapping from the latent distribution to the underlying distribution of the dataset.
+The discriminator would assess generated and real sampels with the same score.&lt;/p&gt;
+
+&lt;p&gt;3D GANs based on 3D CNNs have been &lt;a href=&#34;https://arxiv.org/pdf/1610.07584.pdf&#34;&gt;proposed&lt;/a&gt;.
+Our research question was whether a GAN can be trained where the generator is a DeepSDF network.&lt;/p&gt;
+
+&lt;p&gt;Usually, the discriminator of the GAN is a mirrored version of the generator.
+In the case of the DeepSDF network, this is not feasible because a single sample of the DeepSDF network provides only the SDF for one point.
+From one point alone, a discriminator could not assess if the sample is realistic.
+Instead, the discriminator needs multiple points to assess the generated shape in context.&lt;/p&gt;
+
+&lt;h2 id=&#34;voxel-discriminator&#34;&gt;Voxel discriminator&lt;/h2&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/voxel-discriminator.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/voxel-discriminator_hu89eb1f0c218a97299b507ea356987aac_206471_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;One solution to the problem of missing context is to use a 3D CNN as the discriminator.
+In this case, the generator is evaluated for a batch of raster points and the resulting SDF values are rearranged into a voxel volume.
+The idea to combine a continuous implicit shape network with a 3D CNN was proposed by &lt;a href=&#34;http://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf&#34;&gt;Chen and Zhang&lt;/a&gt; to form an autoencoder.&lt;/p&gt;
+
+&lt;p&gt;The training data for the voxel discriminator are voxel volumes.
+We use datasets with resolution 8³, 16³, 32³ and 64³ and apply &lt;a href=&#34;https://arxiv.org/pdf/1710.10196.pdf&#34;&gt;progressive growing&lt;/a&gt;.
+We use the Wasserstein distance with gradient penalty (&lt;a href=&#34;https://arxiv.org/pdf/1704.00028.pdf&#34;&gt;WGAN-GP&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Here is a latent space interpolation of shapes generated with the voxel discriminator:&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/chairs-voxels.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;Another interesting observation is the generator&amp;rsquo;s ability to generalize from the raster points to intermediate points that it was not trained on.
+Here is an example of a network that was only trained on 16^3 voxels (!), which is the first stage of the progressive growing.&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/upscale.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;On the left, the shapes were reconstructed with 16^3 raster points (the same resolution it was trained on).
+Scaling up the resolution linearly makes it smoother, but doesn&amp;rsquo;t add any detail.
+When querying the network at 128^3, we see that the network is able to generalize to higher resolutions.
+For some parts of the geometry, the low resolution volume has no sample points with negative values, resulting in apparently missing geometry.
+In these cases, the network still generates negative SDFs for intermediate points, thus making the geometry appear when sampled at a higher resolution.&lt;/p&gt;
+
+&lt;h2 id=&#34;pointnet-discriminator&#34;&gt;Pointnet discriminator&lt;/h2&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/pointnet-discriminator.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/pointnet-discriminator_hu5d1cf7589dc8d83b2e89e3ce32b4bc3b_189511_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Since the voxel-based discriminator keeps &lt;em&gt;some&lt;/em&gt; of the disadvantages of fully voxel-based GANs, we investigated an approach that doesn&amp;rsquo;t use voxels at all.
+The &lt;a href=&#34;https://arxiv.org/pdf/1612.00593&#34;&gt;Pointnet&lt;/a&gt; is a neural network architecture that can operate on point clouds.
+In our case, we sample a point cloud of uniform points and use the generator to predict SDFs for the points.
+The Pointnet then receives the positions of the points and the signed distance values as a &amp;ldquo;feature vector&amp;rdquo; with one element.
+This way, we avoid the fixed raster points and use always changing query points.
+A Pointnet typically infers information from the spatial structure of the points, which in our case is random.
+Regardless, we found that the Pointnet can be used as the discriminator in our case.&lt;/p&gt;
+
+&lt;p&gt;To train the GAN with the Pointnet discriminator, we use a ground truth dataset of uniformly sampled points with their corresponding SDFs.
+We &amp;ldquo;grow&amp;rdquo; the point clouds during training simply by increasing the size of the point clouds.&lt;/p&gt;
+
+&lt;p&gt;When the surface of the generated SDF is reconstructed using Marching Cubes, only values close to sign changes matter.
+We would like the network to spend more model capacity on values close to the surface, as they influence the result the most.
+We achieved that by &lt;em&gt;refining&lt;/em&gt; the network with additional sample points close to the surface.
+The gradient of the SDF gives us the direction towards the shape&amp;rsquo;s surface and for a neural network the gradient is easily computed.
+Using that, we can move randomly sampled points closer to the surface of the generated shape.
+The non-uniform point cloud can then be evaluated by the discriminator.
+Since the Pointnet takes the positions of the points into account, it could discern a uniformly sampled point cloud from a surface point cloud.
+Thus, we add surface points to the ground truth data as well.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples of shapes generated with the Pointnet discriminator and uniformly sampled points (top) and shapes generated with the refinement method (bottom).
+(I&amp;rsquo;ll replace this with an animated version soon.)&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/results-points.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/results-points_hu4dcb098271b4a2fa8838d5bf2316b706_593236_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;For both approaches, we found a surprising result when trying different levels for Marching Cubes.
+By default, Marching Cubes reconstructs the isosurface at the level 0, i.e. the surface where the predicted SDF is zero.
+However, we can choose another level, effectively eroding or dilating the shape.
+We would expect that the ideal level would be 0, since that is the isosurface of the training data.
+However, when experimenting with different values, we observe that some features appear to be missing at level 0.&lt;/p&gt;
+
+&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/levels.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/shapegan/levels.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/levels_hucae4cfe78a2a0a8f408bf6dcb7541e82_4523_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;We chose an isosurface level of 0.04 to reduce missing geometry at the cost of slightly rounded corners.
+Since we clip the ground truth SDF at -0.1 and 0.1, the isosurfaces of generated SDF outside of that range are not usable.&lt;/p&gt;</description>
+    </item>
     
     <item>
 		<title>What I learned from building autonomous model race cars for a year</title>
