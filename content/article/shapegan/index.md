@@ -6,13 +6,12 @@ tags:
   - machine-learning
   - 3d
   - python
-draft: true
 ---
 
 <video autoplay loop muted><source src="/article/shapegan/shapegan.mp4" type="video/mp4"/></video>
 
-This article provides an overview of the paper ["Adversarial Generation of Continuous Implicit Shape Representations"](TODO), which I co-authored with [Matthias Fey](https://rusty1s.github.io/).
-While the paper focuses on the theoretical aspects, I'll write a higher level explanation and more details related to the implementation here on the blog.
+This article provides an overview of the paper ["Adversarial Generation of Continuous Implicit Shape Representations"](https://arxiv.org/abs/2002.00349), which I co-authored with [Matthias Fey](https://rusty1s.github.io/).
+While the paper focuses on the theoretical aspects, I'll provide a higher level explanation and and some visualizations here on the blog.
 
 <!--more-->
 
@@ -152,3 +151,5 @@ However, when experimenting with different values, we observe that some features
 
 We chose an isosurface level of 0.04 to reduce missing geometry at the cost of slightly rounded corners.
 Since we clip the ground truth SDF at -0.1 and 0.1, the isosurfaces of generated SDF outside of that range are not usable.
+
+[The source code for this project is available on Github](https://github.com/marian42/shapegan).
