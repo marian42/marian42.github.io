@@ -5,10 +5,46 @@
     <link>https://marian42.de/tags/</link>
     <description>Recent content in Tags on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3d</title>
+      <link>https://marian42.de/tags/3d/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gan</title>
+      <link>https://marian42.de/tags/gan/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/gan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://marian42.de/tags/machine-learning/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://marian42.de/tags/python/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>autonomous-driving</title>
@@ -38,29 +74,11 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://marian42.de/tags/machine-learning/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>datavisualization</title>
       <link>https://marian42.de/tags/datavisualization/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://marian42.de/tags/datavisualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://marian42.de/tags/python/</link>
-      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/python/</guid>
       <description></description>
     </item>
     
@@ -169,15 +187,6 @@
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://marian42.de/tags/procgen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>3d</title>
-      <link>https://marian42.de/tags/3d/</link>
-      <pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
-      
-      <guid>https://marian42.de/tags/3d/</guid>
       <description></description>
     </item>
     

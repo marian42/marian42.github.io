@@ -5,10 +5,22 @@
     <link>https://marian42.de/tags/machine-learning/</link>
     <description>Recent content in machine-learning on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adversarial Generation of Continuous Implicit Shape Representations</title>
+      <link>https://marian42.de/article/shapegan/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/shapegan/</guid>
+      <description>&lt;video autoplay loop muted&gt;&lt;source src=&#34;https://marian42.de/article/shapegan/shapegan.mp4&#34; type=&#34;video/mp4&#34;/&gt;&lt;/video&gt;
+
+&lt;p&gt;This article provides an overview of the paper &lt;a href=&#34;https://arxiv.org/abs/2002.00349&#34;&gt;&amp;ldquo;Adversarial Generation of Continuous Implicit Shape Representations&amp;rdquo;&lt;/a&gt;, which I co-authored with &lt;a href=&#34;https://rusty1s.github.io/&#34;&gt;Matthias Fey&lt;/a&gt;.
+While the paper focuses on the theoretical aspects, I&amp;rsquo;ll provide a higher level explanation and and some visualizations here on the blog.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>What I learned from building autonomous model race cars for a year</title>
