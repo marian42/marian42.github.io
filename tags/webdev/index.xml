@@ -22,6 +22,8 @@
 
 
 
+&lt;p&gt;&lt;a href=&#34;https://marian42.de/butterflies/&#34;&gt;Click here for the interactive visualization.&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;The Natural History Museum in London has a &lt;a href=&#34;https://data.nhm.ac.uk/&#34;&gt;data portal&lt;/a&gt; in which they provide digital records for many of their specimens.
 Some of these records have images.
 I recently learned how to use machine learning tools such as convolutional neural networks and I wanted to use the NHM data to see what can be done with these tools.
