@@ -13,6 +13,8 @@ tags:
 
 {{< img "tsne.jpg" "" >}}
 
+[Click here for the interactive visualization.](https://marian42.de/butterflies/)
+
 The Natural History Museum in London has a [data portal](https://data.nhm.ac.uk/) in which they provide digital records for many of their specimens.
 Some of these records have images.
 I recently learned how to use machine learning tools such as convolutional neural networks and I wanted to use the NHM data to see what can be done with these tools.
