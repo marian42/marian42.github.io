@@ -33,3 +33,6 @@ realtiveURLs = true
 [outputs]
 	home = [ "HTML", "RSS" ]
 	page = [ "HTML" ]
+
+[markup.goldmark.renderer]
+unsafe= true
