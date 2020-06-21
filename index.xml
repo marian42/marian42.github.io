@@ -21,6 +21,8 @@ While the paper focuses on the theoretical aspects, I&amp;rsquo;ll provide a hig
 &lt;p&gt;In the paper, we propose a GAN that generates 3D shapes.
 The GAN uses a DeepSDF network as a generator and either a 3D CNN or a Pointnet as the discriminator.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Update June 2020:&lt;/em&gt; &lt;a href=&#34;https://www.youtube.com/watch?v=5jdf_8bCON0&amp;amp;feature=youtu.be&amp;amp;t=2636&#34;&gt;Here is a recording of the presentation I gave about the paper at the virtual Eurographics 2020 conference&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h1 id=&#34;deepsdf&#34;&gt;DeepSDF&lt;/h1&gt;
 
 &lt;p&gt;First, I&amp;rsquo;ll introduce the idea behind &lt;a href=&#34;https://arxiv.org/abs/1901.05103&#34;&gt;DeepSDF&lt;/a&gt;.
