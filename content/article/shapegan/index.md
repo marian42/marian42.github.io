@@ -83,7 +83,7 @@ Our research question was whether a GAN can be trained where the generator uses 
 Usually, the discriminator of the GAN is a mirrored version of the generator.
 In the case of the DeepSDF network, this is not feasible because a single sample of the DeepSDF network provides only the SDF for one point.
 From one point alone, a discriminator could not assess if the sample is realistic.
-Instead, the discriminator needs multiple points to judge the generated shape in context.
+Instead, the discriminator needs multiple points to judge the output value in context.
 
 ## Voxel discriminator
 
