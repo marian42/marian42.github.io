@@ -43,12 +43,13 @@ In general, modules have different probabilities to be selected.
 A slot with two possible modules of the same probability has more choice (greater entropy) than one with two modules where one is very likely and one is very unlikely.
 
 ![](https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966)  
-(Gif by [ExUtumno on Github](https://github.com/mxgmn))
+(Gif by [Maxim Gumin on Github](https://github.com/mxgmn))
 
 You can find more information and some beautiful examples of the [Wave Function Collapse algorithm here](https://github.com/mxgmn/WaveFunctionCollapse).
 The algorithm was proposed to generate 2D textures from a single example.
 In that case, the module probabilities and adjacency rules are determined based on how they occur in the example.
 In my case, they are supplied manually.
+Wave Function Collapse is based on Paul Merrel's [Model Synthesis](https://paulmerrell.org/model-synthesis/).
 
 Here is a video of the algorithm in action:
 
