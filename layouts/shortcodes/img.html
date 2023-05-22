@@ -1,8 +1,8 @@
 {{ $original := .Page.Resources.GetMatch (.Get 0) }}
-{{ $preview := $original.Resize "636x" }}
+{{ $preview := $original.Resize "1272x" }}
 {{ $alt := .Get 1 }}
 
-{{ if lt $original.Width 636 }}
+{{ if lt $original.Width 1272 }}
 <img src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" alt="{{ $alt }}">
 {{ else }}
 <a href="{{ $original.RelPermalink }}" target="_blank" title="{{ $alt }}">
