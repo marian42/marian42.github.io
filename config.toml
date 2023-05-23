@@ -6,8 +6,9 @@ enableRobotsTXT = true
 
 DefaultContentLanguage = "en"
 
-
 realtiveURLs = true
+
+timeout = 60000
 
 [params]
 	author = "Marian Kleineberg"
