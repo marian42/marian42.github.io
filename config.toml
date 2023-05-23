@@ -23,6 +23,7 @@ realtiveURLs = true
 	showSocialMedia = true
 
 	twitter    = "https://twitter.com/marian42_"
+	mastodon   = "https://mastodon.gamedev.place/@marian42"
 	github     = "https://github.com/marian42"
 	email      = "mailto:mail@marian42.de"
 	rss        = "/index.xml"
