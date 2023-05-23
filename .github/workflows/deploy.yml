@@ -34,3 +34,5 @@ jobs:
         publish_dir: ./public
         keep_files: true
         allow_empty_commit: true
+        publish_branch: master
+        commit_message: Deploy to Github Pages
