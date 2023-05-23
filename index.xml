@@ -46,7 +46,7 @@ The DeepSDF network doesn&amp;rsquo;t use convolutions.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/deepsdf.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/deepsdf_hu8a9999743b0646fccfcac44a485c285e_36679_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/deepsdf_hu8a9999743b0646fccfcac44a485c285e_36679_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -66,7 +66,7 @@ These points are in part uniformly sampled and in part normally distributed arou
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/sdf-cloud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/sdf-cloud_hub9754221ba420deebe785cb4c61b65be_673017_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/sdf-cloud_hub9754221ba420deebe785cb4c61b65be_673017_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -114,7 +114,7 @@ Instead, the discriminator needs multiple points to judge the output value in co
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/voxel-discriminator.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/voxel-discriminator_hu89eb1f0c218a97299b507ea356987aac_206471_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/voxel-discriminator_hu89eb1f0c218a97299b507ea356987aac_206471_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -150,7 +150,7 @@ In these cases, the network still generates negative SDFs for intermediate point
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/pointnet-discriminator.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/pointnet-discriminator_hu5d1cf7589dc8d83b2e89e3ce32b4bc3b_189511_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/pointnet-discriminator_hu5d1cf7589dc8d83b2e89e3ce32b4bc3b_189511_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -184,7 +184,7 @@ Thus, we add surface points to the ground truth data as well.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/results-points.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/results-points_hu4dcb098271b4a2fa8838d5bf2316b706_593236_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/results-points_hu4dcb098271b4a2fa8838d5bf2316b706_593236_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -203,7 +203,7 @@ However, when experimenting with different values, we observe that some features
 
 
 &lt;a href=&#34;https://marian42.de/article/shapegan/levels.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/shapegan/levels_hucae4cfe78a2a0a8f408bf6dcb7541e82_4523_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/shapegan/levels_hucae4cfe78a2a0a8f408bf6dcb7541e82_4523_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -220,7 +220,7 @@ Since we clip the ground truth SDF at -0.1 and 0.1, the isosurfaces of generated
 		<pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
 		<guid>https://marian42.de/article/arpg/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/arpg/car.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/arpg/car_hu7e318ce0abc84126abf470d742744e01_3604221_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/car_hu7e318ce0abc84126abf470d742744e01_3604221_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -243,7 +243,7 @@ The software we developed is &lt;a href=&#34;https://github.com/Autonomous-Racin
 
 
 &lt;a href=&#34;https://marian42.de/article/arpg/camera.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/arpg/camera_huf02f7f6c3e4a34cd7241f4582573fe2d_3005587_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/camera_huf02f7f6c3e4a34cd7241f4582573fe2d_3005587_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -260,7 +260,7 @@ We ended up not using the stereo camera.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/arpg/wires.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/arpg/wires_hu8fe0e9510807aaf629180783801700f6_2149158_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/wires_hu8fe0e9510807aaf629180783801700f6_2149158_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -284,7 +284,7 @@ ROS nodes can be written in C++ and Python 2.7 and since each node is its own pr
 
 
 &lt;a href=&#34;https://marian42.de/article/arpg/rosgraph.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/arpg/rosgraph_hufdcf77b4d032670a099b9a7584c9d7fe_734936_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/rosgraph_hufdcf77b4d032670a099b9a7584c9d7fe_734936_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -312,7 +312,7 @@ The visual appearance and realism was less important for our use case.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/arpg/track.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/arpg/track_hu1343c6acdccaa2cb5769fe1314583090_267951_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/arpg/track_hu1343c6acdccaa2cb5769fe1314583090_267951_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -433,7 +433,7 @@ It looks like they are even working on moving away from Gazebo.&lt;/p&gt;</descr
 		<pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
 		<guid>https://marian42.de/article/butterflies/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/butterflies/tsne.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/tsne_hud71a1620f6d55453b4d37c36a301e951_710601_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/tsne_hud71a1620f6d55453b4d37c36a301e951_710601_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -453,9 +453,7 @@ Here, you can see &lt;a href=&#34;https://data.nhm.ac.uk/dataset/56e711e6-c847-4
 
 
 
-&lt;a href=&#34;https://marian42.de/article/butterflies/dataportal.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/dataportal_hu23868297e3b6f494562ad1faa0a5eeb6_704913_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/butterflies/dataportal.png&#34; width=&#34;1232&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -470,9 +468,7 @@ Most of the 150000 images have noisy backgrounds with varying brightness, such a
 
 
 
-&lt;a href=&#34;https://marian42.de/article/butterflies/background-example.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/background-example_hu0ba601600426aeaa53586feb839d502c_120475_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/butterflies/background-example.jpg&#34; width=&#34;1024&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -487,7 +483,7 @@ It is a convolutional neural network that receives an image as the input and pro
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/masks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/masks_hu1588d35ca1a1994f752688c56ddb3280_165589_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/masks_hu1588d35ca1a1994f752688c56ddb3280_165589_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -506,7 +502,7 @@ Since the network needs to make a prediction for every single pixel, it is force
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/alpha.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/alpha_hu57f3e35a14313bf992ea4de8ea4cf9e5_1328558_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/alpha_hu57f3e35a14313bf992ea4de8ea4cf9e5_1328558_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -524,9 +520,7 @@ This way, it learns to compress each image into a &lt;em&gt;latent vector&lt;/em
 
 
 
-&lt;a href=&#34;https://marian42.de/article/butterflies/reconstruction.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/reconstruction_hu98d383a4a0ac839065649cf4cd1b414c_81878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/butterflies/reconstruction.jpg&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -545,7 +539,7 @@ The t-SNE transformation places the points so that those points appear close to 
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/tsne-plot.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/tsne-plot_hu05e3307ea217853219dac9f3794c04ba_1049176_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/tsne-plot_hu05e3307ea217853219dac9f3794c04ba_1049176_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -565,7 +559,7 @@ Each point is then moved away from its closest neighbor by a small distance:&lt;
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/map-part.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/map-part_hu0a5c0bfef10627d0def13bfcc9c87827_526933_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/map-part_hu0a5c0bfef10627d0def13bfcc9c87827_526933_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -590,7 +584,7 @@ I found that when using t-SNE space to determine the representative, an outlier 
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/cluster.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/cluster_hu56347c8bff6892296baebe59b1d77183_290887_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/cluster_hu56347c8bff6892296baebe59b1d77183_290887_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -609,9 +603,7 @@ This is what it looks like to zoom around in the interactive t-SNE plot:&lt;/p&g
 
 
 
-&lt;a href=&#34;https://marian42.de/article/butterflies/popup.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/popup_hu9a6cace4899091425e4aa84c4ef7d81c_714854_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/butterflies/popup.png&#34; width=&#34;947&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -630,7 +622,7 @@ Now the metadata is loaded only for the regions that the user looks at.&lt;/p&gt
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/genus.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/genus_hu97d55d7b2de9aadaa2c5fdc18aa58114_1647240_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/genus_hu97d55d7b2de9aadaa2c5fdc18aa58114_1647240_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -646,7 +638,7 @@ This is an example of unsupervised training of a classifier.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/families.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/families_huea1b8c10fed2f5069aaa8eba05ec3a22_1681314_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/families_huea1b8c10fed2f5069aaa8eba05ec3a22_1681314_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -660,9 +652,7 @@ Since the missing wing is the most striking visual feature, it primarily determi
 
 
 
-&lt;a href=&#34;https://marian42.de/article/butterflies/missing-wing.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/missing-wing_hu5f90bf03b0cab5905577c1d0b0c132c1_307278_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/butterflies/missing-wing.jpg&#34; width=&#34;1039&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -675,7 +665,7 @@ But for the &lt;a href=&#34;https://marian42.de/butterflies/?-0.40247,-0.76001,1
 
 
 &lt;a href=&#34;https://marian42.de/article/butterflies/male-female.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/butterflies/male-female_huf1e308b73177fce33e0c94ff16c79f6e_955543_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/butterflies/male-female_huf1e308b73177fce33e0c94ff16c79f6e_955543_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -691,9 +681,7 @@ The images of the butterflies are provided by the &lt;a href=&#34;https://data.n
 		<link>https://marian42.de/article/partdesigner/</link>
 		<pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
 		<guid>https://marian42.de/article/partdesigner/</guid>
-		<description>&lt;a href=&#34;https://marian42.de/article/partdesigner/partdesigner.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/partdesigner_hu848b95c1a7a5f7bdd0de614dd09bca54_112021_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+		<description>&lt;img src=&#34;https://marian42.de/article/partdesigner/partdesigner.png&#34; width=&#34;1185&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -710,7 +698,7 @@ Pin Hole, Axle Hole, Pin, Axle and Solid.&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/partdesigner/blocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/blocks_hu4539ca95fcf0d99c7240eb9548a79b51_58787_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/blocks_hu4539ca95fcf0d99c7240eb9548a79b51_58787_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -731,7 +719,7 @@ Finally, before rendering the tiny blocks, they are merged to lower the number o
 
 
 &lt;a href=&#34;https://marian42.de/article/partdesigner/tinyblocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/tinyblocks_hu14cfc12955323e4cac5a1d5699cab725_401758_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/tinyblocks_hu14cfc12955323e4cac5a1d5699cab725_401758_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -754,9 +742,7 @@ Of course the point of this tool is to make parts that don&amp;rsquo;t already e
 
 
 
-&lt;a href=&#34;https://marian42.de/article/partdesigner/catalog.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/catalog_hu303d6b643ad27fdc9c67860a1e2f7ade_254558_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/partdesigner/catalog.png&#34; width=&#34;1063&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -776,9 +762,7 @@ I took the sun, earth and moon design from that model and designed everything el
 
 
 
-&lt;a href=&#34;https://marian42.de/article/partdesigner/orrerybase.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrerybase_hubbb49a61c2121a3e8572870999b37209_103245_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/partdesigner/orrerybase.png&#34; width=&#34;1101&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -790,7 +774,7 @@ I took the sun, earth and moon design from that model and designed everything el
 
 
 &lt;a href=&#34;https://marian42.de/article/partdesigner/gears.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/gears_hub93d87bc4894e727bdc3bb694c35c041_642069_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/gears_hub93d87bc4894e727bdc3bb694c35c041_642069_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -801,7 +785,7 @@ I took the sun, earth and moon design from that model and designed everything el
 
 
 &lt;a href=&#34;https://marian42.de/article/partdesigner/orrery1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery1_hub93d87bc4894e727bdc3bb694c35c041_1622496_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery1_hub93d87bc4894e727bdc3bb694c35c041_1622496_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -814,7 +798,7 @@ I took the sun, earth and moon design from that model and designed everything el
 
 
 &lt;a href=&#34;https://marian42.de/article/partdesigner/orrery2.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery2_hub93d87bc4894e727bdc3bb694c35c041_1616575_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/partdesigner/orrery2_hub93d87bc4894e727bdc3bb694c35c041_1616575_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -832,7 +816,7 @@ One advantage of printing parts like this is that it saves you the time to figur
 		<pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate>
 		<guid>https://marian42.de/article/ggj19/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/ggj19/system1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj19/system1_hub37c77a8bdb645f534a89a4da743e7ec_1929407_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system1_hub37c77a8bdb645f534a89a4da743e7ec_1929407_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -842,7 +826,7 @@ I joined a team of six programmers, unfortunately there was a shortage of artist
 During the 48 hour jam, we made a space game that is inspired by Faster Than Light.&lt;/p&gt;
 
 &lt;a href=&#34;https://marian42.de/article/ggj19/map.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj19/map_hu3f52b41c9100f6e5c4fb06bcecd7a132_2014156_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/map_hu3f52b41c9100f6e5c4fb06bcecd7a132_2014156_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -858,7 +842,7 @@ The amount of fuel in the spacecraft is also limited, but it regenerates over ti
 
 
 &lt;a href=&#34;https://marian42.de/article/ggj19/system2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj19/system2_hu7c4a542bb0bee7823a98e503e62a9e30_1929320_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system2_hu7c4a542bb0bee7823a98e503e62a9e30_1929320_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -874,7 +858,7 @@ I hope that I&amp;rsquo;ll do more with realistic orbits in Unity in the future.
 
 
 &lt;a href=&#34;https://marian42.de/article/ggj19/system3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj19/system3_hu4cd628865f62271c1ee13ed7ab8731aa_1907049_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/system3_hu4cd628865f62271c1ee13ed7ab8731aa_1907049_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -888,7 +872,7 @@ These ended up being quite small in the levels, so we added &amp;ldquo;personal&
 
 
 &lt;a href=&#34;https://marian42.de/article/ggj19/credits.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj19/credits_hu3d7dbcc1beb217c4913d91d65dbb8631_2042676_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj19/credits_hu3d7dbcc1beb217c4913d91d65dbb8631_2042676_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -907,7 +891,7 @@ These ended up being quite small in the levels, so we added &amp;ldquo;personal&
 		<pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
 		<guid>https://marian42.de/article/wfc/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/wfc/wfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -971,7 +955,7 @@ I started out with a small number of blocks and made more whenever I had some sp
 
 
 &lt;a href=&#34;https://marian42.de/article/wfc/blocks.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wfc/blocks_hu114abfd4d48dd340f32b76b8c9dfa1e2_348405_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/blocks_hu114abfd4d48dd340f32b76b8c9dfa1e2_348405_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -994,7 +978,7 @@ Here is what I came up with:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/wfc/blocks2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wfc/blocks2_hu37f13feb32bd6da3e960f52edbce8af6_342729_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/blocks2_hu37f13feb32bd6da3e960f52edbce8af6_342729_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1027,7 +1011,7 @@ Here is an example of a map generated &lt;em&gt;without&lt;/em&gt; the exclusion
 
 
 &lt;a href=&#34;https://marian42.de/article/wfc/noexclusions.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wfc/noexclusions_hu41b98ab5240a8eddbb04645b41374b88_648216_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wfc/noexclusions_hu41b98ab5240a8eddbb04645b41374b88_648216_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1047,9 +1031,7 @@ In this image you can see all the places affected from collapsing just one slot:
 
 
 
-&lt;a href=&#34;https://marian42.de/article/wfc/cloud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wfc/cloud_hu64dccd040cc017d12f021f2216a83cda_44916_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/wfc/cloud.png&#34; width=&#34;901&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1124,7 +1106,7 @@ The source code is available after all and it&amp;rsquo;s MIT licensed.&lt;/p&gt
 		<pubDate>Sun, 22 Jul 2018 19:32:12 +0000</pubDate>
 		<guid>https://marian42.de/article/exomars/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/exomars/exomars.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/exomars/exomars_hu2a0e68d61e4b4f91b71fce8961bf5194_1571417_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1145,7 +1127,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 		<pubDate>Tue, 17 Apr 2018 20:46:44 +0000</pubDate>
 		<guid>https://marian42.de/article/neighborhood/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/neighborhood/DSCF3466.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3466_hu0304cb7e538da5a35ca6f72df4bbc0a9_4451455_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1162,7 +1144,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/square.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/square_hu54a05c297a7ded348f622a81f63cad57_539415_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/square_hu54a05c297a7ded348f622a81f63cad57_539415_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1179,7 +1161,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/first.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/first_hua3cc1ad2326f7318912c34595ad41dac_1290287_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/first_hua3cc1ad2326f7318912c34595ad41dac_1290287_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1192,7 +1174,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-149.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149_huec574cf7580820776255c5b16cf7b9eb_1032567_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149_huec574cf7580820776255c5b16cf7b9eb_1032567_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1207,7 +1189,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-149b.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149b_hu072b60a146f2e2602077e94e4921c18e_1568067_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-149b_hu072b60a146f2e2602077e94e4921c18e_1568067_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1221,9 +1203,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/neighborhood/belnder.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/belnder_hu087aede2d0e7107cfb21de8b042da18f_373061_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/neighborhood/belnder.png&#34; width=&#34;1096&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1235,7 +1215,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/Screenshot-150.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-150_hu16f154dd47c9881400f973f8f5311294_997269_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/Screenshot-150_hu16f154dd47c9881400f973f8f5311294_997269_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1248,7 +1228,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/neighborhood/DSCF3482.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3482_huffb867a27675b009de6b88a54bf6c5d8_292533_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/neighborhood/DSCF3482_huffb867a27675b009de6b88a54bf6c5d8_292533_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -1258,7 +1238,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 		<pubDate>Sun, 04 Feb 2018 13:46:35 +0000</pubDate>
 		<guid>https://marian42.de/article/ggj18/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-16.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-16_hu18f2958810b1c2bd374a4dfbe8ec8feb_3481081_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1273,7 +1253,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/ggj18/Screenshot-12-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-12-1_hub97d7a4566bfbaa5dd59fe2352afbd97_3376740_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ggj18/Screenshot-12-1_hub97d7a4566bfbaa5dd59fe2352afbd97_3376740_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1292,7 +1272,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 		<pubDate>Tue, 02 Jan 2018 22:14:14 +0000</pubDate>
 		<guid>https://marian42.de/article/roofmeshes/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/roofmeshes/example.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/example_hu56825e999e4caa40ee19eeab6ada3443_645515_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1310,9 +1290,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/separation.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/separation_hu01176d2368e5b27c08f5e6bd78615e98_20855_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/separation.png&#34; width=&#34;677&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1329,9 +1307,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/ransac.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/ransac_hubdceeb8983e57db09f92a36945107e98_90029_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/ransac.png&#34; width=&#34;964&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1347,7 +1323,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/roofmeshes/convex.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/convex_hu70b74044e4f9f3ff82f6960d7d4709f9_96534_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/convex_hu70b74044e4f9f3ff82f6960d7d4709f9_96534_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1362,7 +1338,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/roofmeshes/algorithmexample.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/algorithmexample_hu50a234768f1144c8040e779f2b1d19b6_333779_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/algorithmexample_hu50a234768f1144c8040e779f2b1d19b6_333779_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1388,9 +1364,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexa.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexa_hue91d5cea83a39dcf95425e13a99bef95_284340_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexa.png&#34; width=&#34;826&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1398,9 +1372,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexb.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexb_hu6f8b60ac18ecf85ae6c4a6c57d0e375a_227379_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexb.png&#34; width=&#34;760&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1408,9 +1380,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexc.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexc_hu53b8f90271ec9fbdcbf5f613758c4838_246849_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexc.png&#34; width=&#34;742&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1418,9 +1388,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/konvexd-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexd-1_hub9deedc562b5b26a14c23e1e0c6e8e3e_282653_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/konvexd-1.png&#34; width=&#34;766&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1463,9 +1431,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaua.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaua_hu3533fc11d9bee14bd1fff2ee98f0c689_526700_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaua.png&#34; width=&#34;838&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1473,9 +1439,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaub.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaub_hu40c01ef95c9fec83a0641260c7b30f78_365578_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaub.png&#34; width=&#34;844&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1483,9 +1447,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbauc.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbauc_hu5ad9d0309e5113d621bdeab749a41723_396090_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbauc.png&#34; width=&#34;778&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -1493,9 +1455,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 
-&lt;a href=&#34;https://marian42.de/article/roofmeshes/anbaud.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaud_hu0d14cc1893ab9bcddd2df78d088d2388_291075_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/roofmeshes/anbaud.png&#34; width=&#34;953&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -1512,7 +1472,7 @@ You can have a closer look at the model on &lt;a href=&#34;https://sketchfab.com
 
 
 &lt;a href=&#34;https://marian42.de/article/roofmeshes/gui-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/roofmeshes/gui-1_hub02691b97b5eba00ae18a8dd18fecbd5_743640_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/roofmeshes/gui-1_hub02691b97b5eba00ae18a8dd18fecbd5_743640_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1533,9 +1493,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 		<link>https://marian42.de/article/ledmatrix-software/</link>
 		<pubDate>Sat, 13 May 2017 21:49:00 +0000</pubDate>
 		<guid>https://marian42.de/article/ledmatrix-software/</guid>
-		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2_hu883386bfa628fad3c089167fccdaa299_46020_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+		<description>&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/screenshot-2.png&#34; width=&#34;843&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1629,7 +1587,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-software/DSCF1527.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/DSCF1527_hu0013a6270d5b14a6d216699302a8701b_677905_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-software/DSCF1527_hu0013a6270d5b14a6d216699302a8701b_677905_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -1639,7 +1597,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 		<pubDate>Mon, 08 May 2017 00:17:55 +0000</pubDate>
 		<guid>https://marian42.de/article/ledmatrix-tutorial/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1196_hu8db4ef05d929f8147950860218a32d9d_384627_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1654,7 +1612,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1226.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1226_huebcc994a0cc4e4d011a77d7bbc25ae4d_435543_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1226_huebcc994a0cc4e4d011a77d7bbc25ae4d_435543_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1671,7 +1629,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1298-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1298-1_hu007b1fd197d392935a4c4db9ee032936_686107_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1298-1_hu007b1fd197d392935a4c4db9ee032936_686107_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1684,7 +1642,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1343.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1343_huefd32cd731011394475107d597eaabd6_712538_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1343_huefd32cd731011394475107d597eaabd6_712538_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1697,7 +1655,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1317.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1317_hu6ab933de1457ee52c71fe148f0db7b55_790362_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1317_hu6ab933de1457ee52c71fe148f0db7b55_790362_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1710,7 +1668,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1320.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1320_hu30e085a5ffb490e5d1e27e9c3f77bcba_754167_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1320_hu30e085a5ffb490e5d1e27e9c3f77bcba_754167_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1723,7 +1681,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1299.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1299_hu140ed1165fdbce301c884374d3d925f9_838318_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1299_hu140ed1165fdbce301c884374d3d925f9_838318_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1738,7 +1696,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1244.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1244_hue8e9577b2b9500d50fbfdec55972e883_848090_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1244_hue8e9577b2b9500d50fbfdec55972e883_848090_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1751,7 +1709,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1258.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1258_hu006d00af7db03d8466394e781c8ab493_577532_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1258_hu006d00af7db03d8466394e781c8ab493_577532_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1764,7 +1722,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1261.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1261_hu546a9d3dec7abcde6c05337a8c9bbe70_619759_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1261_hu546a9d3dec7abcde6c05337a8c9bbe70_619759_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1777,7 +1735,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1277-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1277-1_hu59d92efabab9f582a9282ba34eaf602a_794432_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1277-1_hu59d92efabab9f582a9282ba34eaf602a_794432_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1796,7 +1754,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1216.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1216_hu9e01d8a326ff20cba31230c743aa82f6_1230261_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1216_hu9e01d8a326ff20cba31230c743aa82f6_1230261_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1815,7 +1773,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1471.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1471_hu9636491b4dd5371821f9b328e971fb90_428327_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1471_hu9636491b4dd5371821f9b328e971fb90_428327_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1830,7 +1788,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/layout.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/layout_hu9eea575f3a5442485ce8a3aab31ec3a0_439212_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/layout_hu9eea575f3a5442485ce8a3aab31ec3a0_439212_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1847,7 +1805,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1467.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1467_hu162479749694a23d53162ad8436287db_467290_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1467_hu162479749694a23d53162ad8436287db_467290_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1870,7 +1828,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1390.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1390_hu44ccd217ff412db25e6203fdbfe986e4_602781_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1390_hu44ccd217ff412db25e6203fdbfe986e4_602781_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1885,7 +1843,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1210.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1210_hudc30c4ed2d8fbe718c5ad07483d83e20_696545_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1210_hudc30c4ed2d8fbe718c5ad07483d83e20_696545_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -1898,7 +1856,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1504_c.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1504_c_hu2b0445ec532f9b2e3a115715e7ef509e_728602_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix-tutorial/DSCF1504_c_hu2b0445ec532f9b2e3a115715e7ef509e_728602_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -1927,7 +1885,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 &lt;a href=&#34;https://marian42.de/article/no-mans-starfield/starfield.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/no-mans-starfield/starfield_hu1ff34d90f796d5b61b798ff4e4955ea0_113008_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/no-mans-starfield/starfield_hu1ff34d90f796d5b61b798ff4e4955ea0_113008_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -1936,9 +1894,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 		<link>https://marian42.de/article/computervision/</link>
 		<pubDate>Sat, 02 Jul 2016 19:03:31 +0000</pubDate>
 		<guid>https://marian42.de/article/computervision/</guid>
-		<description>&lt;a href=&#34;https://marian42.de/article/computervision/setup-1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/computervision/setup-1_hu1e0ec63932f61001b9e35ff69eb45bb7_102522_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+		<description>&lt;img src=&#34;https://marian42.de/article/computervision/setup-1.jpg&#34; width=&#34;1024&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1962,9 +1918,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 
-&lt;a href=&#34;https://marian42.de/article/computervision/symbols-comparison.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/computervision/symbols-comparison_hu45f31a2cf2d5fd76e145ce3923804d35_121591_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/computervision/symbols-comparison.png&#34; width=&#34;1024&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1973,9 +1927,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 
-&lt;a href=&#34;https://marian42.de/article/computervision/screenshot-1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/computervision/screenshot-1_hu416e6cdfe7b64541b68008c170488f3f_309857_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/computervision/screenshot-1.png&#34; width=&#34;664&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -1986,9 +1938,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 
 
 
-&lt;a href=&#34;https://marian42.de/article/computervision/Bild3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/computervision/Bild3_hubb30837be62c837d998adb5ca75061d5_109411_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/computervision/Bild3.jpg&#34; width=&#34;900&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2007,7 +1957,7 @@ The screenshots in this article contain map data by &lt;a href=&#34;https://ope
 		<pubDate>Sat, 12 Sep 2015 23:10:12 +0000</pubDate>
 		<guid>https://marian42.de/article/reslayer/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-21.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-21_hub28618bf5cf515e5703eb33a2e5f259d_556731_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2028,7 +1978,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-5.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-5_hud701fe3eb76b5e5221b9fa63ce0c88ab_939567_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-5_hud701fe3eb76b5e5221b9fa63ce0c88ab_939567_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2042,9 +1992,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-22.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-22_hu2e913d5de65812cc5247a26e7302f423_240300_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-22.png&#34; width=&#34;1029&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2057,9 +2005,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-14.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-14_hu347b6f5ab0cb2222c418e9cf27becfbe_115900_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-14.png&#34; width=&#34;927&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2081,9 +2027,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-12.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-12_hu3ca64d15e2af66bea0d019966aab7af6_168921_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-12.png&#34; width=&#34;1002&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2094,9 +2038,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-20.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-20_hu0b18c74297ee5bed2d20164543a5b0d5_256129_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-20.png&#34; width=&#34;1083&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2107,9 +2049,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/reslayer/Screenshot-8.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-8_hu6b14c541c7aadb3e955ae2307be4b1e5_136945_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/reslayer/Screenshot-8.png&#34; width=&#34;756&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2126,7 +2066,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Sat, 12 Sep 2015 14:44:48 +0000</pubDate>
 		<guid>https://marian42.de/article/ledmatrix/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090010_hu881c752b3f20d2080a78a051cf94f2f1_228329_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2143,7 +2083,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080915.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080915_hu95fdd951061dbe718a9626a47da63c1d_316792_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080915_hu95fdd951061dbe718a9626a47da63c1d_316792_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2156,7 +2096,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080919.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080919_hub459312615562a7ff29b7a5d5a37ac95_227898_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080919_hub459312615562a7ff29b7a5d5a37ac95_227898_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2169,7 +2109,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080923.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080923_huf8728b90ecaaafc761b459fe2422f939_249560_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080923_huf8728b90ecaaafc761b459fe2422f939_249560_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2182,7 +2122,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080927.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080927_hu3e7ac390ccc094b532223af7d665d637_234546_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080927_hu3e7ac390ccc094b532223af7d665d637_234546_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2195,7 +2135,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080928.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080928_hua06c47a72fb142eca7ae377e779f7d72_203351_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080928_hua06c47a72fb142eca7ae377e779f7d72_203351_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2208,7 +2148,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080931.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080931_hue66e459d316701d9e18faa9f476dc2f6_275828_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080931_hue66e459d316701d9e18faa9f476dc2f6_275828_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2221,7 +2161,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080934.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080934_hue9c8c16fc79d074f7658211e231d956b_322974_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080934_hue9c8c16fc79d074f7658211e231d956b_322974_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2234,7 +2174,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080947.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080947_huc9481e9d04f9aa659b47c90dfcb60220_313975_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080947_huc9481e9d04f9aa659b47c90dfcb60220_313975_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2247,7 +2187,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080949.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080949_hu8ba4a10c7756d3deb0b0571baf194383_193363_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080949_hu8ba4a10c7756d3deb0b0571baf194383_193363_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2260,7 +2200,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080951.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080951_hu2403484efd05e27d46e0576e20abaf4e_395376_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080951_hu2403484efd05e27d46e0576e20abaf4e_395376_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2273,7 +2213,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080954.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080954_hu2f6c095106311b6a9abeff34c419f840_470515_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080954_hu2f6c095106311b6a9abeff34c419f840_470515_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2286,7 +2226,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080960.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080960_huc69c2115ae8a9e01ccb685a833eeba75_358597_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080960_huc69c2115ae8a9e01ccb685a833eeba75_358597_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2299,7 +2239,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080970.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080970_hu41b8a136a28e87190e7bdbc3ff132521_314546_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080970_hu41b8a136a28e87190e7bdbc3ff132521_314546_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2312,7 +2252,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080978.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080978_hu304783b9d8a288cbcf5a4799fd0829c5_276415_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080978_hu304783b9d8a288cbcf5a4799fd0829c5_276415_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2325,7 +2265,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P10809811.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P10809811_hu37b7d978fc349c89cb209aec5b053119_281481_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P10809811_hu37b7d978fc349c89cb209aec5b053119_281481_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2338,7 +2278,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1080987.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080987_hu8c33c7df81a8f36c9471c198c8f1b30d_194567_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1080987_hu8c33c7df81a8f36c9471c198c8f1b30d_194567_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2351,7 +2291,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090028_hu8569c9ef0d609ddecff8984267da4e85_233610_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090028_hu8569c9ef0d609ddecff8984267da4e85_233610_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2364,7 +2304,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090029.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090029_hu08fbfbefffad0402e1f36d7e9051943c_240234_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090029_hu08fbfbefffad0402e1f36d7e9051943c_240234_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2389,7 +2329,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090049.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090049_hu1b71f14c5f3911cebc5bf31a43e38a12_179469_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090049_hu1b71f14c5f3911cebc5bf31a43e38a12_179469_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2402,7 +2342,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090042.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090042_hua395f00ceb48b3f2ec1a1a8a1dace615_212287_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090042_hua395f00ceb48b3f2ec1a1a8a1dace615_212287_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2415,7 +2355,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090047.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090047_hub6406a378f58f26df70fd0091944eb32_203751_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090047_hub6406a378f58f26df70fd0091944eb32_203751_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2436,7 +2376,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090106.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090106_hua6bf1781c9ba6bdd9a2df468492d9001_169850_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090106_hua6bf1781c9ba6bdd9a2df468492d9001_169850_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2449,7 +2389,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/ledmatrix/P1090099.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090099_hubebed54848d41621dd3173f4b1cf7d47_259597_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/ledmatrix/P1090099_hubebed54848d41621dd3173f4b1cf7d47_259597_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2471,7 +2411,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Sat, 18 Jul 2015 16:18:46 +0000</pubDate>
 		<guid>https://marian42.de/article/proceduralart/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/proceduralart/canvas1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas1_hu4c2b71ac20cb5c401d09fca7da11831a_637979_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2490,7 +2430,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/proceduralart/canvas.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas_hub7d22b3d618fb8e046b790eac2a7e92a_715584_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas_hub7d22b3d618fb8e046b790eac2a7e92a_715584_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2501,7 +2441,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/proceduralart/canvas12.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas12_hu4b2f5a6cef0d92e62a0c52eeda9a82a4_563505_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas12_hu4b2f5a6cef0d92e62a0c52eeda9a82a4_563505_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2512,7 +2452,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/proceduralart/canvas3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas3_hu7ca2e58f81dec36be6a270c53d07b2c0_517149_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas3_hu7ca2e58f81dec36be6a270c53d07b2c0_517149_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2523,7 +2463,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/proceduralart/canvas11.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas11_hu5ec6da819b681f825cb15cf9826991e9_480525_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas11_hu5ec6da819b681f825cb15cf9826991e9_480525_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2534,7 +2474,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/proceduralart/canvas8.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas8_hu6e7cb5136d1c8504bbaa448567c60b1e_458446_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/proceduralart/canvas8_hu6e7cb5136d1c8504bbaa448567c60b1e_458446_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -2577,7 +2517,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/setup.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/setup_hua7b6311d47231104d6f6e1eca9a72e9a_2423523_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/setup_hua7b6311d47231104d6f6e1eca9a72e9a_2423523_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2593,9 +2533,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/feeder.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/feeder_hue7e65815e4166da6e97ff305ae8b9153_105165_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/feeder.png&#34; width=&#34;782&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2607,7 +2545,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/schedule.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/schedule_huba0c5bd725585b0018e6de89d3191da7_25083_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/schedule_huba0c5bd725585b0018e6de89d3191da7_25083_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2620,7 +2558,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/webcam.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/webcam_hu3f9334f75d9434ff9a882bb97d429ae1_1802755_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/webcam_hu3f9334f75d9434ff9a882bb97d429ae1_1802755_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2633,7 +2571,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/img65.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/img65_hu92b2eb64b5f746bb3bf4c9d36fdae972_154705_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/img65_hu92b2eb64b5f746bb3bf4c9d36fdae972_154705_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2645,9 +2583,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/iot-fishfeeder/pushbullet.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/pushbullet_hu32a45a272f29279c748ba2ee8593b492_612565_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/iot-fishfeeder/pushbullet.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -2664,7 +2600,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Mon, 30 Jun 2014 19:57:37 +0000</pubDate>
 		<guid>https://marian42.de/article/fishfeeder/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0027_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0027__hu219ad8ddefebca35033ce9be81e512ae_434884_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2698,7 +2634,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_201910.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_201910_hu3d8a9efff99dc282a1aebde91d0e47e0_1718044_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_201910_hu3d8a9efff99dc282a1aebde91d0e47e0_1718044_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 &lt;/td&gt;
@@ -2708,7 +2644,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_212625.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_212625_hu4d909e094c41b364ef0734788eebf943_1851401_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140526_212625_hu4d909e094c41b364ef0734788eebf943_1851401_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 &lt;/td&gt;
@@ -2718,7 +2654,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/IMG_20140528_201416.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140528_201416_hu475289a36430ba104f108ab1132df939_452956_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/IMG_20140528_201416_hu475289a36430ba104f108ab1132df939_452956_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 &lt;/td&gt;
@@ -2740,7 +2676,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0020_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0020__hubf53b84e3b32edd9a0076ce266f6bb4b_264506_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0020__hubf53b84e3b32edd9a0076ce266f6bb4b_264506_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2757,7 +2693,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/DSC_0016_.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0016__hu844935d39919c2b49e467ce119fe6073_320251_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/DSC_0016__hu844935d39919c2b49e467ce119fe6073_320251_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2772,7 +2708,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/fishfeeder/openclose.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/fishfeeder/openclose_hub5bae307f11b5d3cb57e9c9965f1108b_946599_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/fishfeeder/openclose_hub5bae307f11b5d3cb57e9c9965f1108b_946599_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2788,7 +2724,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Wed, 30 Apr 2014 23:16:18 +0000</pubDate>
 		<guid>https://marian42.de/article/portalgun/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/portalgun/DSC_0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/DSC_0022_hu84f6777da9c0c385efb89a9e14d3adcc_1008766_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2809,7 +2745,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0001.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0001_hu39d7582b51df118ba1010ce70cdb752a_244470_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0001_hu39d7582b51df118ba1010ce70cdb752a_244470_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2820,7 +2756,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0002.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0002_hu39d7582b51df118ba1010ce70cdb752a_245788_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0002_hu39d7582b51df118ba1010ce70cdb752a_245788_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2831,7 +2767,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0003.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0003_hu39d7582b51df118ba1010ce70cdb752a_251714_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0003_hu39d7582b51df118ba1010ce70cdb752a_251714_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2842,7 +2778,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0004.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0004_hu39d7582b51df118ba1010ce70cdb752a_263213_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0004_hu39d7582b51df118ba1010ce70cdb752a_263213_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2853,7 +2789,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0005.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0005_hu39d7582b51df118ba1010ce70cdb752a_264504_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0005_hu39d7582b51df118ba1010ce70cdb752a_264504_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2864,7 +2800,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0006.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0006_hu39d7582b51df118ba1010ce70cdb752a_266085_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0006_hu39d7582b51df118ba1010ce70cdb752a_266085_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2875,7 +2811,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0007.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0007_hu39d7582b51df118ba1010ce70cdb752a_268036_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0007_hu39d7582b51df118ba1010ce70cdb752a_268036_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2886,7 +2822,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0008.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0008_hu39d7582b51df118ba1010ce70cdb752a_264543_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0008_hu39d7582b51df118ba1010ce70cdb752a_264543_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2897,7 +2833,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0009.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0009_huc735453f1f6ba0b59ea8ef21cb56d9a0_266996_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0009_huc735453f1f6ba0b59ea8ef21cb56d9a0_266996_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2908,7 +2844,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0010.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0010_huc735453f1f6ba0b59ea8ef21cb56d9a0_268407_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0010_huc735453f1f6ba0b59ea8ef21cb56d9a0_268407_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2919,7 +2855,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0011.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0011_hu97a90871ac9f57b47e6d7033c5d53356_227834_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0011_hu97a90871ac9f57b47e6d7033c5d53356_227834_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2930,7 +2866,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0012.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0012_hu97a90871ac9f57b47e6d7033c5d53356_229517_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0012_hu97a90871ac9f57b47e6d7033c5d53356_229517_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2941,7 +2877,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0013.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0013_hu56f21d525cb02137367cb5b0173c10dc_172224_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0013_hu56f21d525cb02137367cb5b0173c10dc_172224_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2952,7 +2888,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0014.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0014_hu56f21d525cb02137367cb5b0173c10dc_194692_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0014_hu56f21d525cb02137367cb5b0173c10dc_194692_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2963,7 +2899,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0015_hu56f21d525cb02137367cb5b0173c10dc_190422_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0015_hu56f21d525cb02137367cb5b0173c10dc_190422_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2974,7 +2910,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0017.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0017_hu56f21d525cb02137367cb5b0173c10dc_191712_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0017_hu56f21d525cb02137367cb5b0173c10dc_191712_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2985,7 +2921,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0018.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0018_hu56f21d525cb02137367cb5b0173c10dc_185659_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0018_hu56f21d525cb02137367cb5b0173c10dc_185659_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -2996,7 +2932,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0019.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0019_hu56f21d525cb02137367cb5b0173c10dc_177482_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0019_hu56f21d525cb02137367cb5b0173c10dc_177482_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3007,7 +2943,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0020.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0020_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_243639_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0020_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_243639_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3018,7 +2954,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0021.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0021_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_244245_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0021_hu6a6ac6a29ab6a2cd7b3af0dbf391e811_244245_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3029,7 +2965,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0022.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0022_hu664fdda1930640a0d752304579bfa665_254533_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0022_hu664fdda1930640a0d752304579bfa665_254533_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3040,7 +2976,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0023.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0023_hu137109586ac9630afbea1472af9434f9_275921_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0023_hu137109586ac9630afbea1472af9434f9_275921_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3051,7 +2987,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0024.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0024_hu3e073af37710670247f71c9ea19b9caa_281321_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0024_hu3e073af37710670247f71c9ea19b9caa_281321_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3062,7 +2998,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0025.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0025_hu3e073af37710670247f71c9ea19b9caa_283424_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0025_hu3e073af37710670247f71c9ea19b9caa_283424_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3073,7 +3009,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0026.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0026_hub68f9a10646bbb21d517d641c5b2d8ac_285229_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0026_hub68f9a10646bbb21d517d641c5b2d8ac_285229_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3084,7 +3020,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0027.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0027_hub68f9a10646bbb21d517d641c5b2d8ac_290398_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0027_hub68f9a10646bbb21d517d641c5b2d8ac_290398_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3095,7 +3031,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0028_hu5eb84db25f19e7b2f4b382bb7ba1ffc3_288024_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0028_hu5eb84db25f19e7b2f4b382bb7ba1ffc3_288024_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3106,7 +3042,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0029.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0029_hu2b0d9c19469c5f49708f59e2c2dd52d2_147155_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0029_hu2b0d9c19469c5f49708f59e2c2dd52d2_147155_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3119,7 +3055,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0030.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0030_hu2b0d9c19469c5f49708f59e2c2dd52d2_184091_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0030_hu2b0d9c19469c5f49708f59e2c2dd52d2_184091_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3130,7 +3066,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0031.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0031_hu2b0d9c19469c5f49708f59e2c2dd52d2_176625_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0031_hu2b0d9c19469c5f49708f59e2c2dd52d2_176625_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3141,7 +3077,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/step0032.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/step0032_huab9e53e7393918c682a8da345b08f26d_295587_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/step0032_huab9e53e7393918c682a8da345b08f26d_295587_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3152,7 +3088,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/portalgun/portalgun2.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/portalgun/portalgun2_hu8fd17cc1ba39511ea0087a6bc0ad0d95_189342_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/portalgun/portalgun2_hu8fd17cc1ba39511ea0087a6bc0ad0d95_189342_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;</description>
     </item>
     
@@ -3162,7 +3098,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Sun, 16 Feb 2014 18:47:39 +0000</pubDate>
 		<guid>https://marian42.de/article/lol-notifications/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3259,9 +3195,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-19.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-19_hudb07cbd4f760f0f7e7a1a8cfdebe92b5_60362_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-19.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;td&gt;
@@ -3269,9 +3203,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-28.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-28_hu5f37382d3f139cded47066d9f719f119_66187_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/uni-timer/Screenshot_2013-11-30-17-42-28.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -3290,7 +3222,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Sat, 26 Oct 2013 23:57:34 +0000</pubDate>
 		<guid>https://marian42.de/article/copter/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3315,7 +3247,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter/IMG_20130820_140911s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130820_140911s_huf8fba1a8a124ce5a4c67488e6ff5fd97_408793_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130820_140911s_huf8fba1a8a124ce5a4c67488e6ff5fd97_408793_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3330,7 +3262,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter/IMG_20130824_003531s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130824_003531s_huabcf8e1ffafad7473cf22a7256b3cb0a_369176_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/IMG_20130824_003531s_huabcf8e1ffafad7473cf22a7256b3cb0a_369176_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3360,7 +3292,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter/G0010081.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/G0010081_hu6a9b1b669b4e0b7b119dbd95ed6f64b1_1561312_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/G0010081_hu6a9b1b669b4e0b7b119dbd95ed6f64b1_1561312_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3375,7 +3307,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter/DSC_0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3423,7 +3355,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/pi-projects/wiring.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-projects/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-projects/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3466,9 +3398,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/pi-projects/Screenshot_2013-10-19-12-16-43.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-projects/Screenshot_2013-10-19-12-16-43_hu24419dde733dd0fa62a74d16b62b89be_565330_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/pi-projects/Screenshot_2013-10-19-12-16-43.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -3488,7 +3418,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Tue, 15 Oct 2013 22:47:26 +0000</pubDate>
 		<guid>https://marian42.de/article/copter-lights/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3513,7 +3443,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lights/arduino_Schaltplan33.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/arduino_Schaltplan33_hu2eac0c52fd28c06c7069f3896c007823_398551_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/arduino_Schaltplan33_hu2eac0c52fd28c06c7069f3896c007823_398551_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3526,7 +3456,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_00071.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_00071_hufa16802c69aee134b13faeaeec7c986a_1928374_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_00071_hufa16802c69aee134b13faeaeec7c986a_1928374_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3547,9 +3477,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/copter-lights/q1.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/q1_hu906862880a70537b96e9a7829a600a91_127801_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/copter-lights/q1.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -3571,9 +3499,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/copter-lights/q2.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/q2_hu77394f32494edfe5b55c019b16ce4eea_179642_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/copter-lights/q2.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -3597,7 +3523,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Mon, 07 Oct 2013 22:39:59 +0000</pubDate>
 		<guid>https://marian42.de/article/copter-lightpainting/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3605,7 +3531,7 @@ Here is an example:&lt;/p&gt;
 &lt;p&gt;Die Fotos wurden mit einem &lt;a href=&#34;https://www.youtube.com/watch?v=WMknyBcoIIU&#34;&gt;beleuchteten&lt;/a&gt; Quadrocopter, einem Stativ und 15 Sekunden Belichtung aufgenommen.&lt;/p&gt;
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030_hu64c176f12090e957f948890e03cca9d1_603882_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0030_hu64c176f12090e957f948890e03cca9d1_603882_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3616,7 +3542,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0028.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0028_hu20c9143fd7d33ea37d634833419f6378_617542_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3627,7 +3553,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0016.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0016_hu68eed684564a47324e94258c2a9112ab_601780_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0016_hu68eed684564a47324e94258c2a9112ab_601780_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3638,7 +3564,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0034.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0034_hu0a64b3cefb708984f8d059defc4ff173_636342_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0034_hu0a64b3cefb708984f8d059defc4ff173_636342_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3651,7 +3577,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0405.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0405_hu9a41eb3cf51097ef3498ffeb5b1f7702_944581_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0405_hu9a41eb3cf51097ef3498ffeb5b1f7702_944581_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3662,7 +3588,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0403.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0403_hu0dd46a3f1a1e15033768ceec3ce466fe_1055166_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0403_hu0dd46a3f1a1e15033768ceec3ce466fe_1055166_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3673,7 +3599,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0400.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0400_hue2f6a8339621cbafa74e374ac95cbd15_944074_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0400_hue2f6a8339621cbafa74e374ac95cbd15_944074_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3684,7 +3610,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0390.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0390_hu17dbf37f00353fce0f8655720ab79a76_906598_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0390_hu17dbf37f00353fce0f8655720ab79a76_906598_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3695,7 +3621,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0389.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0389_hub84162cb0713e4ced1414b4c17ca3c22_987105_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0389_hub84162cb0713e4ced1414b4c17ca3c22_987105_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3706,7 +3632,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0371.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0371_hue51b7d2859a0ad0700ab678c34a71299_683109_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0371_hue51b7d2859a0ad0700ab678c34a71299_683109_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3720,7 +3646,7 @@ Here is an example:&lt;/p&gt;
 		<pubDate>Mon, 23 Sep 2013 17:27:39 +0000</pubDate>
 		<guid>https://marian42.de/article/pi-wetterstation/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3728,7 +3654,7 @@ Here is an example:&lt;/p&gt;
 &lt;p&gt;Um die Daten, die meine &lt;a href=&#34;http://marian42.de/?p=8&#34;&gt;Arduino-Wetterstation&lt;/a&gt; liefert, verfügbarer zu machen, habe ich mich entschieden, das Projekt jetzt mit einem Raspberry Pi weiterzuführen. Die Sensordaten werden wieder vom ILC-Board geliefert, das ich für den Schülerwettbewerb &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge&lt;/a&gt; bekommen habe.&lt;/p&gt;
 
 &lt;a href=&#34;https://marian42.de/article/pi-wetterstation/wiring.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/wiring_hu4df0e5f56148bb1f73b0d758944d1e17_3524872_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -3755,9 +3681,7 @@ Here is an example:&lt;/p&gt;
 
 
 
-&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/xively.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/xively_hucebc74b746d20651483b92983bebeab6_25353_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/xively.png&#34; width=&#34;970&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -3779,7 +3703,7 @@ Here is an example:&lt;/p&gt;
 
 
 &lt;a href=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_hudf552e1623e1ce736d7adab5dca76b30_165718_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4003,7 +3927,7 @@ mycolorsender:255,0,255
 
 
 &lt;a href=&#34;https://marian42.de/article/btduino-tutorial/btsetup3.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/btsetup3_hub086522d4565c7744cbc3187ca044a1c_219848_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/btsetup3_hub086522d4565c7744cbc3187ca044a1c_219848_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4018,7 +3942,7 @@ mycolorsender:255,0,255
 
 
 &lt;a href=&#34;https://marian42.de/article/btduino-tutorial/schaltung_Steckplatine.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/schaltung_Steckplatine_hude9311adc2572445c7f9f798c54b0ddb_1722399_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/schaltung_Steckplatine_hude9311adc2572445c7f9f798c54b0ddb_1722399_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4051,9 +3975,7 @@ void loop() {
 
 
 
-&lt;a href=&#34;https://marian42.de/article/btduino-tutorial/Screenshot_2013-07-25-00-29-39.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/Screenshot_2013-07-25-00-29-39_hu7a226aa3f5e06d5a881f36750cb5d1f0_61271_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/btduino-tutorial/Screenshot_2013-07-25-00-29-39.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -4089,7 +4011,7 @@ pinMode(ledpin,OUTPUT);
 		<pubDate>Tue, 09 Jul 2013 23:43:32 +0000</pubDate>
 		<guid>https://marian42.de/article/wetterstation/</guid>
 		<description>&lt;a href=&#34;https://marian42.de/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4103,9 +4025,7 @@ pinMode(ledpin,OUTPUT);
 
 
 
-&lt;a href=&#34;https://marian42.de/article/wetterstation/Screenshot_2013-05-28-20-11-15.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/Screenshot_2013-05-28-20-11-15_hu2233e746e718bf5c45aed4dc71af19ed_117322_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/wetterstation/Screenshot_2013-05-28-20-11-15.png&#34; width=&#34;768&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -4119,7 +4039,7 @@ pinMode(ledpin,OUTPUT);
 
 
 &lt;a href=&#34;https://marian42.de/article/wetterstation/erkl%C3%A4rung.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/erkl%C3%A4rung_hu01afd7596af374f295ea80cb12fb1c7d_737220_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/erkl%C3%A4rung_hu01afd7596af374f295ea80cb12fb1c7d_737220_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4135,9 +4055,7 @@ pinMode(ledpin,OUTPUT);
 
 
 
-&lt;a href=&#34;https://marian42.de/article/wetterstation/wetterstation_o.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_o_hu91695d419e6dcc72c31d24acc44c7c26_316718_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_o.png&#34; width=&#34;1024&#34; alt=&#34;&#34;&gt;
 
 
 
@@ -4147,7 +4065,7 @@ pinMode(ledpin,OUTPUT);
 
 
 &lt;a href=&#34;https://marian42.de/article/wetterstation/wetterstation.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_huf514aa3aa432b302687eb64190d36974_448406_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/wetterstation_huf514aa3aa432b302687eb64190d36974_448406_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4160,7 +4078,7 @@ pinMode(ledpin,OUTPUT);
 
 
 &lt;a href=&#34;https://marian42.de/article/wetterstation/schaltplan.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/schaltplan_hu5dcb1ed7ddd03f83ffedb4c52c79eab9_274582_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/schaltplan_hu5dcb1ed7ddd03f83ffedb4c52c79eab9_274582_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -4172,9 +4090,7 @@ pinMode(ledpin,OUTPUT);
 
 
 
-&lt;a href=&#34;https://marian42.de/article/wetterstation/gui.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/gui_hu549bc1f7059fc882cc9848cd32f7d3f0_131118_636x0_resize_box_2.png&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
-&lt;/a&gt;
+&lt;img src=&#34;https://marian42.de/article/wetterstation/gui.png&#34; width=&#34;1247&#34; alt=&#34;&#34;&gt;
 
 
 

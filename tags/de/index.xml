@@ -17,7 +17,7 @@
       
       <guid>https://marian42.de/article/lol-notifications/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/lol-notifications/head.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/lol-notifications/head_hu62b125b0943eacf79c09ac008a130c4d_702183_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -48,7 +48,7 @@
       
       <guid>https://marian42.de/article/uni-timer/</guid>
       <description>Ich bin seit diesem Semester Student und in der Uni dauern Vorlesungen immer 90 Minuten, von “viertel nach” bis “viertel vor”. Da kam mir die Idee, dass man eine Uhr bräuchte, die nicht den Fortschritt der aktuellen Stunde, sondern den der aktuellen Vorlesung zeigt. Dazu habe ich schnell diese App zusammengecodet:
-                  Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
+                Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       
       <guid>https://marian42.de/article/copter/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/copter/DSC_0008s.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter/DSC_0008s_hub76d3e56374177dca191e2563c23142b_1230965_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -73,7 +73,7 @@
       
       <guid>https://marian42.de/article/pi-projects/</guid>
       <description>Was macht man eigentlich mit einem Raspberry Pi? Ich habe mir vor einem halben Jahr einen gekauft. Seitdem steht er hier auf meinem Schreibtisch und führt eine Reihe von Aufgaben aus. Hier eine Übersicht:
- http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet    Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                       Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
+ http-Server für einige Webseiten auf dem Pi und die Daten auf meiner externen Festplatte Samba und FTP Server für die Daten auf der Festplatte   Wetterstation: Mit einigen Sensoren werden einmal pro Minute Wetterdaten aufgezeichnet    Webseite für die Wetterdaten Über einen RF-Sender steuert der Pi einige Funksteckdosen in meinem Zimmer an (mit RF-Sender, ELRO-Funksteckdosen und rcswitch-pi) Über einen IR-Sender steuert der Pi meine Stereoanlage (mit LIRC)                      Für die Stereoanlage und die Steckdosen gibt es eine API und ein Web-Interface zum Steuern.</description>
     </item>
     
     <item>
@@ -83,7 +83,7 @@
       
       <guid>https://marian42.de/article/copter-lights/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/copter-lights/DSC_0036.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lights/DSC_0036_hucc72102bdf44ebb047d0872585a81dfc_587878_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -98,7 +98,7 @@
       
       <guid>https://marian42.de/article/copter-lightpainting/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/copter-lightpainting/DSC_0015_hu5cd437a557e8beada30ef45cd2978670_718485_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -113,7 +113,7 @@
       
       <guid>https://marian42.de/article/pi-wetterstation/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/pi-wetterstation/b1.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/pi-wetterstation/b1_huc90655baa7a8555e6492e2675ebbc4fa_915901_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
@@ -128,7 +128,7 @@
       
       <guid>https://marian42.de/article/wetterstation/</guid>
       <description>&lt;a href=&#34;https://marian42.de/article/wetterstation/DSC_0037-3.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
-	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_636x0_resize_q75_box.jpg&#34; width=&#34;636&#34; alt=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/wetterstation/DSC_0037-3_huf6b55f4aa8d2badf513b77a8a1000025_560535_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
 &lt;/a&gt;
 
 
