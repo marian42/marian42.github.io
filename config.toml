@@ -30,7 +30,7 @@ timeout = 60000
 	rss        = "/index.xml"
 
 	contact    = "mailto:mail@marian42.de"
-	imprint    = "/page/imprint/"
+#	imprint    = "/page/imprint/"
 
 [outputs]
 	home = [ "HTML", "RSS" ]
