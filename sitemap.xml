@@ -3,6 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://marian42.de/article/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/article/infinite-wfc/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/graphics/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/procgen/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://marian42.de/tags/wfc/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://marian42.de/tags/3d/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -11,24 +52,6 @@
   <url>
     <loc>https://marian42.de/article/shapegan/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/article/</loc>
-    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/</loc>
-    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/tags/</loc>
-    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -153,19 +176,7 @@
   </url>
   
   <url>
-    <loc>https://marian42.de/tags/graphics/</loc>
-    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://marian42.de/tags/modeling/</loc>
-    <lastmod>2019-01-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/tags/procgen/</loc>
     <lastmod>2019-01-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -591,15 +602,6 @@
   <url>
     <loc>https://marian42.de/article/wetterstation/</loc>
     <lastmod>2013-07-09T23:43:32+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/page/imprint/</loc>
-  </url>
-  
-  <url>
-    <loc>https://marian42.de/page/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

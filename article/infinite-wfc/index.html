@@ -1,0 +1,500 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="Personal blog about programming, game development and space ships.">
+        <meta name="keywords" content="">
+        <meta name="generator" content="Hugo 0.55.4" />
+        <title>
+			
+				
+					Generating an infinite world with the Wave Function Collapse algorithm |
+				
+				Marian&#39;s Blog
+			
+		</title>
+        <meta name="description" content="Generating an infinite world with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
+        <meta itemprop="name" content="Generating an infinite world with the Wave Function Collapse algorithm">
+        <meta itemprop="description" content="Generating an infinite world with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
+        <meta property="og:title" content="Generating an infinite world with the Wave Function Collapse algorithm">
+        <meta property="og:description" content="Generating an infinite world with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="https://marian42.de/article/infinite-wfc/">
+        <meta property="og:site_name" content="Marian&#39;s Blog">
+        <meta property="og:type" content="article">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+        
+        
+        
+        
+        
+        
+        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.2441e62c6bd67cf08a73659344468d18941f6361820bdffed9b4ce177d6ea5fd.css">
+
+        
+    </head>
+    <body class="bilberry-hugo-theme">
+        <header>
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/marian.png" alt="">
+            </a>
+        </div>
+    </div>
+</header>
+
+
+        <div class="main container">
+            
+     
+    <div class="article-wrapper u-cf single">
+        <article class="default article">
+    <div class="content">
+    <h1 class="article-headline"><a href="/article/infinite-wfc/">Generating an infinite world with the Wave Function Collapse algorithm</a></h1>
+    
+		<div class="meta">
+    		<span class="date">June 20, 2023</span>
+		</div>
+    
+
+    
+        <a href="/article/infinite-wfc/city.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/city_hu611865a9dee004d5ac7c4a8d3d9a3edd_2784332_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>This article describes how I generate an infinite city using the Wave Function Collapse algorithm in a way that is fast, deterministic, parallelizable and reliable.
+It&rsquo;s a follow-up to <a href="/article/wfc/">my 2019 article</a> on adapting the WFC algorithm to generate an infinite world.
+The new approach presented in this article removes the limitations of my original implementation.</p>
+
+<p>I first mentioned these ideas in this <a href="https://twitter.com/marian42_/status/1490060483944140804">Twitter thread</a>.</p>
+
+<h1 id="objective">Objective</h1>
+
+<p>The goal is to procedurally generate a 3D environment by placing human designed blocks on a 3D grid.
+The blocks need to be placed in accordance with given adjacency contraints.
+For each of the 6 sides of each block, some information about the face and its symmetry is used to generate a list of possible neighbors.</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/modules.png" target="_blank" title="">
+	<img src="/article/infinite-wfc/modules_hu3a905464f46e4a482870b0390af2477b_4695530_1272x0_resize_box_2.png" width="1272" alt="">
+</a>
+
+
+
+<p>This is different from the original formulation of the <a href="https://github.com/mxgmn/WaveFunctionCollapse">WFC algorithm</a>, where the possible blocks, their adjacency rules and their spawn probabilities are extracted automatically from an example texture.</p>
+
+<p>In this improved version, the generation method is robust enough to be shipped in a commercial game, so it needs to be reliable, fast and allow for artistic control over the result.</p>
+
+<h1 id="wave-function-collapse">Wave Function Collapse</h1>
+
+<p>This article is aimed at readers who already know how the <a href="https://github.com/mxgmn/WaveFunctionCollapse">WFC algorithm</a> works, but here is a brief recap.
+Remember, I&rsquo;m skipping the part where blocks are extracted from an example texture and I&rsquo;m only using the part where we generate a new &ldquo;texture&rdquo;.</p>
+
+<p><img src="https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966" alt="" /><br />
+(Gif by <a href="https://github.com/mxgmn">Maxim Gumin on Github</a>)</p>
+
+<p>The algorithm starts with an array of slots (the &ldquo;wave function&rdquo;), where nothing is decided.
+Each slot has a list of possible blocks (or &ldquo;modules&rdquo;) that can be placed there and in the starting state, each list contains all modules.
+The algorithm will then do collapse steps and a constraint propagation steps until the map is fully collapsed or until it has reached a dead end.</p>
+
+<h2 id="collapse-step">Collapse step</h2>
+
+<p>We pick the slot with the lowest entropy and collapse it.
+That means we pick one of the modules from that slot&rsquo;s list of possible modules and set it as the selected module for this slot.
+Intuitively, the &ldquo;slot with the lowest entropy&rdquo; is the one with the least amount of choice.
+If all modules have the same spawn probability, the slot with the fewest possible modules is the one with the lowest entropy.</p>
+
+<h2 id="constraint-propagation">Constraint propagation</h2>
+
+<p>Collapsing a slot effectively shrinks the list of possible modules of that slot to 1.
+The constraint propagation step propagates this information through the map by removing modules from the respective lists of other slots that relied on a different choice for the slot we just collapsed.
+The constraint propagation step of the WFC algorithm is the most compute intensive part.</p>
+
+<h2 id="end">End</h2>
+
+<p>The algorithm terminates when all slots are collapsed, which means success, or when the list of possible modules for any slot is empty.
+In that case the procedure has failed and one could backtrack or start over.</p>
+
+<h1 id="the-original-approach-and-its-limitations">The original approach and its limitations</h1>
+
+<p>(skip this section if you just want to know the solution)</p>
+
+<p>WFC is usually applied to finite maps that can be stored in an array.
+In my <a href="/article/wfc/">original post</a>, I described why I thought it would be impractical to do a chunk-based WFC implementation.
+(I had not figured out how to avoid the problem that constraints need to be propagated across chunk boundaries)
+Instead, I stored the map in a dictionary, where new slots would be allocated when they were needed or when they were touched by constraint propagation.
+That means, even to geneate a small area of the map, a large cloud of slots around that area would be allocated since constraint propagation could &ldquo;bounce back&rdquo; into the area we&rsquo;re interested in.</p>
+
+<p>Problems of that approach include:</p>
+
+<p><strong>Non-determinism</strong>: The result of the generation depends on the order in which parts of the map are generated (and thus on the path the player takes).<br />
+<strong>Memory leak</strong>: We can&rsquo;t release the memory used to generate a part of the world when the player leaves since we don&rsquo;t know at what point distant slots no longer have an effect on local world generation.<br />
+<strong>Reliability</strong>: The longer you walk around, the higher the chance becomes that the WFC algorithm runs into a dead end and is unable to continue generating the map.<br />
+<strong>Single threaded</strong>: Since there are no chunks, all operations on the map datastructure need to be sequential and can&rsquo;t run in multiple threads.
+In practice, the map height had to be limited so that the map generation was fast enough.</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/2018demo.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/2018demo_hu4960955ee4c3401ac7cf8858f69b88f0_2120482_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>My implementation of this flawed approach is still <a href="https://github.com/marian42/wavefunctioncollapse">available on Github</a> and a playable demo is on <a href="https://marian42.itch.io/wfc">itch.io</a>.
+If you want to implement your own WFC algorithm, you shouldn&rsquo;t do it like that though!</p>
+
+<h1 id="chunk-based-wfc">Chunk-based WFC</h1>
+
+<p>The idea is to start with a simple pre-generated, tiling map and generate &ldquo;fitting&rdquo; replacements at runtime.
+However, we do this at an offset so that the seam (which would otherwise look the same for each chunk) is replaced.
+In this section, I&rsquo;ll explain in detail what that means.</p>
+
+<p>This solution is a refinement of ideas proposed by <a href="https://paulmerrell.org/model-synthesis/">Paul Merrel</a> and <a href="https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/">BorisTheBrave</a>.</p>
+
+<p>We start by generating a simple, finite, tiling, 8x8x8 map:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/tilingmap.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/tilingmap_hue3ee3da5d0bcc33616886d4e6b25465e_288768_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>This is done offline.
+We use a small subset of the available modules to make it as simple as possible.
+The map is <em>tiling</em> in the sense that the boundaries on opposite sides match, so copies of this map could be placed next to each other seamlessly.
+Doing that would look like this:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/tilingworld.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/tilingworld_hu9aba4c6d7d7a3d9adea8af376750116c_1108242_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>Generating a tiling map is done by &ldquo;wrapping around&rdquo; the constraint propagation at the map boundary.
+In a finite map, when we propagate a constraint to a slot outside the map, we discard that information.
+In a tiling map, the slot on the opposing map boundary is treated as if it was a neighbor.</p>
+
+<p>Next, we pre-generate a set of replacements for our starting map.</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/patches.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/patches_hue0e9b3e998c16e452dcff70036bfe989_350446_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>We use the boundary of the starting map as a boundary constraint to generate these replacements.
+For any slots on the boundary of these new maps, we only allow modules with a matching profile for those sides that face the map boundary.
+This means that we can &ldquo;swap out&rdquo; our starting map with any of the pre-generated patches without creating a visible seam.</p>
+
+<p>Now we can randomly choose from our collection of pre-generated patches at runtime and we have a simple chunk-based infinite world generator:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/simplechunks.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/simplechunks_hue7dac2809f049cd8be2c0cd6d43cfd57_1317390_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>Note that we&rsquo;re not doing any WFC generation at runtime yet, we&rsquo;re just placing pre-generated 8x8x8 block patches.
+Since all these patches have a matching boundary, we can spot this chunk boundary as an unnatural pattern in the generated world.</p>
+
+<p>Now for the important part:
+At runtime, we generate an 8x8x8 replacement map for each chunk, <strong>but we do it at a 4 block offset in both horizontal directions</strong>.
+The starting point for each chunks&rsquo;s generation is made up of the four pre-generated patches that touch it.
+The replacement map we generate at runtime has a boundary constraint to &ldquo;fit in&rdquo;, just like our pre-generated patches.
+However, due to the offset, the boundary that is shared between all pre-generated patches is replaced at runtime and the area that is different in every pre-generated patch remains unchanged during the runtime generation.
+(This is needed so that neighbor chunks can be generated independently from each other.)
+If this replacement map fails to generate, we just copy the blocks from the starting patches.</p>
+
+<p>Here is the result of that:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/chunkwfc.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/chunkwfc_hufb19efa20157fc8b7aac6341c846c76a_1254672_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>Notice how the chunk boundary artifacts from the previous screenshot are gone!</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/offset.png" target="_blank" title="">
+	<img src="/article/infinite-wfc/offset_hu36218e1a4aa533ada4a4b1cba4952acc_10395_1272x0_resize_box_2.png" width="1272" alt="">
+</a>
+
+
+
+<p>Consider this drawing, where the gray blocks are one chunk (seen from above).
+We determine the four starting patches that overlap this chunk (the blue boxes).
+This needs to be random but deterministic, since neighbor chunks will need to use the same information.
+We query the pre-generated patches at the boundary of the chunk (shown in green) and use this as the boundary constraint for the generation of the chunk.</p>
+
+<p>The green boundary area will stay the same during runtime generation, but this looks ok due to the variance in the pre-generated patches.
+The blue boundary is the same for each pre-generated patch, but will be replaced at runtime.</p>
+
+<p>Note how this has the properties we want:
+Each chunk can be generated deterministically and independently from other chunks.
+If the generation for one chunk fails, we simply copy the blocks from the starting patches.</p>
+
+<h1 id="using-a-heightmap">Using a heightmap</h1>
+
+<p>In this section, I&rsquo;ll explain how to generate a world in the shape of an arbitrary heightmap.</p>
+
+<p>Consider an integer heightmap where the difference between two adjacent points is always one.
+The next point is either one above or one below, but never at the same level or anywhere else.</p>
+
+<p>Each 2x2 cell in that heightmap has one of these six shapes:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/shapes.png" target="_blank" title="">
+	<img src="/article/infinite-wfc/shapes_hua6418b97b922d0562ec94a8cc4d7a862_449946_1272x0_resize_box_2.png" width="1272" alt="">
+</a>
+
+
+
+<p>For each of these six possible 2x2 cell shapes, we pre-generate a set of starting patches:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/heightmappatches.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/heightmappatches_hu7373bfcde80c6891606539238fe38375_840466_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>These starting patches are no longer tiling in the classic sense.
+Instead, each side matches the opposite side with a vertical offset.</p>
+
+<p>With our special integer heightmap where adjacent points always have a difference of 1, we will now generate one chunk for each point in the heightmap.
+Our query point has four adjacent 2x2 cells.
+For each 2x2 cell, we determine which of the six possible shapes it has and pick a pre-generated starting patch from the respective collection.
+Then, we generate a replacement map as explained in the previous section.</p>
+
+<p>Here is an example of the heightmap in engine, each chunk is represented as one flat quad:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/heightmap.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/heightmap_hub46a566999f2e47e72facb15f582519a_1564353_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>This mesh is used to render the world far away from the camera.
+I added a &ldquo;city like&rdquo; texture and some billboard-rendered fake buildings.
+In the foreground, you can see the actual chunks generated by the algorithm:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/heightmap2.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/heightmap2_hu3e2a2191a389e6a78d3289d3c820a876_2791999_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>Okay, now we know how to turn our integer heightmap into a cool looking infinite WFC world, but how do we get that integer heightmap in the first place?
+How do we get a function that generates an integer elevation function where the vertical difference between two adjacent points is always 1 or -1, but never 0 or anything else?</p>
+
+<p>We start with a target function that doesn&rsquo;t have this property.
+In my case, I&rsquo;m using 8 octaves of Perlin noise, but any heightmap can be used here.</p>
+
+<p>Then, we use an elaborate clamping process to force the step constraint on our target function.
+It works in a hierarchical way, similarly to descending down a quadtree.
+We start with a relatively large square (the root of the quadtree) and evaluate our target function for the four corners.
+Then, we generate the heightmap value on the edge centers and the square center by querying the target function and then clamping the value to fulfil our slope constraint.
+The slope constraint requires that the vertical difference is less than or equal the horizontal difference.
+If our query point is inside any of the four quadrants, we repeat this process for the respective quadrant (descending the quadtree).
+If our query point is one of the points we just calculated, we&rsquo;re done.</p>
+
+<p>The hierarchical nature of this approach means that it lends itself very well to caching.</p>
+
+<p>Here is a 2D visualization of the process:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/heightmapquery.png" target="_blank" title="">
+	<img src="/article/infinite-wfc/heightmapquery_hu2849b093dc103752f241a4e0810a5865_415227_1272x0_resize_box_2.png" width="1272" alt="">
+</a>
+
+
+
+<p>The blue line shows the target function.
+At every descend step down the quadtree, new limits are introduced to adhere to the slope constraint (shown as black lines).
+The orange dots are the values of our resulting heightmap.</p>
+
+<h1 id="outlook-and-notes">Outlook and notes</h1>
+
+<p>Each chunk can be generated independently.
+That makes it easy to parallelize the computation required to generate the world.
+In my case, I&rsquo;m using Unity&rsquo;s Burst compiler to do the runtime generation.</p>
+
+<p>By varying the module probabilities for different areas of the map, I can generate different biomes.
+Here is an example of a biome boundary:</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/biomeboundary.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/biomeboundary_hu63803fed97f6286587be00b26c013de7_3217187_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>The biome on the left spawns copper roofs and bridges, the one on the right spawns tiled roofs and arches.
+On the boundary, there is one row of chunks where modules from both biomes can spawn, creating a natural looking transition.</p>
+
+<p>I want to mention some progress on this project that is unrelated to the WFC algorithm.
+Since my last blog post in 2019, I&rsquo;ve created lots of new blocks, textured them, added a water plane and added procedurally generated trees and climbing plants.</p>
+
+
+
+
+
+
+<a href="/article/infinite-wfc/plants.jpg" target="_blank" title="">
+	<img src="/article/infinite-wfc/plants_hua8a67233cfc2fbd912ab8c7233f2a390_2703254_1272x0_resize_q75_box.jpg" width="1272" alt="">
+</a>
+
+
+
+<p>The trees and plants are generated at runtime using the Space Colonization algorithm and adapt to the geometry of the world.</p>
+
+<p>The next challenge is to come up with interesting gameplay ideas for this project.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+	
+	    
+	        <div class="tags">
+				tagged
+	            <div class="links">
+	                
+	                    <a href="/tags/procgen">procgen</a>
+	                
+	                    <a href="/tags/graphics">graphics</a>
+	                
+	                    <a href="/tags/wfc">wfc</a>
+	                
+	            </div>
+	        </div>
+	    
+	
+</div>
+
+</article>
+
+    </div>
+	
+     
+
+        </div>
+
+        
+<footer>
+    <div class="container">
+		<div class="left">
+			
+			
+				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
+			
+        </div>
+        <div class="right">
+            
+            <div class="external-profiles">
+                
+                    <a href="https://mastodon.gamedev.place/@marian42" target="_blank" rel="me">
+                        <i class="fa">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                
+                                <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
+                            </svg>
+                        </i>
+                    </a>
+                
+                
+                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
+                
+                
+                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
+                
+				
+                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
+                
+				
+                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    </body>
+</html>

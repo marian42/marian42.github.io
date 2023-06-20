@@ -5,10 +5,27 @@
     <link>https://marian42.de/article/</link>
     <description>Recent content in Articles on Marian&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jun 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://marian42.de/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Generating an infinite world with the Wave Function Collapse algorithm</title>
+      <link>https://marian42.de/article/infinite-wfc/</link>
+      <pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marian42.de/article/infinite-wfc/</guid>
+      <description>&lt;a href=&#34;https://marian42.de/article/infinite-wfc/city.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/city_hu611865a9dee004d5ac7c4a8d3d9a3edd_2784332_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This article describes how I generate an infinite city using the Wave Function Collapse algorithm in a way that is fast, deterministic, parallelizable and reliable.
+It&amp;rsquo;s a follow-up to &lt;a href=&#34;https://marian42.de/article/wfc/&#34;&gt;my 2019 article&lt;/a&gt; on adapting the WFC algorithm to generate an infinite world.
+The new approach presented in this article removes the limitations of my original implementation.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Adversarial Generation of Continuous Implicit Shape Representations</title>

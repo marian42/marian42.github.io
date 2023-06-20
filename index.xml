@@ -3,10 +3,374 @@
     <title>Marian&#39;s Blog</title>
     <link>https://marian42.de/</link>
     <description>Personal blog about programming, game development and space ships.</description>
-	<lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 20 Jun 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+		<title>Generating an infinite world with the Wave Function Collapse algorithm</title>
+		<link>https://marian42.de/article/infinite-wfc/</link>
+		<pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
+		<guid>https://marian42.de/article/infinite-wfc/</guid>
+		<description>&lt;a href=&#34;https://marian42.de/article/infinite-wfc/city.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/city_hu611865a9dee004d5ac7c4a8d3d9a3edd_2784332_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This article describes how I generate an infinite city using the Wave Function Collapse algorithm in a way that is fast, deterministic, parallelizable and reliable.
+It&amp;rsquo;s a follow-up to &lt;a href=&#34;https://marian42.de/article/wfc/&#34;&gt;my 2019 article&lt;/a&gt; on adapting the WFC algorithm to generate an infinite world.
+The new approach presented in this article removes the limitations of my original implementation.&lt;/p&gt;
+
+&lt;p&gt;I first mentioned these ideas in this &lt;a href=&#34;https://twitter.com/marian42_/status/1490060483944140804&#34;&gt;Twitter thread&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;objective&#34;&gt;Objective&lt;/h1&gt;
+
+&lt;p&gt;The goal is to procedurally generate a 3D environment by placing human designed blocks on a 3D grid.
+The blocks need to be placed in accordance with given adjacency contraints.
+For each of the 6 sides of each block, some information about the face and its symmetry is used to generate a list of possible neighbors.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/modules.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/modules_hu3a905464f46e4a482870b0390af2477b_4695530_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is different from the original formulation of the &lt;a href=&#34;https://github.com/mxgmn/WaveFunctionCollapse&#34;&gt;WFC algorithm&lt;/a&gt;, where the possible blocks, their adjacency rules and their spawn probabilities are extracted automatically from an example texture.&lt;/p&gt;
+
+&lt;p&gt;In this improved version, the generation method is robust enough to be shipped in a commercial game, so it needs to be reliable, fast and allow for artistic control over the result.&lt;/p&gt;
+
+&lt;h1 id=&#34;wave-function-collapse&#34;&gt;Wave Function Collapse&lt;/h1&gt;
+
+&lt;p&gt;This article is aimed at readers who already know how the &lt;a href=&#34;https://github.com/mxgmn/WaveFunctionCollapse&#34;&gt;WFC algorithm&lt;/a&gt; works, but here is a brief recap.
+Remember, I&amp;rsquo;m skipping the part where blocks are extracted from an example texture and I&amp;rsquo;m only using the part where we generate a new &amp;ldquo;texture&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+(Gif by &lt;a href=&#34;https://github.com/mxgmn&#34;&gt;Maxim Gumin on Github&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;The algorithm starts with an array of slots (the &amp;ldquo;wave function&amp;rdquo;), where nothing is decided.
+Each slot has a list of possible blocks (or &amp;ldquo;modules&amp;rdquo;) that can be placed there and in the starting state, each list contains all modules.
+The algorithm will then do collapse steps and a constraint propagation steps until the map is fully collapsed or until it has reached a dead end.&lt;/p&gt;
+
+&lt;h2 id=&#34;collapse-step&#34;&gt;Collapse step&lt;/h2&gt;
+
+&lt;p&gt;We pick the slot with the lowest entropy and collapse it.
+That means we pick one of the modules from that slot&amp;rsquo;s list of possible modules and set it as the selected module for this slot.
+Intuitively, the &amp;ldquo;slot with the lowest entropy&amp;rdquo; is the one with the least amount of choice.
+If all modules have the same spawn probability, the slot with the fewest possible modules is the one with the lowest entropy.&lt;/p&gt;
+
+&lt;h2 id=&#34;constraint-propagation&#34;&gt;Constraint propagation&lt;/h2&gt;
+
+&lt;p&gt;Collapsing a slot effectively shrinks the list of possible modules of that slot to 1.
+The constraint propagation step propagates this information through the map by removing modules from the respective lists of other slots that relied on a different choice for the slot we just collapsed.
+The constraint propagation step of the WFC algorithm is the most compute intensive part.&lt;/p&gt;
+
+&lt;h2 id=&#34;end&#34;&gt;End&lt;/h2&gt;
+
+&lt;p&gt;The algorithm terminates when all slots are collapsed, which means success, or when the list of possible modules for any slot is empty.
+In that case the procedure has failed and one could backtrack or start over.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-original-approach-and-its-limitations&#34;&gt;The original approach and its limitations&lt;/h1&gt;
+
+&lt;p&gt;(skip this section if you just want to know the solution)&lt;/p&gt;
+
+&lt;p&gt;WFC is usually applied to finite maps that can be stored in an array.
+In my &lt;a href=&#34;https://marian42.de/article/wfc/&#34;&gt;original post&lt;/a&gt;, I described why I thought it would be impractical to do a chunk-based WFC implementation.
+(I had not figured out how to avoid the problem that constraints need to be propagated across chunk boundaries)
+Instead, I stored the map in a dictionary, where new slots would be allocated when they were needed or when they were touched by constraint propagation.
+That means, even to geneate a small area of the map, a large cloud of slots around that area would be allocated since constraint propagation could &amp;ldquo;bounce back&amp;rdquo; into the area we&amp;rsquo;re interested in.&lt;/p&gt;
+
+&lt;p&gt;Problems of that approach include:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Non-determinism&lt;/strong&gt;: The result of the generation depends on the order in which parts of the map are generated (and thus on the path the player takes).&lt;br /&gt;
+&lt;strong&gt;Memory leak&lt;/strong&gt;: We can&amp;rsquo;t release the memory used to generate a part of the world when the player leaves since we don&amp;rsquo;t know at what point distant slots no longer have an effect on local world generation.&lt;br /&gt;
+&lt;strong&gt;Reliability&lt;/strong&gt;: The longer you walk around, the higher the chance becomes that the WFC algorithm runs into a dead end and is unable to continue generating the map.&lt;br /&gt;
+&lt;strong&gt;Single threaded&lt;/strong&gt;: Since there are no chunks, all operations on the map datastructure need to be sequential and can&amp;rsquo;t run in multiple threads.
+In practice, the map height had to be limited so that the map generation was fast enough.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/2018demo.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/2018demo_hu4960955ee4c3401ac7cf8858f69b88f0_2120482_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;My implementation of this flawed approach is still &lt;a href=&#34;https://github.com/marian42/wavefunctioncollapse&#34;&gt;available on Github&lt;/a&gt; and a playable demo is on &lt;a href=&#34;https://marian42.itch.io/wfc&#34;&gt;itch.io&lt;/a&gt;.
+If you want to implement your own WFC algorithm, you shouldn&amp;rsquo;t do it like that though!&lt;/p&gt;
+
+&lt;h1 id=&#34;chunk-based-wfc&#34;&gt;Chunk-based WFC&lt;/h1&gt;
+
+&lt;p&gt;The idea is to start with a simple pre-generated, tiling map and generate &amp;ldquo;fitting&amp;rdquo; replacements at runtime.
+However, we do this at an offset so that the seam (which would otherwise look the same for each chunk) is replaced.
+In this section, I&amp;rsquo;ll explain in detail what that means.&lt;/p&gt;
+
+&lt;p&gt;This solution is a refinement of ideas proposed by &lt;a href=&#34;https://paulmerrell.org/model-synthesis/&#34;&gt;Paul Merrel&lt;/a&gt; and &lt;a href=&#34;https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/&#34;&gt;BorisTheBrave&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We start by generating a simple, finite, tiling, 8x8x8 map:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/tilingmap.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/tilingmap_hue3ee3da5d0bcc33616886d4e6b25465e_288768_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This is done offline.
+We use a small subset of the available modules to make it as simple as possible.
+The map is &lt;em&gt;tiling&lt;/em&gt; in the sense that the boundaries on opposite sides match, so copies of this map could be placed next to each other seamlessly.
+Doing that would look like this:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/tilingworld.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/tilingworld_hu9aba4c6d7d7a3d9adea8af376750116c_1108242_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Generating a tiling map is done by &amp;ldquo;wrapping around&amp;rdquo; the constraint propagation at the map boundary.
+In a finite map, when we propagate a constraint to a slot outside the map, we discard that information.
+In a tiling map, the slot on the opposing map boundary is treated as if it was a neighbor.&lt;/p&gt;
+
+&lt;p&gt;Next, we pre-generate a set of replacements for our starting map.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/patches.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/patches_hue0e9b3e998c16e452dcff70036bfe989_350446_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;We use the boundary of the starting map as a boundary constraint to generate these replacements.
+For any slots on the boundary of these new maps, we only allow modules with a matching profile for those sides that face the map boundary.
+This means that we can &amp;ldquo;swap out&amp;rdquo; our starting map with any of the pre-generated patches without creating a visible seam.&lt;/p&gt;
+
+&lt;p&gt;Now we can randomly choose from our collection of pre-generated patches at runtime and we have a simple chunk-based infinite world generator:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/simplechunks.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/simplechunks_hue7dac2809f049cd8be2c0cd6d43cfd57_1317390_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Note that we&amp;rsquo;re not doing any WFC generation at runtime yet, we&amp;rsquo;re just placing pre-generated 8x8x8 block patches.
+Since all these patches have a matching boundary, we can spot this chunk boundary as an unnatural pattern in the generated world.&lt;/p&gt;
+
+&lt;p&gt;Now for the important part:
+At runtime, we generate an 8x8x8 replacement map for each chunk, &lt;strong&gt;but we do it at a 4 block offset in both horizontal directions&lt;/strong&gt;.
+The starting point for each chunks&amp;rsquo;s generation is made up of the four pre-generated patches that touch it.
+The replacement map we generate at runtime has a boundary constraint to &amp;ldquo;fit in&amp;rdquo;, just like our pre-generated patches.
+However, due to the offset, the boundary that is shared between all pre-generated patches is replaced at runtime and the area that is different in every pre-generated patch remains unchanged during the runtime generation.
+(This is needed so that neighbor chunks can be generated independently from each other.)
+If this replacement map fails to generate, we just copy the blocks from the starting patches.&lt;/p&gt;
+
+&lt;p&gt;Here is the result of that:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/chunkwfc.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/chunkwfc_hufb19efa20157fc8b7aac6341c846c76a_1254672_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Notice how the chunk boundary artifacts from the previous screenshot are gone!&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/offset.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/offset_hu36218e1a4aa533ada4a4b1cba4952acc_10395_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Consider this drawing, where the gray blocks are one chunk (seen from above).
+We determine the four starting patches that overlap this chunk (the blue boxes).
+This needs to be random but deterministic, since neighbor chunks will need to use the same information.
+We query the pre-generated patches at the boundary of the chunk (shown in green) and use this as the boundary constraint for the generation of the chunk.&lt;/p&gt;
+
+&lt;p&gt;The green boundary area will stay the same during runtime generation, but this looks ok due to the variance in the pre-generated patches.
+The blue boundary is the same for each pre-generated patch, but will be replaced at runtime.&lt;/p&gt;
+
+&lt;p&gt;Note how this has the properties we want:
+Each chunk can be generated deterministically and independently from other chunks.
+If the generation for one chunk fails, we simply copy the blocks from the starting patches.&lt;/p&gt;
+
+&lt;h1 id=&#34;using-a-heightmap&#34;&gt;Using a heightmap&lt;/h1&gt;
+
+&lt;p&gt;In this section, I&amp;rsquo;ll explain how to generate a world in the shape of an arbitrary heightmap.&lt;/p&gt;
+
+&lt;p&gt;Consider an integer heightmap where the difference between two adjacent points is always one.
+The next point is either one above or one below, but never at the same level or anywhere else.&lt;/p&gt;
+
+&lt;p&gt;Each 2x2 cell in that heightmap has one of these six shapes:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/shapes.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/shapes_hua6418b97b922d0562ec94a8cc4d7a862_449946_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;For each of these six possible 2x2 cell shapes, we pre-generate a set of starting patches:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/heightmappatches.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/heightmappatches_hu7373bfcde80c6891606539238fe38375_840466_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;These starting patches are no longer tiling in the classic sense.
+Instead, each side matches the opposite side with a vertical offset.&lt;/p&gt;
+
+&lt;p&gt;With our special integer heightmap where adjacent points always have a difference of 1, we will now generate one chunk for each point in the heightmap.
+Our query point has four adjacent 2x2 cells.
+For each 2x2 cell, we determine which of the six possible shapes it has and pick a pre-generated starting patch from the respective collection.
+Then, we generate a replacement map as explained in the previous section.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the heightmap in engine, each chunk is represented as one flat quad:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/heightmap.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/heightmap_hub46a566999f2e47e72facb15f582519a_1564353_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;This mesh is used to render the world far away from the camera.
+I added a &amp;ldquo;city like&amp;rdquo; texture and some billboard-rendered fake buildings.
+In the foreground, you can see the actual chunks generated by the algorithm:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/heightmap2.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/heightmap2_hu3e2a2191a389e6a78d3289d3c820a876_2791999_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;Okay, now we know how to turn our integer heightmap into a cool looking infinite WFC world, but how do we get that integer heightmap in the first place?
+How do we get a function that generates an integer elevation function where the vertical difference between two adjacent points is always 1 or -1, but never 0 or anything else?&lt;/p&gt;
+
+&lt;p&gt;We start with a target function that doesn&amp;rsquo;t have this property.
+In my case, I&amp;rsquo;m using 8 octaves of Perlin noise, but any heightmap can be used here.&lt;/p&gt;
+
+&lt;p&gt;Then, we use an elaborate clamping process to force the step constraint on our target function.
+It works in a hierarchical way, similarly to descending down a quadtree.
+We start with a relatively large square (the root of the quadtree) and evaluate our target function for the four corners.
+Then, we generate the heightmap value on the edge centers and the square center by querying the target function and then clamping the value to fulfil our slope constraint.
+The slope constraint requires that the vertical difference is less than or equal the horizontal difference.
+If our query point is inside any of the four quadrants, we repeat this process for the respective quadrant (descending the quadtree).
+If our query point is one of the points we just calculated, we&amp;rsquo;re done.&lt;/p&gt;
+
+&lt;p&gt;The hierarchical nature of this approach means that it lends itself very well to caching.&lt;/p&gt;
+
+&lt;p&gt;Here is a 2D visualization of the process:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/heightmapquery.png&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/heightmapquery_hu2849b093dc103752f241a4e0810a5865_415227_1272x0_resize_box_2.png&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The blue line shows the target function.
+At every descend step down the quadtree, new limits are introduced to adhere to the slope constraint (shown as black lines).
+The orange dots are the values of our resulting heightmap.&lt;/p&gt;
+
+&lt;h1 id=&#34;outlook-and-notes&#34;&gt;Outlook and notes&lt;/h1&gt;
+
+&lt;p&gt;Each chunk can be generated independently.
+That makes it easy to parallelize the computation required to generate the world.
+In my case, I&amp;rsquo;m using Unity&amp;rsquo;s Burst compiler to do the runtime generation.&lt;/p&gt;
+
+&lt;p&gt;By varying the module probabilities for different areas of the map, I can generate different biomes.
+Here is an example of a biome boundary:&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/biomeboundary.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/biomeboundary_hu63803fed97f6286587be00b26c013de7_3217187_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The biome on the left spawns copper roofs and bridges, the one on the right spawns tiled roofs and arches.
+On the boundary, there is one row of chunks where modules from both biomes can spawn, creating a natural looking transition.&lt;/p&gt;
+
+&lt;p&gt;I want to mention some progress on this project that is unrelated to the WFC algorithm.
+Since my last blog post in 2019, I&amp;rsquo;ve created lots of new blocks, textured them, added a water plane and added procedurally generated trees and climbing plants.&lt;/p&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://marian42.de/article/infinite-wfc/plants.jpg&#34; target=&#34;_blank&#34; title=&#34;&#34;&gt;
+	&lt;img src=&#34;https://marian42.de/article/infinite-wfc/plants_hua8a67233cfc2fbd912ab8c7233f2a390_2703254_1272x0_resize_q75_box.jpg&#34; width=&#34;1272&#34; alt=&#34;&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;p&gt;The trees and plants are generated at runtime using the Space Colonization algorithm and adapt to the geometry of the world.&lt;/p&gt;
+
+&lt;p&gt;The next challenge is to come up with interesting gameplay ideas for this project.&lt;/p&gt;</description>
+    </item>
     
     <item>
 		<title>Adversarial Generation of Continuous Implicit Shape Representations</title>
@@ -4097,20 +4461,6 @@ pinMode(ledpin,OUTPUT);
 &lt;p&gt;Ich habe mit dem Projekt bei der &lt;a href=&#34;http://www.intel-leibniz-challenge.de/&#34;&gt;Intel Leibniz Challenge 2013&lt;/a&gt; teilgenommen, bin aber nicht in die Endauswahl gekommen. Für diesen Wettbewerb habe ich auch eine GUI entwickelt, mit der die Daten über eine USB-Verbindung am Computer angezeigt werdenkönnen.&lt;/p&gt;
 
 &lt;p&gt;Downloads: &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation.ino&#34;&gt;Arduino-Sketch&lt;/a&gt;, &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation_tiny.ino&#34;&gt;Arduino-Sketch für den ATtiny&lt;/a&gt;, &lt;a href=&#34;http://marian42.de/?p=179&#34;&gt;Android-App&lt;/a&gt; (mindestens Android 4.0), &lt;a href=&#34;https://marian42.de/article/wetterstation/Wetterstation.fzz&#34;&gt;Fritzing-Schaltplan&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-		<title>Impressum</title>
-		<link>https://marian42.de/page/imprint/</link>
-		<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-		<guid>https://marian42.de/page/imprint/</guid>
-		<description>&lt;p&gt;Angaben gemäß § 5 TMG:&lt;/p&gt;
-
-&lt;p&gt;Marian Kleineberg&lt;br /&gt;
-Kohlentreiberweg 26&lt;br /&gt;
-45549 Sprockhövel&lt;br /&gt;
-mail@marian42.de&lt;/p&gt;
-</description>
     </item>
     
   </channel>
