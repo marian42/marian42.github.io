@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    background-image: url("background.svg");
+    background-size: 34.641px;
+    background-position-x: center;
+    background-position-y: 10px;
+    font-family: sans-serif;
+    color: #222;
+    font-size: 12pt;
+}
+
+header {
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+
+.triangle-pattern {
+    background-color: black;
+    background-image: url("triangles.svg");
+    background-position-x: center;
+}
+
+header .container {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+header .a {
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+}
+
+header .container img {
+    max-width: 100%;
+    display: block;
+}
+
+.card {
+    width: 720px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.card .timestamp {
+    color: #999;
+    font-size: 0.825em;
+    letter-spacing: 1px;
+    margin: 1em 0;
+}
+
+.card h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.content {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+.card .continue {
+    display: inline-block;
+    padding: 16px;
+    background-color: #e2e2e2;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card .continue:hover {
+    background-color: #c2c2c2;
+}
+
+.continue:visited, .continue:hover, .continue:active {
+    color: inherit;
+}
+
+footer {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+
+footer .socials {
+    width: 760px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.socials>div {
+  display: flex;
+  align-items: center;
+}
+
+.socials .social-icon {
+    display: inline-block;
+    width: 40px;
+    padding: 10px 10px;
+    margin: auto 10px;
+}
+
+.social-icon svg path {
+    fill: #272727;
+}
+
+footer .socials a, footer .socials a:hover, footer .socials a:active, footer .socials a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer .decorator {
+    height: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121314;
+        background-image: url(background-dark.svg);
+        color: #dfdfdf;
+    }
+
+    .card, footer {
+        background-color: #262728;
+    }
+    
+    .card .continue {
+        background-color: #3e4044;
+    }
+
+    .card .continue:hover {
+        background-color: #5a5d64;
+    }
+
+    .social-icon svg path {
+        fill: #dfdfdf;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card {
+        border-radius: 0;
+    }
+}
