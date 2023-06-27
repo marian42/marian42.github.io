@@ -4,7 +4,7 @@ import jinja2
 
 from article import Article
 
-OUTPUT_DIRECTORY = 'output'
+from config import OUTPUT_DIRECTORY
 
 def clear_directory(directory):
     for filename in os.listdir(directory):
@@ -25,7 +25,9 @@ def write_file(filename, content):
     if not filename.endswith('.html'):
         filename = os.path.join(filename, "index.html")
     filename = os.path.join(OUTPUT_DIRECTORY, filename)
-    os.makedirs(os.path.dirname(filename))
+    file_directory = os.path.dirname(filename)
+    if not os.path.isdir(file_directory):
+        os.makedirs(file_directory)
     with open(filename, 'w') as file:
         file.write(content)
 

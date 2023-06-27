@@ -1,7 +1,27 @@
 import os
 import yaml
-import markdown2
 import re
+from mistune import HTMLRenderer, create_markdown
+import shutil
+from config import OUTPUT_DIRECTORY
+
+class CustomHTMLRenderer(HTMLRenderer):
+    def __init__(self, article):
+        super().__init__()
+        self.article = article
+        self.images = set()
+        
+    def image(self, alt, url, title=None):
+        file_path = os.path.join(self.article.directory, url)
+        if os.path.isfile(file_path):
+            if url not in self.images:
+                target_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], url)
+                target_directory = os.path.dirname(target_path)
+                if not os.path.isdir(target_directory):
+                    os.makedirs(target_directory)
+                shutil.copy(file_path, target_path)
+                self.images.add(url)
+        return super().image(alt, url, title)
 
 def fix_images(markdown_text):
     pattern = r'{{< img "([^"]+)" "([^"]*)" >}}'
@@ -32,6 +52,8 @@ class Article:
         file_content = file_content[dashes_index + 4:]
         fold_index = file_content.find('<!--more-->')
         self.markdown_summary = file_content[:fold_index]
+
+        self.renderer = CustomHTMLRenderer(self)
         
         self.markdown_content = self.markdown_summary + file_content[fold_index + 11:]
 
@@ -39,10 +61,12 @@ class Article:
         self.markdown_summary = fix_images(self.markdown_summary)
 
     def get_html_content(self):
-        return markdown2.markdown(self.markdown_content)
+        render = create_markdown(renderer=self.renderer)
+        return render(self.markdown_content)
     
     def get_html_summary(self):
-        return markdown2.markdown(self.markdown_summary)
+        render = create_markdown(renderer=self.renderer)
+        return render(self.markdown_summary)
     
     def get_title(self):
         return self.config["title"]
