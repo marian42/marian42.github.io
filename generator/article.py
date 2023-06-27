@@ -3,7 +3,9 @@ import yaml
 import re
 from mistune import HTMLRenderer, create_markdown
 import shutil
+
 from config import OUTPUT_DIRECTORY
+import templates
 
 class CustomHTMLRenderer(HTMLRenderer):
     def __init__(self, article):
@@ -21,13 +23,13 @@ class CustomHTMLRenderer(HTMLRenderer):
                     os.makedirs(target_directory)
                 shutil.copy(file_path, target_path)
                 self.images.add(url)
-        return super().image(alt, url, title)
+
+        return templates.image.render(url=url, src=url, alt=alt)
 
 def fix_images(markdown_text):
     pattern = r'{{< img "([^"]+)" "([^"]*)" >}}'
     replacement = r'![\2](\1)'
     return re.sub(pattern, replacement, markdown_text)
-
 
 class Article:
     def __init__(self, filename):

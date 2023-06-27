@@ -1,10 +1,11 @@
 import os
 import shutil
-import jinja2
 
 from article import Article
 
 from config import OUTPUT_DIRECTORY
+
+import templates
 
 def clear_directory(directory):
     for filename in os.listdir(directory):
@@ -38,15 +39,10 @@ if not os.path.exists(OUTPUT_DIRECTORY):
 clear_directory(OUTPUT_DIRECTORY)
 copy_content('theme/static', OUTPUT_DIRECTORY)
 
-templates = jinja2.Environment(loader=jinja2.FileSystemLoader('theme/templates'))
-
-page_template = templates.get_template('index.html')
-article_template = templates.get_template('article.html')
-
 article = Article('content/article/infinite-wfc')
 
-output = page_template.render(
-    content=article_template.render(
+output = templates.page.render(
+    content=templates.article.render(
         content=article.get_html_content(),        
         title=article.get_title()
     )
