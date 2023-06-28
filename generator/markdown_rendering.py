@@ -4,10 +4,8 @@ import shutil
 import os
 from PIL import Image
 
-from config import OUTPUT_DIRECTORY
+from config import OUTPUT_DIRECTORY, IMAGE_WIDTH, FAST
 import templates
-
-IMAGE_WIDTH = 1280
 
 small_images = set()
 
@@ -28,9 +26,17 @@ class MarkdownImage:
         if not os.path.isdir(target_directory):
             os.makedirs(target_directory)
 
-        shutil.copy(self.source_file_path, target_directory)
+        if not FAST or not os.path.isfile(self.source_file_path):
+            shutil.copy(self.source_file_path, target_directory)
+            
+        filename, file_extension = os.path.splitext(base_url)
+        self.small_image_name = filename + "_" + str(IMAGE_WIDTH) + file_extension
+        small_image_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], self.small_image_name)
 
         self.is_small = False
+        if FAST and os.path.isfile(small_image_path):
+            return
+
         image = Image.open(self.source_file_path)
         width, height = image.size
 
@@ -39,12 +45,7 @@ class MarkdownImage:
         else:
             new_height = int(height * IMAGE_WIDTH / width)
             resized_image = image.resize((IMAGE_WIDTH, new_height))
-
-            filename, file_extension = os.path.splitext(base_url)
-            self.small_image_name = filename + "_" + str(IMAGE_WIDTH) + file_extension
-            full_size_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], self.small_image_name)
-
-            resized_image.save(full_size_path)
+            resized_image.save(small_image_path)
 
     def get_source(self, relative):
         if self.is_remote:

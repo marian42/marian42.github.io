@@ -3,7 +3,7 @@ import shutil
 
 from article import Article
 
-from config import OUTPUT_DIRECTORY
+from config import OUTPUT_DIRECTORY, FAST
 
 import templates
 
@@ -16,9 +16,9 @@ def clear_directory(directory):
         elif os.path.isdir(file_path):
             shutil.rmtree(file_path)
 
-def copy_content(source, destination):
-    for item_name in os.listdir(source):
-        shutil.copy(os.path.join(source, item_name), os.path.join(destination, item_name))
+def copy_content(source_directory, destination_directory):
+    for item_name in os.listdir(source_directory):
+        shutil.copy(os.path.join(source_directory, item_name), os.path.join(destination_directory, item_name))
 
 def write_file(filename, content):
     if filename.startswith("/"):
@@ -36,7 +36,8 @@ def write_file(filename, content):
 if not os.path.exists(OUTPUT_DIRECTORY):
     os.makedirs(OUTPUT_DIRECTORY)
 
-clear_directory(OUTPUT_DIRECTORY)
+if not FAST:
+    clear_directory(OUTPUT_DIRECTORY)
 copy_content('theme/static', OUTPUT_DIRECTORY)
 
 article = Article('content/article/infinite-wfc')

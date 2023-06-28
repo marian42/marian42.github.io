@@ -1,2 +1,4 @@
 
 OUTPUT_DIRECTORY = 'output'
+IMAGE_WIDTH = 1280
+FAST = True
