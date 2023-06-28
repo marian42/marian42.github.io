@@ -27,12 +27,6 @@ header .container {
     margin: 0 auto;
 }
 
-header .a {
-    width: auto;
-    display: inline-block;
-    text-decoration: none;
-}
-
 header .container img {
     max-width: 100%;
     display: block;
@@ -57,7 +51,12 @@ header .container img {
     margin: 1em 0;
 }
 
-.card>h1 {
+.card>a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card>a>h1 {
     font-size: 2em;
     margin: 0;
     font-weight: normal;

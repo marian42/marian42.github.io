@@ -45,7 +45,9 @@ article = Article('content/article/infinite-wfc')
 output = templates.page.render(
     content=templates.article.render(
         content=article.get_html_content(),        
-        title=article.get_title()
+        title=article.get_title(),
+        time=article.date.strftime('%B %d, %Y'),
+        url=article.url
     )
 )
 

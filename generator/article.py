@@ -1,6 +1,7 @@
 import os
 import yaml
 import re
+from datetime import datetime
 
 from mistune import create_markdown
 
@@ -30,6 +31,8 @@ class Article:
         dashes_index = file_content.find('---')
         config = file_content[:dashes_index]
         self.config = yaml.safe_load(config)
+
+        self.date = self.config['date']
 
         file_content = file_content[dashes_index + 4:]
         fold_index = file_content.find('<!--more-->')
