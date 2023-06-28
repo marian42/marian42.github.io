@@ -1,30 +1,10 @@
 import os
 import yaml
 import re
-from mistune import HTMLRenderer, create_markdown
-import shutil
 
-from config import OUTPUT_DIRECTORY
-import templates
+from mistune import create_markdown
 
-class CustomHTMLRenderer(HTMLRenderer):
-    def __init__(self, article):
-        super().__init__()
-        self.article = article
-        self.images = set()
-        
-    def image(self, alt, url, title=None):
-        file_path = os.path.join(self.article.directory, url)
-        if os.path.isfile(file_path):
-            if url not in self.images:
-                target_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], url)
-                target_directory = os.path.dirname(target_path)
-                if not os.path.isdir(target_directory):
-                    os.makedirs(target_directory)
-                shutil.copy(file_path, target_path)
-                self.images.add(url)
-
-        return templates.image.render(url=url, src=url, alt=alt)
+from markdown_rendering import CustomHTMLRenderer
 
 def fix_images(markdown_text):
     pattern = r'{{< img "([^"]+)" "([^"]*)" >}}'
