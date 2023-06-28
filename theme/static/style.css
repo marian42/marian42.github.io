@@ -83,7 +83,11 @@ header .container img {
     font-size: 1.1em;
 }
 
-.card img {
+.content h1, .content h2, .content h3 {
+    margin-bottom: 0;
+}
+
+.card img, .card video {
     max-width: 100%;
 }
 

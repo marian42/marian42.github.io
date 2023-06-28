@@ -16,6 +16,7 @@ class MarkdownImage:
         self.source_file_path = os.path.join(self.article.directory, base_url)
 
         self.is_remote = False
+        self.is_video = base_url.endswith('.mp4')
 
         if not os.path.isfile(self.source_file_path):
             self.is_remote = True
@@ -26,8 +27,12 @@ class MarkdownImage:
         if not os.path.isdir(target_directory):
             os.makedirs(target_directory)
 
-        if not FAST or not os.path.isfile(self.source_file_path):
-            shutil.copy(self.source_file_path, target_directory)
+        if not FAST or not os.path.isfile(full_size_path):
+            shutil.copy(self.source_file_path, full_size_path)
+
+        if self.is_video:
+            self.is_small = True
+            return
             
         filename, file_extension = os.path.splitext(base_url)
         self.small_image_name = filename + "_" + str(IMAGE_WIDTH) + file_extension
@@ -84,5 +89,8 @@ class CustomHTMLRenderer(HTMLRenderer):
         else:
             image = MarkdownImage(self.article, url)
             image_cache[key] = image
-        
+
+        if image.is_video:
+            return templates.video.render(src=image.get_source(self.use_relative_image_urls))
+                
         return templates.image.render(url=image.get_link(self.use_relative_image_urls), src=image.get_source(self.use_relative_image_urls), alt=alt)

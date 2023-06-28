@@ -10,7 +10,11 @@ from markdown_rendering import CustomHTMLRenderer
 def fix_images(markdown_text):
     pattern = r'{{< img "([^"]+)" "([^"]*)" >}}'
     replacement = r'![\2](\1)'
-    return re.sub(pattern, replacement, markdown_text)
+    markdown_text = re.sub(pattern, replacement, markdown_text)
+    pattern = r'<video[^>]*><source\s*src="\/article\/[^\/*]*\/([^"]*)"[^>]*>[^>]*>'
+    replacement = r'![](\1)'
+    markdown_text = re.sub(pattern, replacement, markdown_text)
+    return markdown_text
 
 class Article:
     def __init__(self, filename):

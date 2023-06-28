@@ -40,13 +40,13 @@ if not FAST:
     clear_directory(OUTPUT_DIRECTORY)
 copy_content('theme/static', OUTPUT_DIRECTORY)
 
-article = Article('content/article/infinite-wfc')
+article = Article('content/article/shapegan')
 
 output = templates.page.render(
     content=templates.article.render(
         content=article.get_html_content(),        
         title=article.get_title(),
-        time=article.date.strftime('%B %d, %Y'),
+        time=article.date.strftime('%B %e, %Y'),
         url=article.url
     )
 )
