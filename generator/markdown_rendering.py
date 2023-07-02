@@ -76,7 +76,7 @@ image_cache = dict()
 
 class CustomHTMLRenderer(HTMLRenderer):
     def __init__(self, article, use_relative_image_urls=True):
-        super().__init__()
+        super().__init__(escape=False)
         self.article = article
         self.use_relative_image_urls = use_relative_image_urls
         

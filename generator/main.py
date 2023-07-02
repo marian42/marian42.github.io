@@ -55,8 +55,6 @@ page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
 page_urls = ['/page/' + str(i + 1) for i in range(page_count)]
 page_urls[0] = '/'
 
-print(len(articles), "articles on", page_count, "pages")
-
 for page_index in tqdm(range(page_count), desc="Feed"):
     page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
 

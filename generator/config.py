@@ -4,4 +4,6 @@ OUTPUT_DIRECTORY = 'output'
 IMAGE_WIDTH = 1280
 ARTICLES_PER_PAGE = 10
 DATE_FORMAT = '%B %e, %Y'
+PLUGINS = ['table']
+
 FAST = True
