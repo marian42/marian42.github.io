@@ -29,7 +29,18 @@ def fix_markdown(markdown_text):
 
     # Youtube command
     pattern = r'{{<\s*youtube\s([^\s>]*)\s*>}}'
-    markdown_text = re.sub(pattern, youtube_replacement, markdown_text)    
+    markdown_text = re.sub(pattern, youtube_replacement, markdown_text)
+
+
+    pattern = r'\n\s*\[([(0-9]+)\]: ([^\n]*)'
+
+    urls = []
+
+    for key, value in re.findall(pattern, markdown_text):
+       urls.append((key, value)) 
+    
+    for key, value in urls:
+        markdown_text = markdown_text.replace('][' + key + ']', '](' + value + ')')
 
     return markdown_text
 
@@ -61,6 +72,9 @@ class Article:
         self.title = self.config['title']
 
         file_content = file_content[dashes_index + 4:]
+
+        file_content = fix_markdown(file_content)
+
         fold_index = file_content.find('<!--more-->')
 
         if fold_index == -1:
@@ -72,8 +86,8 @@ class Article:
         
         self.markdown_content = self.markdown_summary + file_content[fold_index + 11:]
 
-        self.markdown_content = fix_markdown(self.markdown_content)
-        self.markdown_summary = fix_markdown(self.markdown_summary)
+        self.markdown_content = self.markdown_content
+        self.markdown_summary = self.markdown_summary
 
     def get_html_content(self):
         self.renderer.use_relative_image_urls = True
