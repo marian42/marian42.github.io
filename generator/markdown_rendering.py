@@ -16,7 +16,7 @@ class MarkdownImage:
         self.source_file_path = os.path.join(self.article.directory, base_url)
 
         self.is_remote = False
-        self.is_video = base_url.endswith('.mp4')
+        self.is_video = base_url.endswith('.mp4') or base_url.endswith('.webm') or base_url.endswith('.ogv')
 
         if not os.path.isfile(self.source_file_path):
             self.is_remote = True

@@ -8,12 +8,15 @@ from mistune import create_markdown
 from markdown_rendering import CustomHTMLRenderer
 
 def fix_images(markdown_text):
-    pattern = r'{{< img "([^"]+)" "([^"]*)" >}}'
+    # Replace Hugo and HTML style media with pure Markdown
+
+    pattern = r'{{<\s*img\s*"([^"]+)"\s*(?:"([^"]*)")?\s*>}}'
     replacement = r'![\2](\1)'
     markdown_text = re.sub(pattern, replacement, markdown_text)
     pattern = r'<video[^>]*><source\s*src="\/article\/[^\/*]*\/([^"]*)"[^>]*>[^>]*>'
     replacement = r'![](\1)'
     markdown_text = re.sub(pattern, replacement, markdown_text)
+    
     return markdown_text
 
 class Article:
@@ -22,11 +25,11 @@ class Article:
             filename = os.path.join(filename, "index.md")
 
         self.filename = filename
-        self.directory = os.path.dirname(filename)
+        self.directory = os.path.dirname(filename).replace('\\', '/')
         self.slug = self.directory.split('/')[-1]
         self.url = '/article/' + self.slug + "/"
 
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding="utf8") as file:
             file_content = file.read()
             
         dashes_index = file_content.find('---')
@@ -37,6 +40,11 @@ class Article:
         self.config = yaml.safe_load(config)
 
         self.date = self.config['date']
+
+        if type(self.date) == datetime:
+            self.date = self.date.date()
+
+        self.title = self.config['title']
 
         file_content = file_content[dashes_index + 4:]
         fold_index = file_content.find('<!--more-->')
@@ -50,12 +58,11 @@ class Article:
         self.markdown_summary = fix_images(self.markdown_summary)
 
     def get_html_content(self):
+        self.renderer.use_relative_image_urls = True
         render = create_markdown(renderer=self.renderer)
         return render(self.markdown_content)
     
     def get_html_summary(self):
+        self.renderer.use_relative_image_urls = False
         render = create_markdown(renderer=self.renderer)
         return render(self.markdown_summary)
-    
-    def get_title(self):
-        return self.config["title"]

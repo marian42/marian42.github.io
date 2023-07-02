@@ -1,4 +1,7 @@
 
+ARTICLES_DIRECTORY = 'content/article'
 OUTPUT_DIRECTORY = 'output'
 IMAGE_WIDTH = 1280
+ARTICLES_PER_PAGE = 10
+DATE_FORMAT = '%B %e, %Y'
 FAST = True

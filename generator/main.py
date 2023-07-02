@@ -1,9 +1,10 @@
 import os
 import shutil
+import math
 
 from article import Article
 
-from config import OUTPUT_DIRECTORY, FAST
+from config import OUTPUT_DIRECTORY, FAST, ARTICLES_DIRECTORY, ARTICLES_PER_PAGE, DATE_FORMAT
 
 import templates
 
@@ -40,15 +41,45 @@ if not FAST:
     clear_directory(OUTPUT_DIRECTORY)
 copy_content('theme/static', OUTPUT_DIRECTORY)
 
-article = Article('content/article/shapegan')
+articles = []
 
+for article_folder in os.listdir(ARTICLES_DIRECTORY):
+    article_path = os.path.join(ARTICLES_DIRECTORY, article_folder)
+    article = Article(article_path)
+    articles.append(article)
+
+articles.sort(key=lambda article: article.date, reverse=True)
+
+page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
+page_urls = ['page/' + str(i + 1) for i in range(page_count)]
+page_urls[0] = '/'
+
+print(len(articles), "articles on", page_count, "pages")
+
+for page_index in range(page_count):
+    page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
+
+    cards_html = [
+        templates.article_summary.render(
+            content=article.get_html_summary(),        
+            title=article.title,
+            time=article.date.strftime(DATE_FORMAT),
+            url=article.url
+        )
+        for article in page_articles
+    ]
+    cards_html = '\n\n'.join(cards_html)
+
+    page_html = templates.page.render(content=cards_html)
+    write_file(page_urls[page_index], page_html)
+
+article = articles[0]
 output = templates.page.render(
     content=templates.article.render(
         content=article.get_html_content(),        
-        title=article.get_title(),
-        time=article.date.strftime('%B %e, %Y'),
+        title=article.title,
+        time=article.date.strftime(DATE_FORMAT),
         url=article.url
     )
 )
-
 write_file(article.url, output)
