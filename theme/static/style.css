@@ -164,10 +164,11 @@ figure {
 
 
 .page-navigation {
-    width: 720px;
+    width: 780px;
     max-width: 100%;
     box-sizing: border-box;
     margin: 40px auto;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
 }
