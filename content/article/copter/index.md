@@ -64,8 +64,7 @@ Der Copter ist mit RGB-LED Streifen ausgestattet, die pro Arm ansteuerbar sind. 
 
   * [Onboard Videomaterial][11]
   * [Teileliste mit Links][12]
-  * [Alle Blogbeiträge zum Quadrocopter][13]
-  * [Lichtsystem][14]
+  * [Lichtsystem][13]
 
  [1]: http://fpv-community.de/forum.php
  [2]: http://fpv-community.de/showthread.php?24169-Anleitung-amp-Erkl%E4rung-zum-Bau-eines-Multicopters-mit-aktuellen-Komponenten
@@ -79,5 +78,4 @@ Der Copter ist mit RGB-LED Streifen ausgestattet, die pro Arm ansteuerbar sind. 
  [10]: /article/copter-lightpainting/
  [11]: https://www.youtube.com/playlist?list=PLou6JbK5uCtZ4Q6rRq4UWLk5jsg_JpIeh
  [12]: /article/copter/parts.html
- [13]: /tags/quadcopter/
- [14]: /article/copter-lights/
+ [13]: /article/copter-lights/
