@@ -1,6 +1,7 @@
 import os
 import shutil
 import math
+from tqdm import tqdm
 
 from article import Article
 
@@ -30,7 +31,7 @@ def write_file(filename, content):
     file_directory = os.path.dirname(filename)
     if not os.path.isdir(file_directory):
         os.makedirs(file_directory)
-    with open(filename, 'w') as file:
+    with open(filename, 'w', encoding='utf8') as file:
         file.write(content)
 
 
@@ -56,7 +57,7 @@ page_urls[0] = '/'
 
 print(len(articles), "articles on", page_count, "pages")
 
-for page_index in range(page_count):
+for page_index in tqdm(range(page_count), desc="Feed"):
     page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
 
     cards_html = [
@@ -82,13 +83,13 @@ for page_index in range(page_count):
     page_html = templates.page.render(content=cards_html)
     write_file(page_urls[page_index], page_html)
 
-article = articles[0]
-output = templates.page.render(
-    content=templates.article.render(
-        content=article.get_html_content(),        
-        title=article.title,
-        time=article.date.strftime(DATE_FORMAT),
-        url=article.url
+for article in tqdm(articles, desc="Articles"):
+    output = templates.page.render(
+        content=templates.article.render(
+            content=article.get_html_content(),        
+            title=article.title,
+            time=article.date.strftime(DATE_FORMAT),
+            url=article.url
+        )
     )
-)
-write_file(article.url, output)
+    write_file(article.url, output)
