@@ -51,7 +51,7 @@ for article_folder in os.listdir(ARTICLES_DIRECTORY):
 articles.sort(key=lambda article: article.date, reverse=True)
 
 page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
-page_urls = ['page/' + str(i + 1) for i in range(page_count)]
+page_urls = ['/page/' + str(i + 1) for i in range(page_count)]
 page_urls[0] = '/'
 
 print(len(articles), "articles on", page_count, "pages")
@@ -68,6 +68,15 @@ for page_index in range(page_count):
         )
         for article in page_articles
     ]
+
+    navigation = '<div class="page-navigation">\n'
+    if page_index != page_count - 1:
+        navigation += '<a href="' + page_urls[page_index + 1] + '">see older posts</a>\n'
+    if page_index != 0:
+        navigation += '<a href="' + page_urls[page_index - 1] + '">see newer posts</a>\n'
+    navigation += '</div>'
+    cards_html.append(navigation)
+
     cards_html = '\n\n'.join(cards_html)
 
     page_html = templates.page.render(content=cards_html)
