@@ -7,16 +7,22 @@ from mistune import create_markdown
 
 from markdown_rendering import CustomHTMLRenderer
 
-def fix_images(markdown_text):
-    # Replace Hugo and HTML style media with pure Markdown
-
+def fix_markdown(markdown_text):
+    # Replace hugo image commands with Markdown images
     pattern = r'{{<\s*img\s*"([^"]+)"\s*(?:"([^"]*)")?\s*>}}'
     replacement = r'![\2](\1)'
     markdown_text = re.sub(pattern, replacement, markdown_text)
-    pattern = r'<video[^>]*><source\s*src="\/article\/[^\/*]*\/([^"]*)"[^>]*>[^>]*>'
+    
+    # HTML videos
+    pattern = r'<video.*\s*src="\/article\/[^\/*]*\/([^"]*)"[^>]*>[^>]*>'
     replacement = r'![](\1)'
     markdown_text = re.sub(pattern, replacement, markdown_text)
-    
+
+    # HTML links
+    pattern = r'<a\s*href="([^"]*)"\s*>([^<]*)<\/a>'
+    replacement = r'[\2](\1)'
+    markdown_text = re.sub(pattern, replacement, markdown_text)
+
     return markdown_text
 
 class Article:
@@ -54,8 +60,8 @@ class Article:
         
         self.markdown_content = self.markdown_summary + file_content[fold_index + 11:]
 
-        self.markdown_content = fix_images(self.markdown_content)
-        self.markdown_summary = fix_images(self.markdown_summary)
+        self.markdown_content = fix_markdown(self.markdown_content)
+        self.markdown_summary = fix_markdown(self.markdown_summary)
 
     def get_html_content(self):
         self.renderer.use_relative_image_urls = True
