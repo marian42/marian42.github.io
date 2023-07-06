@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 from article import Article
 
+import config
 from config import OUTPUT_DIRECTORY, FAST, ARTICLES_DIRECTORY, ARTICLES_PER_PAGE, DATE_FORMAT
 
 import templates
@@ -78,7 +79,16 @@ for page_index in tqdm(range(page_count), desc="Feed"):
 
     cards_html = '\n\n'.join(cards_html)
 
-    page_html = templates.page.render(content=cards_html)
+    page_html = templates.page.render(
+        content=cards_html,
+        title=config.SITE_TITLE,
+        name=config.SITE_TITLE,
+        description=config.SITE_SUBTITLE,
+        url=config.SITE_URL + page_urls[page_index],
+        site_name=config.SITE_TITLE,
+        author=config.AUTHOR,
+        site_url=config.SITE_URL
+    )
     write_file(page_urls[page_index], page_html)
 
 for article in tqdm(articles, desc="Articles"):
@@ -88,6 +98,13 @@ for article in tqdm(articles, desc="Articles"):
             title=article.title,
             time=article.date.strftime(DATE_FORMAT),
             url=article.url
-        )
+        ),
+        title=article.title + " | " + config.SITE_TITLE,
+        name=article.title,
+        description=article.title + " - " + config.SITE_SUBTITLE,
+        url=config.SITE_URL + article.url,
+        site_name=config.SITE_TITLE,
+        author=config.AUTHOR,
+        site_url=config.SITE_URL
     )
     write_file(article.url, output)

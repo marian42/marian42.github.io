@@ -2,26 +2,26 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+        <title>
+            {{ title }}
+		</title>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Marian Kleineberg">
-        <meta name="description" content="Personal blog about programming, game development and space ships.">
-        <title>
-            Marian&#39;s Blog
-		</title>
-        <meta name="description" content="Personal blog about programming, game development and space ships.">
-        <meta itemprop="name" content="">
-        <meta itemprop="description" content="Personal blog about programming, game development and space ships.">
-        <meta property="og:title" content="">
-        <meta property="og:description" content="Personal blog about programming, game development and space ships.">
-        <meta property="og:image" content="">
-        <meta property="og:url" content="https://marian42.de/">
-        <meta property="og:site_name" content="Marian&#39;s Blog"><meta property="og:type" content="website">
-        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+        <meta name="author" content="{{ author }}">
+        <meta name="description" content="{{ description }}">
+        <meta itemprop="name" content="{{ name }}">
+        <meta itemprop="description" content="{{ description }}">
+        <meta property="og:title" content="{{ name }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:image" content="{{ image }}">
+        <meta property="og:url" content="{{ url }}">
+        <meta property="og:site_name" content="{{ site_name }}"><meta property="og:type" content="website">
 
-        <link href="https://marian42.de/index.xml" rel="alternate" type="application/rss+xml" title="Marian&#39;s Blog" />
-        <link href="https://marian42.de/index.xml" rel="feed" type="application/rss+xml" title="Marian&#39;s Blog" />
+        <link rel="icon" type="image/png" href="{{ site_url }}/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ site_url }}/favicon-16x16.png" sizes="16x16">
+
+        <!-- <link href="{{ site_url }}/index.xml" rel="feed" type="application/rss+xml" title="{{ site_name }}" /> -->
                 
         <link rel="stylesheet" href="/style.css">        
     </head>
