@@ -94,3 +94,13 @@ class CustomHTMLRenderer(HTMLRenderer):
             return templates.video.render(src=image.get_source(self.use_relative_image_urls))
                 
         return templates.image.render(url=image.get_link(self.use_relative_image_urls), src=image.get_source(self.use_relative_image_urls), alt=alt)
+    
+    def link(self, text, url, title=None):
+        if (url.startswith(self.article.url)):
+            local_filename = url[len(self.article.url):]
+            source_path = os.path.join(self.article.directory, local_filename)
+            destination_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], local_filename)
+            if not os.path.isfile(destination_path):
+                shutil.copy(source_path, destination_path)
+
+        return super().link(text, url, title)
