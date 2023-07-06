@@ -2,13 +2,16 @@ import os
 import shutil
 import math
 from tqdm import tqdm
+from bs4 import BeautifulSoup
+from bs4.formatter import HTMLFormatter
 
 from article import Article
-
 import config
 from config import OUTPUT_DIRECTORY, FAST, ARTICLES_DIRECTORY, ARTICLES_PER_PAGE, DATE_FORMAT
 
 import templates
+
+formatter = HTMLFormatter(indent='\t')
 
 def clear_directory(directory):
     for filename in os.listdir(directory):
@@ -23,7 +26,9 @@ def copy_content(source_directory, destination_directory):
     for item_name in os.listdir(source_directory):
         shutil.copy(os.path.join(source_directory, item_name), os.path.join(destination_directory, item_name))
 
-def write_file(filename, content):
+def write_file(filename, html_content):
+    html_content = BeautifulSoup(html_content, 'html.parser').prettify(formatter=formatter)
+
     if filename.startswith("/"):
         filename = filename[1:]
     if not filename.endswith('.html'):
@@ -33,8 +38,7 @@ def write_file(filename, content):
     if not os.path.isdir(file_directory):
         os.makedirs(file_directory)
     with open(filename, 'w', encoding='utf8') as file:
-        file.write(content)
-
+        file.write(html_content)
 
 if not os.path.exists(OUTPUT_DIRECTORY):
     os.makedirs(OUTPUT_DIRECTORY)
