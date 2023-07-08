@@ -4,6 +4,8 @@ import math
 from tqdm import tqdm
 from datetime import datetime
 import html
+import re
+import urllib.parse
 
 from article import Article
 import config
@@ -135,21 +137,38 @@ def create_redirect(source, destination):
 
 create_redirect("page/1", "/")
 
-rss_items = []
-for article in articles:
-    content = templates.rss_article.render(
-        content=html.escape(article.get_html_content(use_global_urls=True)),
-        title=article.title,
-        time=article.date.strftime(config.RSS_DATE_FORMAT),
-        url=config.SITE_URL + article.url
-    )
-    rss_items.append(content)
+def create_rss_feed():
+    rss_items = []
+    for article in articles:
+        content = templates.rss_article.render(
+            content=html.escape(article.get_html_content(use_global_urls=True)),
+            title=article.title,
+            time=article.date.strftime(config.RSS_DATE_FORMAT),
+            url=config.SITE_URL + article.url
+        )
+        rss_items.append(content)
 
-write_file('index.xml', templates.rss_feed.render(
-    description=config.SITE_SUBTITLE,
-    site_name=config.SITE_TITLE,
-    site_url=config.SITE_URL,
-    time=datetime.now().strftime(config.RSS_DATE_FORMAT),
-    rss_url=config.SITE_URL + '/index.xml',
-    articles="\n".join(rss_items)
-))
+    write_file('index.xml', templates.rss_feed.render(
+        description=config.SITE_SUBTITLE,
+        site_name=config.SITE_TITLE,
+        site_url=config.SITE_URL,
+        time=datetime.now().strftime(config.RSS_DATE_FORMAT),
+        rss_url=config.SITE_URL + '/index.xml',
+        articles="\n".join(rss_items)
+    ))
+
+create_rss_feed()
+
+def create_style():
+    content = open('theme/style.css', 'r').read()
+    pattern = r'url\(\"(.*\.svg)\"\);'
+
+    for filename in re.findall(pattern, content):
+        svg_content = open(os.path.join('theme', filename)).read()
+        result = 'data:image/svg+xml,' + urllib.parse.quote(svg_content, safe='~()*!\'')
+        content = content.replace(filename, result)
+
+    with open(os.path.join(config.OUTPUT_DIRECTORY, 'style.css'), 'w', encoding='utf8') as file:
+        file.write(content)
+
+create_style()
