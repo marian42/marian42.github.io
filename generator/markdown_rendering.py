@@ -45,6 +45,10 @@ class CustomHTMLRenderer(HTMLRenderer):
             source_path = os.path.join(self.article.directory, local_filename)
             destination_path = os.path.join(OUTPUT_DIRECTORY, self.article.url[1:], local_filename)
             if not os.path.isfile(destination_path):
+                target_directory = os.path.dirname(destination_path)
+                if not os.path.isdir(target_directory):
+                    os.makedirs(target_directory)
+
                 shutil.copy(source_path, destination_path)
 
         if self.use_global_urls:
