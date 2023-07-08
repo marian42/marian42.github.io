@@ -1,6 +1,8 @@
 import math
 import random
 
+random.seed(0)
+
 TRIANGLE_SIZE = 20
 HEIGHT = (TRIANGLE_SIZE * math.sqrt(3)) / 2
 
@@ -8,8 +10,6 @@ GROWTH = TRIANGLE_SIZE / 2
 ANGLE_RAD = math.radians(30)
 GROWTH_X = math.cos(ANGLE_RAD) * GROWTH
 GROWTH_Y = math.sin(ANGLE_RAD) * GROWTH
-
-CREATE_PATTERN = False
 
 def get_triangle(index_x, index_y):
     if index_x % 2 != 0:
@@ -50,19 +50,6 @@ def get_svg_triangle(x, y, color=None):
     result += '" fill="' + color + '"/>'
     return result
 
-GRID_WIDTH = 28
-GRID_HEIGHT = 11
-
-if CREATE_PATTERN:
-    GRID_WIDTH = 12
-
-content_width = GRID_WIDTH * HEIGHT
-content_height = (GRID_HEIGHT / 2 - 0.5) * TRIANGLE_SIZE
-
-print(content_width)
-
-content = ['<svg width="' + str(content_width) + '" height="' + str(content_height) + '" xmlns="http://www.w3.org/2000/svg">']
-
 LIGHT = [
     (1, 4), (1, 5), (1, 6), (1, 7), #M
     (6, 5), (6, 6), (6, 7), #A
@@ -91,17 +78,42 @@ DARK = [
 
 COLORS = ['#E0E0E0', '#C4C4C4', '#A5A5A5']
 
-for x in range(GRID_WIDTH):
-    for y in range(GRID_HEIGHT):
-        color = None
-        if (x, y) in LIGHT:
-            color = COLORS[0]
-        elif (x, y) in MED:
-            color = COLORS[1]
-        elif (x, y) in DARK:
-            color = COLORS[2]
-        content.append(get_svg_triangle(x, y, None if CREATE_PATTERN else color))
 
-content.append('</svg>')
-with open("triangles.svg" if CREATE_PATTERN else "logo.svg", 'w') as file:
-    file.write("\n".join(content))
+
+def save_file(lines, width, height, filename):
+    content = '<svg width="' + str(width) + '" height="' + str(height) + '" xmlns="http://www.w3.org/2000/svg">\n'
+    content += '\n'.join(lines)
+    content += '\n</svg>'
+
+    with open(filename, 'w') as file:
+        file.write(content)
+
+def create_triangles(horizontal_triangles=12, vertical_triangles=11):
+    lines = []
+    for x in range(horizontal_triangles):
+        for y in range(vertical_triangles):
+            lines.append(get_svg_triangle(x, y))
+
+    save_file(lines, horizontal_triangles * HEIGHT, (vertical_triangles / 2 - 0.5) * TRIANGLE_SIZE, 'theme/triangles.svg')
+
+def create_logo():
+    LOGO_HORIZONTAL_TRIANGLES = 28
+    LOGO_VERTICAL_TRIANGLES = 11
+
+    lines = []
+    for x in range(LOGO_HORIZONTAL_TRIANGLES):
+        for y in range(LOGO_VERTICAL_TRIANGLES):
+            color = None
+            if (x, y) in LIGHT:
+                color = COLORS[0]
+            elif (x, y) in MED:
+                color = COLORS[1]
+            elif (x, y) in DARK:
+                color = COLORS[2]
+            lines.append(get_svg_triangle(x, y, color))
+
+    save_file(lines, LOGO_HORIZONTAL_TRIANGLES * HEIGHT, (LOGO_VERTICAL_TRIANGLES / 2 - 0.5) * TRIANGLE_SIZE, 'theme/static/logo.svg')
+    
+
+create_triangles()
+create_logo()
