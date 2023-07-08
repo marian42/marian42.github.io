@@ -6,7 +6,8 @@ from datetime import datetime
 from mistune import create_markdown
 
 from config import PLUGINS
-from markdown_rendering import CustomHTMLRenderer, get_image_from_cache
+from markdown_rendering import CustomHTMLRenderer
+from media import get_media_from_cache
 
 import templates
 youtube_replacement = templates.youtube_embed.render(video="\\1")
@@ -92,7 +93,7 @@ class Article:
         image_pattern = r'!\[[^\]]*\]\(([^)]+)\)'
         for image_filename in re.findall(image_pattern, self.markdown_summary):
             if image_filename.endswith(".png") or image_filename.endswith(".jpg"):
-                self.article_image = get_image_from_cache(self, image_filename).get_source(relative=False)
+                self.article_image = get_media_from_cache(self, image_filename).get_source(relative=False)
 
     def get_html_content(self):
         self.renderer.use_relative_image_urls = True
