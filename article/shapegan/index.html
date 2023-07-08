@@ -1,344 +1,228 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+        <title>
+            Adversarial Generation of Continuous Implicit Shape Representations | Marian's Blog
+		</title>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Marian Kleineberg">
-        <meta name="description" content="Personal blog about programming, game development and space ships.">
-        <meta name="keywords" content="">
-        <meta name="generator" content="Hugo 0.55.4" />
-        <title>
-			
-				
-					Adversarial Generation of Continuous Implicit Shape Representations |
-				
-				Marian&#39;s Blog
-			
-		</title>
-        <meta name="description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about programming, game development and space ships.">
+        <meta name="description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about game development, programming and making">
         <meta itemprop="name" content="Adversarial Generation of Continuous Implicit Shape Representations">
-        <meta itemprop="description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about programming, game development and space ships.">
+        <meta itemprop="description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about game development, programming and making">
         <meta property="og:title" content="Adversarial Generation of Continuous Implicit Shape Representations">
-        <meta property="og:description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about programming, game development and space ships.">
+        <meta property="og:description" content="Adversarial Generation of Continuous Implicit Shape Representations - Personal blog about game development, programming and making">
         <meta property="og:image" content="">
         <meta property="og:url" content="https://marian42.de/article/shapegan/">
-        <meta property="og:site_name" content="Marian&#39;s Blog">
-        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Marian's Blog"><meta property="og:type" content="website">
+
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
 
-        
-        
-        
-        
-        
-        
-        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.2441e62c6bd67cf08a73659344468d18941f6361820bdffed9b4ce177d6ea5fd.css">
-
-        
+        <link href="https://marian42.de/index.xml" rel="feed" type="application/rss+xml" title="Marian's Blog" />
+                
+        <link rel="stylesheet" href="/style.css">        
     </head>
-    <body class="bilberry-hugo-theme">
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                <img src="/marian.png" alt="">
-            </a>
-        </div>
-    </div>
-</header>
-
-
-        <div class="main container">
-            
-     
-    <div class="article-wrapper u-cf single">
-        <article class="default article">
+    <body>
+        <header class="triangle-pattern">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="/logo.svg" alt="Marian's Blog">
+                </a>
+            </div>
+        </header>
+        
+        <article class="card">
+    <a href="/article/shapegan/">
+        <h1>Adversarial Generation of Continuous Implicit Shape Representations</h1>
+    </a>
+    <div class="timestamp">February  2, 2020</div>
     <div class="content">
-    <h1 class="article-headline"><a href="/article/shapegan/">Adversarial Generation of Continuous Implicit Shape Representations</a></h1>
-    
-		<div class="meta">
-    		<span class="date">February 2, 2020</span>
-		</div>
-    
-
-    
-        <video autoplay loop muted><source src="/article/shapegan/shapegan.mp4" type="video/mp4"/></video>
-
-<p>This article provides an overview of the paper <a href="https://arxiv.org/abs/2002.00349">&ldquo;Adversarial Generation of Continuous Implicit Shape Representations&rdquo;</a>, which I co-authored with <a href="https://rusty1s.github.io/">Matthias Fey</a>.
-While the paper focuses on the theoretical aspects, I&rsquo;ll provide a higher level explanation and and some visualizations here on the blog.</p>
-
+        <p><figure>
+    <video autoplay loop muted>
+        <source src="shapegan.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>This article provides an overview of the paper <a href="https://arxiv.org/abs/2002.00349">&quot;Adversarial Generation of Continuous Implicit Shape Representations&quot;</a>, which I co-authored with <a href="https://rusty1s.github.io/">Matthias Fey</a>.
+While the paper focuses on the theoretical aspects, I'll provide a higher level explanation and and some visualizations here on the blog.</p>
 <p>In the paper, we propose a GAN that generates 3D shapes.
 The GAN uses a DeepSDF network as a generator and either a 3D CNN or a Pointnet as the discriminator.</p>
-
 <p><em>Update June 2020:</em> <a href="https://www.youtube.com/watch?v=5jdf_8bCON0&amp;feature=youtu.be&amp;t=2636">Here is a recording of the presentation I gave about the paper at the virtual Eurographics 2020 conference</a>.</p>
-
-<h1 id="deepsdf">DeepSDF</h1>
-
-<p>First, I&rsquo;ll introduce the idea behind <a href="https://arxiv.org/abs/1901.05103">DeepSDF</a>.
+<h1>DeepSDF</h1>
+<p>First, I'll introduce the idea behind <a href="https://arxiv.org/abs/1901.05103">DeepSDF</a>.
 The standard way of representing 3D shapes in deep learning models uses voxel volumes.
 They are a generalization of images to 3D space and and use voxels instead of pixels.
 With this <a href="https://arxiv.org/pdf/1610.07584.pdf">3D CNN</a> approach, concepts from deep learning for images can be applied to 3D shapes.</p>
-
 <p>However, CNNs are well suited for learning texture properties and learning to represent a 3D shape as a combination of 3D texture patches is not ideal.
 Furthermore, due to the memory requirements of this approach, high voxel resolutions are not feasible.</p>
-
 <p>A voxel volume contains a rasterized representation of the signed distance field of the shape.
 The signed distance function is a function that maps a point in 3D space to a scalar <a href="https://en.wikipedia.org/wiki/Signed_distance_function">signed distance</a> value.
 The idea behind the DeepSDF network is to train a neural network to predict the value of the signed distance directly for an arbitrary point in space.
 Thus, the network learns a <em>continuous</em> representation instead of a rasterized one.
 An SDF network for a single shape has three input neurons and one output neuron.
-The DeepSDF network doesn&rsquo;t use convolutions.</p>
-
-
-
-
-
-
-<a href="/article/shapegan/deepsdf.png" target="_blank" title="">
-	<img src="/article/shapegan/deepsdf_hu8a9999743b0646fccfcac44a485c285e_36679_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+The DeepSDF network doesn't use convolutions.</p>
+<p><figure>
+    <a href="deepsdf.png">
+        <img src="deepsdf_1280.png" alt="">
+    </a>
+</figure></p>
 <p>To learn a representation of multiple shapes, the DeepSDF network receives a latent code as an additional input.</p>
-
 <p>The decision boundary of the network is the surface of the learned shape.
 For a given latent code, a mesh can be created using Marching Cubes by evaluating the network for a raster of points.
 The resolution of that raster can be selected arbitrarily after the network was trained.</p>
-
 <p>The DeepSDF network is trained on a dataset of 3D points with corresponding SDF values.
 These points are in part uniformly sampled and in part normally distributed around the shape surface, resulting in a high density of training data near the surface.</p>
-
-
-
-
-
-
-<a href="/article/shapegan/sdf-cloud.png" target="_blank" title="">
-	<img src="/article/shapegan/sdf-cloud_hub9754221ba420deebe785cb4c61b65be_673017_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+<p><figure>
+    <a href="sdf-cloud.png">
+        <img src="sdf-cloud_1280.png" alt="">
+    </a>
+</figure></p>
 <p>Generating SDF data for the <a href="https://www.shapenet.org/">ShapeNet dataset</a> is quite challenging because the dataset contains non-watertight meshes.
 I made my own implementation of the approach proposed in the DeepSDF paper, as well as a slightly different approach.
 <a href="https://github.com/marian42/mesh_to_sdf">I published this project as a python module</a>.</p>
-
 <p>I created my own implementation of the DeepSDF network and trained it on the ShapeNet dataset.
 The DeepSDF auto<em>decoder</em> works like an autoencoder, but without the encoder.
 The latent codes are assigned randomly and then optimized during training using SGD.</p>
-
-<video autoplay loop muted><source src="/article/shapegan/deepsdf.mp4" type="video/mp4"/></video>
-
+<p><figure>
+    <video autoplay loop muted>
+        <source src="deepsdf.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
 <p>In the animation above, you see a t-SNE plot of the learned latent space of the DeepSDF autodecoder for the ShapeNet dataset.
 The colors show dataset categories which are not known to the network.
 It has learned on its own to assign similar latent codes to shapes of the same category.
 The shapes on the left are reconstructions of latent codes along a random spline path through the latent space.
 <a href="https://www.youtube.com/watch?v=C_XNdGGs6qM">Click here for a high resolution version of the animation</a>.</p>
-
-<h1 id="gan">GAN</h1>
-
+<h1>GAN</h1>
 <p>So far, I introduced the DeepSDF autodecoder that learns to reconstruct a given dataset of shapes.
 The contribution of our paper is to propose a GAN architecture that trains a DeepSDF network to generate new shapes.</p>
-
 <p>A <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network"><em>generative adversarial network</em></a>  is a pair of a generator network and a discriminator network.
-The generator proposes new samples (in our case shapes) and the discriminator predicts whether a given sample was generated by the generator (&ldquo;fake&rdquo;) or taken from the dataset (&ldquo;real&rdquo;).
+The generator proposes new samples (in our case shapes) and the discriminator predicts whether a given sample was generated by the generator (&quot;fake&quot;) or taken from the dataset (&quot;real&quot;).
 The trick is that the generator is improved using the gradient of the discriminator output and the discriminator is trained on the dataset of real samples and the increasingly realistic fake samples provided by the generator.
 Thus, the generator and discriminator have adversarial goals.
 If the GAN training is successful, the GAN reaches an equilibrium where the generator has learned a mapping from the latent distribution to the underlying distribution of the dataset and discriminator assesses generated and real samples with the same score.</p>
-
 <p>3D GANs based on 3D CNNs have been <a href="https://arxiv.org/pdf/1610.07584.pdf">proposed</a>.
 Our research question was whether a GAN can be trained where the generator uses the DeepSDF architecture.</p>
-
 <p>Usually, the discriminator of the GAN is a mirrored version of the generator.
 In the case of the DeepSDF network, this is not feasible because a single sample of the DeepSDF network provides only the SDF for one point.
 From one point alone, a discriminator could not assess if the sample is realistic.
 Instead, the discriminator needs multiple points to judge the output value in context.</p>
-
-<h2 id="voxel-discriminator">Voxel discriminator</h2>
-
-
-
-
-
-
-<a href="/article/shapegan/voxel-discriminator.png" target="_blank" title="">
-	<img src="/article/shapegan/voxel-discriminator_hu89eb1f0c218a97299b507ea356987aac_206471_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+<h2>Voxel discriminator</h2>
+<p><figure>
+    <a href="voxel-discriminator.png">
+        <img src="voxel-discriminator_1280.png" alt="">
+    </a>
+</figure></p>
 <p>One solution to the problem of missing context is to use a 3D CNN as the discriminator.
 In this case, the generator is evaluated for a batch of raster points and the resulting SDF values are rearranged into a voxel volume.
 The idea to combine a continuous implicit shape network with a 3D CNN was proposed by <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf">Chen and Zhang</a> for their autoencoder.</p>
-
 <p>The training data for the voxel discriminator are voxel volumes.
 We use datasets with resolution 8³, 16³, 32³ and 64³ and apply <a href="https://arxiv.org/pdf/1710.10196.pdf">progressive growing</a>.
 We use the Wasserstein distance with gradient penalty (<a href="https://arxiv.org/pdf/1704.00028.pdf">WGAN-GP</a>).</p>
-
 <p>Here is a latent space interpolation of shapes generated with the voxel discriminator:</p>
-
-<video autoplay loop muted><source src="/article/shapegan/chairs-voxels.mp4" type="video/mp4"/></video>
-
-<p>Another interesting observation is the generator&rsquo;s ability to generalize from the raster points to intermediate points that it was not trained on.
+<p><figure>
+    <video autoplay loop muted>
+        <source src="chairs-voxels.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>Another interesting observation is the generator's ability to generalize from the raster points to intermediate points that it was not trained on.
 Here is an example of a network that was only trained on 16^3 voxels (!), which is the first stage of the progressive growing.</p>
-
-<video autoplay loop muted><source src="/article/shapegan/upscale.mp4" type="video/mp4"/></video>
-
+<p><figure>
+    <video autoplay loop muted>
+        <source src="upscale.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
 <p>On the left, the shapes were reconstructed with 16^3 raster points (the same resolution it was trained on).
-Scaling up the resolution linearly makes it smoother, but doesn&rsquo;t add any detail.
+Scaling up the resolution linearly makes it smoother, but doesn't add any detail.
 When querying the network at 128^3, we see that the network is able to generalize to higher resolutions.
 For some parts of the geometry, the low resolution volume has no sample points with negative values, resulting in apparently missing geometry.
 In these cases, the network still generates negative SDFs for intermediate points, thus making the geometry appear when sampled at a higher resolution.</p>
-
-<h2 id="pointnet-discriminator">Pointnet discriminator</h2>
-
-
-
-
-
-
-<a href="/article/shapegan/pointnet-discriminator.png" target="_blank" title="">
-	<img src="/article/shapegan/pointnet-discriminator_hu5d1cf7589dc8d83b2e89e3ce32b4bc3b_189511_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
-<p>Since the voxel-based discriminator keeps <em>some</em> of the disadvantages of fully voxel-based GANs, we investigated an approach that doesn&rsquo;t use voxels at all.
+<h2>Pointnet discriminator</h2>
+<p><figure>
+    <a href="pointnet-discriminator.png">
+        <img src="pointnet-discriminator_1280.png" alt="">
+    </a>
+</figure></p>
+<p>Since the voxel-based discriminator keeps <em>some</em> of the disadvantages of fully voxel-based GANs, we investigated an approach that doesn't use voxels at all.
 The <a href="https://arxiv.org/pdf/1612.00593">Pointnet</a> is a neural network architecture that can operate on point clouds.
 In our case, we sample a point cloud of uniform points and use the generator to predict SDFs for the points.
-The Pointnet then receives the positions of the points and the signed distance values as a &ldquo;feature vector&rdquo; with one element.
+The Pointnet then receives the positions of the points and the signed distance values as a &quot;feature vector&quot; with one element.
 This way, we avoid the fixed raster points and use always changing query points.
 A Pointnet typically infers information from the spatial structure of the points, which in our case is random.
 Regardless, we found that the Pointnet can be used as the discriminator in our case.</p>
-
 <p>To train the GAN with the Pointnet discriminator, we use a ground truth dataset of uniformly sampled points with their corresponding SDFs.
-We &ldquo;grow&rdquo; the point clouds during training simply by increasing the number of points.</p>
-
+We &quot;grow&quot; the point clouds during training simply by increasing the number of points.</p>
 <p>When the surface of the generated SDF is reconstructed using Marching Cubes, only values close to sign changes matter.
 We would like the network to spend more model capacity on values close to the surface, as they influence the result the most.
 We achieved that by <em>refining</em> the network with additional sample points close to the surface.
-The gradient of the SDF gives us the direction towards the shape&rsquo;s surface and for a neural network the gradient is easily computed.
+The gradient of the SDF gives us the direction towards the shape's surface and for a neural network the gradient is easily computed.
 Using that, we can move randomly sampled points closer to the surface of the generated shape.
 The non-uniform point cloud can then be evaluated by the discriminator.
 Since the Pointnet takes the positions of the points into account, it could discern a uniformly sampled point cloud from a surface point cloud.
 Thus, we add surface points to the ground truth data as well.</p>
-
 <p>Here are some examples of shapes generated with the Pointnet discriminator and uniformly sampled points (top) and shapes generated with the refinement method (bottom).
-(I&rsquo;ll replace this with an animated version soon.)</p>
-
-
-
-
-
-
-<a href="/article/shapegan/results-points.png" target="_blank" title="">
-	<img src="/article/shapegan/results-points_hu4dcb098271b4a2fa8838d5bf2316b706_593236_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+(I'll replace this with an animated version soon.)</p>
+<p><figure>
+    <a href="results-points.png">
+        <img src="results-points_1280.png" alt="">
+    </a>
+</figure></p>
 <p>For both approaches, we found a surprising result when trying different levels for Marching Cubes.
 By default, Marching Cubes reconstructs the isosurface at the level 0, i.e. the surface where the predicted SDF is zero.
 However, we can choose another level, effectively eroding or dilating the shape.
 We would expect that the ideal level would be 0, since that is the isosurface of the training data.
 However, when experimenting with different values, we observe that some features appear to be missing at level 0.</p>
-
-<video autoplay loop muted><source src="/article/shapegan/levels.mp4" type="video/mp4"/></video>
-
-
-
-
-
-
-<a href="/article/shapegan/levels.png" target="_blank" title="">
-	<img src="/article/shapegan/levels_hucae4cfe78a2a0a8f408bf6dcb7541e82_4523_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+<p><figure>
+    <video autoplay loop muted>
+        <source src="levels.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p><figure>
+    <a href="levels.png">
+        <img src="levels_1280.png" alt="">
+    </a>
+</figure></p>
 <p>We chose an isosurface level of 0.04 to reduce missing geometry at the cost of slightly rounded corners.
 Since we clip the ground truth SDF at -0.1 and 0.1, the isosurfaces of generated SDF outside of that range are not usable.</p>
-
 <p><a href="https://github.com/marian42/shapegan">The source code for this project is available on Github</a>.</p>
-    
-</div>
 
-    
-<div class="footer">
-
-
-	
-	    
-	        <div class="tags">
-				tagged
-	            <div class="links">
-	                
-	                    <a href="/tags/gan">gan</a>
-	                
-	                    <a href="/tags/machine-learning">machine-learning</a>
-	                
-	                    <a href="/tags/3d">3d</a>
-	                
-	                    <a href="/tags/python">python</a>
-	                
-	            </div>
-	        </div>
-	    
-	
-</div>
-
+    </div>
 </article>
 
-    </div>
-	
-     
-
-        </div>
-
-        
-<footer>
-    <div class="container">
-		<div class="left">
-			
-			
-				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
-			
-        </div>
-        <div class="right">
-            
-            <div class="external-profiles">
-                
-                    <a href="https://mastodon.gamedev.place/@marian42" target="_blank" rel="me">
-                        <i class="fa">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                
-                                <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
-                            </svg>
-                        </i>
+        <footer>
+            <div class="socials">
+                <div class="inner-div">
+                    <a href="mailto:mail@marian42.de">
+                        Contact
                     </a>
-                
-                
-                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
-                
-				
-                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
-                
-				
-                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
-                
+                </div>
+                <div>
+                    <a href="https://mastodon.gamedev.place/@marian42" rel="me" title="Follow me on Mastodon" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512">                                
+                            <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/marian42_" title="Follow me on Twitter" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
+                            <path d="M221.95,51.29c0.15,2.17,0.15,4.34,0.15,6.53c0,66.73-50.8,143.69-143.69,143.69v-0.04 C50.97,201.51,24.1,193.65,1,178.83c3.99,0.48,8,0.72,12.02,0.73c22.74,0.02,44.83-7.61,62.72-21.66 c-21.61-0.41-40.56-14.5-47.18-35.07c7.57,1.46,15.37,1.16,22.8-0.87C27.8,117.2,10.85,96.5,10.85,72.46c0-0.22,0-0.43,0-0.64 c7.02,3.91,14.88,6.08,22.92,6.32C11.58,63.31,4.74,33.79,18.14,10.71c25.64,31.55,63.47,50.73,104.08,52.76 c-4.07-17.54,1.49-35.92,14.61-48.25c20.34-19.12,52.33-18.14,71.45,2.19c11.31-2.23,22.15-6.38,32.07-12.26 c-3.77,11.69-11.66,21.62-22.2,27.93c10.01-1.18,19.79-3.86,29-7.95C240.37,35.29,231.83,44.14,221.95,51.29z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/marian42" title="View my code on Github" class="social-icon">
+                        <svg viewbox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                        </svg>
+                    </a>
+                    <a href="/index.xml" title="RSS feed" class="social-icon">
+                        <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0.38705632,0.38705632 V 1.5913525 A 6.021594,6.021594 0 0 1 6.4086474,7.6129437 H 7.6129437 A 7.2259129,7.2259129 0 0 0 0.38705632,0.38705632 Z m 0,2.40864748 V 4 A 3.6129564,3.6129564 0 0 1 4,7.6129437 H 5.2042963 A 4.8172751,4.8172751 0 0 0 0.38705632,2.7957038 Z M 1.3430849,5.7008865 A 0.95602666,0.95602666 0 0 0 0.38705632,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,7.6129437 0.95602666,0.95602666 0 0 0 2.2991135,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,5.7008865 Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            
-        </div>
-    </div>
-</footer>
-
-
-
-        
+            <div class="decorator triangle-pattern">
+            </div>
+        </footer>
     </body>
 </html>

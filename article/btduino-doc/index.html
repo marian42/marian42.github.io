@@ -1,313 +1,158 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+        <title>
+            BTduino documentation | Marian's Blog
+		</title>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Marian Kleineberg">
-        <meta name="description" content="Personal blog about programming, game development and space ships.">
-        <meta name="keywords" content="">
-        <meta name="generator" content="Hugo 0.55.4" />
-        <title>
-			
-				
-					BTduino documentation |
-				
-				Marian&#39;s Blog
-			
-		</title>
-        <meta name="description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta name="description" content="BTduino documentation - Personal blog about game development, programming and making">
         <meta itemprop="name" content="BTduino documentation">
-        <meta itemprop="description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta itemprop="description" content="BTduino documentation - Personal blog about game development, programming and making">
         <meta property="og:title" content="BTduino documentation">
-        <meta property="og:description" content="BTduino documentation - Personal blog about programming, game development and space ships.">
+        <meta property="og:description" content="BTduino documentation - Personal blog about game development, programming and making">
         <meta property="og:image" content="">
         <meta property="og:url" content="https://marian42.de/article/btduino-doc/">
-        <meta property="og:site_name" content="Marian&#39;s Blog">
-        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Marian's Blog"><meta property="og:type" content="website">
+
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
 
-        
-        
-        
-        
-        
-        
-        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.2441e62c6bd67cf08a73659344468d18941f6361820bdffed9b4ce177d6ea5fd.css">
-
-        
+        <link href="https://marian42.de/index.xml" rel="feed" type="application/rss+xml" title="Marian's Blog" />
+                
+        <link rel="stylesheet" href="/style.css">        
     </head>
-    <body class="bilberry-hugo-theme">
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                <img src="/marian.png" alt="">
-            </a>
-        </div>
-    </div>
-</header>
-
-
-        <div class="main container">
-            
-     
-    <div class="article-wrapper u-cf single">
-        <article class="default article">
+    <body>
+        <header class="triangle-pattern">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="/logo.svg" alt="Marian's Blog">
+                </a>
+            </div>
+        </header>
+        
+        <article class="card">
+    <a href="/article/btduino-doc/">
+        <h1>BTduino documentation</h1>
+    </a>
+    <div class="timestamp">July 27, 2013</div>
     <div class="content">
-    <h1 class="article-headline"><a href="/article/btduino-doc/">BTduino documentation</a></h1>
-    
-		<div class="meta">
-    		<span class="date">July 27, 2013</span>
-		</div>
-    
-
-    
-        <p>The <a href="http://marian42.de/?p=179">BTduino app</a> sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable.</p>
-
-<p>Example:</p>
-
-<pre><code>name:value
-</code></pre>
-
-<h2 id="special-commands">Special commands</h2>
-
-<h3 id="setup">Setup</h3>
-
-<pre><code>requestsetup
-</code></pre>
-
+        <p>The <a href="http://marian42.de/?p=179">BTduino app</a> sends data using the serial interface of a microcontroller and a bluetooth connection. The concept of the protocol is to send all data in text form. Each set of data consists of the name and the value, seperated by a colon. This way of communication is not the most efficient one, but it is easy to use and human readable. Example:</p>
+<pre><code>name:value</code></pre>
+<h2>Special commands</h2>
+<h3>Setup</h3>
+<pre><code>requestsetup</code></pre>
 <p>The BTduino app will send this command if you open a new project or if you click Menu &gt; Request setup. At this point the microcontroller program should request all events that it will be using. The <a href="/article/btduino-doc/BTduino_example.txt">example sketch</a> for Arduino provides a method that is called when requestsetup is received.</p>
-
-<h3 id="ping">Ping</h3>
-
-<pre><code>ping
-</code></pre>
-
+<h3>Ping</h3>
+<pre><code>ping</code></pre>
 <p>If the BTduino app receives this line, it will send exactly the same back to the microcontroller. This can be used to check if there is a working connection.</p>
-
-<h3 id="remove-event">Remove event</h3>
-
-<pre><code>remove:myevent
-</code></pre>
-
+<h3>Remove event</h3>
+<pre><code>remove:myevent</code></pre>
 <p>If the BTduino app receives this line, it will remove the specified event.</p>
-
-<h3 id="parse">Parse</h3>
-
+<h3>Parse</h3>
 <p>In your project in the BTduino app, click Menu &gt; Parse and enter a command. This will have the exact same effect as if the app received this command via Bluetooth.</p>
-
-<h2 id="events">Events</h2>
-
+<h2>Events</h2>
 <p>BTduino features several event types that can be used in a project:</p>
-
-<h3 id="value-receiver"><strong>Value receiver</strong></h3>
-
+<h3><strong>Value receiver</strong></h3>
 <p>This event displays values that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. The event is discovered by the app automatically. Example:</p>
-
-<pre><code>mysensor:42
-</code></pre>
-
+<pre><code>mysensor:42</code></pre>
 <p>The app provides a gauge, a plot and datalogging.</p>
-
-<h3 id="string-receiver"><strong>String receiver</strong></h3>
-
+<h3><strong>String receiver</strong></h3>
 <p>This event displays text that is sent from the microcontroller to the Android device. Send the name, a colon and your text as one line. The event is discovered by the app automatically. Example:</p>
-
-<pre><code>log:ready
-</code></pre>
-
+<pre><code>log:ready</code></pre>
 <p>The app provides a datalogging feature.</p>
-
-<h3 id="value-sender"><strong>Value sender</strong></h3>
-
+<h3><strong>Value sender</strong></h3>
 <p>This event provides an interface to send numbers from the Android device to the microcontroller.</p>
-
 <p>Send a value by typing it in the input field and hitting the send button or by using the slider. Touching the slider will automatically send a value to the microcontroller. The data will look like this:</p>
-
-<pre><code>myvaluesender:42
-</code></pre>
-
+<pre><code>myvaluesender:42</code></pre>
 <p>You can change the value of the input field and the position of the slider via Bluetooth. This is done again by sending the name and the value as in the example above.</p>
-
 <p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
-
-<pre><code>requestint:myvaluesender
-</code></pre>
-
+<pre><code>requestint:myvaluesender</code></pre>
 <p>This command will as well make the Android app send the current value.</p>
-
 <p>Set the min and max value of the slider by entering a value in the input field and then clicking the min or max value or by sending one of these commands via Bluetooth:</p>
-
 <pre><code>setminmyvaluesender:0
-setmaxmyvaluesender:100
-</code></pre>
-
-<h3 id="string-sender"><strong>String sender</strong></h3>
-
+setmaxmyvaluesender:100</code></pre>
+<h3><strong>String sender</strong></h3>
 <p>This event provides an interface to send text from the Android device to the microcontroller. Send text by typing it in the input field and hitting the send button. The data will look like this:</p>
-
-<pre><code>mystringsender:Hello World!
-</code></pre>
-
+<pre><code>mystringsender:Hello World!</code></pre>
 <p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
-
-<pre><code>requeststring:mystringsender
-</code></pre>
-
+<pre><code>requeststring:mystringsender</code></pre>
 <p>This command will as well make the Android app send the current value.</p>
-
-<h3 id="boolean-sender"><strong>Boolean sender</strong></h3>
-
+<h3><strong>Boolean sender</strong></h3>
 <p>This event provides a switch that will send a boolean value to the microcontroller. Example:</p>
-
 <pre><code>mybooleansender:true;
-mybooleansender:false;
-</code></pre>
-
+mybooleansender:false;</code></pre>
 <p>You can change the state of the switch via Bluetooth. This is done again by sending the name and the value as in the example above. The app will recognize “true”/”false”, “1”/”0″ and “HIGH”/”LOW”. The event can be added manually in the Android app or by sending this command via bluetooth:</p>
-
 <pre><code>requestboolean:mybooleansender
-requestbool:mybooleansender
-</code></pre>
-
+requestbool:mybooleansender</code></pre>
 <p>This command will as well make the Android app send the current value.</p>
-
-<h3 id="event-sender"><strong>Event sender</strong></h3>
-
+<h3><strong>Event sender</strong></h3>
 <p>This event provides a button that will send a specific text to the microcontroller when clicked. It will send the word “event” and the name of the event:</p>
-
-<pre><code>event:myevent
-</code></pre>
-
+<pre><code>event:myevent</code></pre>
 <p>Add it manually from the app or by sending this code:</p>
-
-<pre><code>registerevent:myevent
-</code></pre>
-
-<h3 id="color-receiver"><strong>Color receiver</strong></h3>
-
+<pre><code>registerevent:myevent</code></pre>
+<h3><strong>Color receiver</strong></h3>
 <p>This event displays colors that are sent from the microcontroller to the Android device. Send the name, a colon and the value as one line. You can use the HTML format or send the color as an integer value. The event is discovered by the app automatically if you use the HTML color format. Example:</p>
-
 <pre><code>mycolorreceiver:#FF00FF
-mycolorreceiver:16711935
-</code></pre>
-
+mycolorreceiver:16711935</code></pre>
 <p>Both lines represent the same color, because 16711935 equals 0xFF00FF. The color receiver provides a datalogging feature.</p>
-
-<h3 id="color-sender">Color sender</h3>
-
+<h3>Color sender</h3>
 <p>This event provides an interface to send colors from the Android device to the microcontroller.</p>
-
 <p>Click on the color area to choose a color and click the send button to send it. You can select between four color formats: Integer, Hex, HTML and RGB. Example:</p>
-
 <pre><code>mycolorsender:16711935
 mycolorsender:FF00FF
 mycolorsender:#FF00FF
-mycolorsender:255,0,255
-</code></pre>
-
+mycolorsender:255,0,255</code></pre>
 <p>You can change the value of the color field via Bluetooth. This is done again by sending the name and the value as in the example above, using the HTML or integer format.</p>
-
 <p>The event can be added manually in the Android app or by sending this command via bluetooth:</p>
-
-<pre><code>requestcolor:mycolorsender
-</code></pre>
-
+<pre><code>requestcolor:mycolorsender</code></pre>
 <p>This command will as well make the Android app send the current color.</p>
-
-<h3 id="joystick"><strong>Joystick</strong></h3>
-
+<h3><strong>Joystick</strong></h3>
 <p>This event provides a virtual joystick on the Android device that will continuously send the position via bluetooth. It will send X and Y coordinates between -1.0 and 1.0 like this:</p>
-
-<pre><code>myjostick:0|0
-</code></pre>
-
+<pre><code>myjostick:0|0</code></pre>
 <p>The <a href="/article/btduino-doc/BTduino_example.txt">example sketch for Arduino</a> shows how to use the data. The event can be added manually in the Android app or by sending this command via bluetooth:</p>
-
-<pre><code>requestjoystick:myjoystick
-</code></pre>
-
+<pre><code>requestjoystick:myjoystick</code></pre>
 <p>You can lock or invert an axis in the BTduino app. The app allow you use the accelerometer to control the joystick. Click the record button to record a path. It can be performed using the play button. After you have recorded a path, long-click the joystick and select “Save path” to add a path event. This allows you to record multiple paths.</p>
-
 <p>The logfiles for value receiver, string receiver and color receiver are stored on the SD card int he folder <code>/Bluetooth/&lt;project name&gt;/&lt;eventname&gt;.txt</code>. The textfile contains one dataset per line, consisting of the timestamp in milliseconds and the value.</p>
-    
-</div>
 
-    
-<div class="footer">
-
-
-	
-	    
-	        <div class="tags">
-				tagged
-	            <div class="links">
-	                
-	                    <a href="/tags/android">android</a>
-	                
-	                    <a href="/tags/app">app</a>
-	                
-	                    <a href="/tags/arduino">arduino</a>
-	                
-	                    <a href="/tags/bluetooth">bluetooth</a>
-	                
-	            </div>
-	        </div>
-	    
-	
-</div>
-
+    </div>
 </article>
 
-    </div>
-	
-     
-
-        </div>
-
-        
-<footer>
-    <div class="container">
-		<div class="left">
-			
-			
-				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
-			
-        </div>
-        <div class="right">
-            
-            <div class="external-profiles">
-                
-                    <a href="https://mastodon.gamedev.place/@marian42" target="_blank" rel="me">
-                        <i class="fa">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                
-                                <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
-                            </svg>
-                        </i>
+        <footer>
+            <div class="socials">
+                <div class="inner-div">
+                    <a href="mailto:mail@marian42.de">
+                        Contact
                     </a>
-                
-                
-                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
-                
-				
-                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
-                
-				
-                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
-                
+                </div>
+                <div>
+                    <a href="https://mastodon.gamedev.place/@marian42" rel="me" title="Follow me on Mastodon" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512">                                
+                            <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/marian42_" title="Follow me on Twitter" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
+                            <path d="M221.95,51.29c0.15,2.17,0.15,4.34,0.15,6.53c0,66.73-50.8,143.69-143.69,143.69v-0.04 C50.97,201.51,24.1,193.65,1,178.83c3.99,0.48,8,0.72,12.02,0.73c22.74,0.02,44.83-7.61,62.72-21.66 c-21.61-0.41-40.56-14.5-47.18-35.07c7.57,1.46,15.37,1.16,22.8-0.87C27.8,117.2,10.85,96.5,10.85,72.46c0-0.22,0-0.43,0-0.64 c7.02,3.91,14.88,6.08,22.92,6.32C11.58,63.31,4.74,33.79,18.14,10.71c25.64,31.55,63.47,50.73,104.08,52.76 c-4.07-17.54,1.49-35.92,14.61-48.25c20.34-19.12,52.33-18.14,71.45,2.19c11.31-2.23,22.15-6.38,32.07-12.26 c-3.77,11.69-11.66,21.62-22.2,27.93c10.01-1.18,19.79-3.86,29-7.95C240.37,35.29,231.83,44.14,221.95,51.29z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/marian42" title="View my code on Github" class="social-icon">
+                        <svg viewbox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                        </svg>
+                    </a>
+                    <a href="/index.xml" title="RSS feed" class="social-icon">
+                        <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0.38705632,0.38705632 V 1.5913525 A 6.021594,6.021594 0 0 1 6.4086474,7.6129437 H 7.6129437 A 7.2259129,7.2259129 0 0 0 0.38705632,0.38705632 Z m 0,2.40864748 V 4 A 3.6129564,3.6129564 0 0 1 4,7.6129437 H 5.2042963 A 4.8172751,4.8172751 0 0 0 0.38705632,2.7957038 Z M 1.3430849,5.7008865 A 0.95602666,0.95602666 0 0 0 0.38705632,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,7.6129437 0.95602666,0.95602666 0 0 0 2.2991135,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,5.7008865 Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            
-        </div>
-    </div>
-</footer>
-
-
-
-        
+            <div class="decorator triangle-pattern">
+            </div>
+        </footer>
     </body>
 </html>

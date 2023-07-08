@@ -1,94 +1,62 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+        <title>
+            Infinite procedurally generated city with the Wave Function Collapse algorithm | Marian's Blog
+		</title>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Marian Kleineberg">
-        <meta name="description" content="Personal blog about programming, game development and space ships.">
-        <meta name="keywords" content="">
-        <meta name="generator" content="Hugo 0.55.4" />
-        <title>
-			
-				
-					Infinite procedurally generated city with the Wave Function Collapse algorithm |
-				
-				Marian&#39;s Blog
-			
-		</title>
-        <meta name="description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
+        <meta name="description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about game development, programming and making">
         <meta itemprop="name" content="Infinite procedurally generated city with the Wave Function Collapse algorithm">
-        <meta itemprop="description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
+        <meta itemprop="description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about game development, programming and making">
         <meta property="og:title" content="Infinite procedurally generated city with the Wave Function Collapse algorithm">
-        <meta property="og:description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about programming, game development and space ships.">
-        <meta property="og:image" content="">
+        <meta property="og:description" content="Infinite procedurally generated city with the Wave Function Collapse algorithm - Personal blog about game development, programming and making">
+        <meta property="og:image" content="https://marian42.de/article/wfc/wfc_1280.jpg">
         <meta property="og:url" content="https://marian42.de/article/wfc/">
-        <meta property="og:site_name" content="Marian&#39;s Blog">
-        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Marian's Blog"><meta property="og:type" content="website">
+
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
 
-        
-        
-        
-        
-        
-        
-        <link rel="stylesheet" href="https://marian42.de/sass/combined.min.2441e62c6bd67cf08a73659344468d18941f6361820bdffed9b4ce177d6ea5fd.css">
-
-        
+        <link href="https://marian42.de/index.xml" rel="feed" type="application/rss+xml" title="Marian's Blog" />
+                
+        <link rel="stylesheet" href="/style.css">        
     </head>
-    <body class="bilberry-hugo-theme">
-        <header>
-    <div class="container">
-        <div class="logo">
-            <a href="/" class="logo">
-                <img src="/marian.png" alt="">
-            </a>
-        </div>
-    </div>
-</header>
-
-
-        <div class="main container">
-            
-     
-    <div class="article-wrapper u-cf single">
-        <article class="default article">
+    <body>
+        <header class="triangle-pattern">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="/logo.svg" alt="Marian's Blog">
+                </a>
+            </div>
+        </header>
+        
+        <article class="card">
+    <a href="/article/wfc/">
+        <h1>Infinite procedurally generated city with the Wave Function Collapse algorithm</h1>
+    </a>
+    <div class="timestamp">January  6, 2019</div>
     <div class="content">
-    <h1 class="article-headline"><a href="/article/wfc/">Infinite procedurally generated city with the Wave Function Collapse algorithm</a></h1>
-    
-		<div class="meta">
-    		<span class="date">January 6, 2019</span>
-		</div>
-    
-
-    
-        <a href="/article/wfc/wfc.jpg" target="_blank" title="">
-	<img src="/article/wfc/wfc_hu304a90a78938916a54cf05f5bef9c583_387521_1272x0_resize_q75_box.jpg" width="1272" alt="">
-</a>
-
-
-
+        <p><figure>
+    <a href="wfc.jpg">
+        <img src="wfc_1280.jpg" alt="">
+    </a>
+</figure></p>
 <p>This is a game where you walk through an infinite city that is procedurally generated as you walk.
 It is generated from a set of blocks with the Wave Function Collapse algorithm.</p>
-
 <p>You can download a playable build of the game on <a href="https://marian42.itch.io/wfc">itch.io</a> and you can get the <a href="https://github.com/marian42/wavefunctioncollapse">source code on github</a>.
 Here is a video of me walking around a generated city:</p>
+<iframe width="660" height="371" src="https://www.youtube.com/embed/-W7zt8181Zo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/-W7zt8181Zo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
-<h1 id="the-algorithm">The algorithm</h1>
-
-<p>I will use the word &ldquo;slot&rdquo; for a place in the 3D voxel grid that can contain a block (or be empty) and I will use the word &ldquo;module&rdquo; for a block that can inhabit such a slot.</p>
-
+<h1>The algorithm</h1>
+<p>I will use the word &quot;slot&quot; for a place in the 3D voxel grid that can contain a block (or be empty) and I will use the word &quot;module&quot; for a block that can inhabit such a slot.</p>
 <p>The algorithm chooses which modules to select for each slot in the world.
 The array of slots is considerd a wave function in an unobserved state.
 That means that each slot has a set of possible modules that could be put there.
-In the language of quantum mechanics, one could say &ldquo;The slot is in superposition of all modules&rdquo;.
+In the language of quantum mechanics, one could say &quot;The slot is in superposition of all modules&quot;.
 The world starts in a completely unobserved state where every module is possible in any slot.
 One by one, each slot is collapsed.
 That means, one module from the set of possible modules is selected at random.
@@ -96,260 +64,165 @@ This is followed by a step of constraint propagation.
 For each module, only a subset of modules are allowed to be placed adjacent to it.
 Whenever a slot is collapsed, the sets of modules that are still possible to be placed in nearby slots need to be updated.
 The constraint propagation step is the most computationally expensive part of the algorithm.</p>
-
 <p>An important aspect of the algorithm is deciding which slot to collapse.
-The algorithm always collapses the slot with the lowest <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">entropy</a>.
+The algorithm always collapses the slot with the lowest <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory">entropy</a>).
 That is the slot which has the least amount of choice (or chaos).
 If all modules have the same probability, the slot with the smallest number of possible modules has the lowest entropy.
 In general, modules have different probabilities to be selected.
 A slot with two possible modules of the same probability has more choice (greater entropy) than one with two modules where one is very likely and one is very unlikely.</p>
-
-<p><img src="https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966" alt="" /><br />
+<p><figure>
+    <a href="https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966">
+        <img src="https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966" alt="">
+    </a>
+</figure><br />
 (Gif by <a href="https://github.com/mxgmn">Maxim Gumin on Github</a>)</p>
-
 <p>You can find more information and some beautiful examples of the <a href="https://github.com/mxgmn/WaveFunctionCollapse">Wave Function Collapse algorithm here</a>.
 The algorithm was proposed to generate 2D textures from a single example.
 In that case, the module probabilities and adjacency rules are determined based on how they occur in the example.
 In my case, they are supplied manually.
-Wave Function Collapse is based on Paul Merrel&rsquo;s <a href="https://paulmerrell.org/model-synthesis/">Model Synthesis</a>.</p>
-
+Wave Function Collapse is based on Paul Merrel's <a href="https://paulmerrell.org/model-synthesis/">Model Synthesis</a>.</p>
 <p>Here is a video of the algorithm in action:</p>
+<video autoplay loop muted src="wfc.mp4">
 
-<p><video autoplay loop muted src="wfc.mp4"></p>
-
-<h1 id="about-blocks-prototypes-and-modules">About blocks, prototypes and modules</h1>
-
+<h1>About blocks, prototypes and modules</h1>
 <p>The world is generated from a set of ~100 blocks, which I made with Blender.
 I started out with a small number of blocks and made more whenever I had some spare time.</p>
-
-
-
-
-
-
-<a href="/article/wfc/blocks.png" target="_blank" title="">
-	<img src="/article/wfc/blocks_hu114abfd4d48dd340f32b76b8c9dfa1e2_348405_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+<p><figure>
+    <a href="blocks.png">
+        <img src="blocks_1280.png" alt="">
+    </a>
+</figure></p>
 <p>The algorithm needs to know which modules can be placed next to each other.
 Each module has 6 lists of possible neighbors, one for each direction.
 But I wanted to avoid having to create this list manually.
 I also wanted a way to automatically generate rotated variants of my blocks.</p>
-
 <p>Both can be achieved by using what I call <em>module prototypes</em>.
 This is a MonoBehaviour that can be conveniently edited in the Unity editor.
 The modules together with lists of allowed neighbors and the rotated variants are created automatically from these.</p>
-
 <p>A difficult problem was figuring out how to model adjacency information so that this automatic process works.
 Here is what I came up with:</p>
-
-
-
-
-
-
-<a href="/article/wfc/blocks2.png" target="_blank" title="">
-	<img src="/article/wfc/blocks2_hu37f13feb32bd6da3e960f52edbce8af6_342729_1272x0_resize_box_2.png" width="1272" alt="">
-</a>
-
-
-
+<p><figure>
+    <a href="blocks2.png">
+        <img src="blocks2_1280.png" alt="">
+    </a>
+</figure></p>
 <p>Each block has 6 connectors, one for each face.
 The connector has a number.
 In addition, horizontal connectors are either <em>flipped</em>, <em>not flipped</em> or <em>symmetric</em>.
 Vertical connectors either have a rotation index between 0 and 3 (b, c, d in the screenshot) or they are flagged <em>rotationally invariant</em>.</p>
-
 <p>Based on this, I can automatically check which modules are allowed next to each other.
 Adjaced modules must have the same connector number.
 And their symmetry must match (same rotation index vertically, a <em>flipped</em> and <em>not flipped</em> pair horizontally) or they must be symmetric / invariant.</p>
-
-
-
-
-
-
-<img src="/article/wfc/moduleprototype.png" width="323" alt="">
-
-
-
+<p><figure>
+    <a href="moduleprototype.png">
+        <img src="moduleprototype.png" alt="">
+    </a>
+</figure></p>
 <p>There are exclusion rules that allow me to prohibit neighbors that would otherwise be allowed.
-Some blocks with matching connectors just don&rsquo;t look nice next to each other.
+Some blocks with matching connectors just don't look nice next to each other.
 Here is an example of a map generated <em>without</em> the exclusion rules:</p>
-
-
-
-
-
-
-<a href="/article/wfc/noexclusions.jpg" target="_blank" title="">
-	<img src="/article/wfc/noexclusions_hu41b98ab5240a8eddbb04645b41374b88_648216_1272x0_resize_q75_box.jpg" width="1272" alt="">
-</a>
-
-
-
-<h1 id="reaching-infinity">Reaching infinity</h1>
-
+<p><figure>
+    <a href="noexclusions.jpg">
+        <img src="noexclusions_1280.jpg" alt="">
+    </a>
+</figure></p>
+<h1>Reaching infinity</h1>
 <p>The original Wave Function Collapse algorithm generates finite maps.
 I wanted to have a world that expands further and further as you walk through it.</p>
-
 <p>My first approach was to generate chunks of finite size and use the connectors of adjacent chunks as constraints.
 If a chunk is generated and an adjacent chunk was already generated, only modules are allowed that fit with the existing modules.
 The problem with this approach is, whenever a slot is collapsed, the constraint propagation will limit the posibilities even a few slots away.
 In this image you can see all the places affected from collapsing just one slot:</p>
-
-
-
-
-
-
-<img src="/article/wfc/cloud.png" width="901" alt="">
-
-
-
+<p><figure>
+    <a href="cloud.png">
+        <img src="cloud.png" alt="">
+    </a>
+</figure></p>
 <p>When just generating a single chunk at once, constraints were not propagated to adjacent chunks.
 This led to modules being selected within the chunk that would not be allowed when considering the other chunks.
 When the algorithm would then try to generate the next chunk, it could not find any solution.</p>
-
 <p>Instead of using chunks, I store the map in a dictionary that maps a slot position to a slot.
 It is only populated when needed.
 Some parts of the algorithm needed to be adjusted to this.
 When selecting a slot to collapse, not all infinite slots can be considered.
 Instead, only a small area of the map is generated at once, when the player reaches it.
 Constraints are still propagated outside of this area.</p>
-
-<p>In some cases this approach doesn&rsquo;t work.
+<p>In some cases this approach doesn't work.
 Consider a module set with the straight tunnel piece from the screenshot above, but no tunnel entrance.
 If the algorithm selects such a tunnel module, this predetermines an infinite tunnel.
 The constraint propagation step would try to allocate an infinite amount of slots.
 I designed the module set to avoid this problem.</p>
-
-<h1 id="boundary-constraints">Boundary constraints</h1>
-
+<h1>Boundary constraints</h1>
 <p>There are two important boundary constraints:
-Faces at the top of the map must have &ldquo;air&rdquo; connectors.
-Faces at the bottom of the map must have &ldquo;solid&rdquo; connectors.
+Faces at the top of the map must have &quot;air&quot; connectors.
+Faces at the bottom of the map must have &quot;solid&quot; connectors.
 If these constraints are not met, there are holes in the ground and buildings with missing roofs.</p>
-
 <p>In a finite map, this would be easy to do:
 For all slots in the top and bottom layer, remove all modules with unwanted connectors.
 Then use constraint propagation to remove other modules that are no longer valid.</p>
-
-<p>In the infinite map, this doesn&rsquo;t work because there are infinitely many slots in the top and bottom layer.
+<p>In the infinite map, this doesn't work because there are infinitely many slots in the top and bottom layer.
 Naively, I would only remove these modules in the top and bottom layer once the slots are created.
 However, removing a module in one top layer slot implies constraints for its neighbor slots.
 This leads to a cascading effect which would again allocate slots infinitely.</p>
-
 <p>I solved this by creating a 1×n×1 map, where n is the height.
 This map uses world wrapping to propagate constraints.
 This works like Pacman, you leave the level on the right and enter on the left.
 Now in this map I can apply all the boundary constraints.
 Whenever a new slot in the infinite map is created, it is initialized with the module set of the corresponding position in that map.</p>
-
-<h1 id="error-states-and-backtracking">Error states and backtracking</h1>
-
+<h1>Error states and backtracking</h1>
 <p>Sometimes the WFC algorithm will reach a state where a slot has zero possible modules.
 In applications with a finite world, you can just discard the result and start over.
-In the infinite world, this doesn&rsquo;t work, since a part of the world has already been shown to the player.
+In the infinite world, this doesn't work, since a part of the world has already been shown to the player.
 I started with a solution where a white block would be spawned in places of errors.</p>
-
 <p>My current solution is backtracking.
 The order in which the slots where collapsed and some information about constraint propagation is stored as a history.
 If the WFC algorithm fails, some of the history is undone.
 This works in most cases, but sometimes errors are recognized very late which leads to many steps being backtracked.
 In rare cases, the slot in which the player is, is regenerated.</p>
-
 <p>In my opinion, this limitation makes the WFC approach for infinite worlds unsuitable for commercial games.</p>
-
-<h1 id="outlook">Outlook</h1>
-
+<h1>Outlook</h1>
 <p>I started working on this when I saw a <a href="https://www.youtube.com/watch?v=0bcZb-SsnrA">talk by Oskar Stålberg who uses the WFC algorithm to generate levels in Bad North</a>.
 Most of the basics were implemented during the <a href="http://www.procjam.com/">procjam</a> week.</p>
-
-<p>I have some ideas about future improvements, but I&rsquo;m not sure if I&rsquo;ll ever add gameplay.
+<p>I have some ideas about future improvements, but I'm not sure if I'll ever add gameplay.
 And if I do, it will probably not be the battle royale game that you are envisioning.
 But if you want to see your favorite game mechanic added to this, just do it yourself!
-The source code is available after all and it&rsquo;s MIT licensed.</p>
-    
-</div>
+The source code is available after all and it's MIT licensed.</p>
 
-    
-<div class="footer">
-
-
-	
-	    
-	        <div class="tags">
-				tagged
-	            <div class="links">
-	                
-	                    <a href="/tags/unity">unity</a>
-	                
-	                    <a href="/tags/procgen">procgen</a>
-	                
-	                    <a href="/tags/modeling">modeling</a>
-	                
-	                    <a href="/tags/graphics">graphics</a>
-	                
-	                    <a href="/tags/wfc">wfc</a>
-	                
-	            </div>
-	        </div>
-	    
-	
-</div>
-
+    </div>
 </article>
 
-    </div>
-	
-     
-
-        </div>
-
-        
-<footer>
-    <div class="container">
-		<div class="left">
-			
-			
-				<a href="mailto:mail@marian42.de">Contact</a>&nbsp;
-			
-        </div>
-        <div class="right">
-            
-            <div class="external-profiles">
-                
-                    <a href="https://mastodon.gamedev.place/@marian42" target="_blank" rel="me">
-                        <i class="fa">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                
-                                <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
-                            </svg>
-                        </i>
+        <footer>
+            <div class="socials">
+                <div class="inner-div">
+                    <a href="mailto:mail@marian42.de">
+                        Contact
                     </a>
-                
-                
-                    <a href="https://twitter.com/marian42_" target="_blank"><i class="fa fa-twitter-adblock-proof"></i></a>
-                
-                
-                    <a href="https://github.com/marian42" target="_blank"><i class="fa fa-github"></i></a>
-                
-				
-                    <a href="mailto:mail@marian42.de" target="_blank"><i class="fa fa-envelope"></i></a>
-                
-				
-                    <a href="/index.xml" target="_blank"><i class="fa fa-rss"></i></a>
-                
+                </div>
+                <div>
+                    <a href="https://mastodon.gamedev.place/@marian42" rel="me" title="Follow me on Mastodon" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512">                                
+                            <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/marian42_" title="Follow me on Twitter" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
+                            <path d="M221.95,51.29c0.15,2.17,0.15,4.34,0.15,6.53c0,66.73-50.8,143.69-143.69,143.69v-0.04 C50.97,201.51,24.1,193.65,1,178.83c3.99,0.48,8,0.72,12.02,0.73c22.74,0.02,44.83-7.61,62.72-21.66 c-21.61-0.41-40.56-14.5-47.18-35.07c7.57,1.46,15.37,1.16,22.8-0.87C27.8,117.2,10.85,96.5,10.85,72.46c0-0.22,0-0.43,0-0.64 c7.02,3.91,14.88,6.08,22.92,6.32C11.58,63.31,4.74,33.79,18.14,10.71c25.64,31.55,63.47,50.73,104.08,52.76 c-4.07-17.54,1.49-35.92,14.61-48.25c20.34-19.12,52.33-18.14,71.45,2.19c11.31-2.23,22.15-6.38,32.07-12.26 c-3.77,11.69-11.66,21.62-22.2,27.93c10.01-1.18,19.79-3.86,29-7.95C240.37,35.29,231.83,44.14,221.95,51.29z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/marian42" title="View my code on Github" class="social-icon">
+                        <svg viewbox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                        </svg>
+                    </a>
+                    <a href="/index.xml" title="RSS feed" class="social-icon">
+                        <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0.38705632,0.38705632 V 1.5913525 A 6.021594,6.021594 0 0 1 6.4086474,7.6129437 H 7.6129437 A 7.2259129,7.2259129 0 0 0 0.38705632,0.38705632 Z m 0,2.40864748 V 4 A 3.6129564,3.6129564 0 0 1 4,7.6129437 H 5.2042963 A 4.8172751,4.8172751 0 0 0 0.38705632,2.7957038 Z M 1.3430849,5.7008865 A 0.95602666,0.95602666 0 0 0 0.38705632,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,7.6129437 0.95602666,0.95602666 0 0 0 2.2991135,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,5.7008865 Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            
-        </div>
-    </div>
-</footer>
-
-
-
-        
+            <div class="decorator triangle-pattern">
+            </div>
+        </footer>
     </body>
 </html>
