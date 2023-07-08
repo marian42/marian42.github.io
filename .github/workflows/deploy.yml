@@ -3,7 +3,7 @@ name: GitHub Pages Deployment
 on:
   push:
     branches:
-      - hugo
+      - python
 
 jobs:
   deploy:
@@ -12,26 +12,21 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        submodules: true
 
-    - name: Install Hugo
-      run: |
-        apt-cache policy libstdc++6
-        wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.55.4/hugo_extended_0.55.4_Linux-64bit.deb
-        sudo dpkg -i /tmp/hugo.deb
+    - name: Install Python dependencies
+      run: pip install mistune Jinja2
 
     - name: Build site
-      run: hugo || exit 1
+      run: python generator/main.py || exit 1
 
     - name: Set up CNAME
-      run: echo marian42.de > public/CNAME
+      run: echo marian42.de > output/CNAME
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./output
         keep_files: true
         allow_empty_commit: true
         publish_branch: master

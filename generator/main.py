@@ -1,7 +1,6 @@
 import os
 import shutil
 import math
-from tqdm import tqdm
 from datetime import datetime
 import html
 import re
@@ -58,7 +57,7 @@ page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
 page_urls = ['/page/' + str(i + 1) for i in range(page_count)]
 page_urls[0] = '/'
 
-for page_index in tqdm(range(page_count), desc="Feed"):
+for page_index in range(page_count):
     page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
 
     cards_html = [
@@ -93,7 +92,7 @@ for page_index in tqdm(range(page_count), desc="Feed"):
     )
     write_file(page_urls[page_index], page_html)
 
-for article in tqdm(articles, desc="Articles"):
+for article in articles:
     output = templates.page.render(
         content=templates.article.render(
             content=article.get_html_content(),
