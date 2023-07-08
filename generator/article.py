@@ -95,12 +95,15 @@ class Article:
             if image_filename.endswith(".png") or image_filename.endswith(".jpg"):
                 self.article_image = get_media_from_cache(self, image_filename).get_source(relative=False)
 
-    def get_html_content(self):
-        self.renderer.use_relative_image_urls = True
+    def get_html_content(self, use_relative_image_urls = True, use_global_urls=False):
+        self.renderer.use_relative_image_urls = use_relative_image_urls and not use_global_urls
+        self.renderer.use_global_urls = use_global_urls
+
         render = create_markdown(renderer=self.renderer, plugins=PLUGINS)
         return render(self.markdown_content)
     
     def get_html_summary(self):
         self.renderer.use_relative_image_urls = False
+        self.renderer.use_global_urls = False
         render = create_markdown(renderer=self.renderer, plugins=PLUGINS)
         return render(self.markdown_summary)

@@ -1,0 +1,7 @@
+<item>
+    <title>{{ title }}</title>
+    <link>{{ url }}</link>
+    <pubDate>{{ time }}</pubDate>
+    <guid>{{ url }}</guid>
+    <description>{{ content }}</description>
+</item>

@@ -4,6 +4,8 @@ import math
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 from bs4.formatter import HTMLFormatter
+from datetime import datetime
+import html
 
 from article import Article
 import config
@@ -27,11 +29,12 @@ def copy_content(source_directory, destination_directory):
         shutil.copy(os.path.join(source_directory, item_name), os.path.join(destination_directory, item_name))
 
 def write_file(filename, html_content):
-    html_content = BeautifulSoup(html_content, 'html.parser').prettify(formatter=formatter)
+    if not filename.endswith('.xml'):
+        html_content = BeautifulSoup(html_content, 'html.parser').prettify(formatter=formatter)
 
     if filename.startswith("/"):
         filename = filename[1:]
-    if not filename.endswith('.html'):
+    if not filename.endswith('.html') and not filename.endswith('.xml'):
         filename = os.path.join(filename, "index.html")
     filename = os.path.join(OUTPUT_DIRECTORY, filename)
     file_directory = os.path.dirname(filename)
@@ -138,3 +141,22 @@ def create_redirect(source, destination):
     write_file(source, templates.redirect.render(url=config.SITE_URL + destination))
 
 create_redirect("page/1", "/")
+
+rss_items = []
+for article in articles:
+    content = templates.rss_article.render(
+        content=html.escape(article.get_html_content(use_global_urls=True)),
+        title=article.title,
+        time=article.date.strftime(config.RSS_DATE_FORMAT),
+        url=config.SITE_URL + article.url
+    )
+    rss_items.append(content)
+
+write_file('index.xml', templates.rss_feed.render(
+    description=config.SITE_SUBTITLE,
+    site_name=config.SITE_TITLE,
+    site_url=config.SITE_URL,
+    time=datetime.now().strftime(config.RSS_DATE_FORMAT),
+    rss_url=config.SITE_URL + '/index.xml',
+    articles="\n".join(rss_items)
+))
