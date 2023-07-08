@@ -11,7 +11,7 @@ ANGLE_RAD = math.radians(30)
 GROWTH_X = math.cos(ANGLE_RAD) * GROWTH
 GROWTH_Y = math.sin(ANGLE_RAD) * GROWTH
 
-def get_triangle(index_x, index_y):
+def get_triangle_overlapping(index_x, index_y):
     if index_x % 2 != 0:
         index_y += 1
     if index_y % 2 != 0:
@@ -29,6 +29,23 @@ def get_triangle(index_x, index_y):
             ((index_x + 1) * HEIGHT + GROWTH_X, (index_y // 2 + 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE + GROWTH_Y)
         ]
     
+
+def get_triangle(index_x, index_y):
+    if index_x % 2 != 0:
+        index_y += 1
+    if index_y % 2 != 0:
+        return [
+            (index_x * HEIGHT, (index_y // 2 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
+            (index_x * HEIGHT, (index_y // 2 + 1 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
+            ((index_x + 1) * HEIGHT, (index_y // 2 + 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE)
+        ]
+    else:
+        return [
+            ((index_x + 1) * HEIGHT, (index_y // 2 - 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
+            (index_x * HEIGHT, (index_y // 2 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
+            ((index_x + 1) * HEIGHT, (index_y // 2 + 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE)
+        ]
+    
 def get_random_colour():
     RANGE = 0.1
     brightness = random.random() * RANGE + 0.02
@@ -41,8 +58,8 @@ def format_number(number):
 
     return '{:.1f}'.format(number)
     
-def get_svg_triangle(x, y, color=None):
-    vertices = get_triangle(x, y)
+def get_svg_triangle(x, y, color=None, overlap=True):
+    vertices = get_triangle_overlapping(x, y) if overlap else get_triangle(x, y)
     result = '\t<polygon points="'
     result += ' '.join(format_number(vert[0]) + ',' + format_number(vert[1]) for vert in vertices)
     if color is None:
