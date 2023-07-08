@@ -98,7 +98,7 @@ for page_index in tqdm(range(page_count), desc="Feed"):
 for article in tqdm(articles, desc="Articles"):
     output = templates.page.render(
         content=templates.article.render(
-            content=article.get_html_content(),        
+            content=article.get_html_content(),
             title=article.title,
             time=article.date.strftime(DATE_FORMAT),
             url=article.url
@@ -113,3 +113,23 @@ for article in tqdm(articles, desc="Articles"):
         image=(config.SITE_URL + article.article_image) if article.article_image is not None else ''
     )
     write_file(article.url, output)
+
+# Render 404 page
+not_found_title = "404 Page not found"
+not_found_content = "The requested page was not found."
+not_found_url = "/404.html"
+output = templates.page.render(
+    content=templates.article.render(
+        content=not_found_content,
+        title=not_found_title,
+        url=not_found_url
+    ),
+    title=not_found_title + " | " + config.SITE_TITLE,
+    name=not_found_title,
+    description=not_found_title + " - " + config.SITE_SUBTITLE,
+    url=config.SITE_URL + not_found_url,
+    site_name=config.SITE_TITLE,
+    author=config.AUTHOR,
+    site_url=config.SITE_URL
+)
+write_file(not_found_url, output)
