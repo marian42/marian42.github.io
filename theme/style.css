@@ -20,7 +20,7 @@ header {
     background-color: black;
     background-image: url("triangles.svg");
     background-position-x: center;
-    background-size: min(208px, calc(100vw / 500 * 208)) auto;
+    background-size: min(207.846px, calc(100vw / 500 * 207.846)) auto;
 }
 
 header .container {
