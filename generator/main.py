@@ -133,3 +133,8 @@ output = templates.page.render(
     site_url=config.SITE_URL
 )
 write_file(not_found_url, output)
+
+def create_redirect(source, destination):
+    write_file(source, templates.redirect.render(url=config.SITE_URL + destination))
+
+create_redirect("page/1", "/")
