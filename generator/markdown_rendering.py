@@ -7,8 +7,6 @@ from PIL import Image
 from config import OUTPUT_DIRECTORY, IMAGE_WIDTH, FAST
 import templates
 
-small_images = set()
-
 class MarkdownImage:
     def __init__(self, article, base_url):
         self.base_url = base_url
@@ -74,6 +72,17 @@ class MarkdownImage:
         
 image_cache = dict()
 
+def get_image_from_cache(article, filename):
+    global image_cache
+
+    key = (article.slug, filename)
+    if key in image_cache:
+        return image_cache[key]
+    else:
+        image = MarkdownImage(article, filename)
+        image_cache[key] = image
+        return image
+
 class CustomHTMLRenderer(HTMLRenderer):
     def __init__(self, article, use_relative_image_urls=True):
         super().__init__(escape=False)
@@ -83,12 +92,7 @@ class CustomHTMLRenderer(HTMLRenderer):
     def image(self, alt, url, title=None):
         global image_cache
 
-        key = (self.article.slug, url)
-        if key in image_cache:
-            image = image_cache[key]
-        else:
-            image = MarkdownImage(self.article, url)
-            image_cache[key] = image
+        image = get_image_from_cache(self.article, url)
 
         if image.is_video:
             return templates.video.render(src=image.get_source(self.use_relative_image_urls))

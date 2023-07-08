@@ -109,6 +109,7 @@ for article in tqdm(articles, desc="Articles"):
         url=config.SITE_URL + article.url,
         site_name=config.SITE_TITLE,
         author=config.AUTHOR,
-        site_url=config.SITE_URL
+        site_url=config.SITE_URL,
+        image=(config.SITE_URL + article.article_image) if article.article_image is not None else ''
     )
     write_file(article.url, output)
