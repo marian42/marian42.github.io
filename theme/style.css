@@ -140,7 +140,7 @@ footer .socials {
 
 .socials .social-icon {
     display: inline-block;
-    width: 40px;
+    width: 32px;
     padding: 10px 10px;
     margin: auto 10px;
 }
@@ -193,7 +193,7 @@ figure {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121314;
-        background-image: url(background-dark.svg);
+        background-image: url("background-dark.svg");
         color: #dfdfdf;
     }
 
