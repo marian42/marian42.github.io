@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: #F4F4F4;
     background-image: url("background.svg");
-    background-size: min(34.641px, calc(100vw / 500 * 34.641)) auto;
+    background-size: min(34.641px, calc((100vw - (100vw - 100%)) / 485 * 34.641)) auto;
     background-position-x: center;
     background-position-y: 10px;
     font-family: sans-serif;
@@ -13,14 +13,13 @@ body {
 
 header {
     box-shadow: 0 2px 4px rgba(0,0,0,.4);
-    height: min(100px, calc(100vw / 500 * 100));
 }
 
 .triangle-pattern {
     background-color: black;
     background-image: url("triangles.svg");
     background-position-x: center;
-    background-size: min(207.846px, calc(100vw / 500 * 207.846)) auto;
+    background-size: min(207.846px, calc((100vw - (100vw - 100%)) / 485 * 207.846)) auto;
 }
 
 header .container {
@@ -29,9 +28,15 @@ header .container {
     margin: 0 auto;
 }
 
-header .container img {
-    max-width: 100%;
+.logo {
     display: block;
+    width: 485px;
+    max-width: min(485px, calc((100vw - (100vw - 100%))));
+    max-height: 100px;
+    aspect-ratio: 485/100;
+    background-image: url("logo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .card {

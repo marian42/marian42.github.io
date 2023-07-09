@@ -43,7 +43,7 @@ def get_triangle(index_x, index_y):
         return [
             ((index_x + 1) * HEIGHT, (index_y // 2 - 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
             (index_x * HEIGHT, (index_y // 2 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
-            ((index_x + 1) * HEIGHT, (index_y // 2 + 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE)
+            ((index_x + 1) * HEIGHT, (index_y // 2 + 0.5 - index_x % 2 * 0.5) * TRIANGLE_SIZE),
         ]
     
 def get_random_colour():
@@ -60,6 +60,14 @@ def format_number(number):
     
 def get_svg_triangle(x, y, color=None, overlap=True):
     vertices = get_triangle_overlapping(x, y) if overlap else get_triangle(x, y)
+    result = '\t<polygon points="'
+    result += ' '.join(format_number(vert[0]) + ',' + format_number(vert[1]) for vert in vertices)
+    if color is None:
+        color = get_random_colour()
+    result += '" fill="' + color + '"/>'
+    return result
+
+def get_svg_polygon(vertices, color=None):
     result = '\t<polygon points="'
     result += ' '.join(format_number(vert[0]) + ',' + format_number(vert[1]) for vert in vertices)
     if color is None:
@@ -95,7 +103,45 @@ DARK = [
 
 COLORS = ['#E0E0E0', '#C4C4C4', '#A5A5A5']
 
+def clean_point(point):
+    rounding_factor = 4
+    return (round(point[0] * rounding_factor) / rounding_factor, round(point[1] * rounding_factor) / rounding_factor)
 
+def follow_edge(point, edges):
+    for p1, p2 in edges:
+        if point == p1:
+            return p2
+
+def merge_triangles(triangles):
+    triangles = [[clean_point(point) for point in triangle] for triangle in triangles]
+
+    edges = set()
+    for triangle in triangles:
+        edges.add((triangle[0], triangle[1]))
+        edges.add((triangle[1], triangle[2]))
+        edges.add((triangle[2], triangle[0]))
+
+    outer_edges = set()
+    for p1, p2 in edges:
+        if (p2, p1) not in edges:
+            outer_edges.add((p1, p2))
+    
+    polygons = []
+    while any(outer_edges):
+        polygon = []
+        start = next(iter(outer_edges))[0]
+        polygon = [start]
+        point = follow_edge(start, outer_edges)
+        outer_edges.remove((start, point))
+        while point != start:
+            polygon.append(point)
+            point2 = follow_edge(point, outer_edges)
+            outer_edges.remove((point, point2))
+            point = point2
+
+        polygons.append(polygon)
+
+    return polygons    
 
 def save_file(lines, width, height, filename):
     content = '<svg width="' + str(width) + '" height="' + str(height) + '" xmlns="http://www.w3.org/2000/svg">\n'
@@ -113,23 +159,59 @@ def create_triangles(horizontal_triangles=12, vertical_triangles=11):
 
     save_file(lines, horizontal_triangles * HEIGHT, (vertical_triangles / 2 - 0.5) * TRIANGLE_SIZE, 'theme/triangles.svg')
 
+def get_neighbors(x, y):
+    return (
+        (x, y - 1),
+        (x, y + 1),
+        (x - 1, y) if y % 2 != x % 2 else (x + 1, y))
+
 def create_logo():
     LOGO_HORIZONTAL_TRIANGLES = 28
     LOGO_VERTICAL_TRIANGLES = 11
 
     lines = []
+
+    # LIGHT
+    triangles = []
+    
     for x in range(LOGO_HORIZONTAL_TRIANGLES):
         for y in range(LOGO_VERTICAL_TRIANGLES):
-            color = None
             if (x, y) in LIGHT:
-                color = COLORS[0]
-            elif (x, y) in MED:
-                color = COLORS[1]
-            elif (x, y) in DARK:
-                color = COLORS[2]
-            lines.append(get_svg_triangle(x, y, color))
+                triangles.append(get_triangle(x, y))
+                for neighbor in get_neighbors(x, y):
+                    if neighbor in MED or neighbor in DARK:
+                        triangles.append(get_triangle(*neighbor))
 
-    save_file(lines, LOGO_HORIZONTAL_TRIANGLES * HEIGHT, (LOGO_VERTICAL_TRIANGLES / 2 - 0.5) * TRIANGLE_SIZE, 'theme/static/logo.svg')
+    polygons = merge_triangles(triangles)
+    for polygon in polygons:
+        lines.append(get_svg_polygon(polygon, COLORS[0]))
+
+    # MED
+    triangles = []
+    for x in range(LOGO_HORIZONTAL_TRIANGLES):
+        for y in range(LOGO_VERTICAL_TRIANGLES):
+            if (x, y) in MED:
+                triangles.append(get_triangle(x, y))
+                for neighbor in get_neighbors(x, y):
+                    if neighbor in DARK:
+                        triangles.append(get_triangle(*neighbor))
+
+    polygons = merge_triangles(triangles)
+    for polygon in polygons:
+        lines.append(get_svg_polygon(polygon, COLORS[1]))
+
+    # DARK
+    triangles = []
+    for x in range(LOGO_HORIZONTAL_TRIANGLES):
+        for y in range(LOGO_VERTICAL_TRIANGLES):
+            if (x, y) in DARK:
+                triangles.append(get_triangle(x, y))
+
+    polygons = merge_triangles(triangles)
+    for polygon in polygons:
+        lines.append(get_svg_polygon(polygon, COLORS[2]))
+
+    save_file(lines, LOGO_HORIZONTAL_TRIANGLES * HEIGHT, (LOGO_VERTICAL_TRIANGLES / 2 - 0.5) * TRIANGLE_SIZE, 'theme/logo.svg')
     
 
 create_triangles()
