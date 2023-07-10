@@ -3,7 +3,7 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Sun, 09 Jul 2023 22:50:39 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jul 2023 23:22:40 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
@@ -799,16 +799,16 @@ One advantage of printing parts like this is that it saves you the time to figur
     <pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate>
     <guid>https://marian42.de/article/ggj19/</guid>
     <description>&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj19/system1.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj19/system1_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj19/system1.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj19/system1_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Like in the &lt;a href=&quot;https://marian42.de/article/ggj18&quot;&gt;previous year&lt;/a&gt;, I took part in the Global Game Jam.
 I joined a team of six programmers, unfortunately there was a shortage of artists this year.
 During the 48 hour jam, we made a space game that is inspired by Faster Than Light.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj19/map.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj19/map_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj19/map.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj19/map_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;You travel through a sector of solar systems, with the goal to make your way home.
@@ -816,8 +816,8 @@ In each system, you need to collect jump fuel to jump to the next system.
 You can die by crashing into a planet or by flying too far into deep space.
 The amount of fuel in the spacecraft is also limited, but it regenerates over time.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj19/system2.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj19/system2_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj19/system2.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj19/system2_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;My contribution was making the planets move on somewhat realistic, elliptical orbits.
@@ -825,15 +825,15 @@ I wanted to achieve the same for the spaceship, but didn&#x27;t manage to do it 
 So now it has semi-realistic physics, but it&#x27;s influenced by all bodies in the system.
 I hope that I&#x27;ll do more with realistic orbits in Unity in the future.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj19/system3.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj19/system3_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj19/system3.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj19/system3_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Our team put quite some effort into making procedurally generated low-poly planets.
 These ended up being quite small in the levels, so we added &amp;quot;personal&amp;quot; planets to our credit screen:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj19/credits.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj19/credits_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj19/credits.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj19/credits_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://globalgamejam.org/2019/games/faster-life&quot;&gt;You can download the game on the Global Game Jam website&lt;/a&gt; or watch me play through it below.&lt;/p&gt;
@@ -1079,14 +1079,14 @@ You can have a closer look at the model on &lt;a href=&quot;https://sketchfab.co
     <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
     <guid>https://marian42.de/article/ggj18/</guid>
     <description>&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj18/Screenshot-16.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj18/Screenshot-16_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj18/Screenshot-16.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj18/Screenshot-16_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;This year I participated in my first game jam, the Global Game Jam 2018. With a team of artists, programmers and a sound designer, we made a video game within 48 hours. You play the game as a virus that infiltrates a company’s headquarters. The virus can not move on its own, it can only take control of hackable devices and use them to move around. There are six levels, each with a puzzle to move to the next one.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/ggj18/Screenshot-12-1.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/ggj18/Screenshot-12-1_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;a href=&quot;https://marian42.de/article/ggj18/Screenshot-12-1.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/ggj18/Screenshot-12-1_1280.jpg&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://globalgamejam.org/2018/games/agent-v&quot;&gt;You can download the game on the Global Game Jam website&lt;/a&gt; or watch the playthrough below.&lt;/p&gt;
