@@ -37,106 +37,30 @@ def write_file(filename, html_content):
     with open(filename, 'w', encoding='utf8') as file:
         file.write(html_content)
 
-if not os.path.exists(OUTPUT_DIRECTORY):
-    os.makedirs(OUTPUT_DIRECTORY)
-
-if not FAST:
-    clear_directory(OUTPUT_DIRECTORY)
-copy_content('theme/static', OUTPUT_DIRECTORY)
-
-articles = []
-
-for article_folder in os.listdir(ARTICLES_DIRECTORY):
-    article_path = os.path.join(ARTICLES_DIRECTORY, article_folder)
-    article = Article(article_path)
-    articles.append(article)
-
-articles.sort(key=lambda article: article.date, reverse=True)
-
-page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
-page_urls = ['/page/' + str(i + 1) for i in range(page_count)]
-page_urls[0] = '/'
-
-for page_index in range(page_count):
-    page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
-
-    cards_html = [
-        templates.article_summary.render(
-            content=article.get_html_summary(),        
-            title=article.title,
-            time=article.date.strftime(DATE_FORMAT),
-            url=article.url
-        )
-        for article in page_articles
-    ]
-
-    navigation = '<div class="page-navigation">\n'
-    if page_index != page_count - 1:
-        navigation += '<a href="' + page_urls[page_index + 1] + '">see older posts</a>\n'
-    if page_index != 0:
-        navigation += '<a href="' + page_urls[page_index - 1] + '">see newer posts</a>\n'
-    navigation += '</div>'
-    cards_html.append(navigation)
-
-    cards_html = '\n\n'.join(cards_html)
-
-    page_html = templates.page.render(
-        content=cards_html,
-        title=config.SITE_TITLE,
-        name=config.SITE_TITLE,
-        description=config.SITE_SUBTITLE,
-        url=config.SITE_URL + page_urls[page_index],
+def render_404_page():
+    not_found_title = "404 Page not found"
+    not_found_content = "The requested page was not found."
+    not_found_url = "/404.html"
+    output = templates.page.render(
+        content=templates.article.render(
+            content=not_found_content,
+            title=not_found_title,
+            url=not_found_url
+        ),
+        title=not_found_title + " | " + config.SITE_TITLE,
+        name=not_found_title,
+        description=not_found_title + " - " + config.SITE_SUBTITLE,
+        url=config.SITE_URL + not_found_url,
         site_name=config.SITE_TITLE,
         author=config.AUTHOR,
         site_url=config.SITE_URL
     )
-    write_file(page_urls[page_index], page_html)
-
-for article in articles:
-    output = templates.page.render(
-        content=templates.article.render(
-            content=article.get_html_content(),
-            title=article.title,
-            time=article.date.strftime(DATE_FORMAT),
-            url=article.url
-        ),
-        title=article.title + " | " + config.SITE_TITLE,
-        name=article.title,
-        description=article.title + " - " + config.SITE_SUBTITLE,
-        url=config.SITE_URL + article.url,
-        site_name=config.SITE_TITLE,
-        author=config.AUTHOR,
-        site_url=config.SITE_URL,
-        image=(config.SITE_URL + article.article_image) if article.article_image is not None else ''
-    )
-    write_file(article.url, output)
-
-# Render 404 page
-not_found_title = "404 Page not found"
-not_found_content = "The requested page was not found."
-not_found_url = "/404.html"
-output = templates.page.render(
-    content=templates.article.render(
-        content=not_found_content,
-        title=not_found_title,
-        url=not_found_url
-    ),
-    title=not_found_title + " | " + config.SITE_TITLE,
-    name=not_found_title,
-    description=not_found_title + " - " + config.SITE_SUBTITLE,
-    url=config.SITE_URL + not_found_url,
-    site_name=config.SITE_TITLE,
-    author=config.AUTHOR,
-    site_url=config.SITE_URL
-)
-write_file(not_found_url, output)
+    write_file(not_found_url, output)
 
 def create_redirect(source, destination):
     write_file(source, templates.redirect.render(url=config.SITE_URL + destination))
 
-create_redirect("page/1", "/")
-
-def create_rss_feed():
+def create_rss_feed(articles):
     rss_items = []
     for article in articles:
         content = templates.rss_article.render(
@@ -156,8 +80,6 @@ def create_rss_feed():
         articles="\n".join(rss_items)
     ))
 
-create_rss_feed()
-
 def create_style():
     content = open('theme/style.css', 'r').read()
     pattern = r'url\(\"(.*\.svg)\"\);'
@@ -170,4 +92,94 @@ def create_style():
     with open(os.path.join(config.OUTPUT_DIRECTORY, 'style.css'), 'w', encoding='utf8') as file:
         file.write(content)
 
-create_style()
+def create_feed(articles):
+    page_count = math.ceil(len(articles) / ARTICLES_PER_PAGE)
+    page_urls = ['/page/' + str(i + 1) for i in range(page_count)]
+    page_urls[0] = '/'
+
+    for page_index in range(page_count):
+        page_articles = articles[page_index * ARTICLES_PER_PAGE : (page_index + 1) * ARTICLES_PER_PAGE]
+
+        cards_html = [
+            templates.article_summary.render(
+                content=article.get_html_summary(),        
+                title=article.title,
+                time=article.date.strftime(DATE_FORMAT),
+                url=article.url
+            )
+            for article in page_articles
+        ]
+
+        navigation = '<div class="page-navigation">\n'
+        if page_index != page_count - 1:
+            navigation += '<a href="' + page_urls[page_index + 1] + '">see older posts</a>\n'
+        if page_index != 0:
+            navigation += '<a href="' + page_urls[page_index - 1] + '">see newer posts</a>\n'
+        navigation += '</div>'
+        cards_html.append(navigation)
+
+        cards_html = '\n\n'.join(cards_html)
+
+        page_html = templates.page.render(
+            content=cards_html,
+            title=config.SITE_TITLE,
+            name=config.SITE_TITLE,
+            description=config.SITE_SUBTITLE,
+            url=config.SITE_URL + page_urls[page_index],
+            site_name=config.SITE_TITLE,
+            author=config.AUTHOR,
+            site_url=config.SITE_URL
+        )
+        write_file(page_urls[page_index], page_html)
+
+def create_article(article):
+    output = templates.page.render(
+        content=templates.article.render(
+            content=article.get_html_content(),
+            title=article.title,
+            time=article.date.strftime(DATE_FORMAT),
+            url=article.url
+        ),
+        title=article.title + " | " + config.SITE_TITLE,
+        name=article.title,
+        description=article.title + " - " + config.SITE_SUBTITLE,
+        url=config.SITE_URL + article.url,
+        site_name=config.SITE_TITLE,
+        author=config.AUTHOR,
+        site_url=config.SITE_URL,
+        image=(config.SITE_URL + article.article_image) if article.article_image is not None else ''
+    )
+    write_file(article.url, output)
+
+def generate_site():
+    if not os.path.exists(OUTPUT_DIRECTORY):
+        os.makedirs(OUTPUT_DIRECTORY)
+
+    if not FAST:
+        clear_directory(OUTPUT_DIRECTORY)
+    
+    copy_content('theme/static', OUTPUT_DIRECTORY)
+
+    articles = []
+
+    for article_folder in os.listdir(ARTICLES_DIRECTORY):
+        article_path = os.path.join(ARTICLES_DIRECTORY, article_folder)
+        article = Article(article_path)
+        articles.append(article)
+
+    articles.sort(key=lambda article: article.date, reverse=True)
+
+    create_feed(articles)
+
+    for article in articles:
+        create_article(article)        
+
+    render_404_page()
+
+    create_redirect("page/1", "/")
+
+    create_rss_feed(articles)
+
+    create_style()
+
+generate_site()
