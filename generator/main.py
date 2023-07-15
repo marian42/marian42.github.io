@@ -165,6 +165,8 @@ def generate_site():
 
     for article_folder in os.listdir(ARTICLES_DIRECTORY):
         article_path = os.path.join(ARTICLES_DIRECTORY, article_folder)
+        if not os.path.isfile(os.path.join(article_path, 'index.md')):
+            continue
         article = Article(article_path)
         articles.append(article)
 
