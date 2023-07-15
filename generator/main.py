@@ -5,6 +5,7 @@ from datetime import datetime
 import html
 import re
 import urllib.parse
+import sys
 
 from article import Article
 import config
@@ -182,4 +183,52 @@ def generate_site():
 
     create_style()
 
+print("Generating site...")
 generate_site()
+
+if '--watch' in sys.argv:
+    print("Site generated. Waiting for changes.")
+
+    from watchdog.observers import Observer
+    from watchdog.events import FileSystemEventHandler
+    import time
+
+    last_update = datetime.now()
+
+    class FileChangeHandler(FileSystemEventHandler):
+        def __init__(self, callback):
+            self.callback = callback
+
+        def on_modified(self, event):
+            self.callback()
+
+        def on_created(self, event):
+            self.callback()
+
+    def on_folder_changed():
+        global last_update
+        if (datetime.now() - last_update).total_seconds() < 2:
+            return
+
+        print("Files have changed. Regenerating site...")
+        generate_site()
+        print("Done. Waiting for changes.")
+
+        last_update = datetime.now()
+
+    observer1 = Observer()
+    observer1.schedule(FileChangeHandler(callback=on_folder_changed), 'theme', recursive=True)
+    observer1.start()
+    observer2 = Observer()
+    observer2.schedule(FileChangeHandler(callback=on_folder_changed), 'content', recursive=True)
+    observer2.start()
+
+    try:
+        while True:
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        observer1.stop()
+        observer2.stop()
+
+    observer1.join()
+    observer2.join()
