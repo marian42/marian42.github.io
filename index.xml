@@ -3,7 +3,7 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Mon, 10 Jul 2023 23:22:40 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 09 Oct 2023 19:50:09 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
@@ -888,8 +888,7 @@ In that case, the module probabilities and adjacency rules are determined based 
 In my case, they are supplied manually.
 Wave Function Collapse is based on Paul Merrel&#x27;s &lt;a href=&quot;https://paulmerrell.org/model-synthesis/&quot;&gt;Model Synthesis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is a video of the algorithm in action:&lt;/p&gt;
-&lt;video autoplay loop muted src=&quot;wfc.mp4&quot;&gt;
-
+&lt;p&gt;&lt;video autoplay loop muted src=&quot;wfc.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;h1&gt;About blocks, prototypes and modules&lt;/h1&gt;
 &lt;p&gt;The world is generated from a set of ~100 blocks, which I made with Blender.
 I started out with a small number of blocks and made more whenever I had some spare time.&lt;/p&gt;
@@ -1762,6 +1761,32 @@ Here is an example:&lt;/p&gt;
 </description>
 </item>
 <item>
+    <title>Game prototypes</title>
+    <link>https://marian42.de/article/game-prototypes/</link>
+    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/game-prototypes/</guid>
+    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
+</description>
+</item>
+<item>
     <title>Procedural pixelart generator</title>
     <link>https://marian42.de/article/proceduralart/</link>
     <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
@@ -1800,32 +1825,6 @@ Here is an example:&lt;/p&gt;
         &lt;img src=&quot;https://marian42.de/article/proceduralart/canvas8_1280.png&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
-</description>
-</item>
-<item>
-    <title>Game prototypes</title>
-    <link>https://marian42.de/article/game-prototypes/</link>
-    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/game-prototypes/</guid>
-    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
 </description>
 </item>
 <item>
@@ -2188,16 +2187,6 @@ Here is an example:&lt;/p&gt;
 </description>
 </item>
 <item>
-    <title>Aquarium Innensicht mit Gopro</title>
-    <link>https://marian42.de/article/gopro-timelapse/</link>
-    <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/gopro-timelapse/</guid>
-    <description>&lt;iframe width=&quot;660&quot; height=&quot;371&quot; src=&quot;https://www.youtube.com/embed/zWb60ZoBSag&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Wegen meinem &lt;a href=&quot;https://marian42.de/article/copter/&quot;&gt;Quadrocopter&lt;/a&gt; habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.&lt;/p&gt;
-</description>
-</item>
-<item>
     <title>Uni-Timer</title>
     <link>https://marian42.de/article/uni-timer/</link>
     <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
@@ -2227,6 +2216,16 @@ Here is an example:&lt;/p&gt;
 &lt;/table&gt;
 &lt;p&gt;Die App zeigt die verbleibende Zeit oder den Fortschritt an und merkt sich den Namen der Veranstaltung und zeigt ihn nächste Woche zur selben Zeit wieder an. Und es gibt ein spezielles Feature für meinen Mathe-Prof, bei dem die Vorlesung nicht 90, sondern 95 Minuten dauert. Das Design ist dem der Stock-Uhr von Android 4 nachempfunden.&lt;/p&gt;
 &lt;p&gt;Download: &lt;a href=&quot;https://marian42.de/article/uni-timer/Uni.apk&quot;&gt;Android-App&lt;/a&gt;, &lt;a href=&quot;https://marian42.de/article/uni-timer/Uni.zip&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
+<item>
+    <title>Aquarium Innensicht mit Gopro</title>
+    <link>https://marian42.de/article/gopro-timelapse/</link>
+    <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/gopro-timelapse/</guid>
+    <description>&lt;iframe width=&quot;660&quot; height=&quot;371&quot; src=&quot;https://www.youtube.com/embed/zWb60ZoBSag&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Wegen meinem &lt;a href=&quot;https://marian42.de/article/copter/&quot;&gt;Quadrocopter&lt;/a&gt; habe ich eine Gopro, die ja auch wasserfest ist. Da war es naheliegend, die mal im Aquarium auszuprobieren. Bei dem Aquarium stand einiges an Arbeit an, da das Glasbecken undicht war, und alles komplett ausgeräumt werden muss, um das Becken auszutauschen.&lt;/p&gt;
 </description>
 </item>
 <item>
@@ -2521,6 +2520,32 @@ Here is an example:&lt;/p&gt;
 </description>
 </item>
 <item>
+    <title>BTduino</title>
+    <link>https://marian42.de/article/btduino/</link>
+    <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/btduino/</guid>
+    <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
+&lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Download&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.apk&quot;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.txt&quot;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_source.zip&quot;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To use this app, you need an Arduino or any microcontroller with a serial connection that you can program, a bluetooth module (about €10) and the parts for your project.&lt;/p&gt;
+&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;The app is designed to be self-explaining. Send values by sending a name, a colon and the value, all in text form. Take a look at the &lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;example sketch for Arduino&lt;/a&gt; for a quick start. There is a step-by-step &lt;a href=&quot;http://marian42.de/?p=95&quot;&gt;tutorial&lt;/a&gt; that shows you how to control an LED and a potentiometer via bluetooth. All capabilities of BTduino are explained in the &lt;a href=&quot;http://marian42.de/?p=140&quot;&gt;documentation&lt;/a&gt;. If anything goes wrong, check out the &lt;a href=&quot;http://marian42.de/?p=242&quot;&gt;troubleshooting page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Beta&lt;/h2&gt;
+&lt;p&gt;I have tested this only with my own setup, so consider this a beta release. If you find a bug or want to request a feature, please &lt;a href=&quot;https://marian42.de/mailto:mail@marian42.de&quot;&gt;send me an email&lt;/a&gt;. Also, just out of curiosity, please let me know if you used this for a project.&lt;/p&gt;
+</description>
+</item>
+<item>
     <title>BTduino documentation</title>
     <link>https://marian42.de/article/btduino-doc/</link>
     <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
@@ -2602,32 +2627,6 @@ mycolorsender:255,0,255&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;requestjoystick:myjoystick&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can lock or invert an axis in the BTduino app. The app allow you use the accelerometer to control the joystick. Click the record button to record a path. It can be performed using the play button. After you have recorded a path, long-click the joystick and select “Save path” to add a path event. This allows you to record multiple paths.&lt;/p&gt;
 &lt;p&gt;The logfiles for value receiver, string receiver and color receiver are stored on the SD card int he folder &lt;code&gt;/Bluetooth/&amp;lt;project name&amp;gt;/&amp;lt;eventname&amp;gt;.txt&lt;/code&gt;. The textfile contains one dataset per line, consisting of the timestamp in milliseconds and the value.&lt;/p&gt;
-</description>
-</item>
-<item>
-    <title>BTduino</title>
-    <link>https://marian42.de/article/btduino/</link>
-    <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/btduino/</guid>
-    <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
-&lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_1280.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h2&gt;Download&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.apk&quot;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.txt&quot;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_source.zip&quot;&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To use this app, you need an Arduino or any microcontroller with a serial connection that you can program, a bluetooth module (about €10) and the parts for your project.&lt;/p&gt;
-&lt;h2&gt;Getting started&lt;/h2&gt;
-&lt;p&gt;The app is designed to be self-explaining. Send values by sending a name, a colon and the value, all in text form. Take a look at the &lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;example sketch for Arduino&lt;/a&gt; for a quick start. There is a step-by-step &lt;a href=&quot;http://marian42.de/?p=95&quot;&gt;tutorial&lt;/a&gt; that shows you how to control an LED and a potentiometer via bluetooth. All capabilities of BTduino are explained in the &lt;a href=&quot;http://marian42.de/?p=140&quot;&gt;documentation&lt;/a&gt;. If anything goes wrong, check out the &lt;a href=&quot;http://marian42.de/?p=242&quot;&gt;troubleshooting page&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Beta&lt;/h2&gt;
-&lt;p&gt;I have tested this only with my own setup, so consider this a beta release. If you find a bug or want to request a feature, please &lt;a href=&quot;https://marian42.de/mailto:mail@marian42.de&quot;&gt;send me an email&lt;/a&gt;. Also, just out of curiosity, please let me know if you used this for a project.&lt;/p&gt;
 </description>
 </item>
 <item>
