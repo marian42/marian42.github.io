@@ -54,7 +54,7 @@ Wave Function Collapse is based on Paul Merrel's [Model Synthesis](https://paulm
 
 Here is a video of the algorithm in action:
 
-<video autoplay loop muted src="wfc.mp4" type="video/mp4"></video>
+<video autoplay loop muted src="/article/wfc/wfc.mp4" type="video/mp4"></video>
 
 # About blocks, prototypes and modules
 
