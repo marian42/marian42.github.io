@@ -3,7 +3,7 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Mon, 09 Oct 2023 19:50:09 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 09 Oct 2023 20:11:43 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
@@ -888,7 +888,11 @@ In that case, the module probabilities and adjacency rules are determined based 
 In my case, they are supplied manually.
 Wave Function Collapse is based on Paul Merrel&#x27;s &lt;a href=&quot;https://paulmerrell.org/model-synthesis/&quot;&gt;Model Synthesis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is a video of the algorithm in action:&lt;/p&gt;
-&lt;p&gt;&lt;video autoplay loop muted src=&quot;wfc.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/wfc.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h1&gt;About blocks, prototypes and modules&lt;/h1&gt;
 &lt;p&gt;The world is generated from a set of ~100 blocks, which I made with Blender.
 I started out with a small number of blocks and made more whenever I had some spare time.&lt;/p&gt;
