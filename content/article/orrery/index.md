@@ -189,7 +189,7 @@ Here is an example of a result when searching for a sequence with a ratio of π:
 
 There is one more interesting mathematical curiosity I want to mention.
 Lego's differential gears have the property that the differential casing rotates at a rate that is the mean of the rates of the two connected axles.
-For example, if one axle rotates onces per second and the other axle three times per second, the casing will rotates twice per second (`(1 + 3) / 2`).
+For example, if one axle rotates once per second and the other axle three times per second, the casing will rotates twice per second (`(1 + 3) / 2`).
 We can exploit this to achieve prime factors that are otherwise impossible with Lego gears.
 
 For example, there are no Lego gears with a tooth number that is a multiple of 13, so transmission ratios that include 13 as a prime factor are not possible with the standard approach.
@@ -224,7 +224,7 @@ This is a work in progress photo:
 One of the main challenges during the design of the orrery, besides making it work at all, was to get the orrery to run smoothly.
 The final design has 70 gears and each additional gear adds a little bit of friction.
 Another source for resistance is the weight of the earth as it spins relatively fast and thus contributes a lot to the torque needed to run the orrery.
-I put a lot of effor into making the orrery run smooth.
+I put a lot of effort into making the orrery run smooth.
 But the mechanism can easily get stuck, for example if any moving part is assembled too tight or if the orrery gathers dust.
 During assembly, it is important to make sure that every moving part has a some slack.
 
