@@ -3,7 +3,7 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Sat, 01 Jun 2024 19:46:41 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 27 Oct 2024 19:12:28 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
@@ -190,7 +190,7 @@ Once the tool has a set of driver gears and follower gears, it uses the &lt;a hr
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;There is one more interesting mathematical curiosity I want to mention.
 Lego&#x27;s differential gears have the property that the differential casing rotates at a rate that is the mean of the rates of the two connected axles.
-For example, if one axle rotates onces per second and the other axle three times per second, the casing will rotates twice per second (&lt;code&gt;(1 + 3) / 2&lt;/code&gt;).
+For example, if one axle rotates once per second and the other axle three times per second, the casing will rotates twice per second (&lt;code&gt;(1 + 3) / 2&lt;/code&gt;).
 We can exploit this to achieve prime factors that are otherwise impossible with Lego gears.&lt;/p&gt;
 &lt;p&gt;For example, there are no Lego gears with a tooth number that is a multiple of 13, so transmission ratios that include 13 as a prime factor are not possible with the standard approach.
 To achieve a transmission ratio of 13, the gear ratio calculator gives us this sequence:&lt;/p&gt;
@@ -232,7 +232,7 @@ This is a work in progress photo:&lt;/p&gt;
 &lt;p&gt;One of the main challenges during the design of the orrery, besides making it work at all, was to get the orrery to run smoothly.
 The final design has 70 gears and each additional gear adds a little bit of friction.
 Another source for resistance is the weight of the earth as it spins relatively fast and thus contributes a lot to the torque needed to run the orrery.
-I put a lot of effor into making the orrery run smooth.
+I put a lot of effort into making the orrery run smooth.
 But the mechanism can easily get stuck, for example if any moving part is assembled too tight or if the orrery gathers dust.
 During assembly, it is important to make sure that every moving part has a some slack.&lt;/p&gt;
 &lt;p&gt;One way to work around this problem is to apply a little bit of silicone spray.
@@ -1869,6 +1869,70 @@ The screenshots in this article contain map data by &lt;a href=&quot;https://op
 </description>
 </item>
 <item>
+    <title>Work in progress: Location based online game</title>
+    <link>https://marian42.de/article/reslayer/</link>
+    <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/reslayer/</guid>
+    <description>&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-21.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-21_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.&lt;/p&gt;
+&lt;p&gt;I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.&lt;/p&gt;
+&lt;p&gt;The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.&lt;/p&gt;
+&lt;p&gt;The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only near paths&amp;quot;.
+Any information that is in OpenStreetMaps can be used to create rules.
+Here is an example:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-5.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-5_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The green resources are distributed randomly along streets, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.&lt;/p&gt;
+&lt;p&gt;There are four kinds of buildings that can be placed anywhere on the map.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-22.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-22.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;In the actual game, players can only place buildings at their current location, and only if there isn’t another building already.&lt;/p&gt;
+&lt;p&gt;Buildings consume and output resources, which are transported via links. All buildings can be connected with links and the system will figure out the most effective way to use them.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-14.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-14.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;A mine picks up resources from the ground.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-15.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-15.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;A warehouse stores them.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-12.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-12.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;There are ten tiers of resources and only the resources of the first tier can be aquired by mining. Higher tier resources are made by directing two different kinds of resources of the same tier into a factory and it will output a resource of a higher tier. This encourages players to build complex networks of mines, factories and warehouses, like this one:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-20.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-20.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;And finally, a tower protects someones buildings. Buildings that are not in the range of a tower can be used by everyone. So you need to build a tower to keep people from pulling resources out of your factories and looting your warehouses. High-tier resources serve as explosives to take down other’s towers and use their production networks.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-8.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-8.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;You can see that two of the mines are idle, because the warehouse has a limited input rate.&lt;/p&gt;
+&lt;p&gt;The goal of this mechanic is to encourage teamwork, reward efforts and provide some permanence to the players’ actions, as opposed to Ingress. In Ingress, it doesn’t really matter which portals of which place you conquer, since someone else will have taken them over by the next day. I’m trying to make a game that fixes some of the problems that Ingress has.&lt;/p&gt;
+&lt;p&gt;The screenshots in this article contain map data by &lt;a href=&quot;https://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; (ODbL) and Dark Matter tiles by &lt;a href=&quot;https://cartodb.com/attributions#basemaps&quot;&gt;CartoDB&lt;/a&gt; (&lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0&lt;/a&gt;).&lt;/p&gt;
+</description>
+</item>
+<item>
     <title>16×16 LED Matrix</title>
     <link>https://marian42.de/article/ledmatrix/</link>
     <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
@@ -2064,67 +2128,29 @@ The screenshots in this article contain map data by &lt;a href=&quot;https://op
 </description>
 </item>
 <item>
-    <title>Work in progress: Location based online game</title>
-    <link>https://marian42.de/article/reslayer/</link>
-    <pubDate>Sat, 12 Sep 2015 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/reslayer/</guid>
-    <description>&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-21.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-21_1280.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;This is a game prototype I’m currently working on. The game is played online, on a real world map and the location of the player is also the location ingame, just like in Ingress.&lt;/p&gt;
-&lt;p&gt;I know that making an online game like this is an ambitious goal and it will probably never be finished, but this prototype is a good way for me to test the game mechanic and see what works and what doesn’t.&lt;/p&gt;
-&lt;p&gt;The prototype is a web app and doesn’t yet use the player’s location, meaning they can interact anywhere on the map. If all works out, I’ll make a mobile client, which will be the actual game.&lt;/p&gt;
-&lt;p&gt;The game is about finding resources and mining them. I’m trying to make the resource locations meaningful and related to the real world. So I wrote an engine that procedurally distributes resources on the map, based on map data provided by Open Street Map. This allows me to define rules like “Resource 1 can be found at water fountains near public parks”, or “Resource 2 can be found only in forests and only near paths&amp;quot;.
-Any information that is in OpenStreetMaps can be used to create rules.
-Here is an example:&lt;/p&gt;
+    <title>Game prototypes</title>
+    <link>https://marian42.de/article/game-prototypes/</link>
+    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/game-prototypes/</guid>
+    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-5.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-5_1280.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The green resources are distributed randomly along streets, the pink ones are around monuments, orange resources can be found near shops. The goal of this is to encourage players to think about what they can do at a certain place without looking at the map. Also, different strategies will emerge in rural and urban areas and some places will be strategically more important than others. This is a feature that Ingress lacks, the Ingress gameplay differs very little across different locations.&lt;/p&gt;
-&lt;p&gt;There are four kinds of buildings that can be placed anywhere on the map.&lt;/p&gt;
+&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-22.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-22.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;In the actual game, players can only place buildings at their current location, and only if there isn’t another building already.&lt;/p&gt;
-&lt;p&gt;Buildings consume and output resources, which are transported via links. All buildings can be connected with links and the system will figure out the most effective way to use them.&lt;/p&gt;
+&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-14.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-14.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;A mine picks up resources from the ground.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-15.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-15.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;A warehouse stores them.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-12.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-12.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;There are ten tiers of resources and only the resources of the first tier can be aquired by mining. Higher tier resources are made by directing two different kinds of resources of the same tier into a factory and it will output a resource of a higher tier. This encourages players to build complex networks of mines, factories and warehouses, like this one:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-20.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-20.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;And finally, a tower protects someones buildings. Buildings that are not in the range of a tower can be used by everyone. So you need to build a tower to keep people from pulling resources out of your factories and looting your warehouses. High-tier resources serve as explosives to take down other’s towers and use their production networks.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/reslayer/Screenshot-8.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/reslayer/Screenshot-8.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;You can see that two of the mines are idle, because the warehouse has a limited input rate.&lt;/p&gt;
-&lt;p&gt;The goal of this mechanic is to encourage teamwork, reward efforts and provide some permanence to the players’ actions, as opposed to Ingress. In Ingress, it doesn’t really matter which portals of which place you conquer, since someone else will have taken them over by the next day. I’m trying to make a game that fixes some of the problems that Ingress has.&lt;/p&gt;
-&lt;p&gt;The screenshots in this article contain map data by &lt;a href=&quot;https://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; (ODbL) and Dark Matter tiles by &lt;a href=&quot;https://cartodb.com/attributions#basemaps&quot;&gt;CartoDB&lt;/a&gt; (&lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
 </description>
 </item>
 <item>
@@ -2166,32 +2192,6 @@ Here is an example:&lt;/p&gt;
         &lt;img src=&quot;https://marian42.de/article/proceduralart/canvas8_1280.png&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
-</description>
-</item>
-<item>
-    <title>Game prototypes</title>
-    <link>https://marian42.de/article/game-prototypes/</link>
-    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/game-prototypes/</guid>
-    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
 </description>
 </item>
 <item>
