@@ -3,7 +3,7 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Sun, 06 Apr 2025 19:31:11 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 06 Apr 2025 22:01:42 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
@@ -31,7 +31,7 @@ I was also inspired by &lt;a href=&quot;https://www.youtube.com/watch?v=TmxXhfyI
 Here is an early test where I printed a camshaft to push a follower back and forth.
 It already has ten stops and this prototype confirmed that my code was working to generate 3D cam shapes based on a sequence of segment states.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/camtest.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -54,7 +54,7 @@ This is the design I ended up with:&lt;/p&gt;
 &lt;p&gt;Each of the seven pushers has two pins, one above and one below, which engages with a cam to push it in one or the other direction.
 This could also be achieved with a single cam and a spring, but I wanted to avoid tensioning the parts.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/digit.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -66,7 +66,7 @@ With the final design, everything should move smoothly right after printing but 
 For this, I&#x27;m using a mechanism called &lt;a href=&quot;https://en.wikipedia.org/wiki/Geneva_drive&quot;&gt;Geneva drive&lt;/a&gt;, which will advance the tens digit of minutes by one when the ones digit of minutes goes from 9 to 0.
 This is what it looks like:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/geneva_drive.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -103,7 +103,7 @@ For this reason, the camshaft of the tens digit of hours stops at these three nu
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Here is the final design with all three Geneva drives engaging simultaneously when the clock rolls over at 23:59:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/geneva_drives.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -147,7 +147,7 @@ Note that the protrusion for the zero digit is a bit thinner.
 By measuring how long the sensor is interrupted, the Arduino can tell if the current digit is zero.&lt;/p&gt;
 &lt;p&gt;Here is the mechanism in action:
 &lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/encoder.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -323,7 +323,7 @@ But these teeth numbers aren&#x27;t available as Lego gears, so we have to find 
 &lt;p&gt;I made &lt;a href=&quot;https://marian42.de/gears/?targetratio=17/23&amp;amp;error=default&amp;amp;incl2d=false&amp;amp;gears=default&quot;&gt;a tool&lt;/a&gt; to find Lego gear sequences for a given transmission ratio.
 For our example of a 17/23 ratio, the app finds plenty of solutions with slightly different ratios, for example a ratio of 20/27, which is only 0.22% off from the target ratio:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/sequence_example.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -364,7 +364,7 @@ If the teeth numbers add up to a multiple of 16, they are the easiest to connect
 Once the tool has a set of driver gears and follower gears, it uses the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hungarian_algorithm&quot;&gt;Hungarian algorithm&lt;/a&gt; to generate a matching with minimal cost.&lt;/p&gt;
 &lt;p&gt;Here is an example of a result when searching for a sequence with a ratio of π:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/sequence.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -773,7 +773,7 @@ Since my last blog post in 2019, I&#x27;ve created lots of new blocks, textured 
     <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
     <guid>https://marian42.de/article/shapegan/</guid>
     <description>&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/shapegan.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -818,7 +818,7 @@ I made my own implementation of the approach proposed in the DeepSDF paper, as w
 The DeepSDF auto&lt;em&gt;decoder&lt;/em&gt; works like an autoencoder, but without the encoder.
 The latent codes are assigned randomly and then optimized during training using SGD.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/deepsdf.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -855,14 +855,14 @@ We use datasets with resolution 8³, 16³, 32³ and 64³ and apply &lt;a href=&q
 We use the Wasserstein distance with gradient penalty (&lt;a href=&quot;https://arxiv.org/pdf/1704.00028.pdf&quot;&gt;WGAN-GP&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Here is a latent space interpolation of shapes generated with the voxel discriminator:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/chairs-voxels.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Another interesting observation is the generator&#x27;s ability to generalize from the raster points to intermediate points that it was not trained on.
 Here is an example of a network that was only trained on 16^3 voxels (!), which is the first stage of the progressive growing.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/upscale.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -907,7 +907,7 @@ However, we can choose another level, effectively eroding or dilating the shape.
 We would expect that the ideal level would be 0, since that is the isosurface of the training data.
 However, when experimenting with different values, we observe that some features appear to be missing at level 0.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/levels.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -977,7 +977,7 @@ With Gazebo, you&#x27;ll also need mesh description XML files and world definiti
 However, I think that using ROS is worth it for ecosystem of existing ROS modules.&lt;/p&gt;
 &lt;h2&gt;Gazebo&lt;/h2&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/gazebo.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1016,7 +1016,7 @@ We didn&#x27;t use the camera.&lt;/p&gt;
 It is the concept that the robot determines its own position in an unknown environment based on a map that it creates while exploring the enviroment.
 For autonomous racing, this means that the car generates a map of the racetrack and can then calculate and follow an ideal racing path using that map and its position.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/slam.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1028,7 +1028,7 @@ This makes them unsuitable for racing.
 But seeing the map generate looks pretty cool!&lt;/p&gt;
 &lt;h2&gt;Wallfollowing&lt;/h2&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/wallfollowing.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1046,7 +1046,7 @@ The wallfollowing approach provided the best lap times in our tests.&lt;/p&gt;
 &lt;p&gt;The videos for Gazebo and for SLAM above show the car being controlled by the Wallfollowing algorithm.
 Here is a video of the physical car driving with it:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/wallfollowing_irl.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1075,7 +1075,7 @@ But both were unreliable in the simulation and didn&#x27;t translate well from s
 I think that we could achieve significantly better results if we had more time.&lt;/p&gt;
 &lt;p&gt;This is a video of the car driving in our simulation with policy gradient:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/policy_gradient.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1171,7 +1171,7 @@ To prevent overlapping of very close points, I iteratively moved them apart.
 This was done by defining a &amp;quot;safe&amp;quot; radius and finding all points that have a neighbor within this radius.
 Each point is then moved away from its closest neighbor by a small distance:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/move_points.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1201,7 +1201,7 @@ I found that when using t-SNE space to determine the representative, an outlier 
 &lt;p&gt;The tileset contains 138000 images, which is ~900 MB.
 This is what it looks like to zoom around in the interactive t-SNE plot:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/zoom.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1432,7 +1432,7 @@ In my case, they are supplied manually.
 Wave Function Collapse is based on Paul Merrel&#x27;s &lt;a href=&quot;https://paulmerrell.org/model-synthesis/&quot;&gt;Model Synthesis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here is a video of the algorithm in action:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/wfc.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -1991,7 +1991,7 @@ The screenshots in this article contain map data by &lt;a href=&quot;https://op
     <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
     <guid>https://marian42.de/article/no-mans-starfield/</guid>
     <description>&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/starfield.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2234,19 +2234,19 @@ Here is an example:&lt;/p&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Beach&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/beach.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Drop&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/drop.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Fire&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/fire.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2270,13 +2270,13 @@ Here is an example:&lt;/p&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Pacman&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/pacman.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Space Invader&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/invader.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2294,13 +2294,13 @@ Here is an example:&lt;/p&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Tetris&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/tetris.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Snake&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/snake.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2355,19 +2355,19 @@ Here is an example:&lt;/p&gt;
     <guid>https://marian42.de/article/game-prototypes/</guid>
     <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2380,7 +2380,7 @@ Here is an example:&lt;/p&gt;
     <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
     <guid>https://marian42.de/article/iot-fishfeeder/</guid>
     <description>&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/feed.ogv&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;
@@ -2489,7 +2489,7 @@ Here is an example:&lt;/p&gt;
 &lt;p&gt;I added a servo that pushes a bar in the gap that used to empty all passing containers. When the correct container is above the gap, the servo moves down, releasing the containers’s content. I use an &lt;a href=&quot;https://www.sparkfun.com/products/11113&quot;&gt;Arduino Pro Mini&lt;/a&gt; as microcontroller.&lt;/p&gt;
 &lt;p&gt;To make precise movements, I added a light sensor to one cog in the clockwork. I colored part of the cog black and put an LED underneath it. When the black part moves between the LED and the sensor, it senses less light. The microcontroller can use this to count the revolutions, mimicing the functionality of a stepper motor.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
+    &lt;video autoplay loop muted playsinline&gt;
         &lt;source src=&quot;https://marian42.de/sensor1.mp4&quot; type=&quot;video/mp4&quot;/&gt;
     &lt;/video&gt;
 &lt;/figure&gt;&lt;/p&gt;

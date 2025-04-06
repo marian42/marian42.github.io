@@ -40,7 +40,7 @@
     <div class="timestamp">February  2, 2020</div>
     <div class="content">
         <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="shapegan.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -85,7 +85,7 @@ I made my own implementation of the approach proposed in the DeepSDF paper, as w
 The DeepSDF auto<em>decoder</em> works like an autoencoder, but without the encoder.
 The latent codes are assigned randomly and then optimized during training using SGD.</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="deepsdf.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -122,14 +122,14 @@ We use datasets with resolution 8³, 16³, 32³ and 64³ and apply <a href="http
 We use the Wasserstein distance with gradient penalty (<a href="https://arxiv.org/pdf/1704.00028.pdf">WGAN-GP</a>).</p>
 <p>Here is a latent space interpolation of shapes generated with the voxel discriminator:</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="chairs-voxels.mp4" type="video/mp4"/>
     </video>
 </figure></p>
 <p>Another interesting observation is the generator's ability to generalize from the raster points to intermediate points that it was not trained on.
 Here is an example of a network that was only trained on 16^3 voxels (!), which is the first stage of the progressive growing.</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="upscale.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -174,7 +174,7 @@ However, we can choose another level, effectively eroding or dilating the shape.
 We would expect that the ideal level would be 0, since that is the isosurface of the training data.
 However, when experimenting with different values, we observe that some features appear to be missing at level 0.</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="levels.mp4" type="video/mp4"/>
     </video>
 </figure></p>

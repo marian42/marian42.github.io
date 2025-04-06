@@ -59,7 +59,7 @@ I was also inspired by <a href="https://www.youtube.com/watch?v=TmxXhfyIY5g">var
 Here is an early test where I printed a camshaft to push a follower back and forth.
 It already has ten stops and this prototype confirmed that my code was working to generate 3D cam shapes based on a sequence of segment states.</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="camtest.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -82,7 +82,7 @@ This is the design I ended up with:</p>
 <p>Each of the seven pushers has two pins, one above and one below, which engages with a cam to push it in one or the other direction.
 This could also be achieved with a single cam and a spring, but I wanted to avoid tensioning the parts.</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="digit.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -94,7 +94,7 @@ With the final design, everything should move smoothly right after printing but 
 For this, I'm using a mechanism called <a href="https://en.wikipedia.org/wiki/Geneva_drive">Geneva drive</a>, which will advance the tens digit of minutes by one when the ones digit of minutes goes from 9 to 0.
 This is what it looks like:</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="geneva_drive.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -131,7 +131,7 @@ For this reason, the camshaft of the tens digit of hours stops at these three nu
 </figure></p>
 <p>Here is the final design with all three Geneva drives engaging simultaneously when the clock rolls over at 23:59:</p>
 <p><figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="geneva_drives.mp4" type="video/mp4"/>
     </video>
 </figure></p>
@@ -175,7 +175,7 @@ Note that the protrusion for the zero digit is a bit thinner.
 By measuring how long the sensor is interrupted, the Arduino can tell if the current digit is zero.</p>
 <p>Here is the mechanism in action:
 <figure>
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline>
         <source src="encoder.mp4" type="video/mp4"/>
     </video>
 </figure></p>
