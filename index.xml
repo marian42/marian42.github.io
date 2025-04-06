@@ -3,10 +3,190 @@
         <title>Marian's Blog</title>
         <link>https://marian42.de test</link>
         <description>Personal blog about game development, programming and making</description>
-        <lastBuildDate>Sun, 27 Oct 2024 19:12:28 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 06 Apr 2025 19:31:11 +0000</lastBuildDate>
         <atom:link href="https://marian42.de/index.xml" rel="self" type="application/rss+xml"/>
 
         <item>
+    <title>3D Printed Mechanical Digital Clock</title>
+    <link>https://marian42.de/article/clock/</link>
+    <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/clock/</guid>
+    <description>&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/clock.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/clock_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;This post is about building a 3D printed, mechanical digital clock, made out of &lt;a href=&quot;https://en.wikipedia.org/wiki/Seven-segment_display&quot;&gt;seven-segment displays&lt;/a&gt;.
+The project was inspired by a &lt;a href=&quot;https://www.youtube.com/watch?v=YQLStT4RXVo&quot;&gt;video by Lukas Deem&lt;/a&gt;, who built a clock with seven-segment displays where the segments slide in and out when they change their state.
+In his design, each segment is controlled by a separate servo.
+I was also inspired by &lt;a href=&quot;https://www.youtube.com/watch?v=TmxXhfyIY5g&quot;&gt;various&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=s-VhmYrKIWA&quot;&gt;projects&lt;/a&gt; from the Karakuri channel, that use camshafts to drive seven-segment displays entirely mechanically.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/inspiration.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/inspiration_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;I wanted to combine the sliding in and out aesthetic of the white segments from the former with the mechanical approach from the latter.&lt;/p&gt;
+&lt;h1&gt;Cam designs&lt;/h1&gt;
+&lt;p&gt;To display ten different numbers, each of the seven segments needs to go through a sequence of ten stops, where the segment is either active or inactive.
+Here is an early test where I printed a camshaft to push a follower back and forth.
+It already has ten stops and this prototype confirmed that my code was working to generate 3D cam shapes based on a sequence of segment states.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/camtest.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Here are some early iterations of digits I printed:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/digit_iterations.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/digit_iterations_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;It has two camshafts with seven cams, so that each segment can be pushed out by one cam and pulled back in by the other.
+At the bottom, the camshafts are connected by a pair of gears so that they rotate at the same time.&lt;/p&gt;
+&lt;p&gt;A lot of iteration was done to make the digits run reliably, without too much resistance and without getting jammed.
+Another big improvement was putting the pushing and pulling cam on the same camshaft, reducing the overall complexity and part count.
+This is the design I ended up with:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/camshaft_and_pushers.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/camshaft_and_pushers_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Each of the seven pushers has two pins, one above and one below, which engages with a cam to push it in one or the other direction.
+This could also be achieved with a single cam and a spring, but I wanted to avoid tensioning the parts.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/digit.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;You can see that the side panels ended up being quite thick.
+When the camshaft pushes against the pins, it&#x27;s important that the sliders move back and forth, instead of the walls bending and the sliders moving left and right.
+With the final design, everything should move smoothly right after printing but adding silicone spray helps a lot with 3D printed mechanical projects.&lt;/p&gt;
+&lt;h1&gt;Connecting four digits&lt;/h1&gt;
+&lt;p&gt;Having designed one digit, the next step is to connect multiple digits.
+For this, I&#x27;m using a mechanism called &lt;a href=&quot;https://en.wikipedia.org/wiki/Geneva_drive&quot;&gt;Geneva drive&lt;/a&gt;, which will advance the tens digit of minutes by one when the ones digit of minutes goes from 9 to 0.
+This is what it looks like:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/geneva_drive.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Note that the ones and tens digits have different camshafts, the ones digit cycles through the numbers 0 to 9, while the tens only goes up to 5 and it goes back to zero after minute 59.&lt;/p&gt;
+&lt;p&gt;Another interesting constraint is that both digits need to advance by one number while the pin of the Geneva drive is engaged.
+That means that the ones camshaft advances by 360/10 degrees, since it has 10 stops and the tens cam advances by 360/6 degrees, since it has 6 stops.
+This requirement fully determines the position of the pin and the radii of the two wheels of the Geneva drive.
+In a standard Geneva drive, the pin enters and leaves the notch straight on, which is not the case in my design since it would dictate the distance and radii of the wheels.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/geneva_drive_drawing.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/geneva_drive_drawing_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The hours digits also have unique camshafts, although there is a special case with the ones digit of hours.
+To display 24 hours, the digit goes through 0 to 9, then through 0 to 9 again and then through 0 to 3.
+After that, at midnight, it transitions from 3 back to 0.
+I considered different ways of implementing this mechanically.
+It would be cool to have 10 digits and somehow skip from 3 to 0 at every third run.
+Eventually I decided to just make a camshaft with 24 stops, which is not as elegant but solves the problem.
+As a result of that, the ones digit of hours is bigger than the other digits.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/24_hour_camshaft.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/24_hour_camshaft_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The tens digit of hours has a similar problem, it only needs to show 0, 1 and 2.
+This would mean that the Geneva drive needs to move 120° when it engages, which is too much.
+For this reason, the camshaft of the tens digit of hours stops at these three numbers twice, for 6 total stops.&lt;/p&gt;
+&lt;p&gt;These are the four camshafts in the clock:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/camshafts.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/camshafts_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Here is the final design with all three Geneva drives engaging simultaneously when the clock rolls over at 23:59:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/geneva_drives.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Note that the large Geneva drive wheel has three pins placed so that they engage after 9, 19 and 23 hours.&lt;/p&gt;
+&lt;h1&gt;Motorization&lt;/h1&gt;
+&lt;p&gt;The next step was to motorize the clock.
+For it to function as a real clock and display the time, it needs to advance once a minute.
+I decided to use a stepper motor for this as it allows for precise angular movement.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/motor.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/motor_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Another advantage of using a stepper motor for mechanical art projects is that it is completely silent.
+When the clock advances to the next minute, all you can hear is a little mechanical rattling.
+The motor itself makes no noise.
+You might think that a stepper motor is entirely sufficient to accurately drive the clock, but in practice this is not the case.
+When turned on, the stepper motor will consume a fixed amount of power, even when not moving.
+To save power, I turn it off between each minute advancement.
+The motor holds its position while powered but moves with less resistance when powered off.
+Sometimes this leads to small errors, which accumulate over time.&lt;/p&gt;
+&lt;p&gt;I printed a mounting bracket for the motor and a gear to transmit the power.
+I use a TMC2209 stepper motor driver and a Seeeduino XIAO since it is compact and has USB-C.
+The project also has a voltage regulator so that the 12V supply for the motors can be used to power the Arduino and three buttons to set the time.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/electronics.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/electronics_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1&gt;Rotary encoder&lt;/h1&gt;
+&lt;p&gt;To avoid accumulating errors while the stepper motor is turned off, I added a rotary encoder to the ones of minutes axis.
+The gear now has ten protrusions that interrupt an IR photo interruptor.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/encoder.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/encoder_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The photo interruptor consists of an IR LED and a photo sensor.
+When a part moves into the interruptor, the sensor can no longer &amp;quot;see&amp;quot; the LED.
+Note that the protrusion for the zero digit is a bit thinner.
+By measuring how long the sensor is interrupted, the Arduino can tell if the current digit is zero.&lt;/p&gt;
+&lt;p&gt;Here is the mechanism in action:
+&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/encoder.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;I also updated the design a bit to allow a single front panel.
+The clock is made up of four digits, the &amp;quot;colon&amp;quot; separator panel in the middle and top and bottom parts to hold it all together.
+These segments were visible from the front, but this new design avoids all the gaps by using a single decorative front panel.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/clock/front_plate.jpg&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/clock/front_plate_1280.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1&gt;Keeping time and practicality&lt;/h1&gt;
+&lt;p&gt;The clock has a power supply that plugs into a wall outlet.
+As long as it has power, it will accurately advance its time once a minute.
+It doesn&#x27;t produce much noise, just a subtle mechanical rumble once every minute.
+But every time the clock is turned on, the correct time needs to be set.
+For this purpose, the clock has two buttons to go forward and backward.&lt;/p&gt;
+&lt;p&gt;I&#x27;ve considered adding a real-time clock module, which uses a tiny coin battery to keep the time even when the device is turned off.
+For it to work, the Arduino would have to write the current RTC time to its EEPROM every time it moves.
+This information is retained when the device loses power.
+When it&#x27;s turned back on, it would then have to read the current time from the RTC and the current clock state from the EEPROM and fast forward the clock by the difference between those two.&lt;/p&gt;
+&lt;p&gt;Another consideration is that the EEPROM in the Arduino has a limited number of write cycles.
+I don&#x27;t know how this will play out in practice, but if the device is limited to 100,000 writes, it could only operate for a few months.&lt;/p&gt;
+&lt;p&gt;I haven&#x27;t done this yet, but it&#x27;s the one remaining feature that I have in mind for this project.
+Since I&#x27;ve just now written the blog post, the project is complete and this probably won&#x27;t happen.
+But I wanted to mention it so that you know I&#x27;ve thought about this problem!&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;One common piece of feedback I&#x27;ve received relates to the contrast of the segments.
+I&#x27;ve specifically chosen this style where the segments slide in and become invisible.
+Yes, the contrast is low but in practice it&#x27;s not really a problem.
+It&#x27;s tricky to catch this on photos but in real life, you can easily tell the time.
+Also, it&#x27;s more of an art project than a practical clock.
+There are ways to make the segments pivot out of view, but it just doesn&#x27;t look as nice.&lt;/p&gt;
+&lt;p&gt;If you&#x27;d like to make your own version of this clock, you can get the &lt;a href=&quot;https://www.printables.com/model/859674-mechanical-digital-clock-24-hours&quot;&gt;files for free on Printables&lt;/a&gt;.
+You can also just print a &lt;a href=&quot;https://www.printables.com/model/834965-mechanical-seven-segment-display-version-2&quot;&gt;single digit&lt;/a&gt;.
+If you&#x27;re interested in printing mechanical seven segment displays, also check out &lt;a href=&quot;https://www.printables.com/model/959686-7-segment-mechanical-counter-version-30-ratchet-fo&quot;&gt;this design&lt;/a&gt; (not by me), which has segments sliding in and out of view for higher contrast.&lt;/p&gt;
+</description>
+</item>
+<item>
     <title>Designing a Lego orrery</title>
     <link>https://marian42.de/article/orrery/</link>
     <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
@@ -2128,32 +2308,6 @@ Here is an example:&lt;/p&gt;
 </description>
 </item>
 <item>
-    <title>Game prototypes</title>
-    <link>https://marian42.de/article/game-prototypes/</link>
-    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/game-prototypes/</guid>
-    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;video autoplay loop muted&gt;
-        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
-    &lt;/video&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
-</description>
-</item>
-<item>
     <title>Procedural pixelart generator</title>
     <link>https://marian42.de/article/proceduralart/</link>
     <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
@@ -2192,6 +2346,32 @@ Here is an example:&lt;/p&gt;
         &lt;img src=&quot;https://marian42.de/article/proceduralart/canvas8_1280.png&quot; alt=&quot;&quot;&gt;
     &lt;/a&gt;
 &lt;/figure&gt;&lt;/p&gt;
+</description>
+</item>
+<item>
+    <title>Game prototypes</title>
+    <link>https://marian42.de/article/game-prototypes/</link>
+    <pubDate>Sat, 18 Jul 2015 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/game-prototypes/</guid>
+    <description>&lt;p&gt;I’d like to share two game prototypes I made a few years ago. The first one is based on Tetris:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris1.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;It was written in C++ with bare-bones OpenGL. Once you press shift, the game enters a “fast mode”, where the down button takes a piece all the way down and if you don’t press it for three seconds, it will drop where it is. This is meant to be a fast-paced version of the original Tetris.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/tetris2.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The second game is based on the Osmos mechanic, in a 3D space. If two cells touch each other, the bigger one absorbs the smaller one. The goal is to become the biggest cell by avoiding bigger cells and eating smaller ones. I wrote this in Java with the LWJGL library.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;video autoplay loop muted&gt;
+        &lt;source src=&quot;https://marian42.de/cells.webm&quot; type=&quot;video/mp4&quot;/&gt;
+    &lt;/video&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/article/game-prototypes/games.zip&quot; target=&quot;_blank&quot;&gt;Here is a zip file with both games&lt;/a&gt;.&lt;/p&gt;
 </description>
 </item>
 <item>
@@ -2887,6 +3067,32 @@ Here is an example:&lt;/p&gt;
 </description>
 </item>
 <item>
+    <title>BTduino</title>
+    <link>https://marian42.de/article/btduino/</link>
+    <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
+    <guid>https://marian42.de/article/btduino/</guid>
+    <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
+&lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;a href=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&quot;&gt;
+        &lt;img src=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_1280.png&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Download&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.apk&quot;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.txt&quot;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_source.zip&quot;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To use this app, you need an Arduino or any microcontroller with a serial connection that you can program, a bluetooth module (about €10) and the parts for your project.&lt;/p&gt;
+&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;The app is designed to be self-explaining. Send values by sending a name, a colon and the value, all in text form. Take a look at the &lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;example sketch for Arduino&lt;/a&gt; for a quick start. There is a step-by-step &lt;a href=&quot;http://marian42.de/?p=95&quot;&gt;tutorial&lt;/a&gt; that shows you how to control an LED and a potentiometer via bluetooth. All capabilities of BTduino are explained in the &lt;a href=&quot;http://marian42.de/?p=140&quot;&gt;documentation&lt;/a&gt;. If anything goes wrong, check out the &lt;a href=&quot;http://marian42.de/?p=242&quot;&gt;troubleshooting page&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Beta&lt;/h2&gt;
+&lt;p&gt;I have tested this only with my own setup, so consider this a beta release. If you find a bug or want to request a feature, please &lt;a href=&quot;https://marian42.de/mailto:mail@marian42.de&quot;&gt;send me an email&lt;/a&gt;. Also, just out of curiosity, please let me know if you used this for a project.&lt;/p&gt;
+</description>
+</item>
+<item>
     <title>BTduino documentation</title>
     <link>https://marian42.de/article/btduino-doc/</link>
     <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
@@ -2968,32 +3174,6 @@ mycolorsender:255,0,255&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;requestjoystick:myjoystick&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can lock or invert an axis in the BTduino app. The app allow you use the accelerometer to control the joystick. Click the record button to record a path. It can be performed using the play button. After you have recorded a path, long-click the joystick and select “Save path” to add a path event. This allows you to record multiple paths.&lt;/p&gt;
 &lt;p&gt;The logfiles for value receiver, string receiver and color receiver are stored on the SD card int he folder &lt;code&gt;/Bluetooth/&amp;lt;project name&amp;gt;/&amp;lt;eventname&amp;gt;.txt&lt;/code&gt;. The textfile contains one dataset per line, consisting of the timestamp in milliseconds and the value.&lt;/p&gt;
-</description>
-</item>
-<item>
-    <title>BTduino</title>
-    <link>https://marian42.de/article/btduino/</link>
-    <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
-    <guid>https://marian42.de/article/btduino/</guid>
-    <description>&lt;p&gt;BTduino is an Android app that lets you add a custom bluetooth interface to your Arduino project without any programming on the Android side.&lt;/p&gt;
-&lt;p&gt;Everything is better with bluetooth! Here are some examples:&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;
-    &lt;a href=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49.png&quot;&gt;
-        &lt;img src=&quot;https://marian42.de/article/btduino/Screenshot_2013-07-24-21-15-49_1280.png&quot; alt=&quot;&quot;&gt;
-    &lt;/a&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h2&gt;Download&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.apk&quot;&gt;Android APK file&lt;/a&gt; Android 4.0 or higher is required.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;Arduino example sketch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino.txt&quot;&gt;Arduino sketch without examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://marian42.de/article/btduino/BTduino_source.zip&quot;&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To use this app, you need an Arduino or any microcontroller with a serial connection that you can program, a bluetooth module (about €10) and the parts for your project.&lt;/p&gt;
-&lt;h2&gt;Getting started&lt;/h2&gt;
-&lt;p&gt;The app is designed to be self-explaining. Send values by sending a name, a colon and the value, all in text form. Take a look at the &lt;a href=&quot;https://marian42.de/article/btduino/BTduino_example.txt&quot;&gt;example sketch for Arduino&lt;/a&gt; for a quick start. There is a step-by-step &lt;a href=&quot;http://marian42.de/?p=95&quot;&gt;tutorial&lt;/a&gt; that shows you how to control an LED and a potentiometer via bluetooth. All capabilities of BTduino are explained in the &lt;a href=&quot;http://marian42.de/?p=140&quot;&gt;documentation&lt;/a&gt;. If anything goes wrong, check out the &lt;a href=&quot;http://marian42.de/?p=242&quot;&gt;troubleshooting page&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Beta&lt;/h2&gt;
-&lt;p&gt;I have tested this only with my own setup, so consider this a beta release. If you find a bug or want to request a feature, please &lt;a href=&quot;https://marian42.de/mailto:mail@marian42.de&quot;&gt;send me an email&lt;/a&gt;. Also, just out of curiosity, please let me know if you used this for a project.&lt;/p&gt;
 </description>
 </item>
 <item>

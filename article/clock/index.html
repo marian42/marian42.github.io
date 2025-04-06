@@ -1,0 +1,253 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>
+            3D Printed Mechanical Digital Clock | Marian's Blog
+		</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marian Kleineberg">
+        <meta name="description" content="3D Printed Mechanical Digital Clock - Personal blog about game development, programming and making">
+        <meta itemprop="name" content="3D Printed Mechanical Digital Clock">
+        <meta itemprop="description" content="3D Printed Mechanical Digital Clock - Personal blog about game development, programming and making">
+        <meta property="og:title" content="3D Printed Mechanical Digital Clock">
+        <meta property="og:description" content="3D Printed Mechanical Digital Clock - Personal blog about game development, programming and making">
+        <meta property="og:image" content="https://marian42.de/article/clock/clock_1280.jpg">
+        <meta property="og:url" content="https://marian42.de/article/clock/">
+        <meta property="og:site_name" content="Marian's Blog"><meta property="og:type" content="website">
+
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://marian42.de/favicon-16x16.png" sizes="16x16">
+
+        <link href="https://marian42.de/index.xml" rel="feed" type="application/rss+xml" title="Marian's Blog" />
+                
+        <link rel="stylesheet" href="/style.css">        
+    </head>
+    <body>
+        <header class="triangle-pattern">
+            <div class="container">
+                <a href="/" class="logo" alt="Marian's Blog">
+                </a>
+            </div>
+        </header>
+        
+        <article class="card">
+    <a href="/article/clock/">
+        <h1>3D Printed Mechanical Digital Clock</h1>
+    </a>
+    <div class="timestamp">April  6, 2025</div>
+    <div class="content">
+        <p><figure>
+    <a href="clock.jpg">
+        <img src="clock_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>This post is about building a 3D printed, mechanical digital clock, made out of <a href="https://en.wikipedia.org/wiki/Seven-segment_display">seven-segment displays</a>.
+The project was inspired by a <a href="https://www.youtube.com/watch?v=YQLStT4RXVo">video by Lukas Deem</a>, who built a clock with seven-segment displays where the segments slide in and out when they change their state.
+In his design, each segment is controlled by a separate servo.
+I was also inspired by <a href="https://www.youtube.com/watch?v=TmxXhfyIY5g">various</a> <a href="https://www.youtube.com/watch?v=s-VhmYrKIWA">projects</a> from the Karakuri channel, that use camshafts to drive seven-segment displays entirely mechanically.</p>
+<p><figure>
+    <a href="inspiration.jpg">
+        <img src="inspiration_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>I wanted to combine the sliding in and out aesthetic of the white segments from the former with the mechanical approach from the latter.</p>
+<h1>Cam designs</h1>
+<p>To display ten different numbers, each of the seven segments needs to go through a sequence of ten stops, where the segment is either active or inactive.
+Here is an early test where I printed a camshaft to push a follower back and forth.
+It already has ten stops and this prototype confirmed that my code was working to generate 3D cam shapes based on a sequence of segment states.</p>
+<p><figure>
+    <video autoplay loop muted>
+        <source src="camtest.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>Here are some early iterations of digits I printed:</p>
+<p><figure>
+    <a href="digit_iterations.jpg">
+        <img src="digit_iterations_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>It has two camshafts with seven cams, so that each segment can be pushed out by one cam and pulled back in by the other.
+At the bottom, the camshafts are connected by a pair of gears so that they rotate at the same time.</p>
+<p>A lot of iteration was done to make the digits run reliably, without too much resistance and without getting jammed.
+Another big improvement was putting the pushing and pulling cam on the same camshaft, reducing the overall complexity and part count.
+This is the design I ended up with:</p>
+<p><figure>
+    <a href="camshaft_and_pushers.jpg">
+        <img src="camshaft_and_pushers_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>Each of the seven pushers has two pins, one above and one below, which engages with a cam to push it in one or the other direction.
+This could also be achieved with a single cam and a spring, but I wanted to avoid tensioning the parts.</p>
+<p><figure>
+    <video autoplay loop muted>
+        <source src="digit.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>You can see that the side panels ended up being quite thick.
+When the camshaft pushes against the pins, it's important that the sliders move back and forth, instead of the walls bending and the sliders moving left and right.
+With the final design, everything should move smoothly right after printing but adding silicone spray helps a lot with 3D printed mechanical projects.</p>
+<h1>Connecting four digits</h1>
+<p>Having designed one digit, the next step is to connect multiple digits.
+For this, I'm using a mechanism called <a href="https://en.wikipedia.org/wiki/Geneva_drive">Geneva drive</a>, which will advance the tens digit of minutes by one when the ones digit of minutes goes from 9 to 0.
+This is what it looks like:</p>
+<p><figure>
+    <video autoplay loop muted>
+        <source src="geneva_drive.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>Note that the ones and tens digits have different camshafts, the ones digit cycles through the numbers 0 to 9, while the tens only goes up to 5 and it goes back to zero after minute 59.</p>
+<p>Another interesting constraint is that both digits need to advance by one number while the pin of the Geneva drive is engaged.
+That means that the ones camshaft advances by 360/10 degrees, since it has 10 stops and the tens cam advances by 360/6 degrees, since it has 6 stops.
+This requirement fully determines the position of the pin and the radii of the two wheels of the Geneva drive.
+In a standard Geneva drive, the pin enters and leaves the notch straight on, which is not the case in my design since it would dictate the distance and radii of the wheels.</p>
+<p><figure>
+    <a href="geneva_drive_drawing.png">
+        <img src="geneva_drive_drawing_1280.png" alt="">
+    </a>
+</figure></p>
+<p>The hours digits also have unique camshafts, although there is a special case with the ones digit of hours.
+To display 24 hours, the digit goes through 0 to 9, then through 0 to 9 again and then through 0 to 3.
+After that, at midnight, it transitions from 3 back to 0.
+I considered different ways of implementing this mechanically.
+It would be cool to have 10 digits and somehow skip from 3 to 0 at every third run.
+Eventually I decided to just make a camshaft with 24 stops, which is not as elegant but solves the problem.
+As a result of that, the ones digit of hours is bigger than the other digits.</p>
+<p><figure>
+    <a href="24_hour_camshaft.jpg">
+        <img src="24_hour_camshaft_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>The tens digit of hours has a similar problem, it only needs to show 0, 1 and 2.
+This would mean that the Geneva drive needs to move 120° when it engages, which is too much.
+For this reason, the camshaft of the tens digit of hours stops at these three numbers twice, for 6 total stops.</p>
+<p>These are the four camshafts in the clock:</p>
+<p><figure>
+    <a href="camshafts.jpg">
+        <img src="camshafts_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>Here is the final design with all three Geneva drives engaging simultaneously when the clock rolls over at 23:59:</p>
+<p><figure>
+    <video autoplay loop muted>
+        <source src="geneva_drives.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>Note that the large Geneva drive wheel has three pins placed so that they engage after 9, 19 and 23 hours.</p>
+<h1>Motorization</h1>
+<p>The next step was to motorize the clock.
+For it to function as a real clock and display the time, it needs to advance once a minute.
+I decided to use a stepper motor for this as it allows for precise angular movement.</p>
+<p><figure>
+    <a href="motor.jpg">
+        <img src="motor_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>Another advantage of using a stepper motor for mechanical art projects is that it is completely silent.
+When the clock advances to the next minute, all you can hear is a little mechanical rattling.
+The motor itself makes no noise.
+You might think that a stepper motor is entirely sufficient to accurately drive the clock, but in practice this is not the case.
+When turned on, the stepper motor will consume a fixed amount of power, even when not moving.
+To save power, I turn it off between each minute advancement.
+The motor holds its position while powered but moves with less resistance when powered off.
+Sometimes this leads to small errors, which accumulate over time.</p>
+<p>I printed a mounting bracket for the motor and a gear to transmit the power.
+I use a TMC2209 stepper motor driver and a Seeeduino XIAO since it is compact and has USB-C.
+The project also has a voltage regulator so that the 12V supply for the motors can be used to power the Arduino and three buttons to set the time.</p>
+<p><figure>
+    <a href="electronics.jpg">
+        <img src="electronics_1280.jpg" alt="">
+    </a>
+</figure></p>
+<h1>Rotary encoder</h1>
+<p>To avoid accumulating errors while the stepper motor is turned off, I added a rotary encoder to the ones of minutes axis.
+The gear now has ten protrusions that interrupt an IR photo interruptor.</p>
+<p><figure>
+    <a href="encoder.jpg">
+        <img src="encoder_1280.jpg" alt="">
+    </a>
+</figure></p>
+<p>The photo interruptor consists of an IR LED and a photo sensor.
+When a part moves into the interruptor, the sensor can no longer &quot;see&quot; the LED.
+Note that the protrusion for the zero digit is a bit thinner.
+By measuring how long the sensor is interrupted, the Arduino can tell if the current digit is zero.</p>
+<p>Here is the mechanism in action:
+<figure>
+    <video autoplay loop muted>
+        <source src="encoder.mp4" type="video/mp4"/>
+    </video>
+</figure></p>
+<p>I also updated the design a bit to allow a single front panel.
+The clock is made up of four digits, the &quot;colon&quot; separator panel in the middle and top and bottom parts to hold it all together.
+These segments were visible from the front, but this new design avoids all the gaps by using a single decorative front panel.</p>
+<p><figure>
+    <a href="front_plate.jpg">
+        <img src="front_plate_1280.jpg" alt="">
+    </a>
+</figure></p>
+<h1>Keeping time and practicality</h1>
+<p>The clock has a power supply that plugs into a wall outlet.
+As long as it has power, it will accurately advance its time once a minute.
+It doesn't produce much noise, just a subtle mechanical rumble once every minute.
+But every time the clock is turned on, the correct time needs to be set.
+For this purpose, the clock has two buttons to go forward and backward.</p>
+<p>I've considered adding a real-time clock module, which uses a tiny coin battery to keep the time even when the device is turned off.
+For it to work, the Arduino would have to write the current RTC time to its EEPROM every time it moves.
+This information is retained when the device loses power.
+When it's turned back on, it would then have to read the current time from the RTC and the current clock state from the EEPROM and fast forward the clock by the difference between those two.</p>
+<p>Another consideration is that the EEPROM in the Arduino has a limited number of write cycles.
+I don't know how this will play out in practice, but if the device is limited to 100,000 writes, it could only operate for a few months.</p>
+<p>I haven't done this yet, but it's the one remaining feature that I have in mind for this project.
+Since I've just now written the blog post, the project is complete and this probably won't happen.
+But I wanted to mention it so that you know I've thought about this problem!</p>
+<h1>Conclusion</h1>
+<p>One common piece of feedback I've received relates to the contrast of the segments.
+I've specifically chosen this style where the segments slide in and become invisible.
+Yes, the contrast is low but in practice it's not really a problem.
+It's tricky to catch this on photos but in real life, you can easily tell the time.
+Also, it's more of an art project than a practical clock.
+There are ways to make the segments pivot out of view, but it just doesn't look as nice.</p>
+<p>If you'd like to make your own version of this clock, you can get the <a href="https://www.printables.com/model/859674-mechanical-digital-clock-24-hours">files for free on Printables</a>.
+You can also just print a <a href="https://www.printables.com/model/834965-mechanical-seven-segment-display-version-2">single digit</a>.
+If you're interested in printing mechanical seven segment displays, also check out <a href="https://www.printables.com/model/959686-7-segment-mechanical-counter-version-30-ratchet-fo">this design</a> (not by me), which has segments sliding in and out of view for higher contrast.</p>
+
+    </div>
+</article>
+
+        <footer>
+            <div class="socials">
+                <div class="inner-div">
+                    <a href="mailto:mail@marian42.de">
+                        Contact
+                    </a>
+                </div>
+                <div>
+                    <a href="https://mastodon.gamedev.place/@marian42" rel="me" title="Follow me on Mastodon" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512">                                
+                            <path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/marian42_" title="Follow me on Twitter" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
+                            <path d="M221.95,51.29c0.15,2.17,0.15,4.34,0.15,6.53c0,66.73-50.8,143.69-143.69,143.69v-0.04 C50.97,201.51,24.1,193.65,1,178.83c3.99,0.48,8,0.72,12.02,0.73c22.74,0.02,44.83-7.61,62.72-21.66 c-21.61-0.41-40.56-14.5-47.18-35.07c7.57,1.46,15.37,1.16,22.8-0.87C27.8,117.2,10.85,96.5,10.85,72.46c0-0.22,0-0.43,0-0.64 c7.02,3.91,14.88,6.08,22.92,6.32C11.58,63.31,4.74,33.79,18.14,10.71c25.64,31.55,63.47,50.73,104.08,52.76 c-4.07-17.54,1.49-35.92,14.61-48.25c20.34-19.12,52.33-18.14,71.45,2.19c11.31-2.23,22.15-6.38,32.07-12.26 c-3.77,11.69-11.66,21.62-22.2,27.93c10.01-1.18,19.79-3.86,29-7.95C240.37,35.29,231.83,44.14,221.95,51.29z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/marian42" title="View my code on Github" class="social-icon">
+                        <svg viewbox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                        </svg>
+                    </a>
+                    <a href="/index.xml" title="RSS feed" class="social-icon">
+                        <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 0.38705632,0.38705632 V 1.5913525 A 6.021594,6.021594 0 0 1 6.4086474,7.6129437 H 7.6129437 A 7.2259129,7.2259129 0 0 0 0.38705632,0.38705632 Z m 0,2.40864748 V 4 A 3.6129564,3.6129564 0 0 1 4,7.6129437 H 5.2042963 A 4.8172751,4.8172751 0 0 0 0.38705632,2.7957038 Z M 1.3430849,5.7008865 A 0.95602666,0.95602666 0 0 0 0.38705632,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,7.6129437 0.95602666,0.95602666 0 0 0 2.2991135,6.6569151 0.95602666,0.95602666 0 0 0 1.3430849,5.7008865 Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="decorator triangle-pattern">
+            </div>
+        </footer>
+    </body>
+</html>
