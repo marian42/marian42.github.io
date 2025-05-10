@@ -18,21 +18,22 @@ I first mentioned these ideas in this [Twitter thread](https://twitter.com/maria
 # Objective
 
 The goal is to procedurally generate a 3D environment by placing human designed blocks on a 3D grid.
-The blocks need to be placed in accordance with given adjacency contraints.
-For each of the 6 sides of each block, some information about the face and its symmetry is used to generate a list of possible neighbors.
+The blocks need to be placed in accordance with given adjacency constraints.
+For each of the 6 sides of a block, some information about the face and its symmetry is used to generate a list of possible neighbors.
 
 {{< img "modules.png" "" >}}
 
 This is different from the original formulation of the [WFC algorithm](https://github.com/mxgmn/WaveFunctionCollapse), where the possible blocks, their adjacency rules and their spawn probabilities are extracted automatically from an example texture.
 
-In this improved version, the generation method is robust enough to be shipped in a commercial game, so it needs to be reliable, fast and allow for artistic control over the result.
+With the improvements described here, the generation method is robust enough to be shipped in a commercial game.
+For this, it needs to be reliable, fast and allow for artistic control over the result.
 
 # Wave Function Collapse
 
 This article is aimed at readers who already know how the [WFC algorithm](https://github.com/mxgmn/WaveFunctionCollapse) works, but here is a brief recap.
-Remember, I'm skipping the part where blocks are extracted from an example texture and I'm only using the part where we generate a new "texture".
+I'm skipping the part where blocks are extracted from an example texture and only use the part where we generate a new "texture".
 
-![](https://camo.githubusercontent.com/dc39c61e02aa67abd0f923628cf241120d14f517/687474703a2f2f692e696d6775722e636f6d2f734e75425653722e676966)  
+![](wfc.gif)  
 (Gif by [Maxim Gumin on Github](https://github.com/mxgmn))
 
 The algorithm starts with an array of slots (the "wave function"), where nothing is decided.
@@ -47,7 +48,7 @@ If all modules have the same spawn probability, the slot with the fewest possibl
 
 ## Constraint propagation
 Collapsing a slot effectively shrinks the list of possible modules of that slot to 1.
-The constraint propagation step propagates this information through the map by removing modules from the respective lists of other slots that relied on a different choice for the slot we just collapsed.
+The constraint propagation step propagates this information through the map by removing modules from the respective lists of other slots that have been ruled out by the latest collapse step.
 The constraint propagation step of the WFC algorithm is the most compute intensive part.
 
 ## End
@@ -61,8 +62,8 @@ In that case the procedure has failed and one could backtrack or start over.
 
 WFC is usually applied to finite maps that can be stored in an array.
 In my [original post](/article/wfc/), I described why I thought it would be impractical to do a chunk-based WFC implementation.
-(I had not figured out how to avoid the problem that constraints need to be propagated across chunk boundaries)
-Instead, I stored the map in a dictionary, where new slots would be allocated when they were needed or when they were touched by constraint propagation.
+I had not figured out how to avoid the problem that constraints need to be propagated across chunk boundaries.
+Instead, I stored the map in a dictionary, where new slots would be allocated when they were generated or when they were touched by constraint propagation.
 That means, even to geneate a small area of the map, a large cloud of slots around that area would be allocated since constraint propagation could "bounce back" into the area we're interested in.
 
 Problems of that approach include:
@@ -75,13 +76,15 @@ In practice, the map height had to be limited so that the map generation was fas
 
 {{< img "2018demo.jpg" "" >}}
 
-My implementation of this flawed approach is still [available on Github](https://github.com/marian42/wavefunctioncollapse) and a playable demo is on [itch.io](https://marian42.itch.io/wfc).
+My implementation of the old approach is still [available on Github](https://github.com/marian42/wavefunctioncollapse) and a playable demo is on [itch.io](https://marian42.itch.io/wfc).
 If you want to implement your own WFC algorithm, you shouldn't do it like that though!
+
+In the next part, I'll describe my solution to all of the aforementioned problems.
 
 # Chunk-based WFC
 
-The idea is to start with a simple pre-generated, tiling map and generate "fitting" replacements at runtime.
-However, we do this at an offset so that the seam (which would otherwise look the same for each chunk) is replaced.
+The idea is to start with a simple, pre-generated, tiling map and generate "fitting" replacements at runtime.
+However, we do this at an offset so that the seam at the chunk borders (which would otherwise look the same for each chunk) is replaced.
 In this section, I'll explain in detail what that means.
 
 This solution is a refinement of ideas proposed by [Paul Merrel](https://paulmerrell.org/model-synthesis/) and [BorisTheBrave](https://www.boristhebrave.com/2021/11/08/infinite-modifying-in-blocks/).
@@ -97,7 +100,7 @@ Doing that would look like this:
 
 {{< img "tilingworld.jpg" "" >}}
 
-Generating a tiling map is done by "wrapping around" the constraint propagation at the map boundary.
+Generating the tiling map is done by "wrapping around" the constraint propagation at the map boundary.
 In a finite map, when we propagate a constraint to a slot outside the map, we discard that information.
 In a tiling map, the slot on the opposing map boundary is treated as if it was a neighbor.
 
@@ -107,7 +110,7 @@ Next, we pre-generate a set of replacements for our starting map.
 
 We use the boundary of the starting map as a boundary constraint to generate these replacements.
 For any slots on the boundary of these new maps, we only allow modules with a matching profile for those sides that face the map boundary.
-This means that we can "swap out" our starting map with any of the pre-generated patches without creating a visible seam.
+This means that we can "swap out" our starting map with any of the pre-generated patches without getting mismatched blocks at the boundary.
 
 Now we can randomly choose from our collection of pre-generated patches at runtime and we have a simple chunk-based infinite world generator:
 
@@ -122,7 +125,7 @@ The starting point for each chunks's generation is made up of the four pre-gener
 The replacement map we generate at runtime has a boundary constraint to "fit in", just like our pre-generated patches.
 However, due to the offset, the boundary that is shared between all pre-generated patches is replaced at runtime and the area that is different in every pre-generated patch remains unchanged during the runtime generation.
 (This is needed so that neighbor chunks can be generated independently from each other.)
-If this replacement map fails to generate, we just copy the blocks from the starting patches.
+If this replacement map fails to generate, we just keep the blocks from the starting patches.
 
 Here is the result of that:
 
@@ -134,7 +137,7 @@ Notice how the chunk boundary artifacts from the previous screenshot are gone!
 
 Consider this drawing, where the gray blocks are one chunk (seen from above).
 We determine the four starting patches that overlap this chunk (the blue boxes).
-This needs to be random but deterministic, since neighbor chunks will need to use the same information.
+This needs to be random but deterministic, since neighbor chunks will need to use the same starting chunks.
 We query the pre-generated patches at the boundary of the chunk (shown in green) and use this as the boundary constraint for the generation of the chunk.
 
 The green boundary area will stay the same during runtime generation, but this looks ok due to the variance in the pre-generated patches.
@@ -142,11 +145,12 @@ The blue boundary is the same for each pre-generated patch, but will be replaced
 
 Note how this has the properties we want:
 Each chunk can be generated deterministically and independently from other chunks.
-If the generation for one chunk fails, we simply copy the blocks from the starting patches.
+If the generation for one chunk fails, we fall back to simply copying the blocks from the starting patches.
 
 # Using a heightmap
 
 In this section, I'll explain how to generate a world in the shape of an arbitrary heightmap.
+This is done to achieve large-scale height differences, which are needed for a natural looking landscape.
 
 Consider an integer heightmap where the difference between two adjacent points is always one.
 The next point is either one above or one below, but never at the same level or anywhere else.
@@ -167,7 +171,7 @@ Our query point has four adjacent 2x2 cells.
 For each 2x2 cell, we determine which of the six possible shapes it has and pick a pre-generated starting patch from the respective collection.
 Then, we generate a replacement map as explained in the previous section.
 
-Here is an example of the heightmap in engine, each chunk is represented as one flat quad:
+Here is an example of the heightmap in engine, each chunk is represented as one flat box:
 
 {{< img "heightmap.jpg" "" >}}
 
